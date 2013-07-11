@@ -44,7 +44,7 @@ public class UserRepository {
 
 
     public void addUser(String username, String password, String name) {
-        jdbcTemplate.execute("INSERT INTO users values ('" +username+ "', '" + password + "', '" + name+ "')");
+        jdbcTemplate.execute("INSERT INTO users values ('" + username + "', '" + password + "', '" + name + "')");
     }
 
     public void modifyUser(String userName, String name) {
@@ -83,6 +83,11 @@ public class UserRepository {
 
     public List<User> fetchFollowing(String userName) {
         return jdbcTemplate.query("select username,name,email from users where username in (select following from following where follower=?)",
+                new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
+    }
+
+    public List<User> fetchFollowers(String userName) {
+        return jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=?)",
                 new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
     }
 }
