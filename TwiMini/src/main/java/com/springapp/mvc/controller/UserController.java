@@ -22,20 +22,20 @@ public class UserController {
         this.repository = repository;
     }
 
-	@RequestMapping("/showusers")
+	@RequestMapping("MiniTwitter/showusers")
     @ResponseBody
     public List<User> printWelcome(ModelMap model) {
         return repository.findUsers();
 	}
 
-    @RequestMapping("/{id}")
+    @RequestMapping("MiniTwitter/{id}")
     @ResponseBody
     public User fetchUser(@PathVariable("id") String userName) {
         System.out.println("Fetching User Details for: " + userName);
         return repository.fetchUser(userName);
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/users", method = RequestMethod.POST)
     @ResponseBody
     public void add(@RequestBody Map<String, String> user) {
         System.out.println("Creating new user: " + user.get("username") + " " + user.get("password"));
