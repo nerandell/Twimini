@@ -1,6 +1,6 @@
 package com.springapp.mvc.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 /**
  * Created with IntelliJ IDEA.
@@ -9,6 +9,7 @@ import java.security.Timestamp;
  * Time: 8:09 PM
  * To change this template use File | Settings | File Templates.
  */
+
 public class Tweet {
 
     public String id;
