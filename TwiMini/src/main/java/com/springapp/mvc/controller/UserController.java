@@ -3,6 +3,7 @@ package com.springapp.mvc.controller;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -64,7 +65,11 @@ public class UserController {
         if ( userRepository.isUserPresent(user.get("username")) ) {
             return;
         }
-        userRepository.addUser(user.get("username"), user.get("password"), user.get("name"));
+        userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"));
+    }
+
+    public String encodePassword(String password) {
+        return DigestUtils.sha256Hex(password);
     }
 
 }

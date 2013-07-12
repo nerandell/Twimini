@@ -36,15 +36,8 @@ public class UserRepository {
                 new Object[]{}, new BeanPropertyRowMapper<>(User.class));
     }
 
-    public int addUser(String userName, String password){
-        jdbcTemplate.execute("INSERT INTO users values ('" + userName + "', '"+ password +"')");
-        System.out.println("User Inserted");
-        return 0;
-    }
-
-
-    public void addUser(String username, String password, String name) {
-        jdbcTemplate.execute("INSERT INTO users values ('" + username + "', '" + password + "', '" + name + "')");
+    public void addUser(String username, String password, String name, String email) {
+        jdbcTemplate.execute("INSERT INTO users values ('" + username + "', '" + name + "', '" + email + "' , '" + password + "')");
     }
 
     public void modifyUser(String userName, String name) {
