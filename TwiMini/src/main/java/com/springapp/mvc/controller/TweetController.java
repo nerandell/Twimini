@@ -1,16 +1,10 @@
 package com.springapp.mvc.controller;
 
 import com.springapp.mvc.data.TweetRepository;
-import com.springapp.mvc.model.User;
+import com.springapp.mvc.model.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import com.springapp.mvc.data.UserRepository;
-
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,11 +16,17 @@ import java.util.Map;
 
 @Controller
 public class TweetController {
-    private final TweetRepository repository;
+    private final TweetRepository tweetRepository;
 
     @Autowired
     public TweetController(TweetRepository repository) {
-        this.repository = repository;
+        this.tweetRepository = repository;
     }
 
+    @RequestMapping("MiniTwitter/tweets/{id}")
+    @ResponseBody
+    public Tweet fetchUser(@PathVariable("id") Long tweetId) {
+        System.out.println("Fetching Tweet Details : " + tweetId);
+        return tweetRepository.findTweet(tweetId);
+    }
 }
