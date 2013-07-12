@@ -1,5 +1,7 @@
 package com.springapp.mvc.controller;
 
+import com.springapp.mvc.data.TweetRepository;
+import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,7 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.springapp.mvc.data.UserRepository;
 
-import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,48 +17,54 @@ import java.util.Map;
 @Controller
 public class UserController {
 
-    private final UserRepository repository;
+    private final UserRepository userRepository;
+    private final TweetRepository tweetRepository;
 
     @Autowired
-    public UserController(UserRepository repository) {
-        this.repository = repository;
+    public UserController(UserRepository userRepository,TweetRepository tweetRepository) {
+        this.userRepository = userRepository;
+        this.tweetRepository = tweetRepository;
     }
 
 	@RequestMapping("MiniTwitter/showusers")
     @ResponseBody
     public List<User> printWelcome(ModelMap model) {
-        return repository.findUsers();
+        return userRepository.findUsers();
 	}
 
     @RequestMapping("MiniTwitter/{id}")
     @ResponseBody
-    public User fetchUser(@PathVariable("id") String userName) {
+    public HashMap fetchUser(@PathVariable("id") String userName) {
+        HashMap userDetails = new HashMap();
         System.out.println("Fetching User Details for: " + userName);
-        return repository.fetchUser(userName);
+        userDetails.put("tweets",tweetRepository.fetchTweets(userName));
+        userDetails.put("info",userRepository.fetchUser(userName));
+        return userDetails;
     }
+
 
     @RequestMapping("MiniTwitter/{id}/following")
     @ResponseBody
     public List<User> fetchFollowing(@PathVariable("id") String userName) {
         System.out.println("Fetching User Details for: " + userName);
-        return repository.fetchFollowing(userName);
+        return userRepository.fetchFollowing(userName);
     }
 
     @RequestMapping("MiniTwitter/{id}/followers")
     @ResponseBody
     public List<User> fetchFollowers(@PathVariable("id") String userName) {
         System.out.println("Fetching User Details for: " + userName);
-        return repository.fetchFollowers(userName);
+        return userRepository.fetchFollowers(userName);
     }
 
     @RequestMapping(value = "MiniTwitter/users", method = RequestMethod.POST)
     @ResponseBody
     public void add(@RequestBody Map<String, String> user) {
         System.out.println("Creating new user: " + user.get("username") + " " + user.get("password"));
-        if ( repository.isUserPresent(user.get("username")) ) {
+        if ( userRepository.isUserPresent(user.get("username")) ) {
             return;
         }
-        repository.addUser(user.get("username"), user.get("password"), user.get("name"));
+        userRepository.addUser(user.get("username"), user.get("password"), user.get("name"));
     }
 
 }
