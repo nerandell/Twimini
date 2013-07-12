@@ -40,9 +40,9 @@ public class UserRepository {
         jdbcTemplate.execute("INSERT INTO users values ('" + username + "', '" + name + "', '" + email + "' , '" + password + "')");
     }
 
-    public void modifyUser(String userName, String name) {
+    public void modifyUser(String userName, String name, String email) {
         //To change body of created methods use File | Settings | File Templates.
-        jdbcTemplate.update("UPDATE users set name=? where username=?", new Object[]{name, userName});
+        jdbcTemplate.update("UPDATE users set name=?,email=? where username=?", new Object[]{name, email, userName});
     }
 
     public void deleteUser(String userName) {
