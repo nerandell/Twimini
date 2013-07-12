@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.springapp.mvc.data.UserRepository;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -66,6 +67,13 @@ public class UserController {
             return;
         }
         userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"));
+    }
+
+    @RequestMapping(value = "MiniTwitter/users/{id}", method = RequestMethod.PUT)
+    @ResponseBody
+    public void modify(@PathVariable("id") String userName, @RequestBody Map<String, String> values) {
+        System.out.println("for user: " + userName + " Modifying name to: " + values.get("name"));
+        userRepository.modifyUser(userName, values.get("name"), values.get("email"));
     }
 
     public String encodePassword(String password) {
