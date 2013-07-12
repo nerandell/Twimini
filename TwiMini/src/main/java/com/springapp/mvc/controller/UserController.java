@@ -33,7 +33,7 @@ public class UserController {
         return userRepository.findUsers();
 	}
 
-    @RequestMapping("MiniTwitter/{id}")
+    @RequestMapping("MiniTwitter/users/{id}")
     @ResponseBody
     public HashMap fetchUser(@PathVariable("id") String userName) {
         HashMap userDetails = new HashMap();
@@ -44,14 +44,14 @@ public class UserController {
     }
 
 
-    @RequestMapping("MiniTwitter/{id}/following")
+    @RequestMapping("MiniTwitter/users/{id}/following")
     @ResponseBody
     public List<User> fetchFollowing(@PathVariable("id") String userName) {
         System.out.println("Fetching User Details for: " + userName);
         return userRepository.fetchFollowing(userName);
     }
 
-    @RequestMapping("MiniTwitter/{id}/followers")
+    @RequestMapping("MiniTwitter/users/{id}/followers")
     @ResponseBody
     public List<User> fetchFollowers(@PathVariable("id") String userName) {
         System.out.println("Fetching User Details for: " + userName);
