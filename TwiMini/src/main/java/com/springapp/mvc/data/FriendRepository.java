@@ -9,6 +9,7 @@ package com.springapp.mvc.data;
  */
 
 
+import com.springapp.mvc.model.Friend;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import com.springapp.mvc.model.User;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -45,13 +48,36 @@ public class FriendRepository {
         return DigestUtils.sha256Hex(password);
     }
 
-    public void addFollower(String username, String toFollow) {
+    public void addFriend(String username, String toFollow) {
         if(!username.equals(toFollow)) {
-            List<Object> list = jdbcTemplate.query("select following from following where follower=? AND following=?",
-                    new Object[]{username, toFollow}, new BeanPropertyRowMapper<>(Object.class));
-            if(list.size()>0) log.info("Tuple Already exists");
+            List<Friend> list = jdbcTemplate.query("select * from following where follower=? AND following=?",
+                    new Object[]{username, toFollow}, new BeanPropertyRowMapper<>(Friend.class));
+            if(list.size()>0) {
+                Friend friend = list.get(0);
+                System.out.println(friend.getTimestamp());
+                if(friend.timestamp==null) log.info("Relationship already exists");
+                else {
+                    jdbcTemplate.execute("update following set timestamp = null where follower = '"+ username + "' AND following = '" + toFollow + "'");
+                    log.info("Resetting timestamp to null value");
+                }
+            }
             else jdbcTemplate.execute("INSERT into following VALUES('" + username + "','" + toFollow + "')");
         }
         else log.info("Can't follow yourself");
+    }
+
+    public void deleteFollower(String username, String toUnfollow) {
+        List<Friend> list = jdbcTemplate.query("select * from following where follower=? AND following=?",
+               new Object[]{username, toUnfollow}, new BeanPropertyRowMapper<>(Friend.class));
+        if(list.size()==0) log.info("No record exists");
+        else {
+            Friend friend = list.get(0);
+            if(friend.timestamp==null) {
+                Timestamp timestamp = new Timestamp(new Date().getTime());
+                jdbcTemplate.execute("update following set timestamp='" + timestamp + "' where follower = '"+ username + "' AND following = '" + toUnfollow + "'");
+                log.info("Resetting timestamp to current time");
+            }
+            else log.info("Already unfollowed");
+        }
     }
 }

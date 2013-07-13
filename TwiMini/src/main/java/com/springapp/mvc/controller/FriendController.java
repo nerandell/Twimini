@@ -48,7 +48,16 @@ public class FriendController {
     @ResponseBody
     public void createFriendShip(@RequestParam("username") String toFollow, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
-        friendRepository.addFollower(username,toFollow);
+        friendRepository.addFriend(username,toFollow);
         log.info("Add new follower: " + toFollow + " for user " + username);
     }
+
+    @RequestMapping(value = "MiniTwitter/friendships/destroy", method = RequestMethod.POST)
+    @ResponseBody
+    public void destroyFriendShip(@RequestParam("username") String toUnfollow, HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        friendRepository.deleteFollower(username,toUnfollow);
+        log.info("Unfollow follower: " + toUnfollow + " for user " + username);
+    }
+
 }
