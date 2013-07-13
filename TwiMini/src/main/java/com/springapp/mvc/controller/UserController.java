@@ -54,6 +54,13 @@ public class UserController {
         return userRepository.fetchFollowing(userName);
     }
 
+    @RequestMapping(value = "MiniTwitter/followers/ids", method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> fetchFollowers(@RequestParam("username") String userName) {
+        log.info("Fetching User Details for: " + userName);
+        return userRepository.fetchFollowers(userName);
+    }
+
     @RequestMapping(value = "MiniTwitter/users", method = RequestMethod.POST)
     @ResponseBody
     public void add(@RequestBody Map<String, String> user) {
