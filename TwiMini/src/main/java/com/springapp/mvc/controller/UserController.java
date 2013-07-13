@@ -4,6 +4,7 @@ import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,6 +22,7 @@ public class UserController {
 
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
+    static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
     public UserController(UserRepository userRepository,TweetRepository tweetRepository) {
@@ -45,18 +47,11 @@ public class UserController {
     }
 
 
-    @RequestMapping("MiniTwitter/users/{id}/following")
+    @RequestMapping(value = "MiniTwitter/friends/ids", method = RequestMethod.GET)
     @ResponseBody
-    public List<User> fetchFollowing(@PathVariable("id") String userName) {
-        System.out.println("Fetching User Details for: " + userName);
+    public List<User> fetchFollowing(@RequestParam("username") String userName) {
+        log.info("Fetching User Details for: " + userName);
         return userRepository.fetchFollowing(userName);
-    }
-
-    @RequestMapping("MiniTwitter/users/{id}/followers")
-    @ResponseBody
-    public List<User> removeFollowing(@PathVariable("id") String userName) {
-        System.out.println("Fetching User Details for: " + userName);
-        return userRepository.fetchFollowers(userName);
     }
 
     @RequestMapping(value = "MiniTwitter/users", method = RequestMethod.POST)
