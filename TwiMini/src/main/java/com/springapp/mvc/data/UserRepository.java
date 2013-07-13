@@ -9,6 +9,7 @@ package com.springapp.mvc.data;
  */
 
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -51,13 +52,14 @@ public class UserRepository {
     }
 
     public boolean isUserValid(String userName, String password) {
-
+        String encodedPassword = encodePassword(password);
+        System.out.println("encode password = "+encodedPassword);
         User user= jdbcTemplate.queryForObject("select password from users where username=?",
-                new Object[]{userName}, new BeanPropertyRowMapper<User>());
-        if(user.getPassword().equals(password)){
+                new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
+        if(user.getPassword().equals(encodedPassword)){
             return true;
         }
-        return false;  //To change body of created methods use File | Settings | File Templates.
+        return false;
     }
 
     public boolean isUserPresent(String username) {
@@ -83,5 +85,11 @@ public class UserRepository {
         return jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=?)",
                 new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
     }
+
+
+    public static String encodePassword(String password) {
+        return DigestUtils.sha256Hex(password);
+    }
+
 }
 
