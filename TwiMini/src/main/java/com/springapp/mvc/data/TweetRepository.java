@@ -35,7 +35,7 @@ public class TweetRepository {
 
     }
 
-    public Tweet findTweet(Long tweetId) {
+    public Tweet fetchTweet(Long tweetId) {
         return jdbcTemplate.queryForObject("select * from tweets where id=?",
                 new Object[]{tweetId}, new BeanPropertyRowMapper<>(Tweet.class));
     }

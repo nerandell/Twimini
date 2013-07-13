@@ -29,11 +29,11 @@ public class TweetController {
         this.tweetRepository = repository;
     }
 
-    @RequestMapping("MiniTwitter/tweets/{id}")
+    @RequestMapping(value = "MiniTwitter/statuses/show", method = RequestMethod.GET)
     @ResponseBody
-    public Tweet fetchUser(@PathVariable("id") Long tweetId) {
-        System.out.println("Fetching Tweet Details : " + tweetId);
-        return tweetRepository.findTweet(tweetId);
+    public Tweet fetchTweet(@RequestParam("id") Long id) {
+        log.info("Fetching tweet with id" + id);
+        return tweetRepository.fetchTweet(id);
     }
 
     @RequestMapping(value = "MiniTwitter/statuses/update", method = RequestMethod.POST)

@@ -14,7 +14,10 @@
     </bean>
 
     <mvc:interceptors>
-        <bean class="com.springapp.mvc.interceptors.CheckAuthorizedInterceptor" />
+        <mvc:interceptor>
+            <mvc:mapping path="/MiniTwitter/statuses/update" />
+            <bean class="com.springapp.mvc.interceptors.CheckAuthorizedInterceptor" />
+        </mvc:interceptor>
     </mvc:interceptors>
 
 </beans>
