@@ -50,5 +50,11 @@ public class TweetRepository {
         jdbcTemplate.execute("INSERT into tweets (username, tweet, timestamp ) VALUES ('" + username + "','" + status + "','" + timestamp + "')");
         log.info("Inserting new tweet " + status + " by user " + username);
     }
+
+    public List<Tweet> searchTweets(String searchQuery) {
+        log.info("SELECT * from tweets where to_tsvector(\'english\',tweet) @@ to_tsquery(\'english\','\""+ searchQuery +"\"')");
+        return jdbcTemplate.query("SELECT * from tweets where to_tsvector(\'english\',tweet) @@ plainto_tsquery(\'english\','\""+ searchQuery +"\"')",
+                new Object[]{}, new BeanPropertyRowMapper<>(Tweet.class));
+    }
 }
 

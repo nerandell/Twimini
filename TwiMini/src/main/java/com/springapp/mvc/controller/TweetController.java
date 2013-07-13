@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.List;
 
 
 /**
@@ -44,4 +47,11 @@ public class TweetController {
         log.info("Add tweet: " + status + " for user " + username);
     }
 
+    @RequestMapping(value = "MiniTwitter/search/tweets", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Tweet> searchTweets(@RequestParam("q") String searchQuery) throws UnsupportedEncodingException {
+        searchQuery = URLDecoder.decode(searchQuery,"UTF-8");
+        log.info("Search tweet for query string: " + searchQuery);
+        return tweetRepository.searchTweets(searchQuery);
+    }
 }
