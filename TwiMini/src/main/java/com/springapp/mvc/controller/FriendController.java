@@ -12,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.springapp.mvc.data.UserRepository;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.Map;
 public class FriendController {
 
     private final FriendRepository friendRepository;
-    static Logger log = Logger.getLogger(UserRepository.class);
+    static Logger log = Logger.getLogger(FriendRepository.class);
 
     @Autowired
     public FriendController(FriendRepository friendRepository) {
@@ -41,5 +42,13 @@ public class FriendController {
     public List<User> fetchFollowers(@RequestParam("username") String userName) {
         log.info("Fetching User Details for: " + userName);
         return friendRepository.fetchFollowers(userName);
+    }
+
+    @RequestMapping(value = "MiniTwitter/friendships/create", method = RequestMethod.POST)
+    @ResponseBody
+    public void createFriendShip(@RequestParam("username") String toFollow, HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        friendRepository.addFollower(username,toFollow);
+        log.info("Add new follower: " + toFollow + " for user " + username);
     }
 }

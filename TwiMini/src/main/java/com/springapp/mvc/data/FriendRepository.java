@@ -10,6 +10,7 @@ package com.springapp.mvc.data;
 
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,6 +22,7 @@ import java.util.List;
 @Repository
 public class FriendRepository {
 
+    static Logger log = Logger.getLogger(TweetRepository.class);
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -43,5 +45,10 @@ public class FriendRepository {
         return DigestUtils.sha256Hex(password);
     }
 
+    public void addFollower(String username, String toFollow) {
+        List<Object> list = jdbcTemplate.query("select following from following where follower=? AND following=?",
+                new Object[]{username, toFollow}, new BeanPropertyRowMapper<>(Object.class));
+        if(list.size()>0) log.info("Tuple Already exists");
+        else jdbcTemplate.execute("INSERT into following VALUES('" + username + "','" + toFollow + "')");
+    }
 }
-
