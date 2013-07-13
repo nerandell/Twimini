@@ -1,5 +1,7 @@
 package com.springapp.mvc.model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.sql.Timestamp;
 
 /**

@@ -28,7 +28,7 @@ public class UserController {
         this.tweetRepository = tweetRepository;
     }
 
-	@RequestMapping("MiniTwitter/showusers")
+	@RequestMapping("showusers")
     @ResponseBody
     public List<User> printWelcome(ModelMap model) {
         return userRepository.findUsers();
@@ -54,7 +54,7 @@ public class UserController {
 
     @RequestMapping("MiniTwitter/users/{id}/followers")
     @ResponseBody
-    public List<User> fetchFollowers(@PathVariable("id") String userName) {
+    public List<User> removeFollowing(@PathVariable("id") String userName) {
         System.out.println("Fetching User Details for: " + userName);
         return userRepository.fetchFollowers(userName);
     }
