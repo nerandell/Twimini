@@ -46,9 +46,12 @@ public class FriendRepository {
     }
 
     public void addFollower(String username, String toFollow) {
-        List<Object> list = jdbcTemplate.query("select following from following where follower=? AND following=?",
-                new Object[]{username, toFollow}, new BeanPropertyRowMapper<>(Object.class));
-        if(list.size()>0) log.info("Tuple Already exists");
-        else jdbcTemplate.execute("INSERT into following VALUES('" + username + "','" + toFollow + "')");
+        if(!username.equals(toFollow)) {
+            List<Object> list = jdbcTemplate.query("select following from following where follower=? AND following=?",
+                    new Object[]{username, toFollow}, new BeanPropertyRowMapper<>(Object.class));
+            if(list.size()>0) log.info("Tuple Already exists");
+            else jdbcTemplate.execute("INSERT into following VALUES('" + username + "','" + toFollow + "')");
+        }
+        else log.info("Can't follow yourself");
     }
 }
