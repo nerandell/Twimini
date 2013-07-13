@@ -5,6 +5,10 @@ import com.springapp.mvc.model.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.apache.log4j.Logger;
+
+import javax.servlet.http.HttpServletRequest;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,7 +20,9 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class TweetController {
+
     private final TweetRepository tweetRepository;
+    static Logger log = Logger.getLogger(TweetRepository.class);
 
     @Autowired
     public TweetController(TweetRepository repository) {
@@ -29,4 +35,13 @@ public class TweetController {
         System.out.println("Fetching Tweet Details : " + tweetId);
         return tweetRepository.findTweet(tweetId);
     }
+
+    @RequestMapping(value = "MiniTwitter/statuses/update", method = RequestMethod.POST)
+    @ResponseBody
+    public void addTweet(@RequestParam("status") String status,HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        tweetRepository.addTweet(username,status);
+        log.info("Add tweet: " + status + " for user " + username);
+    }
+
 }

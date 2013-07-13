@@ -11,6 +11,7 @@ package com.springapp.mvc;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import java.beans.PropertyVetoException;
 
+import com.springapp.mvc.interceptors.CheckAuthorizedInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -57,5 +58,11 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     public static PropertySourcesPlaceholderConfigurer propertiesConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
+
+    public void addInterceptors(InterceptorRegistry registry){
+        CheckAuthorizedInterceptor interceptor = new CheckAuthorizedInterceptor(userRepository);
+        registry.addInterceptor(interceptor).addPathPatterns("MiniTwitter/statuses/update");
+    }
+
 
 }
