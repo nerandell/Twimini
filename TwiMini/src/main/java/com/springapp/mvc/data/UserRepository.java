@@ -76,17 +76,6 @@ public class UserRepository {
         return false;  //To change body of created methods use File | Settings | File Templates.
     }
 
-    public List<User> fetchFollowing(String userName) {
-        return jdbcTemplate.query("select username,name,email from users where username in (select following from following where follower=?)",
-                new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
-    }
-
-    public List<User> fetchFollowers(String userName) {
-        return jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=?)",
-                new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
-    }
-
-
     public static String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }
