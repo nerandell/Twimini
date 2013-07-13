@@ -16,6 +16,8 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/MiniTwitter/statuses/update" />
+            <mvc:mapping path="/MiniTwitter/friendships/create" />
+            <mvc:mapping path="/MiniTwitter/friendships/destroy" />
             <bean class="com.springapp.mvc.interceptors.CheckAuthorizedInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>
