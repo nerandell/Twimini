@@ -41,7 +41,7 @@ public class TweetRepository {
     }
 
     public List<Tweet> fetchUserTimeline(String username) {
-        return jdbcTemplate.query("select * from tweets where username=?",
+        return jdbcTemplate.query("select * from tweets where username=? order by timestamp DESC",
                 new Object[]{username}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
