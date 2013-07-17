@@ -45,6 +45,11 @@ public class TweetRepository {
                 new Object[]{username}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
+    public List<Tweet> fetchHomeTimeline(String username) {
+        return jdbcTemplate.query("select * from tweets where username in(select following from following where follower=?) or username=? order by timestamp DESC",
+                new Object[]{username,username}, new BeanPropertyRowMapper<>(Tweet.class));
+    }
+
     public void addTweet(String username, String status) {
         Timestamp timestamp = new Timestamp(new Date().getTime());
         jdbcTemplate.execute("INSERT into tweets (username, tweet, timestamp ) VALUES ('" + username + "','" + status + "','" + timestamp + "')");

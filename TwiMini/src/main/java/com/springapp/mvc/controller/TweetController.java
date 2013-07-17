@@ -54,6 +54,12 @@ public class TweetController {
         return tweetRepository.fetchUserTimeline(username);
     }
 
+    @RequestMapping(value = "MiniTwitter/statuses/home_timeline", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Tweet> fetchUserTimeline(HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        return tweetRepository.fetchHomeTimeline(username);
+    }
 
     @RequestMapping(value = "MiniTwitter/search/tweets", method = RequestMethod.GET)
     @ResponseBody
