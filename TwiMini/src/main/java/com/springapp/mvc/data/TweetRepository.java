@@ -40,8 +40,8 @@ public class TweetRepository {
                 new Object[]{tweetId}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
-    public List<Tweet> fetchTimeline(String username) {
-        return jdbcTemplate.query("select * from tweets where username in (select following from following where follower = ?)",
+    public List<Tweet> fetchUserTimeline(String username) {
+        return jdbcTemplate.query("select * from tweets where username=?",
                 new Object[]{username}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 

@@ -63,12 +63,6 @@ public class UserController {
         userRepository.modifyUser(userName, values.get("name"), values.get("email"));
     }
 
-    @RequestMapping(value = "MiniTwitter/users/{id}/timeline")
-    @ResponseBody
-    public List<Tweet> fetchTimeLine(@PathVariable("id") String userName) {
-        return tweetRepository.fetchTimeline(userName);
-    }
-
     public String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }

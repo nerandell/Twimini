@@ -47,6 +47,14 @@ public class TweetController {
         log.info("Add tweet: " + status + " for user " + username);
     }
 
+    @RequestMapping(value = "MiniTwitter/statuses/user_timeline", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Tweet> fetchUserTimeline(@RequestParam("username") String username) {
+        log.info("Fetching timeline for user " + username);
+        return tweetRepository.fetchUserTimeline(username);
+    }
+
+
     @RequestMapping(value = "MiniTwitter/search/tweets", method = RequestMethod.GET)
     @ResponseBody
     public List<Tweet> searchTweets(@RequestParam("q") String searchQuery) throws UnsupportedEncodingException {
