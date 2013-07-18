@@ -39,6 +39,13 @@ public class TweetController {
         return tweetRepository.fetchTweet(id);
     }
 
+    @RequestMapping(value = "MiniTwitter/shuffle", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Tweet> fetchRandomTweets() {
+        log.info("Fetching random tweets");
+        return tweetRepository.fetchRandomTweets();
+    }
+
     @RequestMapping(value = "MiniTwitter/statuses/update", method = RequestMethod.POST)
     @ResponseBody
     public void addTweet(@RequestParam("status") String status,HttpServletRequest httpServletRequest) {

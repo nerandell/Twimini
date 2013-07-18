@@ -61,5 +61,10 @@ public class TweetRepository {
         return jdbcTemplate.query("SELECT * from tweets where to_tsvector(\'english\',tweet) @@ plainto_tsquery(\'english\','\""+ searchQuery +"\"')",
                 new Object[]{}, new BeanPropertyRowMapper<>(Tweet.class));
     }
+
+    public List<Tweet> fetchRandomTweets() {
+           return jdbcTemplate.query("SELECT * FROM tweets ORDER BY RANDOM() LIMIT 20",
+                new Object[]{} , new BeanPropertyRowMapper<>(Tweet.class));
+    }
 }
 
