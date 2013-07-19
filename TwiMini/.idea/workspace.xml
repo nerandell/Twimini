@@ -21,13 +21,13 @@
     <file path="$PROJECT_DIR$/../../../Downloads/todo/src/main/java/to/talk/todo/web/UsersController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373705838444" ignored="false" />
     <file path="/mvc-dispatcher-servlet.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374213844943" ignored="false" />
     <file path="$PROJECT_DIR$/../../../Downloads/todo/src/main/java/to/talk/todo/interceptors/CheckAuthorizedInterceptor.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373711673818" ignored="false" />
-    <file path="/web.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374216096826" ignored="false" />
+    <file path="/web.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374234923319" ignored="false" />
     <file path="/index.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374221311689" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer-navbar.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/build/node_modules/hogan.js/test/index.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="/bootstrap.css" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374217355474" ignored="false" />
-    <file path="/user_info.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374232121133" ignored="false" />
+    <file path="/user_info.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374235370180" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +157,7 @@
       <file leaf-file-name="user_info.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="146" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.43392506">
+            <state line="80" column="71" selection-start="3898" selection-end="3898" vertical-scroll-proportion="0.73214287">
               <folding />
             </state>
           </provider>
@@ -193,7 +193,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="22" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
+            <state line="36" column="26" selection-start="1106" selection-end="1106" vertical-scroll-proportion="-14.137931">
               <folding />
             </state>
           </provider>
@@ -219,11 +219,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/twitter-bootstrap/docs/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp" />
       </list>
     </option>
@@ -286,9 +286,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="50" />
-    <option name="y" value="24" />
+    <option name="y" value="-4" />
     <option name="width" value="1871" />
-    <option name="height" value="1057" />
+    <option name="height" value="1085" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -451,6 +451,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twitter-bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twitter-bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -996,7 +1030,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="24" width="1871" height="1057" extended-state="7" />
+    <frame x="50" y="-4" width="1871" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1018,8 +1052,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912782" sideWeight="0.70757735" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905295" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22594832" sideWeight="0.6503885" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34961155" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22594832" sideWeight="0.66092575" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33907428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1140,16 +1174,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TweetController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="32" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+        <state line="25" column="4" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/twitter-bootstrap/docs/assets/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4386" column="38" selection-start="84103" selection-end="84103" vertical-scroll-proportion="0.0">
+        <state line="40" column="27" selection-start="1678" selection-end="1678" vertical-scroll-proportion="-25.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="40" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TweetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="32" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1165,14 +1213,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="22" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="40" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0">
+        <state line="36" column="26" selection-start="1106" selection-end="1106" vertical-scroll-proportion="-14.137931">
           <folding />
         </state>
       </provider>
@@ -1186,23 +1227,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/twitter-bootstrap/docs/assets/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="4" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="27" selection-start="1678" selection-end="1678" vertical-scroll-proportion="-25.0">
+        <state line="4386" column="38" selection-start="84103" selection-end="84103" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="146" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.43392506">
+        <state line="80" column="71" selection-start="3898" selection-end="3898" vertical-scroll-proportion="0.73214287">
           <folding />
         </state>
       </provider>
