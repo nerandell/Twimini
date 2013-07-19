@@ -98,10 +98,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="63" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
+            <state line="57" column="6" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.31127012">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,10 +154,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_info.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user_info.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="71" selection-start="3898" selection-end="3898" vertical-scroll-proportion="0.73214287">
+            <state line="74" column="38" selection-start="3500" selection-end="3514" vertical-scroll-proportion="-20.181818">
               <folding />
             </state>
           </provider>
@@ -1218,15 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="63" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/twitter-bootstrap/docs/assets/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4386" column="38" selection-start="84103" selection-end="84103" vertical-scroll-proportion="0.0">
@@ -1236,8 +1227,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_info.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="71" selection-start="3898" selection-end="3898" vertical-scroll-proportion="0.73214287">
+        <state line="74" column="38" selection-start="3500" selection-end="3514" vertical-scroll-proportion="-20.181818">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="6" selection-start="1948" selection-end="1948" vertical-scroll-proportion="0.31127012">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
