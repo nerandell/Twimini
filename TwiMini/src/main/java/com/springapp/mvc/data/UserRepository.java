@@ -41,9 +41,10 @@ public class UserRepository {
         jdbcTemplate.execute("INSERT INTO users values ('" + username + "', '" + name + "', '" + email + "' , '" + password + "')");
     }
 
-    public void modifyUser(String userName, String name, String email) {
+    public void modifyUser(String userName, String name, String email, String password) {
         //To change body of created methods use File | Settings | File Templates.
-        jdbcTemplate.update("UPDATE users set name=?,email=? where username=?", new Object[]{name, email, userName});
+        String encodedPassword = encodePassword(password);
+        jdbcTemplate.update("UPDATE users set name=?,email=?,password=? where username=?", new Object[]{name,email,encodedPassword,userName});
     }
 
     public void deleteUser(String userName) {
@@ -53,7 +54,6 @@ public class UserRepository {
 
     public boolean isUserValid(String userName, String password) {
         String encodedPassword = encodePassword(password);
-        System.out.println("encode password = "+encodedPassword);
         User user= jdbcTemplate.queryForObject("select password from users where username=?",
                 new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
         if(user.getPassword().equals(encodedPassword)){
