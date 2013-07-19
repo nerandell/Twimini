@@ -38,7 +38,7 @@ public class UserController {
     @RequestMapping("test")
     @ResponseBody
     public ModelAndView printWelcome() {
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("user_info");
         List<User> users = userRepository.findUsers();
         String gSON = new Gson().toJson(getUserNames(users));
         modelAndView.addObject("users",gSON);
