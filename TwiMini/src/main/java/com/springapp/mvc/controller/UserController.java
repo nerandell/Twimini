@@ -1,6 +1,7 @@
 package com.springapp.mvc.controller;
 
 import com.google.gson.Gson;
+import com.springapp.mvc.data.FriendRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
@@ -27,21 +28,28 @@ public class UserController {
 
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
+    private final FriendRepository friendRepository;
+
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public UserController(UserRepository userRepository,TweetRepository tweetRepository) {
+    public UserController(UserRepository userRepository,TweetRepository tweetRepository,FriendRepository friendRepository) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
+        this.friendRepository = friendRepository;
     }
 
-    @RequestMapping("test")
+    @RequestMapping(value = "MiniTwitter/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView printWelcome() {
-        ModelAndView modelAndView = new ModelAndView("user_info");
+    public ModelAndView printWelcome(@PathVariable("id") String userName) {
+        ModelAndView modelAndView = new ModelAndView("index");
         List<User> users = userRepository.findUsers();
         String gSON = new Gson().toJson(getUserNames(users));
         modelAndView.addObject("users",gSON);
+        modelAndView.addObject("tweets", tweetRepository.fetchTweets(userName));
+        modelAndView.addObject("info",userRepository.fetchUser(userName));
+        modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
+        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
         return modelAndView;
     }
 
@@ -56,16 +64,6 @@ public class UserController {
     public List<User> printWelcome(ModelMap model) {
         return userRepository.findUsers();
 	}
-
-    @RequestMapping("MiniTwitter/users/{id}")
-    @ResponseBody
-    public HashMap fetchUser(@PathVariable("id") String userName) {
-        HashMap userDetails = new HashMap();
-        System.out.println("Fetching User Details for: " + userName);
-        userDetails.put("tweets", tweetRepository.fetchTweets(userName));
-        userDetails.put("info",userRepository.fetchUser(userName));
-        return userDetails;
-    }
 
     @RequestMapping(value = "MiniTwitter/users", method = RequestMethod.POST)
     @ResponseBody
