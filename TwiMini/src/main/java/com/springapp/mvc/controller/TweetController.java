@@ -48,7 +48,7 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/statuses/update", method = RequestMethod.POST)
     @ResponseBody
-    public void addTweet(@RequestParam("status") String status,HttpServletRequest httpServletRequest) {
+    public void addTweet(@ModelAttribute("status") String status,HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
         tweetRepository.addTweet(username,status);
         log.info("Add tweet: " + status + " for user " + username);

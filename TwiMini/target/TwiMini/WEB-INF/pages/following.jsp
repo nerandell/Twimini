@@ -406,8 +406,8 @@
                         <div class="widget-main no-padding">
                             <form>
                                 <div class="form-actions input-append">
-                                    <input placeholder="Compose a tweet..." type="text" class="width-75" name="message" />
-                                    <button class="btn btn-small btn-info no-radius" onclick="return false;">
+                                    <input placeholder="Compose a tweet..." type="text" class="width-75" id="tweet" />
+                                    <button class="btn btn-small btn-info no-radius" onclick="postTweet()">
                                         <i class="icon-pencil"></i>
                                         <span class="hidden-phone">Tweet</span>
                                     </button>
@@ -471,6 +471,7 @@
                                                     <div>
                                                         <small>
                                                             @<c:out value="${user.username}"></c:out>
+                                                        </small>
                                                         </small>
                                                     </div>
 
