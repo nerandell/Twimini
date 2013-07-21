@@ -43,13 +43,12 @@ public class UserController {
     @ResponseBody
     public ModelAndView printWelcome(@PathVariable("id") String userName) {
         ModelAndView modelAndView = new ModelAndView("index");
-        List<User> users = userRepository.findUsers();
-        String gSON = new Gson().toJson(getUserNames(users));
-        modelAndView.addObject("users",gSON);
-        modelAndView.addObject("tweets", tweetRepository.fetchTweets(userName));
+        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+        modelAndView.addObject("tweets", tweets);
         modelAndView.addObject("info",userRepository.fetchUser(userName));
         modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
         modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
+        modelAndView.addObject("num_of_tweets", tweets.size());
         return modelAndView;
     }
 

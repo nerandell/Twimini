@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.springapp.mvc.data.UserRepository;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,23 +24,56 @@ import java.util.Map;
 public class FriendController {
 
     private final FriendRepository friendRepository;
+    private final UserRepository userRepository;
+    private final TweetRepository tweetRepository;
+
     static Logger log = Logger.getLogger(FriendRepository.class);
 
     @Autowired
-    public FriendController(FriendRepository friendRepository) {
+    public FriendController(FriendRepository friendRepository,TweetRepository tweetRepository, UserRepository userRepository) {
         this.friendRepository = friendRepository;
+        this.userRepository = userRepository;
+        this.tweetRepository = tweetRepository;
+    }
+
+    @RequestMapping(value = "MiniTwitter/{id}/following", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView fetchFollowing(@PathVariable("id") String userName) {
+        ModelAndView modelAndView = new ModelAndView("following");
+        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+        List<User> following = friendRepository.fetchFollowing(userName);
+        modelAndView.addObject("info",userRepository.fetchUser(userName));
+        modelAndView.addObject("num_following", following.size());
+        modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
+        modelAndView.addObject("num_of_tweets", tweets.size());
+        modelAndView.addObject("following",following);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "MiniTwitter/{id}/followers", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView fetchFollowers(@PathVariable("id") String userName) {
+        ModelAndView modelAndView = new ModelAndView("followers");
+        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+        List<User> followers = friendRepository.fetchFollowers(userName);
+        modelAndView.addObject("info",userRepository.fetchUser(userName));
+        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
+        modelAndView.addObject("num_followers", followers.size());
+        modelAndView.addObject("num_of_tweets", tweets.size());
+        modelAndView.addObject("followers",followers);
+        return modelAndView;
     }
 
     @RequestMapping(value = "MiniTwitter/friends/lists", method = RequestMethod.GET)
     @ResponseBody
-    public List<User> fetchFollowing(@RequestParam("username") String userName) {
+    public List<User> fetchFollowingAPI(@RequestParam("username") String userName) {
         log.info("Fetching User Details for: " + userName);
         return friendRepository.fetchFollowing(userName);
     }
 
     @RequestMapping(value = "MiniTwitter/followers/lists", method = RequestMethod.GET)
     @ResponseBody
-    public List<User> fetchFollowers(@RequestParam("username") String userName) {
+    public List<User> fetchFollowersAPI(@RequestParam("username") String userName) {
         log.info("Fetching User Details for: " + userName);
         return friendRepository.fetchFollowers(userName);
     }
