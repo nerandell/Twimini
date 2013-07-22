@@ -4,20 +4,15 @@ import com.springapp.mvc.data.FriendRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import com.springapp.mvc.data.UserRepository;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @Controller
@@ -36,7 +31,7 @@ public class FriendController {
         this.tweetRepository = tweetRepository;
     }
 
-    @RequestMapping(value = "MiniTwitter/API/{id}/following", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/Website/{id}/following", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView fetchFollowing(@PathVariable("id") String userName) {
         ModelAndView modelAndView = new ModelAndView("following");
@@ -50,7 +45,7 @@ public class FriendController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "MiniTwitter/API/{id}/followers", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/Website/{id}/followers", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView fetchFollowers(@PathVariable("id") String userName) {
         ModelAndView modelAndView = new ModelAndView("followers");

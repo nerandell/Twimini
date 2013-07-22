@@ -9,17 +9,17 @@
 
     <!--basic styles-->
 
-    <link href="../../w8_admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../w8_admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../w8_admin/themes/font-awesome/css/font-awesome.min.css" />
+    <link href="../../../w8_admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../w8_admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../w8_admin/themes/font-awesome/css/font-awesome.min.css" />
 
     <!--[if IE 7]>
-    <link rel="stylesheet" href="../../w8_admin/themes/font-awesome/css/font-awesome-ie7.min.css"/>
+    <link rel="stylesheet" href="../../../w8_admin/themes/font-awesome/css/font-awesome-ie7.min.css"/>
     <![endif]-->
 
     <!--page specific plugin styles-->
 
-    <link rel="stylesheet" href="../../w8_admin/themes/css/prettify.css" />
+    <link rel="stylesheet" href="../../../w8_admin/themes/css/prettify.css" />
 
     <!--fonts-->
 
@@ -27,9 +27,9 @@
 
     <!--ace styles-->
 
-    <link rel="stylesheet" href="../../w8_admin/themes/css/w8.min.css" />
-    <link rel="stylesheet" href="../../w8_admin/themes/css/w8-responsive.min.css" />
-    <link rel="stylesheet" href="../../w8_admin/themes/css/w8-skins.min.css" />
+    <link rel="stylesheet" href="../../../w8_admin/themes/css/w8.min.css" />
+    <link rel="stylesheet" href="../../../w8_admin/themes/css/w8-responsive.min.css" />
+    <link rel="stylesheet" href="../../../w8_admin/themes/css/w8-skins.min.css" />
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="themes/css/ace-ie.min.css" />
@@ -68,12 +68,12 @@
                                             <c:forEach items="${following}" var="user">
                                                 <div class="itemdiv memberdiv">
                                                     <div class="user">
-                                                        <img alt="Bob Doe's avatar" src="../../w8_admin/themes/images/user.png" />
+                                                        <img alt="Bob Doe's avatar" src="../../../w8_admin/themes/images/user.png" />
                                                     </div>
 
                                                     <div class="body">
                                                         <div class="name">
-                                                            <a href="/MiniTwitter/${user.username}">
+                                                            <a href="/MiniTwitter/Website/${user.username}">
                                                                 <c:out value="${user.name}"></c:out>
                                                             </a>
                                                         </div>
@@ -143,22 +143,23 @@
 <script type="text/javascript">
     window.jQuery || document.write("<script src='themes/js/jquery-1.9.1.min.js'>"+"<"+"/script>");
 </script>
-<script src="../../w8_admin/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../w8_admin/themes/js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="../../w8_admin/themes/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../../../w8_admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery.ui.touch-punch.min.js"></script>
+<script src="../../../w8_admin/js/addTweet.js"></script>
 
-<script src="../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>
-<script src="../../w8_admin/themes/js/jquery.easy-pie-chart.min.js"></script>
-<script src="../../w8_admin/themes/js/jquery.sparkline.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery.easy-pie-chart.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery.sparkline.min.js"></script>
 
-<script src="../../w8_admin/themes/js/jquery.flot.min.js"></script>
-<script src="../../w8_admin/themes/js/jquery.flot.pie.min.js"></script>
-<script src="../../w8_admin/themes/js/jquery.flot.resize.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery.flot.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery.flot.pie.min.js"></script>
+<script src="../../../w8_admin/themes/js/jquery.flot.resize.min.js"></script>
 
 <!--w8 scripts-->
 
-<script src="../../w8_admin/themes/js/w8-elements.min.js"></script>
-<script src="../../w8_admin/themes/js/w8.min.js"></script>
+<script src="../../../w8_admin/themes/js/w8-elements.min.js"></script>
+<script src="../../../w8_admin/themes/js/w8.min.js"></script>
 
 <!--inline scripts related to this page-->
 

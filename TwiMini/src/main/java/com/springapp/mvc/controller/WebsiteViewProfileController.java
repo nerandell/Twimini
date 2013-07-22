@@ -15,14 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: mayday
- * Date: 22/7/13
- * Time: 4:59 PM
- * To change this template use File | Settings | File Templates.
- */
-
 @Controller
 public class WebsiteViewProfileController {
 
@@ -42,7 +34,7 @@ public class WebsiteViewProfileController {
     @RequestMapping(value = "MiniTwitter/Website/{id}", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView printWelcome(@PathVariable("id") String userName) {
-        ModelAndView modelAndView = new ModelAndView("index");
+        ModelAndView modelAndView = new ModelAndView("user_profile");
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         modelAndView.addObject("tweets", tweets);
         modelAndView.addObject("info",userRepository.fetchUser(userName));

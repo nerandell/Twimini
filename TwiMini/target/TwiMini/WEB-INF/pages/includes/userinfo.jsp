@@ -30,21 +30,21 @@
 
 <div class="clearfix">
     <div class="grid3">
-        <a href="/MiniTwitter/${info.username}">
+        <a href="/MiniTwitter/Website/${info.username}">
             <span class="grey">Tweets</span>
             <h4 class="bigger pull-right">${num_of_tweets}</h4>
         </a>
     </div>
 
     <div class="grid3">
-        <a href="/MiniTwitter/${info.username}/followers">
+        <a href="/MiniTwitter/Website/${info.username}/followers">
             <span class="grey">Followers</span>
             <h4 class="bigger pull-right">${num_followers}</h4>
         </a>
     </div>
 
     <div class="grid3">
-        <a href="/MiniTwitter/${info.username}/following">
+        <a href="/MiniTwitter/Website/${info.username}/following">
             <div>
                 <span class="grey">Following</span>
                 <h4 class="bigger pull-right">${num_following}</h4>
