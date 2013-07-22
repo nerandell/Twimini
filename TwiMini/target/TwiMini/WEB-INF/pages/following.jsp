@@ -38,193 +38,21 @@
 </head>
 
 <body>
-<div class="navbar navbar-inverse">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <a href="#" class="brand">
-                <small>
-                    <i class="icon-unlock-alt"></i>
-                    TwiMini
-                </small>
-            </a><!--/.brand-->
-
-            <ul class="nav ace-nav pull-right">
-                <li class="grey user-p">
-                    <a href="#">
-                        <i class="icon-home"></i>
-                    </a>
-                </li>
-
-                <li class="purple">
-                    <a href="#">
-                        <i class="icon-bell-alt icon-only icon-animated-bell"></i>
-                        <span class="badge badge-important">8</span>
-                    </a>
-                </li>
-
-                <li class="green">
-                    <a href="#">
-                        <i class="icon-cog"></i>
-                    </a>
-                </li>
-
-                <li class="light-blue user-profile">
-                    <a data-toggle="dropdown" href="#" class="user-menu dropdown-toggle">
-                        <img class="nav-user-photo" src="../../w8_admin/themes/images/user.png" alt="Jason's Photo" />
-								<span id="user_info">
-									<small>Welcome,</small>
-									Jason
-								</span>
-
-                        <i class="icon-caret-down"></i>
-                    </a>
-
-                    <ul class="pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer" id="user_menu">
-                        <li>
-                            <a href="#">
-                                <i class="icon-cog"></i>
-                                Settings
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="icon-user"></i>
-                                Profile
-                            </a>
-                        </li>
-
-                        <li class="divider"></li>
-
-                        <li>
-                            <a href="#">
-                                <i class="icon-off"></i>
-                                Logout
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul><!--/.w8-nav-->
-
-        </div><!--/.container-fluid-->
-    </div><!--/.navbar-inner-->
-</div>
-
+<%@ include file="includes/navbar.jsp" %>
 <div class="container-fluid" id="main-container">
     <a id="menu-toggler" href="#">
         <span></span>
     </a>
 
-    <div id="sidebar">
-        <ul class="nav nav-list">
-            <li class="active">
-                <a href="/MiniTwitter/${info.username}/following">
-                    <i class="icon-dashboard"></i>
-                    <span>Following</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="/MiniTwitter/${info.username}/followers">
-                    <i class="icon-text-width"></i>
-                    <span>Followers</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="/MiniTwitter/${info.username}">
-                    <i class="icon-list"></i>
-                    <span>Tweets</span>
-                </a>
-            </li>
-
-        </ul><!--/.nav-list-->
-
-        <div id="sidebar-collapse">
-            <i class="icon-double-angle-left"></i>
-        </div>
-    </div>
+    <%@ include file="includes/sidebar.jsp" %>
 
     <div id="main-content" class="clearfix">
-        <div id="breadcrumbs">
-            <ul class="breadcrumb">
-                <li>
-                    <i class="icon-home"></i>
-                    <a href="#">Home</a>
 
-							<span class="divider">
-								<i class="icon-angle-right"></i>
-							</span>
-                </li>
-                <li class="active">Dashboard</li>
-            </ul><!--.breadcrumb-->
-
-            <div id="nav-search">
-                <form class="form-search">
-							<span class="input-icon">
-								<input type="text" placeholder="Search ..." class="input-small search-query" id="nav-search-input" autocomplete="off" />
-								<i class="icon-search" id="nav-search-icon"></i>
-							</span>
-                </form>
-            </div><!--#nav-search-->
-        </div>
+        <%@ include file="includes/searchbar.jsp" %>
 
         <div id="page-content" class="clearfix">
-            <div class="page-header position-relative">
-                <h1>
-                    <img class="nav-user-photo" src="../../w8_admin/themes/images/user.png" alt="Jason's Photo" />
-                    ${info.name}
-                    <small>
-                        @${info.username}
-                    </small>
-                </h1>
-            </div><!--/.page-header-->
 
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="widget-box ">
-                        <div class="widget-body">
-                            <div class="widget-main no-padding">
-                                <form>
-                                    <div class="form-actions input-append">
-                                        <input placeholder="Compose a tweet..." type="text" class="width-75" id="tweet" />
-                                        <button class="btn btn-small btn-info no-radius" onclick="postTweet()">
-                                            <i class="icon-pencil"></i>
-                                            <span class="hidden-phone">Tweet</span>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="clearfix">
-                <div class="grid3">
-                    <a href="/MiniTwitter/${info.username}">
-                        <span class="grey">Tweets</span>
-                        <h4 class="bigger pull-right">${num_of_tweets}</h4>
-                    </a>
-                </div>
-
-                <div class="grid3">
-                    <a href="/MiniTwitter/${info.username}/followers">
-                        <span class="grey">Followers</span>
-                        <h4 class="bigger pull-right">${num_followers}</h4>
-                    </a>
-                </div>
-
-                <div class="grid3">
-                    <a href="/MiniTwitter/${info.username}/following">
-                        <div>
-                            <span class="grey">Following</span>
-                            <h4 class="bigger pull-right">${num_following}</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
+            <%@ include file="includes/userinfo.jsp" %>
 
             <div class="row-fluid">
                 <!--PAGE CONTENT BEGINS HERE-->
