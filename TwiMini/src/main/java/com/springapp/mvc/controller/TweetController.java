@@ -32,21 +32,21 @@ public class TweetController {
         this.tweetRepository = repository;
     }
 
-    @RequestMapping(value = "MiniTwitter/statuses/show", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/statuses/show", method = RequestMethod.GET)
     @ResponseBody
     public Tweet fetchTweet(@RequestParam("id") Long id) {
         log.info("Fetching tweet with id" + id);
         return tweetRepository.fetchTweet(id);
     }
 
-    @RequestMapping(value = "MiniTwitter/shuffle", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/shuffle", method = RequestMethod.GET)
     @ResponseBody
     public List<Tweet> fetchRandomTweets() {
         log.info("Fetching random tweets");
         return tweetRepository.fetchRandomTweets();
     }
 
-    @RequestMapping(value = "MiniTwitter/statuses/update", method = RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/API/statuses/update", method = RequestMethod.POST)
     @ResponseBody
     public void addTweet(@ModelAttribute("status") String status,HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
@@ -54,21 +54,21 @@ public class TweetController {
         log.info("Add tweet: " + status + " for user " + username);
     }
 
-    @RequestMapping(value = "MiniTwitter/statuses/user_timeline", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/statuses/user_timeline", method = RequestMethod.GET)
     @ResponseBody
     public List<Tweet> fetchUserTimeline(@RequestParam("username") String username) {
         log.info("Fetching timeline for user " + username);
         return tweetRepository.fetchUserTimeline(username);
     }
 
-    @RequestMapping(value = "MiniTwitter/statuses/home_timeline", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/statuses/home_timeline", method = RequestMethod.GET)
     @ResponseBody
     public List<Tweet> fetchUserTimeline(HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
         return tweetRepository.fetchHomeTimeline(username);
     }
 
-    @RequestMapping(value = "MiniTwitter/search/tweets", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/search/tweets", method = RequestMethod.GET)
     @ResponseBody
     public List<Tweet> searchTweets(@RequestParam("q") String searchQuery) throws UnsupportedEncodingException {
         searchQuery = URLDecoder.decode(searchQuery,"UTF-8");

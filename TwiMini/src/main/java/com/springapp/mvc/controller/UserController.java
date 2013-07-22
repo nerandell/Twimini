@@ -38,7 +38,7 @@ public class UserController {
         this.friendRepository = friendRepository;
     }
 
-    @RequestMapping("MiniTwitter/users/{id}")
+    @RequestMapping("MiniTwitter/API/users/{id}")
     @ResponseBody
     public HashMap fetchUser(@PathVariable("id") String userName) {
         HashMap userDetails = new HashMap();
@@ -48,7 +48,7 @@ public class UserController {
         return userDetails;
     }
 
-    @RequestMapping(value = "MiniTwitter/users", method = RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/API/users", method = RequestMethod.POST)
     @ResponseBody
     public void add(@RequestBody Map<String, String> user) {
         System.out.println("Creating new user: " + user.get("username") + " " + user.get("password"));
@@ -58,7 +58,7 @@ public class UserController {
         userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"));
     }
 
-    @RequestMapping(value = "MiniTwitter/account/settings", method = RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/API/account/settings", method = RequestMethod.POST)
     @ResponseBody
     public void modifyUser(@RequestBody Map<String, String> values,HttpServletRequest httpServletRequest) {
         String userName = httpServletRequest.getAttribute("currentUser").toString();
