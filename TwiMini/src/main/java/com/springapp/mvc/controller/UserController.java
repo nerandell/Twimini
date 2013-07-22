@@ -74,7 +74,7 @@ public class UserController {
         userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"));
     }
 
-    @RequestMapping(value = "MiniTwitter/account/settings", method = RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/account/settings", method = RequestMethod.PUT)
     @ResponseBody
     public void modifyUser(@RequestBody Map<String, String> values,HttpServletRequest httpServletRequest) {
         String userName = httpServletRequest.getAttribute("currentUser").toString();
