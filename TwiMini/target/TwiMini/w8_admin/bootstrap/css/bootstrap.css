@@ -8,6 +8,16 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.little-margin-top-bottom{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.layer-over-overlay {
+    /*position: inherit;*/
+    pointer-events: none;
+}
+
 .clearfix {
   *zoom: 1;
 }

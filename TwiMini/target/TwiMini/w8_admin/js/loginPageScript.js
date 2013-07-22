@@ -6,21 +6,17 @@
  * To change this template use File | Settings | File Templates.
  */
 function signUpClicked(){
-    alert("asdf");
-//    var tweet = $('#tweet').val();
-//    console.log(tweet);
-//    $.ajax({
-//        type:  "POST",
-//        url: "/MiniTwitter/statuses/update",
-//        data: "status="+tweet,
-//        success: function(response) {
-//            $('#tweet').val('');
-//        }
-//    })
+    $('.logIn-class-inputs').hide(200, "swing");
+    document.getElementById('signUp-overlay').className = "MyClass";
+    document.getElementById('logIn-overlay').className = "layer-over-overlay";
+    $('.signUp-class-inputs').show(200, "swing");
 }
 
 function logInClicked(){
-
+    $('.signUp-class-inputs').hide(200, "swing");
+    document.getElementById('logIn-overlay').className = "MyClass";
+    document.getElementById('signUp-overlay').className = "layer-over-overlay";
+    $('.logIn-class-inputs').show(200, "swing");
 }
 
 

@@ -6,12 +6,17 @@
  * To change this template use File | Settings | File Templates.
  */
 function signUpClicked(){
-    alert("asdf");
-
+    $('.logIn-class-inputs').hide(200, "swing");
+    document.getElementById('signUp-overlay').className = "MyClass";
+    document.getElementById('logIn-overlay').className = "layer-over-overlay";
+    $('.signUp-class-inputs').show(200, "swing");
 }
 
 function logInClicked(){
-
+    $('.signUp-class-inputs').hide(200, "swing");
+    document.getElementById('logIn-overlay').className = "MyClass";
+    document.getElementById('signUp-overlay').className = "layer-over-overlay";
+    $('.logIn-class-inputs').show(200, "swing");
 }
 
 

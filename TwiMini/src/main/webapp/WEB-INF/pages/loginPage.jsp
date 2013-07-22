@@ -30,40 +30,64 @@
                             <div id="register-partial-container">
                                 <div id="register-partial">
                                     <div id="register-name">
-                                        <%--<input type="text" class="input-block-level " style="display: none;" name="username" placeholder="Username">--%>
-                                        <%--<input type="text" class="input-block-level" style="display: none;" name="name" placeholder="Full name">--%>
-                                        <%--<input type="text" class="input-block-level" style="display: none;" name="email" placeholder="Email address">--%>
-                                        <%--<input type="password" class="input-block-level" style="display: none;" name="password" placeholder="Password">--%>
-                                        <input type="text" class="input-block-level " name="username" placeholder="Username">
-                                        <input type="text" class="input-block-level" name="name" placeholder="Full name">
-                                        <input type="text" class="input-block-level" name="email" placeholder="Email address">
-                                        <input type="password" class="input-block-level" name="password" placeholder="Password">
+                                        <input type="text" class="input-block-level signUp-class-inputs" style="display: none;" name="username" placeholder="Username">
+                                        <input type="text" class="input-block-level signUp-class-inputs" style="display: none;" name="name" placeholder="Full name">
+                                        <input type="text" class="input-block-level signUp-class-inputs" style="display: none;" name="email" placeholder="Email address">
+                                        <input type="password" class="input-block-level signUp-class-inputs" style="display: none;" name="password" placeholder="Password">
+                                        <%--<input type="text" class="input-block-level signUp-class-inputs" name="username" placeholder="Username">--%>
+                                        <%--<input type="text" class="input-block-level signUp-class-inputs" name="name" placeholder="Full name">--%>
+                                        <%--<input type="text" class="input-block-level signUp-class-inputs" name="email" placeholder="Email address">--%>
+                                        <%--<input type="password" class="input-block-level signUp-class-inputs" name="password" placeholder="Password">--%>
                                     </div>
                                 </div>
-                                <button class="btn btn-large btn-block btn-primary" type="submit" value="Sign up">Sign Up</button>
+                                <div id="signUp-button-container" onclick="signUpClicked()">
+                                    <div id="signUp-overlay" class="layer-over-overlay">
+                                        <button class="btn btn-large btn-block btn-primary" type="submit" value="Sign up">Sign Up</button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
-                            <form class="form-signing-in" action="/MiniTwitter/Website" method="post">
-                                <div id="login-partial-container">
-                                    <div id="login-partial">
-                                        <div id="login-name">
-                                            <%--<input type="text" class="input-block-level" style="display: none;" name="username" placeholder="Username">--%>
-                                            <%--<input type="password" class="input-block-level" style="display: none;" name="password" placeholder="Password">--%>
-                                            <input type="text" class="input-block-level" name="username" placeholder="Username">
-                                            <input type="password" class="input-block-level" name="password" placeholder="Password">
-                                            <label class="checkbox" style="display: none;" >
-                                                <input type="checkbox" value="remember-me"> Remember me
-                                            </label>
-                                        </div>
+                        <form class="form-signing-in" action="/MiniTwitter/Website" method="post">
+                            <div id="login-partial-container">
+                                <div id="login-partial">
+                                    <div id="login-name">
+                                        <input type="text" class="input-block-level logIn-class-inputs" style="display: none;" name="username" placeholder="Username">
+                                        <input type="password" class="input-block-level logIn-class-inputs" style="display: none;" name="password" placeholder="Password">
+                                        <%--<input type="text" class="input-block-level logIn-class-inputs" name="username" placeholder="Username">--%>
+                                        <%--<input type="password" class="input-block-level logIn-class-inputs" name="password" placeholder="Password">--%>
+                                        <label class="checkbox logIn-class-inputs" style="display: none;" >
+                                            <input type="checkbox" value="remember-me"> Remember me
+                                        </label>
                                     </div>
-                                    <button class="btn btn-large btn-block" type="submit" value="Sign in">Sign In</button>
-                                    <a href="/forgot" id="forgot-link" style="display: none;" > Forgot your password?</a>
                                 </div>
-                            </form>
+                                <div id="logIn-button-container" onclick="logInClicked()">
+                                    <div id="logIn-overlay" class="layer-over-overlay">
+                                        <button class="btn btn-large btn-block" type="submit" value="Sign in">Sign In</button>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <%--<a href="/forgot" id="forgot-link" class="logIn-class-inputs little-margin-top-bottom" style="display: none;" > Forgot your password?</a>--%>
+                                    <a href="/forgot" id="forgot-link" class="logIn-class-inputs" style="display: none;" > Forgot your password?</a>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--basic scripts-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='themes/js/jquery-1.9.1.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="../../w8_admin/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--inline scripts related to this page-->
+    <%--Button trick scripts--%>
+    <script src="../../w8_admin/js/loginPageScript.js"></script>
+
 </body>
 </html>
