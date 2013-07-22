@@ -1,6 +1,5 @@
 package com.springapp.mvc.controller;
 
-import com.google.gson.Gson;
 import com.springapp.mvc.data.FriendRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
@@ -39,30 +38,15 @@ public class UserController {
         this.friendRepository = friendRepository;
     }
 
-    @RequestMapping(value = "MiniTwitter/{id}", method = RequestMethod.GET)
+    @RequestMapping("MiniTwitter/users/{id}")
     @ResponseBody
-    public ModelAndView printWelcome(@PathVariable("id") String userName) {
-        ModelAndView modelAndView = new ModelAndView("index");
-        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
-        modelAndView.addObject("tweets", tweets);
-        modelAndView.addObject("info",userRepository.fetchUser(userName));
-        modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
-        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
-        modelAndView.addObject("num_of_tweets", tweets.size());
-        return modelAndView;
+    public HashMap fetchUser(@PathVariable("id") String userName) {
+        HashMap userDetails = new HashMap();
+        System.out.println("Fetching User Details for: " + userName);
+        userDetails.put("tweets", tweetRepository.fetchTweets(userName));
+        userDetails.put("info",userRepository.fetchUser(userName));
+        return userDetails;
     }
-
-    public static List<String> getUserNames(List<User> users) {
-        List<String> userNames = new ArrayList<>();
-        for ( User user : users) userNames.add(user.getName());
-        return userNames;
-    }
-
-	@RequestMapping("showusers")
-    @ResponseBody
-    public List<User> printWelcome(ModelMap model) {
-        return userRepository.findUsers();
-	}
 
     @RequestMapping(value = "MiniTwitter/users", method = RequestMethod.POST)
     @ResponseBody

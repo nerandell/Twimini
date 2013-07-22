@@ -38,7 +38,7 @@ import javax.servlet.http.HttpServletResponse;
 @EnableWebMvc
 @EnableTransactionManagement
 public class AppConfig extends WebMvcConfigurerAdapter{
-    @Autowired
+//    @Autowired
     private UserRepository userRepository;
 
     @Bean
