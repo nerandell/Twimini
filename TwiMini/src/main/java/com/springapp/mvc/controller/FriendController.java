@@ -36,7 +36,7 @@ public class FriendController {
         this.tweetRepository = tweetRepository;
     }
 
-    @RequestMapping(value = "MiniTwitter/{id}/following", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/{id}/following", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView fetchFollowing(@PathVariable("id") String userName) {
         ModelAndView modelAndView = new ModelAndView("following");
@@ -50,7 +50,7 @@ public class FriendController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "MiniTwitter/{id}/followers", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/{id}/followers", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView fetchFollowers(@PathVariable("id") String userName) {
         ModelAndView modelAndView = new ModelAndView("followers");
@@ -64,21 +64,21 @@ public class FriendController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "MiniTwitter/friends/lists", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/friends/lists", method = RequestMethod.GET)
     @ResponseBody
     public List<User> fetchFollowingAPI(@RequestParam("username") String userName) {
         log.info("Fetching User Details for: " + userName);
         return friendRepository.fetchFollowing(userName);
     }
 
-    @RequestMapping(value = "MiniTwitter/followers/lists", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/followers/lists", method = RequestMethod.GET)
     @ResponseBody
     public List<User> fetchFollowersAPI(@RequestParam("username") String userName) {
         log.info("Fetching User Details for: " + userName);
         return friendRepository.fetchFollowers(userName);
     }
 
-    @RequestMapping(value = "MiniTwitter/friendships/create", method = RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/API/friendships/create", method = RequestMethod.POST)
     @ResponseBody
     public void createFriendShip(@RequestParam("username") String toFollow, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
@@ -86,7 +86,7 @@ public class FriendController {
         log.info("Add new follower: " + toFollow + " for user " + username);
     }
 
-    @RequestMapping(value = "MiniTwitter/friendships/destroy", method = RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/API/friendships/destroy", method = RequestMethod.POST)
     @ResponseBody
     public void destroyFriendShip(@RequestParam("username") String toUnfollow, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
