@@ -31,34 +31,6 @@ public class FriendController {
         this.tweetRepository = tweetRepository;
     }
 
-    @RequestMapping(value = "MiniTwitter/Website/{id}/following", method = RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView fetchFollowing(@PathVariable("id") String userName) {
-        ModelAndView modelAndView = new ModelAndView("following");
-        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
-        List<User> following = friendRepository.fetchFollowing(userName);
-        modelAndView.addObject("info",userRepository.fetchUser(userName));
-        modelAndView.addObject("num_following", following.size());
-        modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
-        modelAndView.addObject("num_of_tweets", tweets.size());
-        modelAndView.addObject("following",following);
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "MiniTwitter/Website/{id}/followers", method = RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView fetchFollowers(@PathVariable("id") String userName) {
-        ModelAndView modelAndView = new ModelAndView("followers");
-        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
-        List<User> followers = friendRepository.fetchFollowers(userName);
-        modelAndView.addObject("info",userRepository.fetchUser(userName));
-        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
-        modelAndView.addObject("num_followers", followers.size());
-        modelAndView.addObject("num_of_tweets", tweets.size());
-        modelAndView.addObject("followers",followers);
-        return modelAndView;
-    }
-
     @RequestMapping(value = "MiniTwitter/API/friends/lists", method = RequestMethod.GET)
     @ResponseBody
     public List<User> fetchFollowingAPI(@RequestParam("username") String userName) {
