@@ -11,13 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * Created with IntelliJ IDEA.
- * User: mayday
- * Date: 22/7/13
- * Time: 3:00 PM
- * To change this template use File | Settings | File Templates.
- */
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller
 public class WebsiteSignUpController {
@@ -33,7 +28,8 @@ public class WebsiteSignUpController {
     }
 
     @RequestMapping(value="MiniTwitter/Website/signUp", method= RequestMethod.POST)
-    public String getUserInfoByWebsite(@RequestParam("username") String username, @RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("password") String password, ModelMap model) {
+    public String getUserInfoByWebsite(@RequestParam("username") String username, @RequestParam("name") String name, @RequestParam("email") String email,
+                                       @RequestParam("password") String password, ModelMap model) throws IOException {
         System.out.println("This is where I wanna be. Yo!");
         System.out.println(username);
         System.out.println(name);
@@ -45,8 +41,8 @@ public class WebsiteSignUpController {
             return "hello";
         }
         userRepository.addUser(username, encodePassword(password), name, email);
-        model.addAttribute("message", "Created new user");
-        return "hello";
+        String redirectUrl = "/MiniTwitter/Website/"+username;
+        return "redirect:" + redirectUrl;
     }
 
     public String encodePassword(String password) {
