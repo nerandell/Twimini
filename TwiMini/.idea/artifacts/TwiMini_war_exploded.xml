@@ -13,7 +13,7 @@
           <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5-pre3" />
           <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.6" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:3.2.0.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:3.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.2.0.RELEASE" />
