@@ -65,47 +65,38 @@
 
                 <div class="row-fluid">
                     <div class="span12">
-                        <div class="widget-box ">
-                            <div class="widget-body">
-                                <div class="widget-main no-padding">
-                                    <div class="dialogs">
-                                        <c:forEach items="${tweets}" var="tweet">
-                                            <div class="itemdiv dialogdiv">
-                                                <div class="user">
-                                                    <img alt="Alexa's Avatar" src="../../w8_admin/themes/images/avatar1.png" />
-                                                </div>
-
-                                                <div class="body">
-                                                    <div class="time">
-                                                        <i class="icon-time"></i>
+                        <c:forEach items="${tweets}" var="tweet">
+                            <div class="itemdiv dialogdiv">
+                                <div class="user">
+                                    <img alt="Alexa's Avatar" src="../../w8_admin/themes/images/avatar1.png" />
+                                </div>
+                                <div class="body">
+                                    <div class="time">
+                                        <i class="icon-time"></i>
                                                     <span class="green">
                                                         <c:if test="${not empty tweet.timestamp}">
                                                         <span title="${tweet.timestamp}"><fmt:formatDate value="${tweet.timestamp}"
                                                                                                          pattern="MM/dd/yyyy HH:mm" /></span>
                                                         </c:if>
                                                     </span>
-                                                    </div>
-
-                                                    <div class="name">
-                                                        <a href="/MiniTwitter/${tweet.username}"><c:out value="${tweet.username}"></c:out>
-                                                        </a>
-                                                    </div>
-                                                    <div class="text">
-                                                        <c:out value="${tweet.tweet}"></c:out>
-                                                    </div>
-
-                                                    <div class="tools">
-                                                        <a href="#" class="btn btn-minier btn-info">
-                                                            <i class="icon-only icon-share-alt"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </c:forEach>
                                     </div>
-                                </div><!--/widget-main-->
-                            </div><!--/widget-body-->
-                        </div><!--/widget-box-->
+
+                                    <div class="name">
+                                        <a href="/MiniTwitter/${tweet.username}"><c:out value="${tweet.username}"></c:out>
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        <c:out value="${tweet.tweet}"></c:out>
+                                    </div>
+
+                                    <div class="tools">
+                                        <a href="#" class="btn btn-minier btn-info">
+                                            <i class="icon-only icon-share-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div><!--/span-->
                 </div><!--/row-->
 
