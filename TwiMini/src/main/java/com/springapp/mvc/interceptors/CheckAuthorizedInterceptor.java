@@ -1,72 +1,61 @@
 package com.springapp.mvc.interceptors;
 
 
+import com.springapp.mvc.data.TokenRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.bind.DatatypeConverter;
 import java.io.UnsupportedEncodingException;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import com.springapp.mvc.AppConfig;
-import com.springapp.mvc.data.UserRepository;
-import com.springapp.mvc.model.User;
 
 public class CheckAuthorizedInterceptor implements HandlerInterceptor {
-    private final UserRepository repository;
+    private final TokenRepository tokenRepository;
+    static Logger log = Logger.getLogger(CheckAuthorizedInterceptor.class);
+
 
     @Autowired
-    public CheckAuthorizedInterceptor(UserRepository repository) {
-        this.repository = repository;
+    public CheckAuthorizedInterceptor(TokenRepository tokenRepository) {
+        this.tokenRepository = tokenRepository;
     }
 
-    boolean checkCredentials(String authorizationStr, HttpServletRequest request) throws UnsupportedEncodingException {
-
-        byte[] authBytes = DatatypeConverter.parseBase64Binary(authorizationStr);
-        String decodedCredentials = new String(authBytes, "UTF-8");
-
-        String splittedCredentials[] = decodedCredentials.split(":");
-        if(splittedCredentials.length  != 2){
-            return false;
-        }
-        String username = splittedCredentials[0];
-        String password = splittedCredentials[1];
-
-        System.out.println("Username: " + username + ", Password: " + password);
-
-        if(repository.isUserValid(username, password) ){
-            request.setAttribute("currentUser", username);
-            return true;
-        }
-        return false;
+    boolean checkCredentials(String username,String token) throws UnsupportedEncodingException {
+        log.info("Checking credentials");
+        return tokenRepository.verifyToken(token, username);
     }
 
-    @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse response, Object o) throws Exception {
-        System.out.println("Pre-handling");
-
-        String authorizationStr = httpServletRequest.getHeader("Authorization");
-
-        if(authorizationStr==null ||  !authorizationStr.startsWith("Basic")){
-            System.out.println("Null or not starts with basic");
+        System.out.println("Pre handling");
+        Cookie cookie = WebUtils.getCookie(httpServletRequest,"token");
+        String username = cookie.getValue().split("\\|")[1];
+        log.info(username);
+        String token = cookie.getValue().split("\\|")[0];
+        log.info(token);
+        log.info(username + " " + token);
+        if(username==null || token==null) {
+            System.out.println("Null value encountered");
             return false;
         }
-        if( checkCredentials(authorizationStr.substring(6), httpServletRequest) ) {
+        if(checkCredentials(username,token)) {
+            System.out.println("Current user verified :" + username);
+            httpServletRequest.setAttribute("currentUser",username);
             return true;
         }
-        return false;
+        else return false;
+
     }
 
     @Override
-    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse response, Object o, ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
-    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse response, Object o, Exception e) throws Exception {
+    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 }

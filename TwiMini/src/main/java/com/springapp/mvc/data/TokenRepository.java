@@ -23,14 +23,13 @@ public class TokenRepository{
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void setToken(UUID token, String username) {
+    public void setToken(String token, String username) {
         jdbcTemplate.execute("insert into session_tokens(username,token) values (\'"+username+"\',\'"+token+"\')");
     }
 
-    public int verifyToken(UUID token, String username) {
+    public boolean verifyToken(String token, String username) {
         log.debug("Verifying token");
-        return jdbcTemplate.queryForObject("select count(*) from session_tokens where username=? and token=?",
-                new Object[]{username,token}, new BeanPropertyRowMapper<>(int.class));
+        return jdbcTemplate.queryForInt("select count(*) from session_tokens where username=? and token=?",new Object[]{username,token})!=0;
     }
 }
 

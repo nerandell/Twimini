@@ -11,6 +11,7 @@ package com.springapp.mvc;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import java.beans.PropertyVetoException;
 
+import com.springapp.mvc.data.TokenRepository;
 import com.springapp.mvc.interceptors.CheckAuthorizedInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,8 +39,8 @@ import javax.servlet.http.HttpServletResponse;
 @EnableWebMvc
 @EnableTransactionManagement
 public class AppConfig extends WebMvcConfigurerAdapter{
-//    @Autowired
-    private UserRepository userRepository;
+
+    private TokenRepository tokenRepository;
 
     @Bean
     public JdbcTemplate jdbcTemplate(@Value("${db.driver.class}") String driverClass,
@@ -60,9 +61,7 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     }
 
     public void addInterceptors(InterceptorRegistry registry){
-        CheckAuthorizedInterceptor interceptor = new CheckAuthorizedInterceptor(userRepository);
+        CheckAuthorizedInterceptor interceptor = new CheckAuthorizedInterceptor(tokenRepository);
         registry.addInterceptor(interceptor).addPathPatterns("MiniTwitter/statuses/update");
     }
-
-
 }
