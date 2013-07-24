@@ -15,7 +15,9 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
+            <mvc:mapping path="/MiniTwitter/Website/home" />
             <mvc:mapping path="/MiniTwitter/API/statuses/update" />
+            <mvc:mapping path="/MiniTwitter/API/statuses/home" />
             <mvc:mapping path="/MiniTwitter/API/statuses/home_timeline" />
             <mvc:mapping path="/MiniTwitter/API/friendships/create" />
             <mvc:mapping path="/MiniTwitter/API/friendships/destroy" />

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -69,8 +70,23 @@ public class WebsiteViewProfileController {
         modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
         modelAndView.addObject("num_followers", followers.size());
         modelAndView.addObject("num_of_tweets", tweets.size());
-        modelAndView.addObject("followers",followers);
+        modelAndView.addObject("followers", followers);
         return modelAndView;
     }
 
+    @RequestMapping(value = "MiniTwitter/Website/home", method = RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView fetchHomeTimeLine(HttpServletRequest httpServletRequest) {
+        String userName = httpServletRequest.getAttribute("currentUser").toString();
+        ModelAndView modelAndView = new ModelAndView("home");
+        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName);
+        List<User> followers = friendRepository.fetchFollowers(userName);
+        modelAndView.addObject("info",userRepository.fetchUser(userName));
+        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
+        modelAndView.addObject("num_followers", followers.size());
+        modelAndView.addObject("num_of_tweets", tweetRepository.fetchTweets(userName).size());
+        modelAndView.addObject("followers",followers);
+        modelAndView.addObject("timeline",timeline);
+        return modelAndView;
+    }
 }

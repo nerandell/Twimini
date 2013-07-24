@@ -59,7 +59,7 @@ public class WebsiteController {
             cookie.setMaxAge(-1);
             tokenRepository.setToken(token,username);
             httpServletResponse.addCookie(cookie);
-            String redirectUrl = "/MiniTwitter/Website/"+username;
+            String redirectUrl = "/MiniTwitter/Website/home";
             return "redirect:" + redirectUrl;
         }
         model.addAttribute("message", "User Not Verified.");

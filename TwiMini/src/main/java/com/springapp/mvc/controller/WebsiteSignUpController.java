@@ -41,7 +41,7 @@ public class WebsiteSignUpController {
             return "hello";
         }
         userRepository.addUser(username, encodePassword(password), name, email);
-        String redirectUrl = "/MiniTwitter/Website/"+username;
+        String redirectUrl = "/MiniTwitter/Website/home";
         return "redirect:" + redirectUrl;
     }
 
