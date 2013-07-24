@@ -43,13 +43,11 @@ public class WebsiteController {
 
     @RequestMapping(method= RequestMethod.POST)
     public String verifyUser(@RequestParam("username") String username, @RequestParam("password") String password, ModelMap model) {
-        System.out.println("Verifying user.");
-        System.out.println(username);
-        System.out.println(password);
+        log.debug("Verifying user.");
 
         if (userRepository.isUserValid(username, password)){
-            model.addAttribute("message","User Verified.");
-            return "hello";
+            String redirectUrl = "/MiniTwitter/Website/"+username;
+            return "redirect:" + redirectUrl;
         }
         model.addAttribute("message", "User Not Verified.");
         return "hello";
