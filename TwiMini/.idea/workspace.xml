@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_3_2_0_RELEASE.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwiMini.iml" afterPath="$PROJECT_DIR$/TwiMini.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/TwiMini_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/TwiMini_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/loginPage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/loginPage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TwiMini.iws" />
@@ -16,7 +13,7 @@
     <file path="/App.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373468376655" ignored="false" />
     <file path="/AppConfig.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373469924858" ignored="false" />
     <file path="/application.properties" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373526379084" ignored="false" />
-    <file path="/UserRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374393720594" ignored="false" />
+    <file path="/UserRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374647771587" ignored="false" />
     <file path="/fragment.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373473145645" ignored="false" />
     <file path="/HelloController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373475888300" ignored="false" />
     <file path="/UserController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374479279517" ignored="false" />
@@ -35,7 +32,7 @@
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer-navbar.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/build/node_modules/hogan.js/test/index.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
-    <file path="/bootstrap.css" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374578411247" ignored="false" />
+    <file path="/bootstrap.css" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374593013352" ignored="false" />
     <file path="/user_info.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374302530865" ignored="false" />
     <file path="/FriendController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374406666446" ignored="false" />
     <file path="/following.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374498709460" ignored="false" />
@@ -49,8 +46,9 @@
     <file path="/loginPage.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374574504276" ignored="false" />
     <file path="/loginPageScript.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374579444497" ignored="false" />
     <file path="/WebsiteForgotPasswordController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374574719795" ignored="false" />
-    <file path="/WebsiteForgotPasswordAndAboutController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374575231303" ignored="false" />
-    <file path="/forgot.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374578436775" ignored="false" />
+    <file path="/WebsiteForgotPasswordAndAboutController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374647852115" ignored="false" />
+    <file path="/forgot.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374654129853" ignored="false" />
+    <file path="/forgotSuccess.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374654243478" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,37 +109,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user_profile.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="0" selection-end="8041" vertical-scroll-proportion="-4.375">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forgot.jsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="forgot.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="38" selection-start="441" selection-end="441" vertical-scroll-proportion="-3.125">
+            <state line="70" column="32" selection-start="3456" selection-end="3456" vertical-scroll-proportion="0.512987">
+              <folding>
+                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="89" column="21" selection-start="3352" selection-end="3352" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebsiteController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
+      <file leaf-file-name="WebsiteForgotPasswordAndAboutController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="30" selection-start="1933" selection-end="1933" vertical-scroll-proportion="0.0">
+            <state line="44" column="51" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginPageScript.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js">
+      <file leaf-file-name="forgotSuccess.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="56" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.8695652">
+            <state line="4" column="2" selection-start="49" selection-end="49" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
@@ -150,7 +150,18 @@
       <file leaf-file-name="loginPage.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/loginPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="91" selection-start="1213" selection-end="1213" vertical-scroll-proportion="-11.583333">
+            <state line="28" column="105" selection-start="1238" selection-end="1319" vertical-scroll-proportion="-5.9583335">
+              <folding>
+                <element signature="tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hello.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="12" selection-start="0" selection-end="50" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
@@ -159,7 +170,7 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="816" column="14" selection-start="11390" selection-end="11390" vertical-scroll-proportion="0.0">
+            <state line="11" column="18" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -183,9 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/sidebar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/addTweet.js" />
@@ -194,11 +202,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/forgot.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/loginPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" />
       </list>
     </option>
   </component>
@@ -259,8 +270,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="792" />
+    <option name="x" value="-1301" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
     <option name="height" value="744" />
   </component>
@@ -351,30 +362,8 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="w8_admin" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -400,11 +389,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="w8_admin" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,6 +456,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -928,12 +1003,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="792" width="1301" height="744" extended-state="6" />
+    <frame x="-1301" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="166" y="152" width="1101" height="544" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964426" sideWeight="0.7358185" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -955,7 +1032,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980237" sideWeight="0.6969206" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1024,30 +1100,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/FriendController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="46" selection-start="857" selection-end="857" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="13" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1073,37 +1128,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="40" selection-start="535" selection-end="535" vertical-scroll-proportion="0.109375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="43" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/loginPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="91" selection-start="1213" selection-end="1213" vertical-scroll-proportion="-11.583333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="22" selection-start="1981" selection-end="1981" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="816" column="14" selection-start="11390" selection-end="11390" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1115,24 +1142,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="56" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="34" selection-start="998" selection-end="998" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="45" selection-start="1822" selection-end="1822" vertical-scroll-proportion="0.6325301">
+        <state line="89" column="21" selection-start="3352" selection-end="3352" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/loginPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="105" selection-start="1238" selection-end="1319" vertical-scroll-proportion="-5.9583335">
+          <folding>
+            <element signature="tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="164" column="6" selection-start="7326" selection-end="7326" vertical-scroll-proportion="1.9583334">
+          <folding>
+            <marker date="1374501211710" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="12" selection-start="0" selection-end="50" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="2" selection-start="49" selection-end="49" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="51" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="38" selection-start="441" selection-end="441" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="56" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.8695652">
-          <folding />
+        <state line="70" column="32" selection-start="3456" selection-end="3456" vertical-scroll-proportion="0.512987">
+          <folding>
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

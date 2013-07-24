@@ -76,6 +76,20 @@ public class UserRepository {
         return false;  //To change body of created methods use File | Settings | File Templates.
     }
 
+    public boolean isEmailPresent(String email) {
+        try{
+            List<User> userList = jdbcTemplate.query("select username, name from users where email=?",
+                    new Object[]{email}, new BeanPropertyRowMapper<User>());
+            if(userList.size() > 0){
+                return true;
+            }
+        }
+        catch (Exception e){
+            return true;
+        }
+        return false;
+    }
+
     public static String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }
