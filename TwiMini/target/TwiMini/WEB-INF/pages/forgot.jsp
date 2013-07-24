@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,15 @@
     <link href="../../w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="notify-wrapper">
+        <c:if test="${shouldIDisplayMessage==true}">
+            <div class="error-msg-container">
+                <div class="alert-without-cross alert-error error-msg-box">
+                    ${messageOnTop}
+                </div>
+            </div>
+        </c:if>
+    </div>
     <div class="container" id="main-page-container">
         <div class="row">
             <div class="span12">
@@ -14,7 +25,7 @@
                 <%@ include file="includes/simpleLogoHeader.jsp"%>
 
                 <div id="page-content">
-                    <form class="form-forgot-pwd span6 offset3">
+                    <form class="form-forgot-pwd span6 offset3" action="/MiniTwitter/Website/forgot" method="post">
                         <div class="page-content-sub-heading pagination-centered">
                             <h3>Forgot your password? </h3>
                         </div>

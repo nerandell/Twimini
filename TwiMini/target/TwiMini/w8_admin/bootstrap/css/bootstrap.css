@@ -8,6 +8,40 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.alert-without-cross {
+    padding: 8px 24px 8px 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.error-msg-container{
+    position: absolute;
+    left: 51%;
+}
+
+.error-msg-box{
+    position: relative;
+    left: -50%;
+}
+
+.error-msg-on-top{
+    position: absolute;
+    left: 500px;
+    top: 5px;
+    z-index: 1;
+}
+
+.page-header-without-top-padding {
+    padding-bottom: 9px;
+    margin: 0 0 30px;
+    border-bottom: 1px solid #eeeeee;
+}
+
 
 #page-footer{
     color: #999;

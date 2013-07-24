@@ -35,6 +35,9 @@ public class WebsiteForgotPasswordAndAboutController {
     @ResponseBody
     public ModelAndView forgotPassword(ModelMap m) {
         ModelAndView modelAndView = new ModelAndView("forgot");
+//        m.addAttribute("shouldIDisplayMessage",false);
+        m.addAttribute("shouldIDisplayMessage",false);
+        m.addAttribute("messageOnTop","Enter the id please.");
         return modelAndView;
     }
 
@@ -42,9 +45,10 @@ public class WebsiteForgotPasswordAndAboutController {
     public String forgotPasswordTakeEmail(@RequestParam("email") String email, ModelMap m) {
         System.out.println("Request Password change for email: "+email);
         if (userRepository.isEmailPresent(email)){
-            m.addAttribute("messageOnTop","Ho gaya..");
+            m.addAttribute("messageEmail",email);
             return "forgotSuccess";
         }
+        m.addAttribute("shouldIDisplayMessage",true);
         m.addAttribute("messageOnTop","Invalid Email id provided. Enter a valid Email id.");
         return "forgot";
     }
