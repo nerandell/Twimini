@@ -45,6 +45,8 @@ public class WebsiteSignUpController {
         return "redirect:" + redirectUrl;
     }
 
+
+
     public String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }

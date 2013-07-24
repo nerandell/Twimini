@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -81,12 +83,25 @@ public class WebsiteViewProfileController {
         ModelAndView modelAndView = new ModelAndView("home");
         List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName);
         List<User> followers = friendRepository.fetchFollowers(userName);
-        modelAndView.addObject("info",userRepository.fetchUser(userName));
+        User currentUser = userRepository.fetchUser(userName);
+        modelAndView.addObject("info",currentUser);
         modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
         modelAndView.addObject("num_followers", followers.size());
         modelAndView.addObject("num_of_tweets", tweetRepository.fetchTweets(userName).size());
-        modelAndView.addObject("followers",followers);
+        modelAndView.addObject("followers", followers);
         modelAndView.addObject("timeline",timeline);
+        modelAndView.addObject("currentUserName",currentUser.getName());
         return modelAndView;
+    }
+
+    @RequestMapping(value = "MiniTwitter/Website/logout", method = RequestMethod.GET)
+    public String logoutCurrentUser(HttpServletResponse httpServletResponse) {
+        log.info("Logging the user out");
+        Cookie cookie = new Cookie("token",null);
+        cookie.setMaxAge(0);
+        cookie.setPath("/MiniTwitter");
+        httpServletResponse.addCookie(cookie);
+        String redirectUrl = "/MiniTwitter/Website";
+        return "redirect:" + redirectUrl;
     }
 }

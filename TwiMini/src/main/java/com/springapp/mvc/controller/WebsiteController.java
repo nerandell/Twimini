@@ -56,7 +56,8 @@ public class WebsiteController {
         if (userRepository.isUserValid(username, password)){
             String token = UUID.randomUUID().toString();
             Cookie cookie = new Cookie("token",token+"|"+username);
-            cookie.setMaxAge(-1);
+            cookie.setMaxAge(3600);
+            cookie.setPath("/MiniTwitter");
             tokenRepository.setToken(token,username);
             httpServletResponse.addCookie(cookie);
             String redirectUrl = "/MiniTwitter/Website/home";
@@ -65,5 +66,4 @@ public class WebsiteController {
         model.addAttribute("message", "User Not Verified.");
         return "hello";
     }
-
 }

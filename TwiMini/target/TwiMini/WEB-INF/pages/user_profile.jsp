@@ -82,7 +82,7 @@
                                     </div>
 
                                     <div class="name">
-                                        <a href="/MiniTwitter/${tweet.username}"><c:out value="${tweet.username}"></c:out>
+                                        <a href="/MiniTwitter/Website/${tweet.username}"><c:out value="${tweet.username}"></c:out>
                                         </a>
                                     </div>
                                     <div class="text">

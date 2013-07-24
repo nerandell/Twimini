@@ -1,3 +1,4 @@
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <div class="navbar navbar-inverse">
     <div class="navbar-inner">
         <div class="container-fluid">
@@ -10,7 +11,7 @@
 
             <ul class="nav ace-nav pull-right">
                 <li class="grey user-p">
-                    <a href="#">
+                    <a href="/MiniTwitter/Website/home">
                         <i class="icon-home"></i>
                     </a>
                 </li>
@@ -33,7 +34,7 @@
                         <img class="nav-user-photo" src="../../../w8_admin/themes/images/user.png" alt="Jason's Photo" />
 								<span id="user_info">
 									<small>Welcome,</small>
-									Jason
+									${currentUserName}
 								</span>
 
                         <i class="icon-caret-down"></i>
@@ -57,7 +58,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="/MiniTwitter/Website/logout">
                                 <i class="icon-off"></i>
                                 Logout
                             </a>
