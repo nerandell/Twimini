@@ -6,6 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 
-function doOnLoad(){
-    $('#page-content').css("min-height",($(window).height() - 175));
+function adjustPageContentHeight(){
+    $('#page-content').css("min-height",($(window).height() - 151));
 }
