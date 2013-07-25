@@ -48,8 +48,12 @@ public class UserRepository {
         jdbcTemplate.update("UPDATE users set name=?,email=?,password=? where username=?", new Object[]{name,email,encodedPassword,userName});
     }
 
+    public void updateUserByEmail(String email, String password){
+        String encodedPassword = encodePassword(password);
+        jdbcTemplate.update("UPDATE users set password=? where email=?", new Object[]{encodedPassword,email});
+    }
+
     public void deleteUser(String userName) {
-        //To change body of created methods use File | Settings | File Templates.
         jdbcTemplate.update("DELETE from users where username=?", new Object[]{userName});
     }
 
