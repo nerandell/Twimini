@@ -65,39 +65,7 @@
  hr-12 hr-dotted"></div>
 
                 <div class="row-fluid">
-                    <div class="span12">
-                        <c:forEach items="${timeline}" var="tweet">
-                            <div class="itemdiv dialogdiv">
-                                <div class="user">
-                                    <img alt="Alexa's Avatar" src="../../w8_admin/themes/images/avatar1.png" />
-                                </div>
-                                <div class="body">
-                                    <div class="time">
-                                        <i class="icon-time"></i>
-                                                    <span class="green">
-                                                        <c:if test="${not empty tweet.timestamp}">
-                                                        <span title="${tweet.timestamp}"><fmt:formatDate value="${tweet.timestamp}"
-                                                                                                         pattern="MM/dd/yyyy HH:mm" /></span>
-                                                        </c:if>
-                                                    </span>
-                                    </div>
-
-                                    <div class="name">
-                                        <a href="/MiniTwitter/Website/${tweet.username}"><c:out value="${tweet.username}"></c:out>
-                                        </a>
-                                    </div>
-                                    <div class="text">
-                                        <c:out value="${tweet.tweet}"></c:out>
-                                    </div>
-
-                                    <div class="tools">
-                                        <a href="#" class="btn btn-minier btn-info">
-                                            <i class="icon-only icon-share-alt"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </c:forEach>
+                    <div class="span12 tweets">
                     </div><!--/span-->
                 </div><!--/row-->
 
@@ -151,6 +119,7 @@
 <script src="../../w8_admin/themes/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="../../w8_admin/themes/js/jquery.ui.touch-punch.min.js"></script>
 <script src="../../w8_admin/js/addTweet.js"></script>
+<script src="../../w8_admin/js/getTweetData.js"></script>
 
 <script src="../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>
 <script src="../../w8_admin/themes/js/jquery.easy-pie-chart.min.js"></script>
@@ -168,11 +137,23 @@
 <!--inline scripts related to this page-->
 
 <script type="text/javascript">
+    var offset = 1;
     $(function() {
         $('.dialogs,.comments').slimScroll({
             height: '300px'
         });
     })
+
+    $(document).ready(function() {
+        getTweetData(0);
+    });
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+            getTweetData(offset);
+            offset++;
+        }
+    });
 </script>
 </body>
 </html>
