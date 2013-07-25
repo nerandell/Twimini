@@ -9,6 +9,7 @@ package com.springapp.mvc.data;
  */
 
 
+import com.springapp.mvc.model.Tweet;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -50,6 +51,11 @@ public class UserRepository {
     public void deleteUser(String userName) {
         //To change body of created methods use File | Settings | File Templates.
         jdbcTemplate.update("DELETE from users where username=?", new Object[]{userName});
+    }
+
+    public List<User> searchForUsers(String query) {
+        return jdbcTemplate.query("SELECT username from users where username LIKE '%"+query+"%'",
+                new Object[]{}, new BeanPropertyRowMapper<>(User.class));
     }
 
     public boolean isUserValid(String userName, String password) {

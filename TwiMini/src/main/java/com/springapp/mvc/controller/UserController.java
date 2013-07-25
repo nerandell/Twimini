@@ -66,6 +66,14 @@ public class UserController {
         userRepository.modifyUser(userName, values.get("name"), values.get("email"), values.get("Password"));
     }
 
+    @RequestMapping(value = "MiniTwitter/API/users/search", method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> add(@RequestParam("query") String query) {
+        log.info("Searching for user "+query);
+        return userRepository.searchForUsers(query);
+    }
+
+
     public String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }
