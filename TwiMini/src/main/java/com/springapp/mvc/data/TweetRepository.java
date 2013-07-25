@@ -45,9 +45,9 @@ public class TweetRepository {
                 new Object[]{username}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
-    public List<Tweet> fetchHomeTimeline(String username) {
-        return jdbcTemplate.query("select DISTINCT username,tweet,id,tweet_timestamp as timestamp from (select username,follower,tweet,id,tweets.timestamp as tweet_timestamp, following.timestamp as following_timestamp from tweets inner join following on tweets.username = following.following) as mergedTable where ((mergedTable.following_timestamp is not NULL and mergedTable.tweet_timestamp<mergedTable.following_timestamp) or mergedTable.following_timestamp is NULL) and (mergedTable.follower=? or mergedTable.username=?) ORDER by timestamp DESC",
-                new Object[]{username,username}, new BeanPropertyRowMapper<>(Tweet.class));
+    public List<Tweet> fetchHomeTimeline(String username,long offset) {
+        return jdbcTemplate.query("select DISTINCT username,tweet,id,tweet_timestamp as timestamp from (select username,follower,tweet,id,tweets.timestamp as tweet_timestamp, following.timestamp as following_timestamp from tweets inner join following on tweets.username = following.following) as mergedTable where ((mergedTable.following_timestamp is not NULL and mergedTable.tweet_timestamp<mergedTable.following_timestamp) or mergedTable.following_timestamp is NULL) and (mergedTable.follower=? or mergedTable.username=?) ORDER by timestamp DESC LIMIT 10 OFFSET ?",
+                new Object[]{username,username,offset*20+1}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
     public void addTweet(String username, String status) {

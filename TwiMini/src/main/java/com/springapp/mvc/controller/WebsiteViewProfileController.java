@@ -81,7 +81,7 @@ public class WebsiteViewProfileController {
     public ModelAndView fetchHomeTimeLine(HttpServletRequest httpServletRequest) {
         String userName = httpServletRequest.getAttribute("currentUser").toString();
         ModelAndView modelAndView = new ModelAndView("home");
-        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName);
+        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
         List<User> followers = friendRepository.fetchFollowers(userName);
         User currentUser = userRepository.fetchUser(userName);
         modelAndView.addObject("info",currentUser);
