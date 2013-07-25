@@ -32,13 +32,10 @@ public class WebsiteForgotPasswordAndAboutController {
     }
 
     @RequestMapping(value="MiniTwitter/Website/forgot", method= RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView forgotPassword(ModelMap m) {
-        ModelAndView modelAndView = new ModelAndView("forgot");
-//        m.addAttribute("shouldIDisplayMessage",false);
+    public String forgotPassword(ModelMap m) {
         m.addAttribute("shouldIDisplayMessage",false);
         m.addAttribute("messageOnTop","Enter the id please.");
-        return modelAndView;
+        return "forgot";
     }
 
     @RequestMapping(value="MiniTwitter/Website/forgot", method= RequestMethod.POST)
