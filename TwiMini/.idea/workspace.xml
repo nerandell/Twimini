@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/App.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373468376655" ignored="false" />
     <file path="/AppConfig.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373469924858" ignored="false" />
     <file path="/application.properties" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373526379084" ignored="false" />
-    <file path="/UserRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374647771587" ignored="false" />
-    <file path="/fragment.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373473145645" ignored="false" />
+    <file path="/UserRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374757541439" ignored="false" />
+    <file path="/fragment.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374754693289" ignored="false" />
     <file path="/HelloController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373475888300" ignored="false" />
     <file path="/UserController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374479279517" ignored="false" />
     <file path="$PROJECT_DIR$/../../Downloads/todo/src/main/java/to/talk/todo/web/UsersController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373537198416" ignored="false" />
@@ -41,15 +43,20 @@
     <file path="/sidebar.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374497832734" ignored="false" />
     <file path="/loginPage.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374574504276" ignored="false" />
     <file path="/loginPageScript.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374579444497" ignored="false" />
-    <file path="/WebsiteForgotPasswordAndAboutController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374742445033" ignored="false" />
+    <file path="/WebsiteForgotPasswordAndAboutController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374757661795" ignored="false" />
     <file path="/forgot.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374672737981" ignored="false" />
-    <file path="/forgotSuccess.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374654243478" ignored="false" />
+    <file path="/forgotSuccess.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374753704228" ignored="false" />
     <file path="/pageContentMinHeight.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374659026224" ignored="false" />
     <file path="/simpleFooter.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374663439084" ignored="false" />
     <file path="/simpleLogoHeader.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374666831706" ignored="false" />
     <file path="/errorPositionSet.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374670646521" ignored="false" />
     <file path="$PROJECT_DIR$/../../../bitBucket3/minitwitter/TwiMini/.idea/workspace.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374745534435" ignored="false" />
-    <file path="$PROJECT_DIR$/../../../../GoogleMail/.idea/workspace.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374751924220" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GoogleMail/.idea/workspace.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374763462045" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374763462045" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GoogleMail/src/GoogleMail.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374752606408" ignored="false" />
+    <file path="/GoogleMail.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374752378476" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GoogleMail/src/MainClass.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374754876473" ignored="false" />
+    <file path="/MainClass.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374754848462" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,10 +117,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WebsiteForgotPasswordAndAboutController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WebsiteForgotPasswordAndAboutController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="22" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0">
+            <state line="44" column="29" selection-start="1602" selection-end="1602" vertical-scroll-proportion="-0.42480212">
+              <folding>
+                <element signature="method#sendForgotPasswordMail#0;class#WebsiteForgotPasswordAndAboutController#0" expanded="false" />
+                <element signature="class#GenerateRandomString#0;class#WebsiteForgotPasswordAndAboutController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forgotSuccess.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="18" selection-start="32" selection-end="32" vertical-scroll-proportion="-1.25">
               <folding />
             </state>
           </provider>
@@ -122,16 +141,43 @@
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
+            <state line="27" column="28" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendRepository.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FriendRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="51" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.72634274">
+            <state line="66" column="51" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckAuthorizedInterceptor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/interceptors/CheckAuthorizedInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="28" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="24" selection-start="2245" selection-end="2245" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoogleMail.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/mail/GoogleMail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="23" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,11 +201,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/loginPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/setPageContentMinHeight.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/sfd.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/pageContentMinHeight.js" />
@@ -168,9 +211,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/errorPositionSet.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/mail/GoogleMail.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" />
       </list>
     </option>
   </component>
@@ -318,6 +364,84 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -372,6 +496,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TwiMini" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mail" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -968,7 +1122,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912782" sideWeight="0.70757735" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3261391" sideWeight="0.70113087" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27098322" sideWeight="0.70113087" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29886913" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="166" y="152" width="1101" height="544" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980237" sideWeight="0.6969206" order="2" side_tool="false" content_ui="combo" />
@@ -1043,21 +1197,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/searchbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/loginPageScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="24" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleFooter.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="19" selection-start="211" selection-end="211" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="45" selection-start="1637" selection-end="1678" vertical-scroll-proportion="0.0" />
@@ -1088,11 +1227,6 @@
         <state line="13" column="12" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="2" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgot.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="11" selection-start="2689" selection-end="2689" vertical-scroll-proportion="0.0" />
@@ -1112,24 +1246,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="22" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0">
+        <state line="66" column="51" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/interceptors/CheckAuthorizedInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="28" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/mail/GoogleMail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="23" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/forgotSuccess.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="18" selection-start="32" selection-end="32" vertical-scroll-proportion="-1.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
+        <state line="27" column="28" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="51" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.72634274">
+        <state line="58" column="24" selection-start="2245" selection-end="2245" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="29" selection-start="1602" selection-end="1602" vertical-scroll-proportion="-0.42480212">
+          <folding>
+            <element signature="method#sendForgotPasswordMail#0;class#WebsiteForgotPasswordAndAboutController#0" expanded="false" />
+            <element signature="class#GenerateRandomString#0;class#WebsiteForgotPasswordAndAboutController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

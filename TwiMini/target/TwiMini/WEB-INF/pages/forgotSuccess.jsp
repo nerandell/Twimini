@@ -1,5 +1,5 @@
 <html>
 <body>
-<h1>${messageOnTop}</h1>
+<h1>${messageEmail}</h1>
 </body>
 </html>
