@@ -18,7 +18,7 @@
                     <%-- pic here --%>
                         <img src="../../w8_admin/bootstrap/img/detective%20silhouette.jpg" alt="Detective pic here" id="Welcome pic" width="65%" height="65%"/>
                     </div>
-                    <div class="span6 offset 1">
+                    <div class="span6 ">
                         <%-- pic here --%>
                         <div id="forms" class="pagination-centered">
                             <img src="../../w8_admin/bootstrap/img/det_logo.jpg" alt="logo here" id="Standard logo"/>
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="text-center">
                                     <%--<a href="/forgot" id="forgot-link" class="logIn-class-inputs little-margin-top-bottom" style="display: none;" > Forgot your password?</a>--%>
-                                    <a href="/forgot" id="forgot-link" class="logIn-class-inputs" style="display: none;" > Forgot your password?</a>
+                                    <a href="/MiniTwitter/Website/forgot" id="forgot-link" class="logIn-class-inputs" style="display: none;" > Forgot your password?</a>
                                 </div>
                             </div>
                         </form>

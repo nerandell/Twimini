@@ -38,7 +38,7 @@
     <orderEntry type="library" name="Maven: com.mchange:c3p0:0.9.5-pre3" level="project" />
     <orderEntry type="library" name="Maven: com.mchange:mchange-commons-java:0.2.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:3.2.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:3.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:3.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:3.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.2.0.RELEASE" level="project" />
@@ -64,6 +64,12 @@
     <orderEntry type="library" name="Maven: com.sun.jdmk:jmxtools:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jmx:jmxri:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security.oauth:spring-security-oauth2:1.0.0.M4" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:3.1.0.RC3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:3.1.0.RC3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:3.1.0.RC3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:3.1.0.RC3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.1" level="project" />
   </component>
 </module>
 
