@@ -7,6 +7,7 @@
     <title>MiniTwitter - Password Reset</title>
     <meta name="description" content="MiniTwitter - Ideas you care about">
     <link href="../../w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
 </head>
 <body>
     <div id="notify-wrapper">
@@ -15,7 +16,7 @@
         <div class="row">
             <div class="span12">
 
-                <%@ include file="includes/simpleLogoHeader.jsp"%>
+                <%@ include file="includes/simpleLogoHeaderWithDropdown.jsp"%>
 
                 <div id="page-content">
                     <div class="span8 offset2" id="sub-content-container">
@@ -43,6 +44,7 @@
 
     <%--page-specific scripts--%>
     <script src="../../w8_admin/js/pageContentMinHeight.js"></script>
+    <script src="../../w8_admin/js/dropdownToggle.js"></script>
     <script>
         $(document).load(adjustPageContentHeight());
     </script>

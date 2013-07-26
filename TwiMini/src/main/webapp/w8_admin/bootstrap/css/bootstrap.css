@@ -8,6 +8,11 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.form-signing-in-top{
+    padding: 10px 15px 10px 15px;
+    margin: 1px 1px 1px 1px;
+}
+
 .alert-without-cross {
     padding: 8px 24px 8px 24px;
     margin-bottom: 20px;
@@ -46,7 +51,7 @@
 #page-footer{
     color: #999;
     /*color: #444;*/
-    height: 35px;
+    height: 30px;
     width:100%;
     left: 0;
     bottom: 0;
