@@ -2,7 +2,6 @@ function getTweetData(offset) {
     $.getJSON("/MiniTwitter/API/statuses/home_timeline?"+"offset="+offset, function(data) {
         console.log("Into ajax call")
         var items = [];
-        console.log(data);
         $.each(data, function(array, tweet) {
             var d = new Date(tweet.timestamp);
             var curr_date = d.getDate();

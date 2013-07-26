@@ -40,9 +40,9 @@ public class TweetRepository {
                 new Object[]{tweetId}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
-    public List<Tweet> fetchUserTimeline(String username) {
-        return jdbcTemplate.query("select * from tweets where username=? order by timestamp DESC",
-                new Object[]{username}, new BeanPropertyRowMapper<>(Tweet.class));
+    public List<Tweet> fetchUserTimeline(String username, long offset) {
+        return jdbcTemplate.query("select * from tweets where username=? ORDER by timestamp DESC LIMIT 10 OFFSET ?",
+                new Object[]{username,offset*10+1}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
     public List<Tweet> fetchHomeTimeline(String username,long offset) {
