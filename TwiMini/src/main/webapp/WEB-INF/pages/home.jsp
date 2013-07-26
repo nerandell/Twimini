@@ -110,6 +110,7 @@
 
 <script type="text/javascript">
     var offset = 1;
+    var last_id = null;
     $(function() {
         $('.dialogs,.comments').slimScroll({
             height: '300px'

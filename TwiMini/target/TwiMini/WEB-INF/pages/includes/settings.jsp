@@ -17,12 +17,12 @@
         </div>
 
         <div>
-            <input type="checkbox" class="ace-checkbox-2" id="ace-settings-header" />
+            <input type="checkbox" class="ace-checkbox-2" id="ace-settings-header" checked/>
             <label class="lbl" for="ace-settings-header"> Fixed Header</label>
         </div>
 
         <div>
-            <input type="checkbox" class="ace-checkbox-2" id="ace-settings-sidebar" />
+            <input type="checkbox" class="ace-checkbox-2" id="ace-settings-sidebar" checked/>
             <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
         </div>
     </div>

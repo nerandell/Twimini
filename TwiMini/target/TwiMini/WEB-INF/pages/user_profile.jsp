@@ -117,8 +117,9 @@
         });
     })
 
+    var last_id = 0;
     $(document).ready(function() {
-        getUserTweetData(0,username);
+        last_id = getUserTweetData(0,username);
     });
 
     $(window).scroll(function () {
@@ -127,6 +128,13 @@
             offset++;
         }
     });
+
+    $(function() {
+        setInterval(function() {
+            console.log("Running");
+        },10*1000);
+    });
+
 </script>
 </body>
 </html>
