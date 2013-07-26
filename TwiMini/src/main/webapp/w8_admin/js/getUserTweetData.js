@@ -23,7 +23,7 @@ function getUserTweetData(offset, username) {
             data.push('<div class="name">');
             data.push('<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>');
             data.push('</div>');
-            data.push('<div class="text">'+tweet.tweet+'</div>');
+            data.push('<div class="text">'+urlify(tweet.tweet)+'</div>');
             data.push('<div class="tools">');
             data.push('<a href="#" class="btn btn-minier btn-info"><i class="icon-only icon-share-alt"></i></a>');
             data.push("</div></div></div>");
@@ -31,4 +31,19 @@ function getUserTweetData(offset, username) {
             $(content).appendTo(".tweets")
         });
     });
+
+    function urlify(text) {
+        console.log('Urlifying '+text);
+        var urlRegex = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+        return text.replace(urlRegex, function(url) {
+            var youtubeUrl = url.match(/watch\?v=([a-zA-Z0-9\-_]+)/);
+            var vimeoUrl = url.match(/^http:\/\/(www\.)?vimeo\.com\/(clip\:)?(\d+).*$/);
+            if( youtubeUrl ){
+                return '<div></div><iframe src="http://www.youtube.com/embed/'+youtubeUrl[1]+'?rel=0" height="240" width="320" allowfullscreen="" frameborder="0"></iframe></div>'
+            }
+            else if(url.substring(0,3)=="www")
+                return '<a href="http://' + url + '">' + url + '</a>';
+            else return '<a href="' + url + '">' + url + '</a>';
+        })
+    }
 }

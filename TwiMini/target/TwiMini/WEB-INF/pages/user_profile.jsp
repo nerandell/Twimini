@@ -91,6 +91,7 @@
 <script src="../../w8_admin/js/addTweet.js"></script>
 <script src="../../w8_admin/js/autoComplete.js"></script>
 <script src="../../w8_admin/js/getUserTweetData.js"></script>
+<script src="../../w8_admin/js/getTweetData.js"></script>
 
 <script src="../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>
 <script src="../../w8_admin/themes/js/jquery.easy-pie-chart.min.js"></script>
@@ -128,13 +129,6 @@
             offset++;
         }
     });
-
-    $(function() {
-        setInterval(function() {
-            console.log("Running");
-        },10*1000);
-    });
-
 </script>
 </body>
 </html>
