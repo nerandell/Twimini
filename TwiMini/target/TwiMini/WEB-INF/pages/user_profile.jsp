@@ -67,7 +67,7 @@
                         <c:forEach items="${tweets}" var="tweet">
                             <div class="itemdiv dialogdiv">
                                 <div class="user">
-                                    <img alt="Alexa's Avatar" src="../../w8_admin/themes/images/avatar1.png" />
+                                    <img alt="Alexa's Avatar" src="/MiniTwitter/API/users/profile_image?username=${tweet.username}" />
                                 </div>
                                 <div class="body">
                                     <div class="time">

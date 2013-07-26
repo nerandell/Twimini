@@ -28,18 +28,13 @@ public class UserController {
 
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
-    private final FriendRepository friendRepository;
-    private final ImageRepository imageRepository;
 
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public UserController(UserRepository userRepository,TweetRepository tweetRepository,
-                          FriendRepository friendRepository,ImageRepository imageRepository) {
+    public UserController(UserRepository userRepository,TweetRepository tweetRepository) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
-        this.friendRepository = friendRepository;
-        this.imageRepository = imageRepository;
     }
 
     @RequestMapping("MiniTwitter/API/users/{id}")
