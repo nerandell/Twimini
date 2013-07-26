@@ -1,5 +1,7 @@
 package com.springapp.mvc;
 
+import com.springapp.mvc.data.ImageRepository;
+import org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +26,7 @@ public class AppTests {
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     protected WebApplicationContext wac;
+    protected ImageRepository imageRepository;
 
     @Before
     public void setup() {
@@ -36,4 +39,5 @@ public class AppTests {
                 .andExpect(status().isOk())
                 .andExpect(view().name("hello"));
     }
+
 }

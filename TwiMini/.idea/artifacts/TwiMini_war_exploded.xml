@@ -36,6 +36,12 @@
           <element id="library" level="project" name="Maven: com.sun.jdmk:jmxtools:1.2.1" />
           <element id="library" level="project" name="Maven: com.sun.jmx:jmxri:1.2.1" />
           <element id="library" level="project" name="Maven: org.springframework.security.oauth:spring-security-oauth2:1.0.0.M4" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:3.1.0.RC3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:3.1.0.RC3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.1.0.RC3" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:3.1.0.RC3" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.1.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.1" />
         </element>
       </element>
     </root>

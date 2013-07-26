@@ -11,11 +11,9 @@ function getTweetData(offset) {
             var hour = d.getHours();
             var minutes = d.getMinutes();
             var time = curr_date + "/" + curr_month + "/" + curr_year + " " + hour + ":" + minutes;
-            console.log(d);
             var data = '<div class="itemdiv dialogdiv">';
-            data += ('<div class="itemdiv dialogdiv">');
             data += ('<div class="user">');
-            data += ('<img alt="Alexa\'s Avatar" src="../../w8_admin/themes/images/avatar1.png" /></div>');
+            data += ('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.username+'"/></div>');
             data += ('<div class="body"><div class="time"><i class="icon-time"></i>');
             data += ('<span class="green">');
             data += ('<span title="'+tweet.timestamp+'">&nbsp;'+time+'</span');

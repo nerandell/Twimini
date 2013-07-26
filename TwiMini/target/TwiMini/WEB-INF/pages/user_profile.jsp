@@ -60,8 +60,7 @@
 
             <div class="row-fluid">
                 <!--PAGE CONTENT BEGINS HERE-->
-                <div class="hrimport java.util.Map;
- hr-12 hr-dotted"></div>
+                <div class="hr hr-12 hr-dotted"></div>
 
                 <div class="row-fluid">
                     <div class="span12">

@@ -31,10 +31,10 @@
 
                 <li class="light-blue user-profile">
                     <a data-toggle="dropdown" href="#" class="user-menu dropdown-toggle">
-                        <img class="nav-user-photo" src="../../../w8_admin/themes/images/user.png" alt="Jason's Photo" />
+                        <img class="nav-user-photo" src="/MiniTwitter/API/users/profile_image?username=${currentUser.username}" alt="Profile Photo" />
 								<span id="user_info">
 									<small>Welcome,</small>
-									${currentUserName}
+									${currentUser.name}
 								</span>
 
                         <i class="icon-caret-down"></i>

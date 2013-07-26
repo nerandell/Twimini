@@ -90,7 +90,7 @@ public class WebsiteViewProfileController {
         modelAndView.addObject("num_of_tweets", tweetRepository.fetchTweets(userName).size());
         modelAndView.addObject("followers", followers);
         modelAndView.addObject("timeline",timeline);
-        modelAndView.addObject("currentUserName",currentUser.getName());
+        modelAndView.addObject("currentUser",currentUser);
         return modelAndView;
     }
 

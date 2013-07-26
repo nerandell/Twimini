@@ -1,6 +1,6 @@
 <div class="page-header position-relative">
     <h1>
-        <img class="nav-user-photo" src="../../../w8_admin/themes/images/user.png" alt="Jason's Photo" />
+        <img class="nav-user-photo" src="/MiniTwitter/API/users/profile_image?username=${info.username}" height="50" width="40" alt="Jason's Photo" />
         ${info.name}
         <small>
             @${info.username}

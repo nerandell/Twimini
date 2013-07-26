@@ -1,6 +1,7 @@
 package com.springapp.mvc.controller;
 
 import com.springapp.mvc.data.FriendRepository;
+import com.springapp.mvc.data.ImageRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
@@ -28,14 +29,17 @@ public class UserController {
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
     private final FriendRepository friendRepository;
+    private final ImageRepository imageRepository;
 
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public UserController(UserRepository userRepository,TweetRepository tweetRepository,FriendRepository friendRepository) {
+    public UserController(UserRepository userRepository,TweetRepository tweetRepository,
+                          FriendRepository friendRepository,ImageRepository imageRepository) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
         this.friendRepository = friendRepository;
+        this.imageRepository = imageRepository;
     }
 
     @RequestMapping("MiniTwitter/API/users/{id}")
@@ -73,10 +77,8 @@ public class UserController {
         return userRepository.searchForUsers(query);
     }
 
-
     public String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }
-
 
 }
