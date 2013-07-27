@@ -91,6 +91,7 @@
 <script src="../../w8_admin/js/addTweet.js"></script>
 <script src="../../w8_admin/js/autoComplete.js"></script>
 <script src="../../w8_admin/js/getUserTweetData.js"></script>
+<script src="../../w8_admin/js/processTweets.js"></script>
 <script src="../../w8_admin/js/getTweetData.js"></script>
 
 <script src="../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>

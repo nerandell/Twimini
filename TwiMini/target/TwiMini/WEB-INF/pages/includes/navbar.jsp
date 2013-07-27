@@ -16,6 +16,12 @@
                     </a>
                 </li>
 
+                <li class="blue user-p">
+                    <a href="#">
+                        <i class="icon-search"></i>
+                    </a>
+                </li>
+
                 <li class="purple">
                     <a href="#">
                         <i class="icon-bell-alt icon-only icon-animated-bell"></i>

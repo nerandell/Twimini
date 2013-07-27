@@ -77,7 +77,7 @@
 </div><!--/.fluid-container#main-container-->
 
 <a href="#" id="btn-scroll-up" class="btn btn-small btn-inverse">
-    <i class="icon-double-angle-up icon-only bigger-110"></i>
+    <i class="icon-double-angle-up icon-only bigger-110" position:fixed></i>
 </a>
 
 <!--basic scripts-->
@@ -90,6 +90,7 @@
 <script src="../../w8_admin/themes/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="../../w8_admin/themes/js/jquery.ui.touch-punch.min.js"></script>
 <script src="../../w8_admin/js/addTweet.js"></script>
+<script src="../../w8_admin/js/processTweets.js"></script>
 <script src="../../w8_admin/js/getTweetData.js"></script>
 <script src="../../w8_admin/js/autoComplete.js"></script>
 
