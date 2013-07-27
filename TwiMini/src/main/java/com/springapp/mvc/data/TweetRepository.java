@@ -78,10 +78,11 @@ public class TweetRepository {
 
     public void detectAndInsertHashTags(long id,String status) {
         log.info("In HashTag regex function for status : "+status);
-        Pattern p = Pattern.compile("#([a-z0-9])+");
+        Pattern p = Pattern.compile("#\\w+");
         Matcher m = p.matcher(status);
         while(m.find()){
-            log.info("Match found");
+            String hashtag = m.group().substring(1);
+            jdbcTemplate.update("insert into hashtags values(?,?)", new Object[]{id,hashtag});
         }
     }
 }

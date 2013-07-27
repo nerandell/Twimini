@@ -1,5 +1,4 @@
 function getUserTweetData(offset, username) {
-    console.log(username);
     $.getJSON("/MiniTwitter/API/statuses/user_timeline?offset="+offset+"&username="+username, function(data) {
         console.log("Into ajax call")
         var items = [];
