@@ -37,7 +37,7 @@ public class WebsiteViewProfileController {
 
     @RequestMapping(value = "MiniTwitter/Website/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView printWelcome(@PathVariable("id") String userName) {
+    public ModelAndView printWelcome(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("user_profile");
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         modelAndView.addObject("tweets", tweets);

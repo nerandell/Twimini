@@ -111,6 +111,7 @@
 
 <script type="text/javascript">
     var offset = 1;
+    var username = '${currentUser.username}';
     var last_id = null;
     $(function() {
         $('.dialogs,.comments').slimScroll({
@@ -119,12 +120,12 @@
     })
 
     $(document).ready(function() {
-        getTweetData(0);
+        getTweetData(0,username);
     });
 
     $(window).scroll(function () {
         if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
-            getTweetData(offset);
+            getTweetData(offset,username);
             offset++;
         }
     });

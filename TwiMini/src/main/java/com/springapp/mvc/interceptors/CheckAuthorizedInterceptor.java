@@ -29,24 +29,19 @@ public class CheckAuthorizedInterceptor implements HandlerInterceptor {
     }
 
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse response, Object o) throws Exception {
-        System.out.println("Pre handling");
         Cookie cookie = WebUtils.getCookie(httpServletRequest,"token");
-        String username = cookie.getValue().split("\\|")[1];
-        log.info(username);
-        String token = cookie.getValue().split("\\|")[0];
-        log.info(token);
-        log.info(username + " " + token);
-        if(username==null || token==null) {
-            System.out.println("Null value encountered");
+        if(cookie==null) {
+            response.sendRedirect("/MiniTwitter/Website");
             return false;
         }
+        String username = cookie.getValue().split("\\|")[1];
+        String token = cookie.getValue().split("\\|")[0];
         if(checkCredentials(username,token)) {
             System.out.println("Current user verified :" + username);
             httpServletRequest.setAttribute("currentUser",username);
             return true;
         }
         else return false;
-
     }
 
     @Override
