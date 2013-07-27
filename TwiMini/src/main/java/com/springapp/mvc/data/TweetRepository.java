@@ -7,17 +7,20 @@ package com.springapp.mvc.data;
  * Time: 8:22 PM
  * To change this template use File | Settings | File Templates.
  */
+
 import com.springapp.mvc.model.Tweet;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import com.springapp.mvc.model.User;
-import org.apache.log4j.Logger;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Repository
 public class TweetRepository {
@@ -42,7 +45,7 @@ public class TweetRepository {
 
     public List<Tweet> fetchUserTimeline(String username, long offset) {
         return jdbcTemplate.query("select * from tweets where username=? ORDER by timestamp DESC LIMIT 10 OFFSET ?",
-                new Object[]{username,offset*10+1}, new BeanPropertyRowMapper<>(Tweet.class));
+                new Object[]{username,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
     public List<Tweet> fetchHomeTimeline(String username,long offset) {
@@ -51,7 +54,7 @@ public class TweetRepository {
                 "tweets inner join following on tweets.username = following.following) as mergedTable where " +
                 "((mergedTable.following_timestamp is not NULL and mergedTable.tweet_timestamp<mergedTable.following_timestamp) or mergedTable.following_timestamp is NULL) and " +
                 "(mergedTable.follower=? or mergedTable.username=?) ORDER by timestamp DESC LIMIT 10 OFFSET ?",
-                new Object[]{username,username,offset*10+1}, new BeanPropertyRowMapper<>(Tweet.class));
+                new Object[]{username,username,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
     public long addTweet(String username, String status) {
@@ -74,7 +77,12 @@ public class TweetRepository {
     }
 
     public void detectAndInsertHashTags(long id,String status) {
-
+        log.info("In HashTag regex function for status : "+status);
+        Pattern p = Pattern.compile("#([a-z0-9])+");
+        Matcher m = p.matcher(status);
+        while(m.find()){
+            log.info("Match found");
+        }
     }
 }
 
