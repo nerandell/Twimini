@@ -24,9 +24,7 @@ function getUserTweetData(offset, username) {
             data.push('</div>');
             data.push('<div class="text">'+urlify(tweet.tweet)+'</div>');
             data.push('<div class="tools">');
-            if(tweet.username!==username) {
-                data.push('<a href="#" class="btn btn-minier btn-info"><i class="icon-only icon-share-alt"></i></a>');
-            }
+            data.push('<a href="#" class="btn btn-minier btn-info"><i class="icon-only icon-share-alt"></i></a>');
             data.push("</div></div></div>");
             var content = data.join("")
             $(content).appendTo(".tweets")
