@@ -48,10 +48,9 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/update", method = RequestMethod.POST)
     @ResponseBody
-    public void addTweet(@ModelAttribute("status") String status,HttpServletRequest httpServletRequest) {
+    public long addTweet(@ModelAttribute("status") String status,HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
-        tweetRepository.addTweet(username,status);
-        log.info("Add tweet: " + status + " for user " + username);
+        return tweetRepository.addTweet(username,status);
     }
 
     @RequestMapping(value = "MiniTwitter/API/statuses/user_timeline", method = RequestMethod.GET)
@@ -70,9 +69,12 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/search/tweets", method = RequestMethod.GET)
     @ResponseBody
-    public List<Tweet> searchTweets(@RequestParam("q") String searchQuery) throws UnsupportedEncodingException {
+    public List<Tweet> searchTweets(@RequestParam("query") String searchQuery) throws UnsupportedEncodingException {
         searchQuery = URLDecoder.decode(searchQuery,"UTF-8");
         log.info("Search tweet for query string: " + searchQuery);
         return tweetRepository.searchTweets(searchQuery);
     }
+
+
+
 }

@@ -54,10 +54,12 @@ public class TweetRepository {
                 new Object[]{username,username,offset*10+1}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
-    public void addTweet(String username, String status) {
+    public long addTweet(String username, String status) {
         Timestamp timestamp = new Timestamp(new Date().getTime());
-        jdbcTemplate.execute("INSERT into tweets (username, tweet, timestamp ) VALUES ('" + username + "','" + status + "','" + timestamp + "')");
         log.info("Inserting new tweet " + status + " by user " + username);
+        long id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp ) VALUES ('" + username + "','" + status + "','" + timestamp + "') RETURNING id");
+        detectAndInsertHashTags(id, status);
+        return id;
     }
 
     public List<Tweet> searchTweets(String searchQuery) {
@@ -67,8 +69,12 @@ public class TweetRepository {
     }
 
     public List<Tweet> fetchRandomTweets() {
-           return jdbcTemplate.query("SELECT * FROM tweets ORDER BY RANDOM() LIMIT 20",
+        return jdbcTemplate.query("SELECT * FROM tweets ORDER BY RANDOM() LIMIT 20",
                 new Object[]{} , new BeanPropertyRowMapper<>(Tweet.class));
+    }
+
+    public void detectAndInsertHashTags(long id,String status) {
+
     }
 }
 
