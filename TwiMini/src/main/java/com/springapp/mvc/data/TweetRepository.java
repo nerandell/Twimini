@@ -77,13 +77,17 @@ public class TweetRepository {
     }
 
     public void detectAndInsertHashTags(long id,String status) {
-        log.info("In HashTag regex function for status : "+status);
         Pattern p = Pattern.compile("#\\w+");
         Matcher m = p.matcher(status);
         while(m.find()){
             String hashtag = m.group().substring(1);
             jdbcTemplate.update("insert into hashtags values(?,?)", new Object[]{id,hashtag});
         }
+    }
+
+    public List<Tweet> searchHashTags(String searchTag,long offset) {
+        return jdbcTemplate.query("SELECT * from tweets where id in (select hashtags.id from hashtags where hashtag=?) ORDER by timestamp DESC LIMIT 10 OFFSET ?",
+                new Object[]{searchTag,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 }
 

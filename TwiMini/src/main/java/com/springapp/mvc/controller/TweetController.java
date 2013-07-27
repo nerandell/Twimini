@@ -75,6 +75,12 @@ public class TweetController {
         return tweetRepository.searchTweets(searchQuery);
     }
 
-
+    @RequestMapping(value = "MiniTwitter/API/search/hashtags", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Tweet> searchTweets(@RequestParam("query") String searchTag, @RequestParam("offset") long offset) throws UnsupportedEncodingException {
+        searchTag = URLDecoder.decode(searchTag,"UTF-8");
+        log.info("Search tweet for HashTag string: " + searchTag);
+        return tweetRepository.searchHashTags(searchTag,offset);
+    }
 
 }
