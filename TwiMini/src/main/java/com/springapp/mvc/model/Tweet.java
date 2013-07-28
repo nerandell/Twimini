@@ -18,6 +18,15 @@ public class Tweet {
     public String username;
     public String tweet;
     public Timestamp timestamp;
+    public String originalId;
+
+    public String getOriginalId() {
+        return originalId;
+    }
+
+    public void setOriginalId(String originalId) {
+        this.originalId = originalId;
+    }
 
     public String getId() {
         return id;

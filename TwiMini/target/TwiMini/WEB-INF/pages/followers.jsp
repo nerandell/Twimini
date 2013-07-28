@@ -84,7 +84,7 @@
                                                         </div>
 
                                                         <div>
-                                                            <span class="label label-success">Follow</span>
+                                                            <a href="#"><span class="label label-success">Follow</span></a>
                                                         </div>
                                                     </div>
                                                 </div>
