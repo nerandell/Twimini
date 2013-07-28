@@ -27,7 +27,7 @@ function getTweetData(offset,username) {
             else data.push('<div class="text">'+urlify(tweet.tweet)+'<div><small class="grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>' +'</small></div></div>');
             data.push('<div class="tools">');
             if(tweet.username!==username) {
-                data.push('<a href="#" class="btn btn-minier btn-info"><i class="icon-only icon-share-alt"></i></a>');
+                data.push('<a class="btn btn-minier btn-info"><i class="icon-only icon-share-alt" onclick="reTweet('+ tweet.id +')"></i></a>');
             }
             data.push("</div></div></div>");
             var content = data.join("");

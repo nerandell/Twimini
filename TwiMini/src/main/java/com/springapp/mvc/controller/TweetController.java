@@ -66,7 +66,7 @@ public class TweetController {
         return tweetRepository.searchTweets(searchQuery);
     }
 
-    @RequestMapping(value = "MiniTwitter/API/statuses/retweet", method = RequestMethod.GET)
+    @RequestMapping(value = "MiniTwitter/API/statuses/retweet", method = RequestMethod.POST)
     @ResponseBody
     public void searchTweets(@RequestParam("id") long id,HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
         String username = httpServletRequest.getAttribute("currentUser").toString();
