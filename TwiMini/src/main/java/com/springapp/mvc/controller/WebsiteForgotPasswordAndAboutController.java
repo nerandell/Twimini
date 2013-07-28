@@ -1,6 +1,5 @@
 package com.springapp.mvc.controller;
 
-import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.data.UserRepository;
 import com.springapp.mvc.mail.GoogleMail;
 import org.apache.log4j.Logger;
@@ -10,8 +9,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created with IntelliJ IDEA.
@@ -61,7 +58,7 @@ public class WebsiteForgotPasswordAndAboutController {
     @RequestMapping(value="MiniTwitter/Website/about", method= RequestMethod.GET)
     public String aboutPage(ModelMap m) {
         m.addAttribute("message","about page..");
-        return "hello";
+        return "errorPageTemplate";
     }
 
     public String randomPasswordGenerator(){

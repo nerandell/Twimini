@@ -1,26 +1,15 @@
 package com.springapp.mvc.controller;
 
-import com.springapp.mvc.data.FriendRepository;
 import com.springapp.mvc.data.ImageRepository;
-import com.springapp.mvc.data.TweetRepository;
-import com.springapp.mvc.model.Tweet;
-import com.springapp.mvc.model.User;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
-import com.springapp.mvc.data.UserRepository;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 public class ImageController{

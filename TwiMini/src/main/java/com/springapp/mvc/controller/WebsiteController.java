@@ -64,6 +64,6 @@ public class WebsiteController {
             return "redirect:" + redirectUrl;
         }
         model.addAttribute("message", "User Not Verified.");
-        return "hello";
+        return "errorPageTemplate";
     }
 }

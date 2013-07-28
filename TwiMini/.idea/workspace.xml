@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteForgotPasswordAndAboutController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +32,7 @@
     <file path="$PROJECT_DIR$/../../../Downloads/todo/src/main/java/to/talk/todo/web/UsersController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373705838444" ignored="false" />
     <file path="/mvc-dispatcher-servlet.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375013155820" ignored="false" />
     <file path="$PROJECT_DIR$/../../../Downloads/todo/src/main/java/to/talk/todo/interceptors/CheckAuthorizedInterceptor.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373711673818" ignored="false" />
-    <file path="/web.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374346820290" ignored="false" />
+    <file path="/web.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375027196133" ignored="false" />
     <file path="/index.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374486656430" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer-navbar.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
@@ -51,12 +60,12 @@
     <file path="/user_profile.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374926834988" ignored="false" />
     <file path="/WebsiteSignUpController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374684562656" ignored="false" />
     <file path="/logout.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374687205366" ignored="false" />
-    <file path="/getTweetData.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375016785176" ignored="false" />
+    <file path="/getTweetData.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375023274709" ignored="false" />
     <file path="/TestController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374745167141" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/com/springapp/mvc/Test/TestController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374745203383" ignored="false" />
     <file path="/autoComplete.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374755529403" ignored="false" />
     <file path="/searchbar.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374759488160" ignored="false" />
-    <file path="/a.dummy" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374931749909" ignored="false" />
+    <file path="/a.dummy" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375022771660" ignored="false" />
     <file path="/settings.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374845790115" ignored="false" />
     <file path="/ImageRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374831676505" ignored="false" />
     <file path="/AppTests.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374822784143" ignored="false" />
@@ -64,11 +73,12 @@
     <file path="/ImageTests.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374823258348" ignored="false" />
     <file path="/image.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374830576502" ignored="false" />
     <file path="/ImageController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374834955451" ignored="false" />
-    <file path="/getUserTweetData.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375017195180" ignored="false" />
+    <file path="/getUserTweetData.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375023884305" ignored="false" />
     <file path="/notifyNewTweets.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374853972857" ignored="false" />
     <file path="/processTweets.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374923117923" ignored="false" />
     <file path="/detectHashTags.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374909471785" ignored="false" />
     <file path="/retweet.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375016851396" ignored="false" />
+    <file path="/hello.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375026914903" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,19 +139,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TweetController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TweetController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="32" selection-start="3736" selection-end="3736" vertical-scroll-proportion="-17.451612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TweetRepository.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TweetRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="30" selection-start="5235" selection-end="5235" vertical-scroll-proportion="0.8979592">
+            <state line="67" column="15" selection-start="3846" selection-end="3846" vertical-scroll-proportion="-0.9836066">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,17 +153,10 @@
       <file leaf-file-name="getTweetData.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="132" selection-start="2084" selection-end="2118" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="retweet.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/retweet.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="27" column="0" selection-start="1896" selection-end="2120" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1375023448577" expanded="true" signature="1945:1963" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,11 +170,88 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="user_profile.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="135" column="7" selection-start="4598" selection-end="4598" vertical-scroll-proportion="-18.125">
+              <folding>
+                <marker date="1375015800689" expanded="true" signature="699:823" placeholder="..." />
+                <marker date="1375015800689" expanded="true" signature="1329:1420" placeholder="..." />
+                <marker date="1375015800689" expanded="true" signature="4156:4248" placeholder="{...}" />
+                <marker date="1375015800689" expanded="true" signature="4201:4240" placeholder="{&quot;height&quot;: '300px'...}" />
+                <marker date="1375015800689" expanded="true" signature="4305:4360" placeholder="{...}" />
+                <marker date="1375015800689" expanded="true" signature="4397:4570" placeholder="{...}" />
+                <marker date="1375015800689" expanded="true" signature="4484:4564" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="getUserTweetData.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="88" selection-start="2280" selection-end="2280" vertical-scroll-proportion="0.0">
+            <state line="15" column="49" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1375023908829" expanded="true" signature="2007:2025" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HTTPErrorController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/HTTPErrorController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="35" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="4" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="71" column="34" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.9013158">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="errorPageTemplate.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="34" selection-start="45" selection-end="45" vertical-scroll-proportion="-1.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="11" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -203,22 +274,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/detectHashTags.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/processTweets.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/interceptors/CheckAuthorizedInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.min.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/model/Tweet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TweetController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/retweet.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/HttpErrorController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       </list>
     </option>
   </component>
@@ -1591,11 +1662,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="-4" width="1871" height="1085" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2583423" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964426" sideWeight="0.7358185" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1617,7 +1689,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36142626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1688,62 +1759,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/processTweets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="66" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="60" selection-start="2339" selection-end="2339" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="156270" selection-start="156270" selection-end="156270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="27" selection-start="7282" selection-end="7282" vertical-scroll-proportion="-64.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="42" selection-start="3756" selection-end="3756" vertical-scroll-proportion="-3.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/model/Tweet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="87" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="64" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="0" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.31810766">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="0" selection-start="3288" selection-end="3341" vertical-scroll-proportion="0.46166396">
@@ -1760,7 +1775,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TweetController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="32" selection-start="3736" selection-end="3736" vertical-scroll-proportion="-17.451612">
+        <state line="85" column="0" selection-start="3736" selection-end="3736" vertical-scroll-proportion="-17.451612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="15" selection-start="3846" selection-end="3846" vertical-scroll-proportion="-0.9836066">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/retweet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="7" selection-start="4598" selection-end="4598" vertical-scroll-proportion="-18.125">
+          <folding>
+            <marker date="1375015800689" expanded="true" signature="699:823" placeholder="..." />
+            <marker date="1375015800689" expanded="true" signature="1329:1420" placeholder="..." />
+            <marker date="1375015800689" expanded="true" signature="4156:4248" placeholder="{...}" />
+            <marker date="1375015800689" expanded="true" signature="4201:4240" placeholder="{&quot;height&quot;: '300px'...}" />
+            <marker date="1375015800689" expanded="true" signature="4305:4360" placeholder="{...}" />
+            <marker date="1375015800689" expanded="true" signature="4397:4570" placeholder="{...}" />
+            <marker date="1375015800689" expanded="true" signature="4484:4564" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="120016" selection-start="120016" selection-end="120016" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="123289" selection-start="123289" selection-end="123289" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1772,34 +1832,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/retweet.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="15" column="49" selection-start="799" selection-end="799" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1375023908829" expanded="true" signature="2007:2025" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="132" selection-start="2084" selection-end="2118" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="27" column="0" selection-start="1896" selection-end="2120" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1375023448577" expanded="true" signature="1945:1963" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="88" selection-start="2280" selection-end="2280" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="30" selection-start="5235" selection-end="5235" vertical-scroll-proportion="0.8979592">
+        <state line="13" column="11" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="34" selection-start="45" selection-end="45" vertical-scroll-proportion="-1.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/HTTPErrorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="35" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="4" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="34" selection-start="2030" selection-end="2030" vertical-scroll-proportion="0.9013158">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
       </provider>
     </entry>
   </component>

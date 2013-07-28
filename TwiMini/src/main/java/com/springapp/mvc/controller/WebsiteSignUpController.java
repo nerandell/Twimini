@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
@@ -38,7 +37,7 @@ public class WebsiteSignUpController {
 
         if ( userRepository.isUserPresent(username) ) {
             model.addAttribute("message","User already present");
-            return "hello";
+            return "errorPageTemplate";
         }
         userRepository.addUser(username, encodePassword(password), name, email);
         String redirectUrl = "/MiniTwitter/Website/home";

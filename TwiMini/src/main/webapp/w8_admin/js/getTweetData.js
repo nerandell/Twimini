@@ -25,11 +25,13 @@ function getTweetData(offset,username) {
             data.push('</div>');
             if(tweet.originalId===null) data.push('<div class="text">'+urlify(tweet.tweet)+'</div>');
             else data.push('<div class="text">'+urlify(tweet.tweet)+'<div><small class="grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>' +'</small></div></div>');
-            data.push('<div class="tools">');
+            data.push('<div class="tools" style="margin-right: 25px">');
+            data.push('<table><tr>');
+            data.push('<td><a class="btn btn-minier btn-info"><i class="icon-only icon-facebook"></i></a></td>');
             if(tweet.username!==username) {
-                data.push('<a class="btn btn-minier btn-info"><i class="icon-only icon-share-alt" onclick="reTweet('+ tweet.id +')"></i></a>');
+                data.push('<td><a class="btn btn-minier btn-info"><i class="icon-only icon-retweet" onclick="reTweet('+ tweet.id +')"></i></a></td>');
             }
-            data.push("</div></div></div>");
+            data.push("</tr></table></div></div></div>");
             var content = data.join("");
             $(content).appendTo(".tweets");
         });
