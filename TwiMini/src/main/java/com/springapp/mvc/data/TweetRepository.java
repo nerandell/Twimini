@@ -87,5 +87,9 @@ public class TweetRepository {
         return jdbcTemplate.query("SELECT * from tweets where id in (select hashtags.id from hashtags where hashtag=?) ORDER by timestamp DESC LIMIT 10 OFFSET ?",
                 new Object[]{searchTag,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
     }
+
+    public void retweet(long id,String username) {
+        jdbcTemplate.update("insert into retweets values (?,?)", new Object[]{username,id});
+    }
 }
 

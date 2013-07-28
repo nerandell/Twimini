@@ -19,6 +19,7 @@
             <mvc:mapping path="/MiniTwitter/API/account/profile_image" />
             <mvc:mapping path="/MiniTwitter/API/statuses/update" />
             <mvc:mapping path="/MiniTwitter/API/statuses/home" />
+            <mvc:mapping path="/MiniTwitter/API/statuses/retweet" />
             <mvc:mapping path="/MiniTwitter/API/statuses/home_timeline" />
             <mvc:mapping path="/MiniTwitter/API/friendships/create" />
             <mvc:mapping path="/MiniTwitter/API/friendships/destroy" />

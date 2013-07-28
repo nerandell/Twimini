@@ -12,15 +12,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
 
-
-/**
- * Created with IntelliJ IDEA.
- * User: root
- * Date: 7/11/13
- * Time: 8:29 PM
- * To change this template use File | Settings | File Templates.
- */
-
 @Controller
 public class TweetController {
 
@@ -73,6 +64,14 @@ public class TweetController {
         searchQuery = URLDecoder.decode(searchQuery,"UTF-8");
         log.info("Search tweet for query string: " + searchQuery);
         return tweetRepository.searchTweets(searchQuery);
+    }
+
+    @RequestMapping(value = "MiniTwitter/API/statuses/retweet", method = RequestMethod.GET)
+    @ResponseBody
+    public void searchTweets(@RequestParam("id") long id,HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        log.info("Retweet by username: " + username + " for tweet id" + id);
+        tweetRepository.retweet(id,username);
     }
 
     @RequestMapping(value = "MiniTwitter/API/search/hashtags", method = RequestMethod.GET)
