@@ -89,8 +89,13 @@ public class TweetRepository {
     }
 
     public void retweet(long id,String username) {
-        Timestamp timestamp = new Timestamp(new Date().getTime());
-        jdbcTemplate.update("insert into retweets values (?,?,?)", new Object[]{username,id,timestamp});
+        try {
+            Timestamp timestamp = new Timestamp(new Date().getTime());
+            jdbcTemplate.update("insert into retweets values (?,?,?)", new Object[]{username,id,timestamp});
+        }
+        catch (Exception e) {
+            log.error(e.toString());
+        }
     }
 }
 
