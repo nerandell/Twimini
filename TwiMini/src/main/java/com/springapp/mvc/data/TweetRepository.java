@@ -25,8 +25,11 @@ public class TweetRepository {
     }
 
     public List<Tweet> fetchTweets(String username){
-        return jdbcTemplate.query("select * from tweets where username=? order by timestamp desc",
-                new Object[]{username}, new BeanPropertyRowMapper<>(Tweet.class));
+        return jdbcTemplate.query("((select *,null as originalId from tweets where username=?) " +
+                "UNION " +
+                "(select id,retweets.username as username,tweets.tweet,tweets.timestamp,tweets.username as originalId from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=?)) " +
+                "order by timestamp desc",
+                new Object[]{username,username}, new BeanPropertyRowMapper<>(Tweet.class));
 
     }
 
@@ -36,8 +39,11 @@ public class TweetRepository {
     }
 
     public List<Tweet> fetchUserTimeline(String username, long offset) {
-        return jdbcTemplate.query("select * from tweets where username=? ORDER by timestamp DESC LIMIT 10 OFFSET ?",
-                new Object[]{username,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
+        return jdbcTemplate.query("((select *,null as originalId from tweets where username=?) " +
+                "UNION " +
+                "(select id,retweets.username as username,tweets.tweet,tweets.timestamp,tweets.username as originalId from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=?)) " +
+                "ORDER by timestamp DESC LIMIT 10 OFFSET ?",
+                new Object[]{username,username,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
     public List<Tweet> fetchHomeTimeline(String username,long offset) {

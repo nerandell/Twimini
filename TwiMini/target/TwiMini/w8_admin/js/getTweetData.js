@@ -12,16 +12,19 @@ function getTweetData(offset,username) {
             var data = [];
             data.push('<div class="itemdiv dialogdiv">');
             data.push('<div class="user">');
-            data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.username+'"/></div>');
+            if(tweet.originalId===null) data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.username+'"/></div>');
+            else data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.originalId+'"/></div>');
             data.push('<div class="body"><div class="time"><i class="icon-time"></i>');
             data.push('<span class="green">');
             data.push('<span title="'+tweet.timestamp+'">&nbsp;'+time+'</span');
             data.push('</span>');
             data.push('</div>');
             data.push('<div class="name">');
-            data.push('<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>');
+            if(tweet.originalId===null) data.push('<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>');
+            else data.push('<a href="/MiniTwitter/Website/'+tweet.originalId+'">'+tweet.originalId+'</a>');
             data.push('</div>');
-            data.push('<div class="text">'+urlify(tweet.tweet)+'</div>');
+            if(tweet.originalId===null) data.push('<div class="text">'+urlify(tweet.tweet)+'</div>');
+            else data.push('<div class="text">'+urlify(tweet.tweet)+'<div><small class="grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>' +'</small></div></div>');
             data.push('<div class="tools">');
             if(tweet.username!==username) {
                 data.push('<a href="#" class="btn btn-minier btn-info"><i class="icon-only icon-share-alt"></i></a>');
