@@ -34,12 +34,12 @@ public class FriendRepository {
     }
 
     public List<User> fetchFollowing(String userName) {
-        return jdbcTemplate.query("select username,name,email from users where username in (select following from following where follower=?)",
+        return jdbcTemplate.query("select username,name,email from users where username in (select following from following where follower=? and timestamp is null)",
                 new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
     }
 
     public List<User> fetchFollowers(String userName) {
-        return jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=?)",
+        return jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=? and timestamp is null)",
                 new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
     }
 
@@ -82,7 +82,7 @@ public class FriendRepository {
     }
 
     public boolean existsFriendShip(String username, String following) {
-        int row = jdbcTemplate.queryForInt("select count(*) from following where follower=? and following=?",new Object[]{username,following});
+        int row = jdbcTemplate.queryForInt("select count(*) from following where follower=? and following=? and timestamp is null",new Object[]{username,following});
         return row != 0;
     }
 }

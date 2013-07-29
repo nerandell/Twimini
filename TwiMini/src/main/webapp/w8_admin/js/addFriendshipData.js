@@ -1,3 +1,27 @@
+function follow(username,element) {
+    $.ajax({
+        url: '/MiniTwitter/API/friendships/create?username='+username,
+        type: 'POST',
+        success:function() {
+            console.log("Successfully followed user "+username);
+            var $parent = $(element).closest('.switch');
+            $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+username+'\',this)">Unfollow</span></a></div>');
+        }
+    });
+}
+
+function unfollow(username,element) {
+    $.ajax({
+        url: '/MiniTwitter/API/friendships/destroy?username='+username,
+        type: 'POST',
+        success:function() {
+            console.log("Successfully unfollowed user "+username);
+            var $parent = $(element).closest('.switch');
+            $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-success" onclick="follow(\''+username+'\',this)">Follow</span></a></div>');
+        }
+    });
+}
+
 function getFollowing(username,currentLoggedUser) {
     console.log("Getting following");
     console.log("Current Logged User : "+currentLoggedUser);
@@ -23,17 +47,17 @@ function getFollowing(username,currentLoggedUser) {
                     {
                         console.log(data);
                         if(data==="true") {
-                            htmlContent.push('<div><a href="#"><span class="label label-important">Unfollow</span></a></div>');
+                            htmlContent.push('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+relationship.username+'\',this)">Unfollow</span></a></div>');
                         }
                         else {
-                            htmlContent.push('<div><a href="#"><span class="label label-success">Follow</span></a></div>');
+                            htmlContent.push('<div><a class="switch" href="#"><span class="label label-success" onclick="follow(\''+relationship.username+'\',this)">Follow</span></a></div>');
                         }
                     },
                     async: false
                 });
             }
             else {
-                htmlContent.push('<div><a href="#"><span class="label label-success">Follow</span></a></div>');
+                htmlContent.push('<div><a><span class="label label-success" onclick="follow(\''+relationship.username+'\',this)">Follow</span></a></div>');
             }
             htmlContent.push('</div></div>')
             var content = htmlContent.join("");
