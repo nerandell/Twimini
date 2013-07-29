@@ -28,7 +28,8 @@ function getUserTweetData(offset, username) {
             else data.push('<div class="text">'+urlify(tweet.tweet)+'<div><small class="grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>' +'</small></div></div>');
             data.push('<div class="tools" style="margin-right: 25px">');
             data.push('<table><tr>');
-            data.push('<td><a class="btn btn-minier btn-info"><i class="icon-only icon-facebook"></i></a></td>');
+            var url = "https://www.facebook.com/dialog/feed?app_id=140586622674265&link=http%3A%2F%2F172.16.152.62%3A8080%2FMiniTwitter%2FAPI%2Fstatuses%2Fshow%3Fid%3D"+tweet.id+"&name=View+"+tweet.username+"%27s+tweet+on+MiniTwitter&picture=http://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s320/Twitter+logo+2012.png&redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fpostshare%2Fc00.html"
+            data.push('<td><a  target="_blank" onclick="return !window.open(this.href, \'Facebook\', \'width=640,height=300\')" href="'+url+'" class="btn btn-minier btn-info"><i class="icon-only icon-facebook"></i></a></td>');
             data.push('<td><a class="btn btn-minier btn-info"><i class="icon-only icon-share-alt" onclick="reTweet('+ tweet.id +')"></i></a></td>');
             data.push("</tr></table></div></div></div>");
             var content = data.join("")
