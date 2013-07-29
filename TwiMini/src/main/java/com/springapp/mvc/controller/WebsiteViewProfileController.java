@@ -39,12 +39,17 @@ public class WebsiteViewProfileController {
     @ResponseBody
     public ModelAndView printWelcome(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("user_profile");
-        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
-        modelAndView.addObject("tweets", tweets);
-        modelAndView.addObject("info",userRepository.fetchUser(userName));
-        modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
-        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
-        modelAndView.addObject("num_of_tweets", tweets.size());
+        try {
+            List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+            modelAndView.addObject("tweets", tweets);
+            modelAndView.addObject("info",userRepository.fetchUser(userName));
+            modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
+            modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
+            modelAndView.addObject("num_of_tweets", tweets.size());
+        }
+        catch (Exception e) {
+            log.error(e.toString());
+        }
         return modelAndView;
     }
 
