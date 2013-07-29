@@ -26,10 +26,9 @@
             <mvc:mapping path="/MiniTwitter/API/friendships/exists" />
             <bean class="com.springapp.mvc.interceptors.CheckAuthorizedInterceptor" />
         </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/MiniTwitter/Website/*/following" />
+            <bean class="com.springapp.mvc.interceptors.CheckIfLoggedInInterceptor" />
+        </mvc:interceptor>
     </mvc:interceptors>
-
-
-
-
-
 </beans>

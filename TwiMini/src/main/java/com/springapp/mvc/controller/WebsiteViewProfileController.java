@@ -55,8 +55,17 @@ public class WebsiteViewProfileController {
 
     @RequestMapping(value = "MiniTwitter/Website/{id}/following", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView fetchFollowing(@PathVariable("id") String userName) {
+    public ModelAndView fetchFollowing(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("following");
+        Object user = httpServletRequest.getAttribute("currentLoggedUser");
+        if(user==null) {
+            log.info("User not verified");
+            modelAndView.addObject("currentLoggedUser","-1");
+        }
+        else {
+            log.info("User at present is : " + user);
+            modelAndView.addObject("currentLoggedUser",user.toString());
+        }
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         List<User> following = friendRepository.fetchFollowing(userName);
         modelAndView.addObject("info",userRepository.fetchUser(userName));

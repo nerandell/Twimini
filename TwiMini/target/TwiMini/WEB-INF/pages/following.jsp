@@ -64,32 +64,7 @@
                             <div class="widget-body">
                                 <div class="widget-main padding-4">
                                     <div id="member-tab" class="tab-pane">
-                                        <div class="clearfix">
-                                            <c:forEach items="${following}" var="user">
-                                                <div class="itemdiv memberdiv">
-                                                    <div class="user">
-                                                        <img alt="Bob Doe's avatar" src="../../../w8_admin/themes/images/user.png" />
-                                                    </div>
-
-                                                    <div class="body">
-                                                        <div class="name">
-                                                            <a href="/MiniTwitter/Website/${user.username}">
-                                                                <c:out value="${user.name}"></c:out>
-                                                            </a>
-                                                        </div>
-                                                        <div>
-                                                            <small>
-                                                                @<c:out value="${user.username}"></c:out>
-                                                            </small>
-                                                            </small>
-                                                        </div>
-
-                                                        <div>
-                                                            <a href="#"><span class="label label-success">Follow</span></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </c:forEach>
+                                        <div class="clearfix friendship">
                                         </div>
                                     </div><!--member-tab-->
                                 </div><!--/widget-main-->
@@ -118,6 +93,7 @@
 <script src="../../../w8_admin/themes/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="../../../w8_admin/themes/js/jquery.ui.touch-punch.min.js"></script>
 <script src="../../../w8_admin/js/addTweet.js"></script>
+<script src="../../../w8_admin/js/addFriendshipData.js"></script>
 
 <script src="../../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>
 <script src="../../../w8_admin/themes/js/jquery.easy-pie-chart.min.js"></script>
@@ -168,6 +144,10 @@
             return 'left';
         }
     })
+
+    var username = "${info.username}";
+    var currentLoggedUser = "${currentLoggedUser}";
+    getFollowing(username,currentLoggedUser)
 </script>
 </body>
 </html>
