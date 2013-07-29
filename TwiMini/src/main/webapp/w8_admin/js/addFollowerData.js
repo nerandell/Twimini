@@ -2,10 +2,16 @@ function follow(username,element) {
     $.ajax({
         url: '/MiniTwitter/API/friendships/create?username='+username,
         type: 'POST',
-        success:function() {
-            console.log("Successfully followed user "+username);
-            var $parent = $(element).closest('.switch');
-            $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+username+'\',this)">Unfollow</span></a></div>');
+        dataType: "text",
+        success:function(data) {
+            if(data.length!=0) {
+                window.location.replace("/MiniTwitter/Website");
+            }
+            else {
+                console.log("Successfully followed user "+username);
+                var $parent = $(element).closest('.switch');
+                $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+username+'\',this)">Unfollow</span></a></div>');
+            }
         }
     });
 }
@@ -14,7 +20,10 @@ function unfollow(username,element) {
     $.ajax({
         url: '/MiniTwitter/API/friendships/destroy?username='+username,
         type: 'POST',
-        success:function() {
+        success:function(data) {
+            if(data.length!=0) {
+                window.location.replace("/MiniTwitter/Website");
+            }
             console.log("Successfully unfollowed user "+username);
             var $parent = $(element).closest('.switch');
             $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-success" onclick="follow(\''+username+'\',this)">Follow</span></a></div>');

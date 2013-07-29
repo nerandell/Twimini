@@ -27,8 +27,7 @@
             <bean class="com.springapp.mvc.interceptors.CheckAuthorizedInterceptor" />
         </mvc:interceptor>
         <mvc:interceptor>
-            <mvc:mapping path="/MiniTwitter/Website/*/following" />
-            <mvc:mapping path="/MiniTwitter/Website/*/followers" />
+            <mvc:mapping path="/MiniTwitter/*" />
             <bean class="com.springapp.mvc.interceptors.CheckIfLoggedInInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>

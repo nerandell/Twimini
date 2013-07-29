@@ -7,9 +7,11 @@ function follow(username,element) {
             if(data.length!=0) {
                 window.location.replace("/MiniTwitter/Website");
             }
+            else {
             console.log("Successfully followed user "+username);
             var $parent = $(element).closest('.switch');
             $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+username+'\',this)">Unfollow</span></a></div>');
+            }
         }
     });
 }
