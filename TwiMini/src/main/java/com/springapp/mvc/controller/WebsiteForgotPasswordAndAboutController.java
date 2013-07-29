@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: mayday
@@ -44,35 +47,49 @@ public class WebsiteForgotPasswordAndAboutController {
     public String forgotPasswordTakeEmail(@RequestParam("email") String email, ModelMap m) {
         System.out.println("Request Password change for email: "+email);
         if (userRepository.isEmailPresent(email)){
-            m.addAttribute("messageEmail",email);
             String newPassword = randomPasswordGenerator();
-            userRepository.updateUserByEmail(email, newPassword);
-            sendForgotPasswordMail(email, newPassword);
-            return "forgotSuccess";
+            try{
+                userRepository.updateUserByEmail(email, newPassword);
+            }
+            catch(Exception e){
+                m.addAttribute("shouldIDisplayMessage",true);
+                m.addAttribute("messageOnTop","Error in fetching database. Please try again.");
+                return "forgot";
+            }
+            try{
+                sendForgotPasswordMail(email, newPassword);
+            }
+            catch(MessagingException e1){
+                System.out.println("Encountered error while sending forgot-password mail to: "+email);
+                m.addAttribute("shouldIDisplayMessage",true);
+                m.addAttribute("messageOnTop","Error in sending Email. Please try again.");
+                return "forgot";
+            }
+            String redirectUrl = "/MiniTwitter/Website/password-reset-sent";
+            return "redirect:" + redirectUrl;
         }
         m.addAttribute("shouldIDisplayMessage",true);
         m.addAttribute("messageOnTop","Invalid Email id provided. Enter a valid Email id.");
         return "forgot";
     }
 
+    @RequestMapping(value="MiniTwitter/Website/password-reset-sent", method=RequestMethod.GET)
+    public String forgotPasswordSuccess(ModelMap m){
+        return "forgotSuccess";
+    }
+
     @RequestMapping(value="MiniTwitter/Website/about", method= RequestMethod.GET)
-    public String aboutPage(ModelMap m) {
-        m.addAttribute("message","about page..");
-        return "errorPageTemplate";
+    public String aboutPage() {
+        return "about";
     }
 
     public String randomPasswordGenerator(){
         return grs.getAlphaNumeric(10);
     }
 
-    void sendForgotPasswordMail(String email, String password){
-        try{
-            mailer.Send( email, "Reset password", "There was a password reset request from your email id. \n" +
+    void sendForgotPasswordMail(String email, String password) throws MessagingException {
+        mailer.Send( email, "Reset password", "There was a password reset request from your email id. \n" +
                         "Your new password is: " + password);
-        }
-        catch(Exception e){
-            System.out.println("Encountered error while sending forgot-password mail to: "+email);
-        }
     }
 
     public static class GenerateRandomString {

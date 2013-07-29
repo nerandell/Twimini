@@ -28,7 +28,7 @@ public class GoogleMail {
         this.password=password;
     }
 
-    public void Send(String recipientEmail, String title, String message) throws AddressException, MessagingException {
+    public void Send(String recipientEmail, String title, String message) throws MessagingException {
         Send(recipientEmail, "", title, message);
     }
 

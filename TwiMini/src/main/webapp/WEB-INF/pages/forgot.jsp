@@ -65,7 +65,7 @@
     <%--page-specific scripts--%>
     <script src="../../w8_admin/js/pageContentMinHeight.js"></script>
     <script>
-        $(document).ready(doOnLoad());
+        $(document).load(adjustPageContentHeight());
     </script>
 
 </body>

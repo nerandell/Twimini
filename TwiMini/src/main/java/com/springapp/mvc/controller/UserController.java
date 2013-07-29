@@ -1,23 +1,15 @@
 package com.springapp.mvc.controller;
 
-import com.springapp.mvc.data.FriendRepository;
-import com.springapp.mvc.data.ImageRepository;
 import com.springapp.mvc.data.TweetRepository;
-import com.springapp.mvc.model.Tweet;
+import com.springapp.mvc.data.UserRepository;
 import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import com.springapp.mvc.data.UserRepository;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -71,6 +63,14 @@ public class UserController {
         log.info("Searching for user "+query);
         return userRepository.searchForUsers(query);
     }
+
+    @RequestMapping(value="MiniTwitter/API/isPresent", method = RequestMethod.GET)
+    @ResponseBody
+    public boolean isUserPresent(@RequestParam("username") String username, HttpServletRequest httpServletRequest){
+        System.out.println("Checking if user is present!");
+        return userRepository.isUserPresent(username);
+    }
+
 
     public String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
