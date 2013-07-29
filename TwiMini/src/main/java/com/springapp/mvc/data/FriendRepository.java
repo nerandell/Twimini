@@ -80,4 +80,9 @@ public class FriendRepository {
             else log.info("Already unfollowed");
         }
     }
+
+    public boolean existsFriendShip(String username, String following) {
+        int row = jdbcTemplate.queryForInt("select count(*) from following where follower=? and following=?",new Object[]{username,following});
+        return row != 0;
+    }
 }

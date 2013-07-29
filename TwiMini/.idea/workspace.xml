@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/FriendController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/FriendController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +24,7 @@
     <file path="/TweetRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375018575025" ignored="false" />
     <file path="/CheckAuthorizedInterceptor.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374929483111" ignored="false" />
     <file path="$PROJECT_DIR$/../../../Downloads/todo/src/main/java/to/talk/todo/web/UsersController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373705838444" ignored="false" />
-    <file path="/mvc-dispatcher-servlet.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375013155820" ignored="false" />
+    <file path="/mvc-dispatcher-servlet.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375085440733" ignored="false" />
     <file path="$PROJECT_DIR$/../../../Downloads/todo/src/main/java/to/talk/todo/interceptors/CheckAuthorizedInterceptor.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1373711673818" ignored="false" />
     <file path="/web.xml" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375027196133" ignored="false" />
     <file path="/index.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374486656430" ignored="false" />
@@ -31,13 +33,13 @@
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/build/node_modules/hogan.js/test/index.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="/bootstrap.css" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374530316341" ignored="false" />
     <file path="/user_info.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374302530865" ignored="false" />
-    <file path="/FriendController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374406666446" ignored="false" />
+    <file path="/FriendController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375084829961" ignored="false" />
     <file path="/following.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374935397670" ignored="false" />
     <file path="/followers.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374750918681" ignored="false" />
     <file path="/addTweet.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374656266655" ignored="false" />
     <file path="/navbar.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374904962518" ignored="false" />
     <file path="/LoginController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374488594316" ignored="false" />
-    <file path="/Dummy.txt" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375076289349" ignored="false" />
+    <file path="/Dummy.txt" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375085063090" ignored="false" />
     <file path="/userinfo.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374836776030" ignored="false" />
     <file path="/sidebar.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374685513493" ignored="false" />
     <file path="/loginPage.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374531032083" ignored="false" />
@@ -71,6 +73,7 @@
     <file path="/detectHashTags.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374909471785" ignored="false" />
     <file path="/retweet.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375016851396" ignored="false" />
     <file path="/hello.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375026914903" ignored="false" />
+    <file path="/FriendRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375084793730" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,22 +154,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addTweet.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/addTweet.js">
+      <file leaf-file-name="getUserTweetData.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
+            <state line="34" column="45" selection-start="2959" selection-end="2959" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1375081927581" expanded="false" signature="2007:2025" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FriendRepository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="29" selection-start="3648" selection-end="3648" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getUserTweetData.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js">
+      <file leaf-file-name="FriendController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/FriendController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="46" selection-start="3002" selection-end="3002" vertical-scroll-proportion="0.54022986">
-              <folding>
-                <marker date="1375081927581" expanded="false" signature="2007:2025" placeholder="..." />
-              </folding>
+            <state line="70" column="1" selection-start="3174" selection-end="3174" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,10 +192,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="4" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
+            <state line="28" column="23" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.647651">
               <folding />
             </state>
           </provider>
@@ -191,7 +203,7 @@
       </file>
       <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
             <state />
           </provider>
           <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
@@ -202,7 +214,7 @@
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
             <state />
           </provider>
         </entry>
@@ -220,15 +232,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="2" column="34" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="11" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -252,8 +255,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/model/Tweet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp" />
@@ -263,11 +264,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/HttpErrorController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/FriendController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
       </list>
     </option>
   </component>
@@ -1009,9 +1012,9 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1024,7 +1027,63 @@
       <recent name="com.springapp.mvc.interceptors" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 7.0 - C1">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7.0 - C2">
+    <configuration default="false" name="AppTests.testImageUpload" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springapp.mvc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TwiMini" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.springapp.mvc" />
+      <option name="MAIN_CLASS_NAME" value="com.springapp.mvc.AppTests" />
+      <option name="METHOD_NAME" value="testImageUpload" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ImageTests.testImageUpload" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springapp.mvc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TwiMini" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.springapp.mvc" />
+      <option name="MAIN_CLASS_NAME" value="com.springapp.mvc.ImageTests" />
+      <option name="METHOD_NAME" value="testImageUpload" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="home.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 7.0">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WEB-INF/pages/home.jsp" />
       <deployment>
@@ -1101,62 +1160,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="false" name="AppTests.testImageUpload" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.springapp.mvc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TwiMini" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.springapp.mvc" />
-      <option name="MAIN_CLASS_NAME" value="com.springapp.mvc.AppTests" />
-      <option name="METHOD_NAME" value="testImageUpload" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ImageTests.testImageUpload" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.springapp.mvc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TwiMini" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.springapp.mvc" />
-      <option name="MAIN_CLASS_NAME" value="com.springapp.mvc.ImageTests" />
-      <option name="METHOD_NAME" value="testImageUpload" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -1180,6 +1183,19 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -1210,19 +1226,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -1245,13 +1248,6 @@
       </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1271,6 +1267,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
@@ -1415,6 +1418,7 @@
       </method>
     </configuration>
     <configuration default="false" name="Tomcat 7.0 - C2" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0">
+      <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="TwiMini:war exploded">
@@ -1573,12 +1577,12 @@
     </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="JUnit.AppTests" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0 - C1" />
-      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0 - C2" />
-      <item index="3" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0 - C3" />
-      <item index="4" class="java.lang.String" itemvalue="Tomcat Server.home.jsp" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.AppTests.testImageUpload" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.ImageTests.testImageUpload" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.AppTests.testImageUpload" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ImageTests.testImageUpload" />
+      <item index="3" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0 - C1" />
+      <item index="4" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0 - C2" />
+      <item index="5" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7.0 - C3" />
+      <item index="6" class="java.lang.String" itemvalue="Tomcat Server.home.jsp" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -1640,7 +1644,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="-4" width="1317" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1649,7 +1653,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4376013" sideWeight="0.50039524" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40680712" sideWeight="0.50039524" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26640317" sideWeight="0.14100486" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985157" sideWeight="0.67169" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1661,8 +1665,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912782" sideWeight="0.70757735" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21501976" sideWeight="0.57374394" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4262561" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3193676" sideWeight="0.6337115" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36628848" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1737,18 +1741,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="29" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.24764891" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TweetController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="3736" selection-end="3736" vertical-scroll-proportion="-17.451612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/retweet.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" />
@@ -1763,9 +1755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="120016" selection-start="120016" selection-end="120016" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
+        <state line="0" column="120016" selection-start="120016" selection-end="120016" vertical-scroll-proportion="-0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.min.css">
@@ -1775,9 +1765,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/addTweet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="20" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java">
@@ -1801,18 +1789,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="4" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
-      </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
@@ -1820,7 +1798,10 @@
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
         <state />
       </provider>
     </entry>
@@ -1849,10 +1830,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getUserTweetData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="46" selection-start="3002" selection-end="3002" vertical-scroll-proportion="0.54022986">
+        <state line="34" column="45" selection-start="2959" selection-end="2959" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1375081927581" expanded="false" signature="2007:2025" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="29" selection-start="3648" selection-end="3648" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/FriendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="1" selection-start="3174" selection-end="3174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="23" selection-start="1691" selection-end="1691" vertical-scroll-proportion="0.647651">
+          <folding />
         </state>
       </provider>
     </entry>

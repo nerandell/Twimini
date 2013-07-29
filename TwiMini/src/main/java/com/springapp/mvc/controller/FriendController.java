@@ -61,4 +61,11 @@ public class FriendController {
         log.info("Unfollow follower: " + toUnfollow + " for user " + username);
     }
 
+    @RequestMapping(value = "MiniTwitter/API/friendships/exists", method = RequestMethod.GET)
+    @ResponseBody
+    public boolean existsFriendShip(@RequestParam("following") String following, HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        log.info("Cheking if current user: " + username + " follows " + following);
+        return friendRepository.existsFriendShip(username, following);
+    }
 }
