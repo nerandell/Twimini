@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/hello.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -136,9 +134,9 @@
       <file leaf-file-name="getTweetData.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="149" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.54022986">
+            <state line="29" column="29" selection-start="2036" selection-end="2036" vertical-scroll-proportion="0.6551724">
               <folding>
-                <marker date="1375080919589" expanded="false" signature="1945:1963" placeholder="..." />
+                <marker date="1375081321901" expanded="false" signature="1945:1963" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -1664,7 +1662,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21501976" sideWeight="0.57374394" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4262561" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4262561" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1851,9 +1849,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="149" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.54022986">
+        <state line="29" column="29" selection-start="2036" selection-end="2036" vertical-scroll-proportion="0.6551724">
           <folding>
-            <marker date="1375080919589" expanded="false" signature="1945:1963" placeholder="..." />
+            <marker date="1375081321901" expanded="false" signature="1945:1963" placeholder="..." />
           </folding>
         </state>
       </provider>
