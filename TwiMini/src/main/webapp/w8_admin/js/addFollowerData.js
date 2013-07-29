@@ -57,7 +57,7 @@ function getFollowing(username,currentLoggedUser) {
                 });
             }
             else {
-                htmlContent.push('<div><a><span class="label label-success" onclick="follow(\''+relationship.username+'\',this)">Follow</span></a></div>');
+                htmlContent.push('<div><a class="switch" href="#"><span class="label label-success" onclick="follow(\''+relationship.username+'\',this)">Follow</span></a></div>');
             }
             htmlContent.push('</div></div>')
             var content = htmlContent.join("");
