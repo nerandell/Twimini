@@ -73,6 +73,13 @@ public class UserController {
         return userRepository.searchForUsers(query);
     }
 
+    @RequestMapping(value="MiniTwitter/API/isPresent", method = RequestMethod.GET)
+    @ResponseBody
+    public boolean isUserPresent(@RequestParam("username") String username, HttpServletRequest httpServletRequest){
+        System.out.println("Checking if user is present!");
+        return userRepository.isUserPresent(username);
+    }
+
 
     public String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);

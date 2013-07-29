@@ -31,14 +31,18 @@
                                 <div id="register-partial-container">
                                     <div id="register-partial">
                                         <div id="register-name">
-                                            <input type="text" class="input-block-level signUp-class-inputs" style="display: none;" name="username" placeholder="Username">
-                                            <input type="text" class="input-block-level signUp-class-inputs" style="display: none;" name="name" placeholder="Full name">
-                                            <input type="text" class="input-block-level signUp-class-inputs" style="display: none;" name="email" placeholder="Email address">
-                                            <input type="password" class="input-block-level signUp-class-inputs" style="display: none;" name="password" placeholder="Password">
-                                            <%--<input type="text" class="input-block-level signUp-class-inputs" name="username" placeholder="Username">--%>
-                                            <%--<input type="text" class="input-block-level signUp-class-inputs" name="name" placeholder="Full name">--%>
-                                            <%--<input type="text" class="input-block-level signUp-class-inputs" name="email" placeholder="Email address">--%>
-                                            <%--<input type="password" class="input-block-level signUp-class-inputs" name="password" placeholder="Password">--%>
+                                            <input type="text" name="username" class="input-modxlarge signUp-class-inputs" style="display: none;" placeholder="Username" id="username-box">
+                                            <i class="signUp-class-inputs pull-right mid-icon" style="display: none;" id="username-check"></i>
+                                        <%--  --%>
+                                            <input type="text" name="name" class="input-modxlarge signUp-class-inputs" style="display: none;" placeholder="Full name" id="name-box">
+                                            <i class="signUp-class-inputs pull-right mid-icon" style="display: none;" id="name-check"></i>
+                                    <%--  --%>
+                                            <input type="text" name="email" class="input-modxlarge signUp-class-inputs" style="display: none;" placeholder="Email address" id="email-box">
+                                            <i class="signUp-class-inputs pull-right mid-icon" style="display: none;" id="email-check"></i>
+                                        <%--  --%>
+                                            <input type="password" name="password" class="input-modxlarge signUp-class-inputs" style="display: none;" placeholder="Password" id="password-box">
+                                            <i class=" signUp-class-inputs pull-right mid-icon" style="display: none;" id="password-check"></i>
+                                        <%--  --%>
                                         </div>
                                     </div>
                                     <div id="signUp-button-container" onclick="signUpClicked()">
@@ -53,9 +57,9 @@
                                     <div id="login-partial">
                                         <div id="login-name">
                                             <input type="text" class="input-block-level logIn-class-inputs" style="display: none;" name="username" placeholder="Username">
+                                        <%--  --%>
                                             <input type="password" class="input-block-level logIn-class-inputs" style="display: none;" name="password" placeholder="Password">
-                                            <%--<input type="text" class="input-block-level logIn-class-inputs" name="username" placeholder="Username">--%>
-                                            <%--<input type="password" class="input-block-level logIn-class-inputs" name="password" placeholder="Password">--%>
+                                        <%--  --%>
                                             <label class="checkbox logIn-class-inputs" style="display: none;" >
                                                 <input type="checkbox" value="remember-me"> Remember me
                                             </label>
@@ -88,6 +92,7 @@
     </script>
     <script src="../../w8_admin/bootstrap/js/bootstrap.min.js"></script>
 
+
     <!--page-specific scripts-->
     <script src="../../w8_admin/js/loginPageScript.js"></script>
     <script>
@@ -95,6 +100,35 @@
             $('#page-content').css("min-height",($(window).height() - 100));
         }
         $(document).load(adjustPageContentHeight());
+    </script>
+    <script>
+        var timer;
+        $('#username-box').keypress(function(event){
+            if(timer){
+                clearTimeout(timer);
+            }
+
+            timer = setTimeout(function(event){
+                console.log("howdy!");
+                username = $('#username-box').val();
+                //////////////////////////// here's the ajax request //////////////////////////////
+                $.getJSON("/MiniTwitter/API/isPresent?"+"username="+username, function(isUserPresent) {
+                    console.log("Into ajax call");
+                    console.log(isUserPresent);
+                    if (isUserPresent==true){
+                        $("#username-check").removeClass("icon-ok");
+                        $("#username-check").addClass("icon-remove");
+                        $("#username-check").css("margin-top","8px");
+                    }
+                    else{
+                        $("#username-check").removeClass("icon-remove");
+                        $("#username-check").addClass("icon-ok");
+                        $("#username-check").css("margin-top","8px");
+                    }
+                });
+                //////////////////////////// ----------------------- //////////////////////////////
+            }, 500);
+        });
     </script>
 
 </body>

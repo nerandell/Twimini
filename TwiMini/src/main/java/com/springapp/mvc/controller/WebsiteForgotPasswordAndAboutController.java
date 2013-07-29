@@ -82,9 +82,8 @@ public class WebsiteForgotPasswordAndAboutController {
     }
 
     @RequestMapping(value="MiniTwitter/Website/about", method= RequestMethod.GET)
-    public String aboutPage(ModelMap m) {
-        m.addAttribute("message","about page..");
-        return "hello";
+    public String aboutPage() {
+        return "about";
     }
 
     public String randomPasswordGenerator(){
