@@ -1,4 +1,5 @@
 function getTweetData(offset,username) {
+
     $.getJSON("/MiniTwitter/API/statuses/home_timeline?"+"offset="+offset, function(data) {
         var items = [];
         $.each(data, function(array, tweet) {

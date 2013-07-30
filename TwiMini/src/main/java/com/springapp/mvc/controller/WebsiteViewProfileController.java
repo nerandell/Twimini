@@ -46,11 +46,12 @@ public class WebsiteViewProfileController {
             modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
             modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
             modelAndView.addObject("num_of_tweets", tweets.size());
+            return modelAndView;
         }
         catch (Exception e) {
             log.error(e.toString());
+            return new ModelAndView("errorPageTemplate");
         }
-        return modelAndView;
     }
 
     @RequestMapping(value = "MiniTwitter/Website/{id}/following", method = RequestMethod.GET)
