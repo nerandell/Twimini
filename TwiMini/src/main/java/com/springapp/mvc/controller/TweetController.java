@@ -3,6 +3,9 @@ package com.springapp.mvc.controller;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.AdviceMode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.apache.log4j.Logger;
@@ -13,6 +16,7 @@ import java.net.URLDecoder;
 import java.util.List;
 
 @Controller
+@EnableCaching(mode = AdviceMode.ASPECTJ)
 public class TweetController {
 
     private final TweetRepository tweetRepository;
@@ -46,6 +50,7 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/user_timeline", method = RequestMethod.GET)
     @ResponseBody
+    @Cacheable("defaultCache")
     public List<Tweet> fetchUserTimeline(@RequestParam("username") String username,@RequestParam("offset") long offset) {
         log.info("Fetching timeline for user " + username);
         return tweetRepository.fetchUserTimeline(username, offset);
@@ -53,6 +58,7 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/home_timeline", method = RequestMethod.GET)
     @ResponseBody
+    @Cacheable("defaultCache")
     public List<Tweet> fetchHomeTimeline(@RequestParam("offset") long offset, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
         return tweetRepository.fetchHomeTimeline(username, offset);

@@ -1,21 +1,11 @@
 package com.springapp.mvc.data;
 
-/**
- * Created with IntelliJ IDEA.
- * User: root
- * Date: 7/10/13
- * Time: 8:56 PM
- * To change this template use File | Settings | File Templates.
- */
-
-
-import com.springapp.mvc.model.Tweet;
+import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import com.springapp.mvc.model.User;
 
 import java.util.List;
 
@@ -43,7 +33,6 @@ public class UserRepository {
     }
 
     public void modifyUser(String userName, String name, String email, String password) {
-        //To change body of created methods use File | Settings | File Templates.
         String encodedPassword = encodePassword(password);
         jdbcTemplate.update("UPDATE users set name=?,email=?,password=? where username=?", new Object[]{name,email,encodedPassword,userName});
     }
@@ -83,7 +72,7 @@ public class UserRepository {
         catch (Exception e){
             return true;
         }
-        return false;  //To change body of created methods use File | Settings | File Templates.
+        return false;
     }
 
     public boolean isEmailPresent(String email) {

@@ -1,7 +1,10 @@
 package com.springapp.mvc.data;
 
+import com.google.code.ssm.api.ParameterValueKeyProvider;
+import com.google.code.ssm.api.ReadThroughSingleCache;
 import com.springapp.mvc.model.Tweet;
 import org.apache.log4j.Logger;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,6 +17,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Aspect
 @Repository
 public class TweetRepository {
     static Logger log = Logger.getLogger(TweetRepository.class);
@@ -38,7 +42,7 @@ public class TweetRepository {
                 new Object[]{tweetId}, new BeanPropertyRowMapper<>(Tweet.class));
     }
 
-    public List<Tweet> fetchUserTimeline(String username, long offset) {
+    public List<Tweet> fetchUserTimeline(String username,long offset) {
         return jdbcTemplate.query("((select *,null as originalId from tweets where username=?) " +
                 "UNION " +
                 "(select id,retweets.username as username,tweets.tweet,retweets.timestamp ,tweets.username as originalId from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=?)) " +

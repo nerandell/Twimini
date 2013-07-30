@@ -1,16 +1,17 @@
 package com.springapp.mvc.data;
 
-import com.springapp.mvc.model.Friend;
-import org.apache.commons.codec.digest.DigestUtils;
+import com.springapp.mvc.ImageSettings;
 import org.apache.log4j.Logger;
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.AdviceMode;
 import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
-import com.springapp.mvc.model.User;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,9 +20,6 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.List;
 
 @Repository
 public class ImageRepository{
@@ -57,8 +55,10 @@ public class ImageRepository{
         }
     }
 
+    @Cacheable("defaultCache")
     public byte[] getImage(String username) {
         String query = "select image from images where username='"+username+"'";
+        log.info("Getting image of user "+username);
         return jdbcTemplate.query(query, new ResultSetExtractor<byte[]>() {
             @Override
             public byte[] extractData(ResultSet resultSet) throws SQLException, DataAccessException {
@@ -73,6 +73,7 @@ public class ImageRepository{
 
     public void updateImage(final String username, String path) {
         final File file = new File(path);
+        log.info("Updating image of user "+username);
         try {
             final FileInputStream fis = new FileInputStream(file);
             String query = "update images set image=? where username=?";
