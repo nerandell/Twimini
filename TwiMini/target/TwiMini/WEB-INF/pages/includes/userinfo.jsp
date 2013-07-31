@@ -13,21 +13,28 @@
         <div class="widget-box ">
             <div class="widget-body">
                 <div class="widget-main no-padding">
-                    <form>
+                    <form target="hiddenIframe" method="post" action="/MiniTwitter/API/statuses/update" id="tweetForm" enctype="multipart/form-data">
                         <div class="form-actions input-append">
-                            <input placeholder="Compose a tweet..." type="text" class="width-75" id="tweet" />
-                            <button class="btn btn-small btn-info no-radius" onclick="postTweet()">
+                            <input placeholder="Compose a tweet..." name="status" type="text" class="width-75" id="tweet" />
+                            <button class="btn btn-info no-radius" onclick="uploadFile(); return false;">
+                                <i class="icon-camera"></i>
+                            </button>
+                            <button class="btn btn-info no-radius">
+                                <i class="icon-location-arrow"></i>
+                            </button>
+                            <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); window.location.reload();">
                                 <i class="icon-pencil"></i>
                                 <span class="hidden-phone">Tweet</span>
                             </button>
+                            <input id="upload" name="files[]" type="file" multiple style="visibility:hidden;"/>
                         </div>
                     </form>
+                    <iframe name="hiddenIframe" id="hiddenIframe" style="display:none;"></iframe>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="clearfix">
     <div class="grid3">
         <a href="/MiniTwitter/Website/${info.username}">
@@ -53,3 +60,10 @@
     </div>
 
 </div>
+
+<script type="text/javascript">
+    function uploadFile() {
+        var element = document.getElementById("upload");
+        element.click();
+    }
+</script>

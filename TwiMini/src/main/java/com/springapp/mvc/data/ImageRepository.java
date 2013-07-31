@@ -17,9 +17,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class ImageRepository{
@@ -71,6 +74,23 @@ public class ImageRepository{
         });
     }
 
+
+    public List<byte[]> getTweetImage(long id) {
+        String query = "select image from tweetimages where id='"+id+"'";
+        log.info("Getting image of user "+id);
+        return jdbcTemplate.query(query, new ResultSetExtractor<List<byte[]>>() {
+            @Override
+            public List<byte[]> extractData(ResultSet resultSet) throws SQLException, DataAccessException {
+                List<byte[]> images = new ArrayList<byte[]>();
+                while(resultSet.next()) {
+                    byte[] imgBytes = resultSet.getBytes(1);
+                    images.add(imgBytes);
+                }
+                return images;
+            }
+        });
+    }
+
     public void updateImage(final String username, String path) {
         final File file = new File(path);
         log.info("Updating image of user "+username);
@@ -94,4 +114,31 @@ public class ImageRepository{
             e.printStackTrace();
         }
     }
+
+    public void setTweetImage(final long id, String path) {
+        final File file = new File(path);
+        try {
+            log.info("Uploading image file");
+            final FileInputStream fis = new FileInputStream(file);
+            log.info(file.length());
+            String query = "insert into tweetimages values (?,?)";
+            jdbcTemplate.execute(query, new PreparedStatementCallback<Boolean>() {
+                @Override
+                public Boolean doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
+                    preparedStatement.setLong(1,id);
+                    preparedStatement.setBinaryStream(2, fis, (int) file.length());
+                    Boolean returnVal =  preparedStatement.execute();
+                    preparedStatement.close();
+                    return returnVal;
+                }
+            });
+            fis.close();
+            file.delete();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

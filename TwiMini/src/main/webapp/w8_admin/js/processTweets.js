@@ -11,7 +11,7 @@ function urlify(text) {
             var youtubeUrl = url.match(/watch\?v=([a-zA-Z0-9\-_]+)/);
             var vimeoUrl = url.match(/^http:\/\/(www\.)?vimeo\.com\/(clip\:)?(\d+).*$/);
             if( youtubeUrl ){
-                return '<div></div><iframe src="http://www.youtube.com/embed/'+youtubeUrl[1]+'?rel=0" height="240" width="320" allowfullscreen="" frameborder="0"></iframe></div>'
+                return '<div><iframe src="http://www.youtube.com/embed/'+youtubeUrl[1]+'?rel=0" height="240" width="320" allowfullscreen="" frameborder="0"></iframe></div>'
             }
             else if(url.substring(0,3)=="www")
                 return '<a href="http://' + url + '">' + url + '</a>';
@@ -21,7 +21,7 @@ function urlify(text) {
             var youtubeUrl = www.match(/watch\?v=([a-zA-Z0-9\-_]+)/);
             var vimeoUrl = www.match(/^http:\/\/(www\.)?vimeo\.com\/(clip\:)?(\d+).*$/);
             if( youtubeUrl ){
-                return '<div></div><iframe src="http://www.youtube.com/embed/'+youtubeUrl[1]+'?rel=0" height="240" width="320" allowfullscreen="" frameborder="0"></iframe></div>'
+                return '<div><iframe src="http://www.youtube.com/embed/'+youtubeUrl[1]+'?rel=0" height="240" width="320" allowfullscreen="" frameborder="0"></iframe></div>'
             }
             else if(www.substring(0,3)=="www")
                 return '<a href="http://' + www + '">' + www + '</a>';

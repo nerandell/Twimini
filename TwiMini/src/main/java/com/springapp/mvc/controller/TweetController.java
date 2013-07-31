@@ -1,5 +1,6 @@
 package com.springapp.mvc.controller;
 
+import com.springapp.mvc.data.ImageRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.model.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,14 @@ import org.springframework.context.annotation.AdviceMode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.apache.log4j.Logger;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -20,11 +25,14 @@ import java.util.List;
 public class TweetController {
 
     private final TweetRepository tweetRepository;
+    private final ImageRepository imageRepository;
+
     static Logger log = Logger.getLogger(TweetRepository.class);
 
     @Autowired
-    public TweetController(TweetRepository repository) {
-        this.tweetRepository = repository;
+    public TweetController(TweetRepository tweetRepository, ImageRepository imageRepository) {
+        this.tweetRepository = tweetRepository;
+        this.imageRepository = imageRepository;
     }
 
     @RequestMapping(value = "MiniTwitter/API/statuses/show", method = RequestMethod.GET)
@@ -43,9 +51,23 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/update", method = RequestMethod.POST)
     @ResponseBody
-    public long addTweet(@ModelAttribute("status") String status,HttpServletRequest httpServletRequest) {
+    public long addTweet(@RequestParam("files[]") ArrayList<MultipartFile> files, String status,HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
-        return tweetRepository.addTweet(username,status);
+        long id = tweetRepository.addTweet(username,status);
+        for(MultipartFile file : files) {
+            FileOutputStream outputStream = null;
+            String filePath = System.getProperty("java.io.tmpdir") + "/" + file.getOriginalFilename();
+            System.out.println(filePath);
+            try {
+                outputStream = new FileOutputStream(new File(filePath));
+                outputStream.write(file.getBytes());
+                outputStream.close();
+            } catch (Exception e) {
+                System.out.println("Error while saving file");
+            }
+            imageRepository.setTweetImage(id,filePath);
+        }
+        return id;
     }
 
     @RequestMapping(value = "MiniTwitter/API/statuses/user_timeline", method = RequestMethod.GET)

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.URLDecoder;
+import java.util.List;
 
 @Aspect
 @Controller
@@ -22,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ImageController implements ImageSettings{
 
     private final ImageRepository imageRepository;
-    static Logger log = Logger.getLogger(ImageRepository.class);
+    static Logger log = Logger.getLogger(ImageController.class);
 
     @Autowired
     public ImageController(ImageRepository imageRepository) {
@@ -44,16 +46,23 @@ public class ImageController implements ImageSettings{
         imageRepository.updateImage(username,path);
     }
 
-
     @RequestMapping(value = "MiniTwitter/API/users/profile_image", method = RequestMethod.GET)
     @ResponseBody
     @Cacheable("defaultCache")
     public byte[] getImage(@RequestParam("username") String username) {
         byte[] image = imageRepository.getImage(username);
+        log.info(image);
         if(image!=null) return image;
         else {
             log.info("Image not found for user "+username);
             return imageRepository.getImage("dummy");
         }
+    }
+
+    @RequestMapping(value = "MiniTwitter/API/tweets/getImages", method = RequestMethod.GET)
+    @ResponseBody
+    @Cacheable("defaultCache")
+    public List<byte[]> getTweetImage(@RequestParam("id") long id) {
+        return imageRepository.getTweetImage(id);
     }
 }
