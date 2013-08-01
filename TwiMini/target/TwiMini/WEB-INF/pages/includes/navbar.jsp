@@ -29,11 +29,7 @@
                     </a>
                 </li>
 
-                <li class="green">
-                    <a href="#">
-                        <i class="icon-cog"></i>
-                    </a>
-                </li>
+                <%@ include file="settingsModal.jsp" %>
 
                 <li class="light-blue user-profile">
                     <a data-toggle="dropdown" href="#" class="user-menu dropdown-toggle">
@@ -48,7 +44,7 @@
 
                     <ul class="pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer" id="user_menu">
                         <li>
-                            <a href="#">
+                            <a data-toggle="modal" href="#myModal">
                                 <i class="icon-cog"></i>
                                 Settings
                             </a>

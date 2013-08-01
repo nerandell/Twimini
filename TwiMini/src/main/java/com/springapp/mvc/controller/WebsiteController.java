@@ -52,6 +52,7 @@ public class WebsiteController {
     @RequestMapping(method= RequestMethod.POST)
     public String verifyUser(@RequestParam("username") String username, @RequestParam("password") String password,
                              ModelMap model, HttpServletResponse httpServletResponse) {
+        System.out.println("Verifying user");
         log.debug("Verifying user");
         if (userRepository.isUserValid(username, password)){
             String token = UUID.randomUUID().toString();

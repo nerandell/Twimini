@@ -19,7 +19,7 @@
 
 <div class="page-header position-relative">
     <h1>
-        <img class="nav-user-photo" src="/MiniTwitter/API/users/profile_image?username=${info.username}" height="50" width="40" alt="Jason's Photo" />
+        <img class="nav-user-photo" src="/MiniTwitter/API/users/profile_image?username=${info.username}" style="height: 50px" alt="Jason's Photo" />
         ${info.name}
         <small>
             @${info.username}

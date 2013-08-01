@@ -6,6 +6,7 @@ import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,8 +35,16 @@ public class UserController {
     public HashMap fetchUser(@PathVariable("id") String userName) {
         HashMap userDetails = new HashMap();
         System.out.println("Fetching User Details for: " + userName);
-        userDetails.put("tweets", tweetRepository.fetchTweets(userName));
-        userDetails.put("info",userRepository.fetchUser(userName));
+        try{
+            userDetails.put("tweets", tweetRepository.fetchTweets(userName));
+            userDetails.put("info",userRepository.fetchUser(userName));
+        }
+        catch (CannotGetJdbcConnectionException e){
+            System.out.println("--> Error encountered: "+e);
+            System.out.println("--> fetchUser function, class "+ this.getClass().getName() );
+            userDetails.put("Error","CannotGetJdbcConnectionException");
+            return userDetails;
+        }
         return userDetails;
     }
 
@@ -43,11 +52,18 @@ public class UserController {
     @ResponseBody
     public void add(@RequestBody Map<String, String> user) {
         System.out.println("Creating new user: " + user.get("username") + " " + user.get("password"));
-        if ( userRepository.isUserPresent(user.get("username")) ) {
-            return;
+        try{
+            if ( userRepository.isUserPresent(user.get("username")) ) {
+                return;
+            }
+            userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"));
         }
-        userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"));
-    }
+        catch (CannotGetJdbcConnectionException e){
+            System.out.println("--> Error encountered: "+e);
+            System.out.println("--> add function, class "+ this.getClass().getName() );
+        }
+
+        }
 
     @RequestMapping(value = "MiniTwitter/API/account/settings", method = RequestMethod.POST)
     @ResponseBody
@@ -64,13 +80,19 @@ public class UserController {
         return userRepository.searchForUsers(query);
     }
 
-    @RequestMapping(value="MiniTwitter/API/isPresent", method = RequestMethod.GET)
+    @RequestMapping(value="MiniTwitter/API/isUserPresent", method = RequestMethod.GET)
     @ResponseBody
     public boolean isUserPresent(@RequestParam("username") String username, HttpServletRequest httpServletRequest){
         System.out.println("Checking if user is present!");
         return userRepository.isUserPresent(username);
     }
 
+    @RequestMapping(value="MiniTwitter/API/isEmailPresent", method = RequestMethod.GET)
+    @ResponseBody
+    public boolean isEmailPresent(@RequestParam("email") String email, HttpServletRequest httpServletRequest){
+        System.out.println("Checking if email is present!");
+        return userRepository.isEmailPresent(email);
+    }
 
     public String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);

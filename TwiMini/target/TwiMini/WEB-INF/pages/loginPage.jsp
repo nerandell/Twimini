@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,13 @@
     <link href="../../w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="notify-wrapper">
+        <div class="error-msg-container" style="display: none;">
+            <div class="alert-without-cross alert-error error-msg-box" id="message-to-be-displayed">
+                error showing
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -27,11 +35,11 @@
                             <div class="subtitle">
                                 Stalk and be stalked
                             </div>
-                            <form class="form-signing-up" action="/MiniTwitter/Website/signUp" method="post">
+                            <form class="form-signing-up" action="/MiniTwitter/Website/signUp" method="post" id="form-signing-up">
                                 <div id="register-partial-container">
                                     <div id="register-partial">
                                         <div id="register-name">
-                                            <input type="text" name="username" class="input-modxlarge signUp-class-inputs" style="display: none;" placeholder="Username" id="username-box">
+                                            <input type="text" name="username" class="input-modxlarge signUp-class-inputs" style="display: none;" placeholder="Username" id="username-box" >
                                             <i class="signUp-class-inputs pull-right mid-icon" style="display: none;" id="username-check"></i>
                                         <%--  --%>
                                             <input type="text" name="name" class="input-modxlarge signUp-class-inputs" style="display: none;" placeholder="Full name" id="name-box">
@@ -101,35 +109,7 @@
         }
         $(document).load(adjustPageContentHeight());
     </script>
-    <script>
-        var timer;
-        $('#username-box').keypress(function(event){
-            if(timer){
-                clearTimeout(timer);
-            }
-
-            timer = setTimeout(function(event){
-                console.log("howdy!");
-                username = $('#username-box').val();
-                //////////////////////////// here's the ajax request //////////////////////////////
-                $.getJSON("/MiniTwitter/API/isPresent?"+"username="+username, function(isUserPresent) {
-                    console.log("Into ajax call");
-                    console.log(isUserPresent);
-                    if (isUserPresent==true){
-                        $("#username-check").removeClass("icon-ok");
-                        $("#username-check").addClass("icon-remove");
-                        $("#username-check").css("margin-top","8px");
-                    }
-                    else{
-                        $("#username-check").removeClass("icon-remove");
-                        $("#username-check").addClass("icon-ok");
-                        $("#username-check").css("margin-top","8px");
-                    }
-                });
-                //////////////////////////// ----------------------- //////////////////////////////
-            }, 500);
-        });
-    </script>
+    <script src="../../w8_admin/js/signUpFormValidation.js"></script>
 
 </body>
 </html>

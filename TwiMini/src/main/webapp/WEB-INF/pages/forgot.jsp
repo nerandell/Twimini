@@ -66,6 +66,9 @@
     <script src="../../w8_admin/js/pageContentMinHeight.js"></script>
     <script>
         $(document).load(adjustPageContentHeight());
+        setTimeout(function(){
+            $(".error-msg-container").css("display", "none");
+        }, 5000);
     </script>
 
 </body>
