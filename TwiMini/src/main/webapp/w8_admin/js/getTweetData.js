@@ -1,7 +1,24 @@
+function loadImages(id) {
+    console.log("Loading images")
+    $('#gallery').html("");
+    $.ajax({
+        url:"/MiniTwitter/API/tweets/getImages?id="+id,
+        type: 'GET',
+        async: false,
+        success: function(result){
+            $.each(result, function(key, image) {
+                var gallery = $('#gallery');
+                console.log(gallery);
+                $('<a data-gallery="gallery" href="data:image/png;base64,'+image+'" title=""/>')
+                    .append($('<img>').prop('src', 'data:image/png;base64,'+image))
+                    .appendTo(gallery);
+            });
+        }});
+}
+
 function getTweetData(offset,username) {
 
     $.getJSON("/MiniTwitter/API/statuses/home_timeline?"+"offset="+offset, function(data) {
-        var items = [];
         $.each(data, function(array, tweet) {
             var d = new Date(tweet.timestamp);
             var curr_date = d.getDate();
@@ -54,7 +71,7 @@ function getTweetData(offset,username) {
             async: false,
             success: function(result){
                 $.each(result, function(key, image) {
-                    data.push('<img style="height: 240px" src="data:image/png;base64,'+image+'"></img>')
+                    data.push('<a data-slideshow="5000" onclick="loadImages('+id+')" href="#modal-gallery" data-toggle="modal" data-selector="#gallery [data-gallery=gallery]"><img style="height: 240px" src="data:image/png;base64,'+image+'"></img></a>');
                     data.push('&nbsp;');
                 });
             }});
@@ -62,3 +79,5 @@ function getTweetData(offset,username) {
         return data;
     }
 }
+
+

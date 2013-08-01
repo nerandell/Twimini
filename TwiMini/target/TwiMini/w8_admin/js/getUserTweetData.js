@@ -21,6 +21,9 @@ function getUserTweetData(offset, username) {
             data.push('</span>');
             data.push('</div>');
             data.push('<div class="name">');
+            if(tweet.originalId===null) data.push('<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>');
+            else data.push('<a href="/MiniTwitter/Website/'+tweet.originalId+'">'+tweet.originalId+'</a>');
+            data.push('</div>');
             if(tweet.originalId===null) {
                 data.push('<div class="text">'+urlify(tweet.tweet)+'</div>');
                 data = addImages(data, tweet.id);
