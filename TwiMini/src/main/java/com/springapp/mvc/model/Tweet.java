@@ -20,7 +20,26 @@ public class Tweet {
     public Timestamp timestamp;
     public String originalId;
     public String location;
-    public float latitude;
+    public Double latitude;
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public Double longitude;
+
 
     public String getLocation() {
         return location;
@@ -30,23 +49,6 @@ public class Tweet {
         this.location = location;
     }
 
-    public float getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(float latitude) {
-        this.latitude = latitude;
-    }
-
-    public float longitude;
-
-    public float getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(float longitude) {
-        this.longitude = longitude;
-    }
 
     public String getOriginalId() {
         return originalId;

@@ -48,7 +48,10 @@ function getTweetData(offset,username) {
             else {
                 data.push('<div class="text">'+urlify(tweet.tweet)+'<div>');
                 data = addImages(data, tweet.id);
-                data.push('<small class="grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>' +'</small></div></div>');
+                data.push('<small class="text grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a></small>');
+            }
+            if(tweet.location!==null) {
+                data.push('<small class="grey">From '+ '<a href="http://maps.google.com/maps?q=' + tweet.latitude + ',' + tweet.longitude +'">'+tweet.location+'</a>' +'</small>');
             }
             data.push('<div class="tools" style="margin-right: 25px">');
             data.push('<table><tr>');
@@ -64,7 +67,7 @@ function getTweetData(offset,username) {
     });
 
     function addImages(data,id) {
-        data.push('<div class="images"></div>')
+        data.push('<div class="images">')
         $.ajax({
             url:"/MiniTwitter/API/tweets/getImages?id="+id,
             type: 'GET',

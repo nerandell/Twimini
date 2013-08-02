@@ -51,7 +51,7 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/update", method = RequestMethod.POST)
     @ResponseBody
-    public long addTweet(@RequestParam("files[]") ArrayList<MultipartFile> files, String status, String location, float latitude, float longitude, HttpServletRequest httpServletRequest) {
+    public long addTweet(@RequestParam("files[]") ArrayList<MultipartFile> files, String status, String location, Double latitude, Double longitude, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
         long id = tweetRepository.addTweet(username,status,location,latitude,longitude);
         for(MultipartFile file : files) {
