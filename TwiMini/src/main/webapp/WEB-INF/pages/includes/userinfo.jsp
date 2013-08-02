@@ -44,7 +44,7 @@
                             <button class="btn btn-info no-radius" onclick="uploadFile(); return false;">
                                 <i class="icon-camera"></i>
                             </button>
-                            <button class="btn btn-info no-radius" onclick="checkLocation(); return false;">
+                            <button class="btn btn-info no-radius" onclick="getLocation(); return false;">
                                 <i class="icon-location-arrow"></i>
                             </button>
                             <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); window.location.reload();">
@@ -52,6 +52,9 @@
                                 <span class="hidden-phone">Tweet</span>
                             </button>
                             <input id="upload" name="files[]" type="file" multiple style="visibility:hidden;"/>
+                            <input name="location" value="-1" type="text" id="location" style="visibility: hidden;"/>
+                            <input name="latitude" value="-1" type="text" id="latitude" style="visibility: hidden;"/>
+                            <input name="longitude" value="-1" type="text" id="longitude" style="visibility: hidden;"/>
                         </div>
                     </form>
                     <iframe name="hiddenIframe" id="hiddenIframe" style="display:none;"></iframe>
@@ -97,11 +100,57 @@
         element.click();
     }
 
-    function checkLocation() {
-        if (navigator.geolocation)
-        {
-            console.log("Latitude: " + position.coords.latitude +
-                    "<br>Longitude: " + position.coords.longitude);
+    function getLocation() {
+        var geocoder;
+        geocoder = new google.maps.Geocoder();
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        }
+
+        //Get the latitude and the longitude;
+        function successFunction(position) {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            codeLatLng(lat, lng)
+        }
+
+        function errorFunction(){
+            alert("Geocoder failed");
+        }
+
+        function codeLatLng(lat, lng) {
+
+            var latlng = new google.maps.LatLng(lat, lng);
+            geocoder.geocode({'latLng': latlng}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    console.log(results)
+                    if (results[1]) {
+                        //formatted address
+                        //find country name
+                        for (var i=0; i<results[0].address_components.length; i++) {
+                            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+
+                                //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+                                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                                    //this is the object you are looking for
+                                    city= results[0].address_components[i];
+                                    break;
+                                }
+                            }
+                        }
+                        $('#location').val(city.short_name + " " + city.long_name);
+                        $('#latitude').val(lat);
+                        $('#longitude').val(lng);
+                        console.log($('#location').val());
+                    } else {
+                        alert("No results found");
+                    }
+                } else {
+                    alert("Geocoder failed due to: " + status);
+                }
+            });
         }
     }
+
 </script>
