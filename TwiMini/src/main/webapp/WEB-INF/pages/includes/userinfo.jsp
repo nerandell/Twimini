@@ -44,7 +44,7 @@
                             <button class="btn btn-info no-radius" onclick="uploadFile(); return false;">
                                 <i class="icon-camera"></i>
                             </button>
-                            <button class="btn btn-info no-radius">
+                            <button class="btn btn-info no-radius" onclick="checkLocation(); return false;">
                                 <i class="icon-location-arrow"></i>
                             </button>
                             <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); window.location.reload();">
@@ -95,5 +95,13 @@
     function uploadFile() {
         var element = document.getElementById("upload");
         element.click();
+    }
+
+    function checkLocation() {
+        if (navigator.geolocation)
+        {
+            console.log("Latitude: " + position.coords.latitude +
+                    "<br>Longitude: " + position.coords.longitude);
+        }
     }
 </script>

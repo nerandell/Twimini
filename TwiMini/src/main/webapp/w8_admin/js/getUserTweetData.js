@@ -1,3 +1,21 @@
+function loadImages(id) {
+    console.log("Loading images")
+    $('#gallery').html("");
+    $.ajax({
+        url:"/MiniTwitter/API/tweets/getImages?id="+id,
+        type: 'GET',
+        async: false,
+        success: function(result){
+            $.each(result, function(key, image) {
+                var gallery = $('#gallery');
+                console.log(gallery);
+                $('<a data-gallery="gallery" href="data:image/png;base64,'+image+'" title=""/>')
+                    .append($('<img>').prop('src', 'data:image/png;base64,'+image))
+                    .appendTo(gallery);
+            });
+        }});
+}
+
 function getUserTweetData(offset, username) {
     $.getJSON("/MiniTwitter/API/statuses/user_timeline?offset="+offset+"&username="+username, function(data) {
         console.log("Into ajax call")
@@ -52,7 +70,7 @@ function getUserTweetData(offset, username) {
             async: false,
             success: function(result){
                 $.each(result, function(key, image) {
-                    data.push('<img style="height: 200px" src="data:image/png;base64,'+image+'"></img>')
+                    data.push('<a data-slideshow="5000" onclick="loadImages('+id+')" href="#modal-gallery" data-toggle="modal" data-selector="#gallery [data-gallery=gallery]"><img style="height: 240px" src="data:image/png;base64,'+image+'"></img></a>');
                     data.push('&nbsp;');
                 });
             }});

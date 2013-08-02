@@ -15,6 +15,9 @@
     <link href="../../w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="../../w8_admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../w8_admin/themes/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../w8_admin/themes/css/style.css">
+    <link rel="stylesheet" href="../../w8_admin/themes/css/bootstrap-image-gallery.css">
+
 
     <!--[if IE 7]>
     <link rel="stylesheet" href="../../w8_admin/themes/font-awesome/css/font-awesome-ie7.min.css"/>
@@ -33,6 +36,8 @@
     <link rel="stylesheet" href="../../w8_admin/themes/css/w8.min.css" />
     <link rel="stylesheet" href="../../w8_admin/themes/css/w8-responsive.min.css" />
     <link rel="stylesheet" href="../../w8_admin/themes/css/w8-skins.min.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="themes/css/ace-ie.min.css" />
@@ -82,7 +87,6 @@
 
 <!--basic scripts-->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
     window.jQuery || document.write("<script src='themes/js/jquery-1.9.1.min.js'>"+"<"+"/script>");
 </script>
