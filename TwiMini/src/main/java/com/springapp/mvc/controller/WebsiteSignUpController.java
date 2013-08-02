@@ -29,17 +29,11 @@ public class WebsiteSignUpController {
     @RequestMapping(value="MiniTwitter/Website/signUp", method= RequestMethod.POST)
     public String getUserInfoByWebsite(@RequestParam("username") String username, @RequestParam("name") String name, @RequestParam("email") String email,
                                        @RequestParam("password") String password, ModelMap model) throws IOException {
-        System.out.println("This is where I wanna be. Yo!");
-        System.out.println(username);
-        System.out.println(name);
-        System.out.println(email);
-        System.out.println(password);
-
         if ( userRepository.isUserPresent(username) ) {
             model.addAttribute("message","User already present");
             return "errorPageTemplate";
         }
-        userRepository.addUser(username, encodePassword(password), name, email);
+        userRepository.addUser(username, encodePassword(password), name, email, "");
         String redirectUrl = "/MiniTwitter/Website/home";
         return "redirect:" + redirectUrl;
     }

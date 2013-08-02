@@ -56,14 +56,13 @@ public class UserController {
             if ( userRepository.isUserPresent(user.get("username")) ) {
                 return;
             }
-            userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"));
+            userRepository.addUser(user.get("username"), encodePassword(user.get("password")), user.get("name"), user.get("email"),user.get("description"));
         }
         catch (CannotGetJdbcConnectionException e){
             System.out.println("--> Error encountered: "+e);
             System.out.println("--> add function, class "+ this.getClass().getName() );
         }
-
-        }
+    }
 
     @RequestMapping(value = "MiniTwitter/API/account/settings", method = RequestMethod.POST)
     @ResponseBody

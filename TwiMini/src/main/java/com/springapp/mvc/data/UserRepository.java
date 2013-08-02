@@ -22,7 +22,7 @@ public class UserRepository {
     }
 
     public User fetchUser(String username) throws CannotGetJdbcConnectionException {
-        return jdbcTemplate.queryForObject("select username, name, email from users where username=?",
+        return jdbcTemplate.queryForObject("select username, name, email,description from users where username=?",
                 new Object[]{username}, new BeanPropertyRowMapper<>(User.class));
     }
 
@@ -31,8 +31,8 @@ public class UserRepository {
                 new Object[]{}, new BeanPropertyRowMapper<>(User.class));
     }
 
-    public void addUser(String username, String password, String name, String email) throws CannotGetJdbcConnectionException {
-        jdbcTemplate.execute("INSERT INTO users values ('" + username + "', '" + name + "', '" + email + "' , '" + password + "')");
+    public void addUser(String username, String password, String name, String email,String description) throws CannotGetJdbcConnectionException {
+        jdbcTemplate.update("INSERT INTO users values (?,?,?,?)",new Object[]{username,name,email,encodePassword(password),description});
     }
 
     public void modifyUser(String userName, String name, String email, String password) throws CannotGetJdbcConnectionException {

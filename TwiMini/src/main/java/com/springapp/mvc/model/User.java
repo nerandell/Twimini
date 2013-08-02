@@ -17,7 +17,15 @@ public class User {
     public String password;
     public String name;
     public String email;
+    public String description;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getEmail() {
         return email;

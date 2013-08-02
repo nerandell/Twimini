@@ -19,12 +19,18 @@
 
 <div class="page-header position-relative">
     <h1>
-        <img class="nav-user-photo" src="/MiniTwitter/API/users/profile_image?username=${info.username}" style="height: 50px" alt="Jason's Photo" />
+        <img class="nav-user-photo" src="/MiniTwitter/API/users/profile_image?username=${info.username}" style="height: 75px; float: left; padding-right: 10px" alt="Jason's Photo" />
         ${info.name}
         <small>
             @${info.username}
         </small>
+        <div class="grey">
+            <small>
+                ${info.description}
+            </small>
+        </div>
     </h1>
+
 </div><!--/.page-header-->
 
 <div class="row-fluid">

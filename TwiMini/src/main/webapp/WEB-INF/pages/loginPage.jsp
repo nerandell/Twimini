@@ -25,7 +25,7 @@
                     <div class="top">
                         <div class="span4 offset1">
                         <%-- pic here --%>
-                            <img src="../../w8_admin/bootstrap/img/detective%20silhouette.jpg" alt="Detective pic here" id="Welcome pic" width="65%" height="65%"/>
+                            <img src="../../w8_admin/bootstrap/img/detective%20silhouette.jpg" alt="Detective pic here" id="Welcome pic" style="width: 65%; height: 65%"/>
                         </div>
                         <div class="span5 offset1 ">
                             <%-- pic here --%>
