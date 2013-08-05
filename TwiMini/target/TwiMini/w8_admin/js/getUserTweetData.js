@@ -93,7 +93,7 @@ function getUserTweetData(offset, username) {
     });
 
     function addImages(data,id) {
-        data.push('<div class="images"></div>')
+        data.push('<div class="images">')
         $.ajax({
             url:"/MiniTwitter/API/tweets/getImages?id="+id,
             type: 'GET',
@@ -104,6 +104,7 @@ function getUserTweetData(offset, username) {
                     data.push('&nbsp;');
                 });
             }});
+        data.push('</div>');
         return data;
     }
 }
