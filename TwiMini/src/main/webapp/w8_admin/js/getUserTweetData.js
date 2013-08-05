@@ -16,6 +16,31 @@ function loadImages(id) {
         }});
 }
 
+function addMap(latitude,longitude) {
+    var map_canvas = document.getElementById('map_canvas');
+    var myLatlng = new google.maps.LatLng(latitude,longitude);
+    var map_options = {
+        center: new google.maps.LatLng(latitude, longitude),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(map_canvas, map_options);
+
+    window.setTimeout(function(){
+        console.log(myLatlng);
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(myLatlng);
+        marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable: true
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+            map.setCenter(myLatlng);
+        });
+    }, 1000);
+}
+
 function getUserTweetData(offset, username) {
     $.getJSON("/MiniTwitter/API/statuses/user_timeline?offset="+offset+"&username="+username, function(data) {
         console.log("Into ajax call")
@@ -49,7 +74,12 @@ function getUserTweetData(offset, username) {
             else {
                 data.push('<div class="text">'+urlify(tweet.tweet)+'<div>');
                 data = addImages(data, tweet.id);
-                data.push('<small class="grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>' +'</small></div></div>');
+                data.push('<small class="text grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a></small>');
+            }
+            if(tweet.location!==null) {
+                //data.push('<small class="grey">From '+ '<a href="http://maps.google.com/maps?q=' + tweet.latitude + ',' + tweet.longitude +'">'+tweet.location+'</a>' +'</small>');
+                frameSrc = '<a href="http://maps.google.com/maps?q=' + tweet.latitude + ',' + tweet.longitude;
+                data.push('<small class="grey">From '+ '<a data-toggle="modal" href="#MapModal" id="showmap" onclick="addMap('+tweet.latitude+','+tweet.longitude+')">'+tweet.location+'</a>' +'</small>');
             }
             data.push('<div class="tools" style="margin-right: 25px">');
             data.push('<table><tr>');
@@ -57,8 +87,8 @@ function getUserTweetData(offset, username) {
             data.push('<td><a  target="_blank" onclick="return !window.open(this.href, \'Facebook\', \'width=640,height=300\')" href="'+url+'" class="btn btn-minier btn-info"><i class="icon-only icon-facebook"></i></a></td>');
             data.push('<td><a class="btn btn-minier btn-info"><i class="icon-only icon-retweet" onclick="reTweet('+ tweet.id +')"></i></a></td>');
             data.push("</tr></table></div></div></div>");
-            var content = data.join("")
-            $(content).appendTo(".tweets")
+            var content = data.join("");
+            $(content).appendTo(".tweets");
         });
     });
 
@@ -74,7 +104,6 @@ function getUserTweetData(offset, username) {
                     data.push('&nbsp;');
                 });
             }});
-        data.push('</div>');
         return data;
     }
 }

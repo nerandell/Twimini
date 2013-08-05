@@ -43,9 +43,9 @@ public class TweetRepository {
     }
 
     public List<Tweet> fetchUserTimeline(String username,long offset) {
-        return jdbcTemplate.query("((select id,username,tweet,timestamp,null as originalId from tweets where username=?) " +
+        return jdbcTemplate.query("((select id,username,tweet,timestamp,null as originalId, location, latitude, longitude  from tweets where username=?) " +
                 "UNION " +
-                "(select id,retweets.username as username,tweets.tweet,retweets.timestamp ,tweets.username as originalId from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=?)) " +
+                "(select id,retweets.username as username,tweets.tweet,retweets.timestamp ,tweets.username as originalId,location, latitude, longitude  from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=?)) " +
                 "ORDER by timestamp DESC LIMIT 10 OFFSET ?",
                 new Object[]{username,username,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
     }

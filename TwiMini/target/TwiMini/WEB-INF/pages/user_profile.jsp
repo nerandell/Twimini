@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="../../w8_admin/themes/css/w8-skins.min.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="themes/css/ace-ie.min.css" />
