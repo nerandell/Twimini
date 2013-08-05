@@ -31,6 +31,7 @@
 
                 <%@ include file="settingsModal.jsp" %>
                 <%@ include file="MapModal.jsp" %>
+                <%@ include file="HashTagModal.jsp" %>
 
                 <li class="light-blue user-profile">
                     <a data-toggle="dropdown" href="#" class="user-menu dropdown-toggle">

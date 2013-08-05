@@ -30,6 +30,6 @@ function urlify(text) {
         if(mail)
             return "<a href=\"mailto:" + mail + "\">" + mail + "</a>";
         if(twitler)
-            return "<a href=\"/MiniTwitter/API/search/hashtags?query=" + twitler + "&offset=0" + "\">#" + twitler + "</a>";
+            return '<a data-toggle="modal" href="#HashTagModal" id="showHashTags" onclick="initialize('+'\''+twitler +'\''+')">#' + twitler + "</a>";
     });
 }
