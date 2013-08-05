@@ -30,6 +30,7 @@
                 </li>
 
                 <%@ include file="settingsModal.jsp" %>
+                <%@ include file="MapModal.jsp" %>
 
                 <li class="light-blue user-profile">
                     <a data-toggle="dropdown" href="#" class="user-menu dropdown-toggle">
