@@ -106,8 +106,6 @@ public class WebsiteViewProfileController {
         modelAndView.addObject("followers", followers);
         modelAndView.addObject("timeline",timeline);
         modelAndView.addObject("currentUser",currentUser);
-        modelAndView.addObject("currentUserName",currentUser.getName());
-        modelAndView.addObject("currentUserEmail",currentUser.getEmail());
         return modelAndView;
     }
 

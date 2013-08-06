@@ -20,40 +20,40 @@
                         <%--<div class="modal-form-body-side-bar vertical-center">Username</div>--%>
                         <%--<div class="modal-form-body-content-bar">--%>
                         <div class="span2 vertical-center">Username</div>
-                        <div class="span4">
-                            <input type="text" name="username" class="input-modxlarge signUp-class-inputs" placeholder="Username" value="given value" id="username-box" disabled>
+                        <div class="span6">
+                            <input type="text" name="username" class="input-modxxlarge signUp-class-inputs" placeholder="Username" value='${currentUser.username}' id="username-box" disabled>
                             <i class="signUp-class-inputs pull-right mid-icon icon-ok" id="username-check"></i>
                         </div>
                     </div>
                     <%--  --%>
                     <div>
                         <div class="span2 vertical-center">Email</div>
-                        <div class="span4">
-                            <input type="text" name="email" class="input-modxlarge signUp-class-inputs" placeholder="Email address" value="another given value" id="email-box" disabled>
+                        <div class="span6">
+                            <input type="text" name="email" class="input-modxxlarge signUp-class-inputs" placeholder="Email address" value='${currentUser.email}' id="email-box" disabled>
                             <i class="signUp-class-inputs pull-right mid-icon icon-ok" id="email-check"></i>
                         </div>
                     </div>
                     <%--  --%>
                     <div>
                         <div class="span2 vertical-center">Name</div>
-                        <div class="span4">
-                            <input type="text" name="name" class="input-modxlarge signUp-class-inputs" placeholder="Full name" id="name-box">
+                        <div class="span6">
+                            <input type="text" name="name" class="input-modxxlarge signUp-class-inputs" placeholder="Full name" value='${currentUser.name}' id="name-box">
                             <i class="signUp-class-inputs pull-right mid-icon" style="display: none;" id="name-check"></i>
                         </div>
                     </div>
                     <%--  --%>
                     <div>
                         <div class="span2 vertical-center">Password</div>
-                        <div class="span4">
-                            <input type="password" name="password" class="input-modxlarge signUp-class-inputs" placeholder="Password" id="password-box">
+                        <div class="span6">
+                            <input type="password" name="password" class="input-modxxlarge signUp-class-inputs" placeholder="Password" id="password-box">
                             <i class=" signUp-class-inputs pull-right mid-icon" style="display: none;" id="password-check"></i>
                         </div>
                     </div>
                     <%--  --%>
                     <div>
                         <div class="span2 vertical-center">Describe Yourself</div>
-                        <div class="span4">
-
+                        <div class="span6">
+                            <textarea class="form-control input-modxxlarge" rows="3" maxlength="140">${currentUser.description}</textarea>
                         </div>
                     </div>
 
