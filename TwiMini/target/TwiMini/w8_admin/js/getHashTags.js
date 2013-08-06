@@ -6,13 +6,7 @@ function getHashTags(offset,tagName) {
         success: function(data){
             $.each(data, function(array, tweet) {
                 console.log(tweet);
-                var d = new Date(tweet.timestamp);
-                var curr_date = d.getDate();
-                var curr_month = d.getMonth();
-                var curr_year = d.getFullYear();
-                var hour = d.getHours();
-                var minutes = d.getMinutes();
-                var time = curr_date + "/" + curr_month + "/" + curr_year + " " + hour + ":" + minutes;
+                var post_time = new Date(tweet.timestamp);
                 var data = [];
                 data.push('<div class="itemdiv dialogdiv">');
                 data.push('<div class="user">');
@@ -20,7 +14,8 @@ function getHashTags(offset,tagName) {
                 else data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.originalId+'"/></div>');
                 data.push('<div class="body"><div class="time"><i class="icon-time"></i>');
                 data.push('<span class="green">');
-                data.push('<span title="'+tweet.timestamp+'">&nbsp;'+time+'</span');
+                var now = new Date().getTime();
+                data.push('<span title="'+tweet.timestamp+'">&nbsp;'+timeDifference(now, post_time)+'</span');
                 data.push('</span>');
                 data.push('</div>');
                 data.push('<div class="name">');

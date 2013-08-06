@@ -16,6 +16,41 @@ function loadImages(id) {
         }});
 }
 
+function timeDifference(current, previous) {
+
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < msPerMinute) {
+        return Math.round(elapsed/1000) + ' seconds ago';
+    }
+
+    else if (elapsed < msPerHour) {
+        return Math.round(elapsed/msPerMinute) + ' minutes ago';
+    }
+
+    else if (elapsed < msPerDay ) {
+        return Math.round(elapsed/msPerHour ) + ' hours ago';
+    }
+
+    else if (elapsed < msPerMonth) {
+        return Math.round(elapsed/msPerDay) + ' days ago';
+    }
+
+    else if (elapsed < msPerYear) {
+        return Math.round(elapsed/msPerMonth) + ' months ago';
+    }
+
+    else {
+        return Math.round(elapsed/msPerYear ) + ' years ago';
+    }
+}
+
 function addMap(latitude,longitude) {
     var map_canvas = document.getElementById('map_canvas');
     var myLatlng = new google.maps.LatLng(latitude,longitude);
@@ -46,13 +81,7 @@ function getTweetData(offset,username) {
     $.getJSON("/MiniTwitter/API/statuses/home_timeline?"+"offset="+offset, function(data) {
         console.log(data);
         $.each(data, function(array, tweet) {
-            var d = new Date(tweet.timestamp);
-            var curr_date = d.getDate();
-            var curr_month = d.getMonth();
-            var curr_year = d.getFullYear();
-            var hour = d.getHours();
-            var minutes = d.getMinutes();
-            var time = curr_date + "/" + curr_month + "/" + curr_year + " " + hour + ":" + minutes;
+            var post_time = new Date(tweet.timestamp);
             var data = [];
             data.push('<div class="itemdiv dialogdiv">');
             data.push('<div class="user">');
@@ -60,7 +89,8 @@ function getTweetData(offset,username) {
             else data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.originalId+'"/></div>');
             data.push('<div class="body"><div class="time"><i class="icon-time"></i>');
             data.push('<span class="green">');
-            data.push('<span title="'+tweet.timestamp+'">&nbsp;'+time+'</span');
+            var now = new Date().getTime();
+            data.push('<span title="'+tweet.timestamp+'">&nbsp;'+timeDifference(now, post_time)+'</span');
             data.push('</span>');
             data.push('</div>');
             data.push('<div class="name">');
