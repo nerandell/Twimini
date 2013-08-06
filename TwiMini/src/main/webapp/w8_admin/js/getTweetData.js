@@ -44,6 +44,7 @@ function addMap(latitude,longitude) {
 function getTweetData(offset,username) {
 
     $.getJSON("/MiniTwitter/API/statuses/home_timeline?"+"offset="+offset, function(data) {
+        console.log(data);
         $.each(data, function(array, tweet) {
             var d = new Date(tweet.timestamp);
             var curr_date = d.getDate();
