@@ -64,6 +64,11 @@
     </div>
 </div>
 
+<div class="alert alert-success" id = "success-message" style="display:none;">
+    <a class="close" data-dismiss="alert">x</a>
+    Location successfully added
+</div>
+
 <script type="text/javascript" src="../../w8_admin/themes/js/load-image.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/bootstrap-image-gallery.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
@@ -112,7 +117,8 @@
         function successFunction(position) {
             var lat = position.coords.latitude;
             var lng = position.coords.longitude;
-            codeLatLng(lat, lng)
+            codeLatLng(lat, lng);
+            $('#success-message').show();
         }
 
         function errorFunction(){

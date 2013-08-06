@@ -1,4 +1,5 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <div class="navbar navbar-inverse">
     <div class="navbar-inner">
         <div class="container-fluid">
