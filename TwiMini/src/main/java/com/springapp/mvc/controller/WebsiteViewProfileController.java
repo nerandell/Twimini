@@ -47,6 +47,7 @@ public class WebsiteViewProfileController {
         else {
             log.info("User at present is : " + user);
             modelAndView.addObject("currentLoggedUser",user.toString());
+            modelAndView = addCurrentUser(user.toString(),modelAndView);
         }
         try {
             List<Tweet> tweets = tweetRepository.fetchTweets(userName);
@@ -75,6 +76,7 @@ public class WebsiteViewProfileController {
         else {
             log.info("User at present is : " + user);
             modelAndView.addObject("currentLoggedUser",user.toString());
+            modelAndView = addCurrentUser(user.toString(),modelAndView);
         }
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         List<User> following = friendRepository.fetchFollowing(userName);
@@ -93,11 +95,12 @@ public class WebsiteViewProfileController {
         Object user = httpServletRequest.getAttribute("currentLoggedUser");
         if(user==null) {
             log.info("User not verified");
-            modelAndView.addObject("currentLoggedUser","-1");
+            modelAndView.addObject("currentLoggedUser", "-1");
         }
         else {
             log.info("User at present is : " + user);
             modelAndView.addObject("currentLoggedUser",user.toString());
+            modelAndView = addCurrentUser(user.toString(),modelAndView);
         }
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         List<User> followers = friendRepository.fetchFollowers(userName);
@@ -147,5 +150,13 @@ public class WebsiteViewProfileController {
         httpServletResponse.addCookie(cookie);
         String redirectUrl = "/MiniTwitter/Website";
         return "redirect:" + redirectUrl;
+    }
+
+    private ModelAndView addCurrentUser(String s, ModelAndView modelAndView) {
+        User currentUser = userRepository.fetchUser(s);
+        modelAndView.addObject("currentUser",currentUser);
+        modelAndView.addObject("currentUserName",currentUser.getName());
+        modelAndView.addObject("currentUserEmail",currentUser.getEmail());
+        return modelAndView;
     }
 }
