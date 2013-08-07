@@ -39,6 +39,15 @@ public class WebsiteViewProfileController {
     @ResponseBody
     public ModelAndView printWelcome(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("user_profile");
+        Object user = httpServletRequest.getAttribute("currentLoggedUser");
+        if(user==null) {
+            log.info("User not verified");
+            modelAndView.addObject("currentLoggedUser","-1");
+        }
+        else {
+            log.info("User at present is : " + user);
+            modelAndView.addObject("currentLoggedUser",user.toString());
+        }
         try {
             List<Tweet> tweets = tweetRepository.fetchTweets(userName);
             modelAndView.addObject("tweets", tweets);
@@ -79,8 +88,17 @@ public class WebsiteViewProfileController {
 
     @RequestMapping(value = "MiniTwitter/Website/{id}/followers", method = RequestMethod.GET)
     @ResponseBody
-    public ModelAndView fetchFollowers(@PathVariable("id") String userName) {
+    public ModelAndView fetchFollowers(@PathVariable("id") String userName, HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("followers");
+        Object user = httpServletRequest.getAttribute("currentLoggedUser");
+        if(user==null) {
+            log.info("User not verified");
+            modelAndView.addObject("currentLoggedUser","-1");
+        }
+        else {
+            log.info("User at present is : " + user);
+            modelAndView.addObject("currentLoggedUser",user.toString());
+        }
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         List<User> followers = friendRepository.fetchFollowers(userName);
         modelAndView.addObject("info",userRepository.fetchUser(userName));
@@ -94,8 +112,17 @@ public class WebsiteViewProfileController {
     @RequestMapping(value = "MiniTwitter/Website/home", method = RequestMethod.GET)
     @ResponseBody
     public ModelAndView fetchHomeTimeLine(HttpServletRequest httpServletRequest) {
-        String userName = httpServletRequest.getAttribute("currentUser").toString();
         ModelAndView modelAndView = new ModelAndView("home");
+        Object user = httpServletRequest.getAttribute("currentLoggedUser");
+        if(user==null) {
+            log.info("User not verified");
+            modelAndView.addObject("currentLoggedUser","-1");
+        }
+        else {
+            log.info("User at present is : " + user);
+            modelAndView.addObject("currentLoggedUser",user.toString());
+        }
+        String userName = httpServletRequest.getAttribute("currentUser").toString();
         List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
         List<User> followers = friendRepository.fetchFollowers(userName);
         User currentUser = userRepository.fetchUser(userName);

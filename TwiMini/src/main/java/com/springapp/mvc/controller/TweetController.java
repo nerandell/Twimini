@@ -10,6 +10,7 @@ import org.springframework.context.annotation.AdviceMode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.apache.log4j.Logger;
+import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -101,6 +102,17 @@ public class TweetController {
         log.info("Retweet by username: " + username + " for tweet id" + id);
         tweetRepository.retweet(id,username);
     }
+
+    @RequestMapping(value = "MiniTwitter/API/statuses/polling", method = RequestMethod.GET)
+    @ResponseBody
+    public DeferredResult<Long> getNewTweets(@RequestParam("id") long id,HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
+        final DeferredResult<Long> deferredResult = new DeferredResult<>();
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        tweetRepository.getLatestTweetCount(deferredResult,id);
+        log.info("Polling: " + username + " for last id" + id);
+        return deferredResult;
+    }
+
 
     @RequestMapping(value = "MiniTwitter/API/search/hashtags", method = RequestMethod.GET)
     @ResponseBody

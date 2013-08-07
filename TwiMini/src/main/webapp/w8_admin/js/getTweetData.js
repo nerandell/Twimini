@@ -16,6 +16,14 @@ function loadImages(id) {
         }});
 }
 
+function poll(last_id) {
+    $.ajax({
+        url: "/MiniTwitter/API/statuses/polling?id="+last_id,
+        success: function(data){
+            console.log("Server request");
+        }, dataType: "json", complete: poll, timeout: 30000 });
+};
+
 function timeDifference(current, previous) {
 
     var msPerMinute = 60 * 1000;
@@ -80,7 +88,12 @@ function getTweetData(offset,username) {
 
     $.getJSON("/MiniTwitter/API/statuses/home_timeline?"+"offset="+offset, function(data) {
         console.log(data);
+        var check = 0;
         $.each(data, function(array, tweet) {
+            if(offset==0 && check==0) {
+                //poll(tweet.id);
+                check = 1;
+            }
             var post_time = new Date(tweet.timestamp);
             var data = [];
             data.push('<div class="itemdiv dialogdiv">');
@@ -139,9 +152,8 @@ function getTweetData(offset,username) {
         data.push('</div>');
         return data;
     }
-
-
-
 }
+
+
 
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.request.async.DeferredResult;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -107,6 +108,10 @@ public class TweetRepository {
         catch (Exception e) {
             log.error(e.toString());
         }
+    }
+
+    public void getLatestTweetCount(DeferredResult<Long> deferredResult, long id) {
+        //To change body of created methods use File | Settings | File Templates.
     }
 }
 
