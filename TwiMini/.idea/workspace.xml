@@ -46,7 +46,7 @@
     <file path="/TokenRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374659645735" ignored="false" />
     <file path="/log4j.properties" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375188941106" ignored="false" />
     <file path="/infiniteScroll.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374681361616" ignored="false" />
-    <file path="/WebsiteViewProfileController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375891724353" ignored="false" />
+    <file path="/WebsiteViewProfileController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375893488999" ignored="false" />
     <file path="/home.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375792485444" ignored="false" />
     <file path="/user_profile.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374926834988" ignored="false" />
     <file path="/WebsiteSignUpController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375426804157" ignored="false" />
@@ -174,19 +174,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_profile.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
+      <file leaf-file-name="WebsiteViewProfileController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.0">
+            <state line="70" column="91" selection-start="3250" selection-end="3250" vertical-scroll-proportion="0.75783974">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebsiteViewProfileController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
+      <file leaf-file-name="following.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="61" selection-start="3554" selection-end="3554" vertical-scroll-proportion="0.03305785">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="61.875">
+              <folding>
+                <marker date="1375364530773" expanded="false" signature="5036:5049" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addFriendshipData.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/addFriendshipData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="72" selection-start="1363" selection-end="1363" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -223,15 +234,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="36" column="94" selection-start="1346" selection-end="1346" vertical-scroll-proportion="-12.333333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="w8.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="156328" selection-start="156328" selection-end="156328" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -1551,20 +1553,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="54257" selection-start="54257" selection-end="54257" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/goToHomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="9" selection-start="164" selection-end="164" vertical-scroll-proportion="0.1983471">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/themes/css/w8-responsive.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="2880" selection-start="2880" selection-end="2880" vertical-scroll-proportion="-0.0">
@@ -1656,9 +1644,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="61.875">
+          <folding>
+            <marker date="1375364530773" expanded="false" signature="5036:5049" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/addFriendshipData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="72" selection-start="1363" selection-end="1363" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="61" selection-start="3554" selection-end="3554" vertical-scroll-proportion="0.03305785">
+        <state line="70" column="91" selection-start="3250" selection-end="3250" vertical-scroll-proportion="0.75783974">
           <folding />
         </state>
       </provider>

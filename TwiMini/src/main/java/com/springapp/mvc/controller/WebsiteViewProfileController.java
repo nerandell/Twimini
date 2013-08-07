@@ -39,23 +39,12 @@ public class WebsiteViewProfileController {
     @ResponseBody
     public ModelAndView printWelcome(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("user_profile");
-        Object user = httpServletRequest.getAttribute("currentLoggedUser");
-        if(user==null) {
-            log.info("User not verified");
-            modelAndView.addObject("currentLoggedUser","-1");
-        }
-        else {
-            log.info("User at present is : " + user);
-            modelAndView.addObject("currentLoggedUser",user.toString());
-            modelAndView = addCurrentUser(user.toString(),modelAndView);
-        }
+        modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
         try {
             List<Tweet> tweets = tweetRepository.fetchTweets(userName);
             modelAndView.addObject("tweets", tweets);
             modelAndView.addObject("info",userRepository.fetchUser(userName));
-            modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
-            modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
-            modelAndView.addObject("num_of_tweets", tweets.size());
+            modelAndView = getUserInformation(userName,modelAndView);
             return modelAndView;
         }
         catch (Exception e) {
@@ -68,23 +57,11 @@ public class WebsiteViewProfileController {
     @ResponseBody
     public ModelAndView fetchFollowing(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("following");
-        Object user = httpServletRequest.getAttribute("currentLoggedUser");
-        if(user==null) {
-            log.info("User not verified");
-            modelAndView.addObject("currentLoggedUser","-1");
-        }
-        else {
-            log.info("User at present is : " + user);
-            modelAndView.addObject("currentLoggedUser",user.toString());
-            modelAndView = addCurrentUser(user.toString(),modelAndView);
-        }
+        modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         List<User> following = friendRepository.fetchFollowing(userName);
         modelAndView.addObject("info",userRepository.fetchUser(userName));
-        modelAndView.addObject("num_following", following.size());
-        modelAndView.addObject("num_followers", friendRepository.fetchFollowers(userName).size());
-        modelAndView.addObject("num_of_tweets", tweets.size());
-        modelAndView.addObject("following",following);
+        modelAndView = getUserInformation(userName,modelAndView);
         return modelAndView;
     }
 
@@ -92,23 +69,11 @@ public class WebsiteViewProfileController {
     @ResponseBody
     public ModelAndView fetchFollowers(@PathVariable("id") String userName, HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("followers");
-        Object user = httpServletRequest.getAttribute("currentLoggedUser");
-        if(user==null) {
-            log.info("User not verified");
-            modelAndView.addObject("currentLoggedUser", "-1");
-        }
-        else {
-            log.info("User at present is : " + user);
-            modelAndView.addObject("currentLoggedUser",user.toString());
-            modelAndView = addCurrentUser(user.toString(),modelAndView);
-        }
+        modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
+        modelAndView.addObject("info",userRepository.fetchUser(userName));
         List<Tweet> tweets = tweetRepository.fetchTweets(userName);
         List<User> followers = friendRepository.fetchFollowers(userName);
-        modelAndView.addObject("info",userRepository.fetchUser(userName));
-        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
-        modelAndView.addObject("num_followers", followers.size());
-        modelAndView.addObject("num_of_tweets", tweets.size());
-        modelAndView.addObject("followers", followers);
+        modelAndView = getUserInformation(userName,modelAndView);
         return modelAndView;
     }
 
@@ -116,28 +81,13 @@ public class WebsiteViewProfileController {
     @ResponseBody
     public ModelAndView fetchHomeTimeLine(HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("home");
-        Object user = httpServletRequest.getAttribute("currentLoggedUser");
-        if(user==null) {
-            log.info("User not verified");
-            modelAndView.addObject("currentLoggedUser","-1");
-        }
-        else {
-            log.info("User at present is : " + user);
-            modelAndView.addObject("currentLoggedUser",user.toString());
-        }
+        modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
         String userName = httpServletRequest.getAttribute("currentUser").toString();
-        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
-        List<User> followers = friendRepository.fetchFollowers(userName);
         User currentUser = userRepository.fetchUser(userName);
         modelAndView.addObject("info",currentUser);
-        modelAndView.addObject("num_following", friendRepository.fetchFollowing(userName).size());
-        modelAndView.addObject("num_followers", followers.size());
-        modelAndView.addObject("num_of_tweets", tweetRepository.fetchTweets(userName).size());
-        modelAndView.addObject("followers", followers);
+        modelAndView = getUserInformation(userName,modelAndView);
+        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
         modelAndView.addObject("timeline",timeline);
-        modelAndView.addObject("currentUser",currentUser);
-        modelAndView.addObject("currentUserName",currentUser.getName());
-        modelAndView.addObject("currentUserEmail",currentUser.getEmail());
         return modelAndView;
     }
 
@@ -152,11 +102,37 @@ public class WebsiteViewProfileController {
         return "redirect:" + redirectUrl;
     }
 
-    private ModelAndView addCurrentUser(String s, ModelAndView modelAndView) {
-        User currentUser = userRepository.fetchUser(s);
+    private ModelAndView addCurrentUser(String userName, ModelAndView modelAndView) {
+        User currentUser = userRepository.fetchUser(userName);
         modelAndView.addObject("currentUser",currentUser);
         modelAndView.addObject("currentUserName",currentUser.getName());
         modelAndView.addObject("currentUserEmail",currentUser.getEmail());
+        return modelAndView;
+    }
+
+    private ModelAndView addLoggedInUser(ModelAndView modelAndView,HttpServletRequest httpServletRequest) {
+        Object user = httpServletRequest.getAttribute("currentLoggedUser");
+        if(user==null) {
+            log.info("User not verified");
+            modelAndView.addObject("currentLoggedUser", "-1");
+        }
+        else {
+            log.info("User at present is : " + user);
+            modelAndView.addObject("currentLoggedUser",user.toString());
+            modelAndView = addCurrentUser(user.toString(),modelAndView);
+        }
+        return modelAndView;
+    }
+
+    private ModelAndView getUserInformation(String userName, ModelAndView modelAndView) {
+        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+        List<User> followers = friendRepository.fetchFollowers(userName);
+        List<User> following = friendRepository.fetchFollowing(userName);
+        modelAndView.addObject("num_following", following.size());
+        modelAndView.addObject("num_followers", followers.size());
+        modelAndView.addObject("num_of_tweets", tweets.size());
+        modelAndView.addObject("followers", followers);
+        modelAndView.addObject("following",following);
         return modelAndView;
     }
 }
