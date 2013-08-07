@@ -8,6 +8,10 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.form-update-info{
+    margin: 0 0 0 0;
+}
+
 .vertical-center{
     text-align: right;
     padding: 4px 2px 4px 2px;

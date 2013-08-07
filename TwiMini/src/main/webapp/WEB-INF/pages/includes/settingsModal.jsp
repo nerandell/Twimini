@@ -5,14 +5,25 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
+            <div id="notify-wrapper">
+                <div class="error-msg-container" style="display: none;">
+                    <div class="alert-without-cross alert-error error-msg-box" id="message-to-be-displayed">
+                        error showing
+                    </div>
+                </div>
+            </div>
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">Settings</h4>
             </div>
-            <div class="modal-body">
+            <form class="form-update-info" action="/MiniTwitter/Website/updateInfo" method="post" id="form-update-info">
+                <div class="modal-body">
+
 
                 <div class="profile-pic-div">
-                    <img src="../../w8_admin/bootstrap/img/StickFiguesCoffee.png" class="profile-pic" alt="profile picture here">
+                    <%--<img src="../../w8_admin/bootstrap/img/StickFiguesCoffee.png" class="profile-pic" alt="profile picture here">--%>
+                    <img src="/MiniTwitter/API/users/profile_image?username=${currentUser.username}" class="profile-pic" alt="profile picture here">
                 </div>
                 <div class="modal-form-body">
 
@@ -38,7 +49,7 @@
                         <div class="span2 vertical-center">Name</div>
                         <div class="span6">
                             <input type="text" name="name" class="input-modxxlarge signUp-class-inputs" placeholder="Full name" value='${currentUser.name}' id="name-box">
-                            <i class="signUp-class-inputs pull-right mid-icon" style="display: none;" id="name-check"></i>
+                            <i class="signUp-class-inputs pull-right mid-icon icon-ok" id="name-check"></i>
                         </div>
                     </div>
                     <%--  --%>
@@ -46,31 +57,32 @@
                         <div class="span2 vertical-center">Password</div>
                         <div class="span6">
                             <input type="password" name="password" class="input-modxxlarge signUp-class-inputs" placeholder="Password" id="password-box">
-                            <i class=" signUp-class-inputs pull-right mid-icon" style="display: none;" id="password-check"></i>
+                            <i class=" signUp-class-inputs pull-right mid-icon" id="password-check"></i>
                         </div>
                     </div>
                     <%--  --%>
                     <div>
                         <div class="span2 vertical-center">Describe Yourself</div>
                         <div class="span6">
-                            <textarea class="form-control input-modxxlarge" rows="3" maxlength="140">${currentUser.description}</textarea>
+                            <textarea id="description-box" class="form-control input-modxxlarge" rows="3" maxlength="140" name="description">${currentUser.description}</textarea>
                         </div>
                     </div>
 
                 </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
 
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 <li class="green">
-    <a data-toggle="modal" href="#myModal">
+    <a data-toggle="modal" href="#myModal" onclick="updateInfoInForm();">
         <i class="icon-cog"></i>
     </a>
 </li>

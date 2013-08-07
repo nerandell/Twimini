@@ -44,7 +44,7 @@
 
                     <ul class="pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer" id="user_menu">
                         <li>
-                            <a data-toggle="modal" href="#myModal">
+                            <a data-toggle="modal" href="#myModal" onclick="updateInfoInForm();">
                                 <i class="icon-cog"></i>
                                 Settings
                             </a>

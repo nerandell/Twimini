@@ -139,5 +139,12 @@
         }
     });
 </script>
+<script>
+    $(document).ready(function() {
+        init_name = '${currentUser.name}';
+        init_description = '${currentUser.description}';
+    });
+</script>
+<script src="../../w8_admin/js/settingsFormValidation.js"></script>
 </body>
 </html>

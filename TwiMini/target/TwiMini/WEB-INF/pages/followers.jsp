@@ -12,7 +12,7 @@
 
     <link href="../../../w8_admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../../w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../../../w8_admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <%--<link href="../../../w8_admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />--%>
     <link rel="stylesheet" href="../../../w8_admin/themes/font-awesome/css/font-awesome.min.css" />
 
     <!--[if IE 7]>
