@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%@ include file="includes/tabImage.jsp" %>
     <meta charset="utf-8">
     <title>MiniTwitter - About</title>
     <meta name="description" content="MiniTwitter - Ideas you care about">

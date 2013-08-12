@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%@ include file="includes/tabImage.jsp" %>
     <meta charset="utf-8" />
     <title>TwiMini</title>
     <meta name="description" content="This is page-header (.page-header &gt; h1)" />
@@ -150,5 +151,12 @@
     var currentLoggedUser = "${currentLoggedUser}";
     getFollowing(username,currentLoggedUser)
 </script>
+<script>
+    $(document).ready(function() {
+        init_name = '${currentUser.name}';
+        init_description = '${currentUser.description}';
+    });
+</script>
+<script src="../../w8_admin/js/settingsFormValidation.js"></script>
 </body>
 </html>

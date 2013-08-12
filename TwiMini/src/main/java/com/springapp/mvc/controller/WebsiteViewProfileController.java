@@ -8,16 +8,14 @@ import com.springapp.mvc.model.User;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class WebsiteViewProfileController {
@@ -134,5 +132,24 @@ public class WebsiteViewProfileController {
         modelAndView.addObject("followers", followers);
         modelAndView.addObject("following",following);
         return modelAndView;
+    }
+
+    @RequestMapping(value = "MiniTwitter/Website/updateInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean updateUser(@RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
+        System.out.println("In updateUser function..");
+        System.out.println("password: "+ password);
+        System.out.println("description: "+ description);
+        System.out.println("name: "+ name);
+        String userName = httpServletRequest.getAttribute("currentUser").toString();
+        System.out.println("Update settings request confirmation from user: "+userName);
+        if (password.length()>7){
+            userRepository.updatePasswordByUsername(userName, password);
+        }
+        if (name.length()>0){
+            userRepository.updateNameByUsername(userName, name);
+        }
+        userRepository.updateDescriptionByUsername(userName, description);
+        return true;
     }
 }

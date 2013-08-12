@@ -110,6 +110,19 @@ public class UserRepository {
         }
     }
 
+    public void updatePasswordByUsername(String username, String password) throws CannotGetJdbcConnectionException {
+        String encodedPassword = encodePassword(password);
+        jdbcTemplate.update("UPDATE users set password=? where username=?", new Object[]{encodedPassword,username});
+    }
+
+    public void updateNameByUsername(String username, String name) throws CannotGetJdbcConnectionException{
+        jdbcTemplate.update("UPDATE users set name=? where username=?", new Object[]{name, username});
+    }
+
+    public void updateDescriptionByUsername(String username, String description) throws CannotGetJdbcConnectionException{
+        jdbcTemplate.update("UPDATE users set description=? where username=?", new Object[]{description, username});
+    }
+
     public static String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }

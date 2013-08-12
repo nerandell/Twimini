@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%@ include file="includes/tabImage.jsp" %>
+
     <meta charset="utf-8" />
     <title>TwiMini</title>
     <meta name="description" content="This is page-header (.page-header &gt; h1)" />
@@ -14,7 +16,6 @@
 
     <link href="../../w8_admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../../w8_admin/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../w8_admin/themes/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../../w8_admin/themes/css/style.css">
     <link rel="stylesheet" href="../../w8_admin/themes/css/bootstrap-image-gallery.css">
@@ -138,5 +139,12 @@
         }
     });
 </script>
+<script>
+    $(document).ready(function() {
+        init_name = '${currentUser.name}';
+        init_description = '${currentUser.description}';
+    });
+</script>
+<script src="../../w8_admin/js/settingsFormValidation.js"></script>
 </body>
 </html>

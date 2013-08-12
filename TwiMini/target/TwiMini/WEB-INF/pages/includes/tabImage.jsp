@@ -1,0 +1,1 @@
+<link rel="icon" href="../../w8_admin/bootstrap/img/det_logo_cropped.png" type="image/png"/>
