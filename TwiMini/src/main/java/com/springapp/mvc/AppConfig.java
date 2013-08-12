@@ -20,6 +20,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericToStringSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -29,6 +32,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import com.springapp.mvc.data.UserRepository;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,6 +45,21 @@ import javax.servlet.http.HttpServletResponse;
 public class AppConfig extends WebMvcConfigurerAdapter{
 
     private TokenRepository tokenRepository;
+
+    @Bean
+    JedisConnectionFactory jedisConnectionFactory() {
+        return new JedisConnectionFactory();
+    }
+
+    @Bean
+    RedisTemplate< String, Object > redisTemplate() {
+        final RedisTemplate< String, Object > template =  new RedisTemplate< String, Object >();
+        template.setConnectionFactory(jedisConnectionFactory());
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setHashValueSerializer(new GenericToStringSerializer<Object>(Object.class));
+        template.setValueSerializer( new GenericToStringSerializer< Object >( Object.class ) );
+        return template;
+    }
 
     @Bean
     public JdbcTemplate jdbcTemplate(@Value("${db.driver.class}") String driverClass,

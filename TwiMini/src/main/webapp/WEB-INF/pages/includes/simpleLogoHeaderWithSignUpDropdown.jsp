@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </form>
-                    <div class="form-signing-in-top">
+                    <div class="form-signing-in-top-signUp">
                         <button class="btn btn-block" value="Sign up" onclick="goToHomePage()">Sign Up</button>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
         </div>
         <h1>
             <a href="/MiniTwitter/Website">
-                <img  src="../../w8_admin/bootstrap/img/det_logo_cropped.jpg" width="4%" alt="logo here"/>
+                <img  src="../../w8_admin/bootstrap/img/det_logo_cropped.jpg" class="logo-icon" alt="logo here"/>
                 TwiMini
             </a>
         </h1>

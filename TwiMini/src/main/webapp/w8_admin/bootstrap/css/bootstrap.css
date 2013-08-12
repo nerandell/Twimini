@@ -8,6 +8,14 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.logo-icon{
+    width: 4%;
+}
+
+.mail-icon-small{
+    width: 25px;
+}
+
 .form-update-info{
     margin: 0 0 0 0;
 }
@@ -63,6 +71,11 @@
     margin: 1px 1px 1px 1px;
 }
 
+.form-signing-in-top-signUp{
+    padding: 6px 10px 0px 10px;
+    margin: 1px 1px 1px 1px;
+}
+
 #sign_in_form{
     color: #fff;
     max-width: 100px;
@@ -107,7 +120,7 @@
 }
 
 .page-header-without-top-padding {
-    padding-bottom: 9px;
+    padding-bottom: 4px;
     margin: 0 0 30px;
     border-bottom: 1px solid #eeeeee;
 }
@@ -132,9 +145,9 @@
     color: #999;
 }
 
-
 #page-content{
     min-height: 400px;
+    padding-top: 9px;
 }
 
 .form-forgot-pwd{
@@ -965,13 +978,13 @@ h4 small {
 }
 
 .page-header {
-  padding-bottom: 9px;
+  padding-bottom: 4px;
   margin: 10px 0 0px;
   border-bottom: 1px solid #eeeeee;
 }
 
 .page-header-without-line {
-    padding-bottom: 9px;
+    padding-bottom: 4px;
     margin: 20px 0 30px;
 }
 

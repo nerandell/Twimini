@@ -4,6 +4,7 @@ import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,9 +16,11 @@ import java.util.List;
 public class UserRepository {
 
     private final JdbcTemplate jdbcTemplate;
+    private final RedisTemplate< String, Object > template;
 
     @Autowired
-    public UserRepository(JdbcTemplate jdbcTemplate) {
+    public UserRepository(JdbcTemplate jdbcTemplate, RedisTemplate< String, Object > template) {
+        this.template = template;
         this.jdbcTemplate = jdbcTemplate;
     }
 

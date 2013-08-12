@@ -73,7 +73,7 @@
                                             </div>
                                             <div>
                                                 <a href="https://www.facebook.com/ankit.chandawala"><img src="../../w8_admin/bootstrap/img/icon-facebook-small.png"></img></a>
-                                                <a href="mailto:ankit.ch@directi.com"><img src="../../w8_admin/bootstrap/img/Directi-logo.jpg" width="25px"></img></a>
+                                                <a href="mailto:ankit.ch@directi.com"><img src="../../w8_admin/bootstrap/img/Directi-logo.jpg" class="mail-icon-small"></img></a>
                                                 <a href="mailto:ankitchandawala@gmail.com"><img src="../../w8_admin/bootstrap/img/gmail-icon-small.png"></img></a>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@
                                             </div>
                                             <div>
                                                 <a href="https://www.facebook.com/mayank.dang"><img src="../../w8_admin/bootstrap/img/icon-facebook-small.png"></img></a>
-                                                <a href="mailto:mayank.d@directi.com"><img src="../../w8_admin/bootstrap/img/Directi-logo.jpg" width="25px"></img></a>
+                                                <a href="mailto:mayank.d@directi.com"><img src="../../w8_admin/bootstrap/img/Directi-logo.jpg" class="mail-icon-small"></img></a>
                                                 <a href="mailto:mayank.dang.42@gmail.com"><img src="../../w8_admin/bootstrap/img/gmail-icon-small.png"></img></a>
                                             </div>
                                         </div>
