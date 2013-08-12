@@ -55,6 +55,7 @@
                             <input name="location" value="-1" type="text" id="location" style="visibility: hidden;"/>
                             <input name="latitude" value="-1" type="text" id="latitude" style="visibility: hidden;"/>
                             <input name="longitude" value="-1" type="text" id="longitude" style="visibility: hidden;"/>
+
                         </div>
                     </form>
                     <iframe name="hiddenIframe" id="hiddenIframe" style="display:none;"></iframe>

@@ -1,23 +1,23 @@
 <div id="sidebar">
     <ul class="nav nav-list">
         <li class="active">
+            <a href="/MiniTwitter/Website/${info.username}">
+                <i class="icon-list"></i>
+                <span>Tweets</span>
+            </a>
+        </li>
+
+        <li>
             <a href="/MiniTwitter/Website/${info.username}/following">
-                <i class="icon-dashboard"></i>
+                <i class="icon-eye-open"></i>
                 <span>Following</span>
             </a>
         </li>
 
         <li>
             <a href="/MiniTwitter/Website/${info.username}/followers">
-                <i class="icon-text-width"></i>
+                <i class="icon-group"></i>
                 <span>Followers</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="/MiniTwitter/Website/${info.username}">
-                <i class="icon-list"></i>
-                <span>Tweets</span>
             </a>
         </li>
 

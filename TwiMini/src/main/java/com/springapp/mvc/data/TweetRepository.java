@@ -113,5 +113,12 @@ public class TweetRepository {
     public void getLatestTweetCount(DeferredResult<Long> deferredResult, long id) {
         //To change body of created methods use File | Settings | File Templates.
     }
+
+    public List<String> getCurrentTrends() {
+        Timestamp timestamp = new Timestamp(new Date().getTime()-(10*24*60*60*1000));
+        log.info("Fetching trending items after "+timestamp.toString());
+        return jdbcTemplate.queryForList("select result.hashtag from (select count(*) as mycount,hashtag from hashtags where hashtags.id in (select tweets.id from tweets where tweets.timestamp>?) group by hashtag order by mycount desc) as result",
+                new Object[]{timestamp}, String.class);
+    }
 }
 

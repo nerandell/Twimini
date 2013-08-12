@@ -122,4 +122,10 @@ public class TweetController {
         return tweetRepository.searchHashTags(searchTag,offset);
     }
 
+    @RequestMapping(value = "MiniTwitter/API/statuses/trends", method = RequestMethod.GET)
+    @ResponseBody
+    public List<String> getTrends() {
+        return tweetRepository.getCurrentTrends();
+    }
+
 }
