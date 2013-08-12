@@ -6,7 +6,6 @@
                 <span>Tweets</span>
             </a>
         </li>
-
         <li>
             <a href="/MiniTwitter/Website/${info.username}/following">
                 <i class="icon-eye-open"></i>

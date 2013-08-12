@@ -98,7 +98,7 @@ function getTweetData(offset,username) {
             var data = [];
             data.push('<div class="itemdiv dialogdiv">');
             data.push('<div class="user">');
-            if(tweet.originalId===null) data.push('<img style="border:2px solid #5293c4;" alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.username+'"/></div>');
+            if(tweet.originalId===null) data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.username+'"/></div>');
             else data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.originalId+'"/></div>');
             data.push('<div class="body"><div class="time"><i class="icon-time"></i>');
             data.push('<span class="green">');
