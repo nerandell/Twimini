@@ -97,11 +97,12 @@
 <script src="../../w8_admin/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../w8_admin/themes/js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="../../w8_admin/themes/js/jquery.ui.touch-punch.min.js"></script>
-<script src="../../w8_admin/js/addTweet.js"></script>
 <script src="../../w8_admin/js/processTweets.js"></script>
 <script src="../../w8_admin/js/getTweetData.js"></script>
 <script src="../../w8_admin/js/autoComplete.js"></script>
 <script src="../../w8_admin/js/retweet.js"></script>
+<script src="../../w8_admin/js/getHashTags.js"></script>
+
 
 <script src="../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>
 <script src="../../w8_admin/themes/js/jquery.easy-pie-chart.min.js"></script>
@@ -143,8 +144,24 @@
     $(document).ready(function() {
         init_name = '${currentUser.name}';
         init_description = '${currentUser.description}';
+        $.ajax({
+            type:  "GET",
+            url: "/MiniTwitter/API/statuses/trends",
+            success: function(response) {
+                var data = [];
+                $.each(response, function(array, trend) {
+                    console.log(trend)
+                    data.push('<li><a data-toggle="modal" href="#HashTagModal" id="showHashTags" onclick="initialize('+'\''+trend +'\''+')"><i class="icon-double-angle-right"></i>');
+                    data.push("#");
+                    data.push(trend);
+                    data.push('</a>');
+                    data.push('<li>');
+                });
+                var content = data.join("");
+                $(content).appendTo("#trends");
+            }
+        })
     });
 </script>
-<script src="../../w8_admin/js/settingsFormValidation.js"></script>
 </body>
 </html>

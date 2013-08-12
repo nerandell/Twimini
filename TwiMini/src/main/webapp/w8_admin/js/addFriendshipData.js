@@ -54,7 +54,6 @@ function getFollowing(username,currentLoggedUser) {
                     htmlContentType: 'text/html',
                     success:function(data)
                     {
-                        console.log(data);
                         if(data==="true") {
                             htmlContent.push('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+relationship.username+'\',this)">Unfollow</span></a></div>');
                         }
@@ -70,7 +69,6 @@ function getFollowing(username,currentLoggedUser) {
             }
             htmlContent.push('</div></div>')
             var content = htmlContent.join("");
-            console.log(content);
             $(content).appendTo(".friendship");
         });
     });

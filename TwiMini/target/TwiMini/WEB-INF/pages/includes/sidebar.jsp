@@ -20,11 +20,20 @@
                 <span>Followers</span>
             </a>
         </li>
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-star"></i>
+                <span>Trending</span>
 
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu" id="trends">
+            </ul>
+        </li>
     </ul><!--/.nav-list-->
 
     <div id="sidebar-collapse">
         <i class="icon-double-angle-left"></i>
     </div>
 </div>
-

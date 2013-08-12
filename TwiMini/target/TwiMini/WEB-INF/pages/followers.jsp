@@ -100,6 +100,9 @@
 <script src="../../../w8_admin/themes/js/jquery.sparkline.min.js"></script>
 <script src="../../../w8_admin/js/addTweet.js"></script>
 <script src="../../../w8_admin/js/addFollowerData.js"></script>
+<script src="../../../w8_admin/js/getHashTags.js"></script>
+<script src="../../../w8_admin/js/getTweetData.js"></script>
+<script src="../../../w8_admin/js/processTweets.js"></script>
 
 <script src="../../../w8_admin/themes/js/jquery.flot.min.js"></script>
 <script src="../../../w8_admin/themes/js/jquery.flot.pie.min.js"></script>
@@ -107,46 +110,12 @@
 
 <!--w8 scripts-->
 
-<script src="../../../w8_admin/themes/w8-elements.min.js"></script>
-<script src="../../../w8_admin/themes/w8.min.js"></script>
+<script src="../../../w8_admin/themes/js/w8-elements.min.js"></script>
+<script src="../../../w8_admin/themes/js/w8.min.js"></script>
 
 <!--inline scripts related to this page-->
 
 <script type="text/javascript">
-    $(function() {
-
-        $('.dialogs,.comments').slimScroll({
-            height: '300px'
-        });
-
-        $('#tasks').sortable();
-        $('#tasks').disableSelection();
-        $('#tasks input:checkbox').removeAttr('checked').on('click', function(){
-            if(this.checked) $(this).closest('li').addClass('selected');
-            else $(this).closest('li').removeClass('selected');
-        });
-
-        var oldie = $.browser.msie && $.browser.version < 9;
-
-        var $tooltip = $("<div class='tooltip top in' style='display:none;'><div class='tooltip-inner'></div></div>").appendTo('body');
-        placeholder.data('tooltip', $tooltip);
-        var previousPoint = null;
-
-        $('#recent-box [data-rel="tooltip"]').tooltip({plw8ment: tooltip_plw8ment});
-        function tooltip_plw8ment(context, source) {
-            var $source = $(source);
-            var $parent = $source.closest('.tab-content')
-            var off1 = $parent.offset();
-            var w1 = $parent.width();
-
-            var off2 = $source.offset();
-            var w2 = $source.width();
-
-            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-            return 'left';
-        }
-    })
-
     var username = "${info.username}";
     var currentLoggedUser = "${currentLoggedUser}";
     getFollowing(username,currentLoggedUser)
@@ -155,6 +124,23 @@
     $(document).ready(function() {
         init_name = '${currentUser.name}';
         init_description = '${currentUser.description}';
+        $.ajax({
+            type:  "GET",
+            url: "/MiniTwitter/API/statuses/trends",
+            success: function(response) {
+                var data = [];
+                $.each(response, function(array, trend) {
+                    console.log(trend)
+                    data.push('<li><a data-toggle="modal" href="#HashTagModal" id="showHashTags" onclick="initialize('+'\''+trend +'\''+')"><i class="icon-double-angle-right"></i>');
+                    data.push("#");
+                    data.push(trend);
+                    data.push('</a>');
+                    data.push('<li>');
+                });
+                var content = data.join("");
+                $(content).appendTo("#trends");
+            }
+        })
     });
 </script>
 <script src="../../w8_admin/js/settingsFormValidation.js"></script>
