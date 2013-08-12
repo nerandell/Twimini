@@ -1,6 +1,6 @@
 <div id="sidebar">
     <ul class="nav nav-list">
-        <li class="active">
+        <li>
             <a href="/MiniTwitter/Website/${info.username}">
                 <i class="icon-list"></i>
                 <span>Tweets</span>
