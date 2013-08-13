@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/addTweet.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/bootstrap-image-gallery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/bootstrap-image-gallery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/load-image.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/main.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,16 +160,16 @@
       <file leaf-file-name="home.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="0" selection-start="4335" selection-end="4380" vertical-scroll-proportion="-6.25">
+            <state line="101" column="0" selection-start="3480" selection-end="3537" vertical-scroll-proportion="-11.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TweetRepository.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java">
+      <file leaf-file-name="searchbar.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/searchbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="13" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
+            <state line="20" column="68" selection-start="793" selection-end="793" vertical-scroll-proportion="-12.5">
               <folding />
             </state>
           </provider>
@@ -184,15 +179,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="115" column="41" selection-start="5428" selection-end="5428" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settingsModal.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/settingsModal.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="94" selection-start="4292" selection-end="4292" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -216,10 +202,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userinfo.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="userinfo.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="44" selection-start="4986" selection-end="4986" vertical-scroll-proportion="0.21933086">
+            <state line="112" column="44" selection-start="4986" selection-end="4986" vertical-scroll-proportion="-4.9166665">
               <folding />
             </state>
           </provider>
@@ -228,16 +214,25 @@
       <file leaf-file-name="followers.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="4" selection-start="4899" selection-end="4899" vertical-scroll-proportion="-76.875">
+            <state line="106" column="0" selection-start="4285" selection-end="4346" vertical-scroll-proportion="-11.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp">
+      <file leaf-file-name="following.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="0" selection-start="1225" selection-end="5894" vertical-scroll-proportion="0.0">
+            <state line="113" column="33" selection-start="4619" selection-end="4619" vertical-scroll-proportion="0.6533575">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_profile.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="97" column="38" selection-start="3478" selection-end="3478" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
@@ -262,8 +257,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/addFollowerData.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/fdsf.js" />
@@ -277,6 +270,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TweetController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/settingsModal.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp" />
       </list>
     </option>
   </component>
@@ -511,71 +506,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="w8_admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="w8_admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1455,34 +1386,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/FriendController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="37" selection-start="3495" selection-end="3495" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="6" selection-start="3312" selection-end="3312" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/getTweetData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="0" selection-start="2528" selection-end="2528" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="32" selection-start="2681" selection-end="2681" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="9" selection-start="317" selection-end="317" vertical-scroll-proportion="0.33274338">
@@ -1525,23 +1428,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="0" selection-start="4335" selection-end="4380" vertical-scroll-proportion="-6.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="115" column="41" selection-start="5428" selection-end="5428" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="4" selection-start="4899" selection-end="4899" vertical-scroll-proportion="-76.875">
           <folding />
         </state>
       </provider>
@@ -1562,7 +1451,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="44" selection-start="4986" selection-end="4986" vertical-scroll-proportion="0.21933086">
+        <state line="112" column="44" selection-start="4986" selection-end="4986" vertical-scroll-proportion="-4.9166665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/autoComplete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="61" selection-start="824" selection-end="824" vertical-scroll-proportion="0.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="0" selection-start="3480" selection-end="3537" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="0" selection-start="4285" selection-end="4346" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="38" selection-start="3478" selection-end="3478" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/searchbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="68" selection-start="793" selection-end="793" vertical-scroll-proportion="-12.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/following.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="33" selection-start="4619" selection-end="4619" vertical-scroll-proportion="0.6533575">
           <folding />
         </state>
       </provider>

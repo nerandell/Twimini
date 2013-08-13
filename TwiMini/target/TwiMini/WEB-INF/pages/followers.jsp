@@ -103,6 +103,7 @@
 <script src="../../../w8_admin/js/getHashTags.js"></script>
 <script src="../../../w8_admin/js/getTweetData.js"></script>
 <script src="../../../w8_admin/js/processTweets.js"></script>
+<script src="../../../w8_admin/js/autoComplete.js"></script>
 
 <script src="../../../w8_admin/themes/js/jquery.flot.min.js"></script>
 <script src="../../../w8_admin/themes/js/jquery.flot.pie.min.js"></script>
