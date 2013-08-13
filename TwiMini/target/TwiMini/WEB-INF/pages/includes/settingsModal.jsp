@@ -17,7 +17,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">Settings</h4>
             </div>
-            <form class="form-update-info" action="/MiniTwitter/Website/updateInfo" method="post" id="form-update-info">
+
+            <form target="hiddenIframe" class="form-update-info" action="/MiniTwitter/Website/updateInfo" method="post" id="form-update-info">
                 <div class="modal-body">
 
 
@@ -73,7 +74,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button class="btn btn-primary" onclick="$('#form-update-info').submit(); document.location.reload();">
+                        <span class="hidden-phone">Save Changes</span>
+                    </button>
                 </div>
             </form>
 
