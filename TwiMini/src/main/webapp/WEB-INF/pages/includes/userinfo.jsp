@@ -1,4 +1,6 @@
 <!-- modal-gallery is the modal dialog used for the image gallery -->
+
+
 <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
     <div class="modal-header">
         <a class="close" data-dismiss="modal">&times;</a>
@@ -27,10 +29,11 @@
         <div class="grey">
             <small>
                 ${info.description}
+                <div class="pull-right" id="relationButton">
+                </div>
             </small>
         </div>
     </h1>
-
 </div><!--/.page-header-->
 
 <div class="row-fluid">
@@ -73,6 +76,8 @@
 <script type="text/javascript" src="../../w8_admin/themes/js/load-image.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/bootstrap-image-gallery.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
+<script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
+<script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
 
 <div class="clearfix">
     <div class="grid3">
@@ -101,6 +106,32 @@
 </div>
 
 <script type="text/javascript">
+
+    $(document).ready(function() {
+        var currentLoggedUser = '${currentLoggedUser}';
+        var user = '${info.username}';
+        if(currentLoggedUser===user) return;
+        if(currentLoggedUser!=="-1") {
+            $.ajax({
+                url: '/MiniTwitter/API/friendships/exists?follower='+currentLoggedUser+'&following='+user,
+                type: 'GET',
+                htmlContentType: 'text/html',
+                success:function(data)
+                {
+                    if(data==="true") {
+                        $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-important" onclick="unfollow(\'${info.username}\',this)">Unfollow</span></a></div>');
+                    }
+                    else {
+                        $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow(\'${info.username}\',this)">Follow</span></a></div>');
+                    }
+                }
+            });
+        }
+        else {
+            $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow(\'${info.username}\',this)">Follow</span></a></div>');
+        }
+    });
+
     function uploadFile() {
         var element = document.getElementById("upload");
         element.click();
@@ -159,5 +190,39 @@
             });
         }
     }
+
+    function follow(username,element) {
+        $.ajax({
+            url: '/MiniTwitter/API/friendships/create?username='+username,
+            type: 'POST',
+            dataType: "text",
+            success:function(data) {
+                if(data.length!=0) {
+                    window.location.replace("/MiniTwitter/Website");
+                }
+                else {
+                    console.log("Successfully followed user "+username);
+                    var $parent = $(element).closest('.switch');
+                    $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-large label-important" onclick="unfollow(\''+username+'\',this)">Unfollow</span></a></div>');
+                }
+            }
+        });
+    }
+
+    function unfollow(username,element) {
+        $.ajax({
+            url: '/MiniTwitter/API/friendships/destroy?username='+username,
+            type: 'POST',
+            success:function(data) {
+                if(data.length!=0) {
+                    window.location.replace("/MiniTwitter/Website");
+                }
+                console.log("Successfully unfollowed user "+username);
+                var $parent = $(element).closest('.switch');
+                $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow(\''+username+'\',this)">Follow</span></a></div>');
+            }
+        });
+    }
+
 
 </script>
