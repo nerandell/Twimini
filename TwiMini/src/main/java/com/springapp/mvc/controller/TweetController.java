@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.apache.log4j.Logger;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -54,7 +55,7 @@ public class TweetController {
     @ResponseBody
     public long addTweet(@RequestParam("files[]") ArrayList<MultipartFile> files, String status, String location, Double latitude, Double longitude, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
-        long id = tweetRepository.addTweet(username,status,location,latitude,longitude);
+        long id = tweetRepository.addTweet(username, HtmlUtils.htmlEscape(status),location,latitude,longitude);
         for(MultipartFile file : files) {
             FileOutputStream outputStream = null;
             String filePath = System.getProperty("java.io.tmpdir") + "/" + file.getOriginalFilename();

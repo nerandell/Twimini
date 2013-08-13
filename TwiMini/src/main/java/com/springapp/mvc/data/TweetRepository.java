@@ -111,7 +111,6 @@ public class TweetRepository {
     }
 
     public void getLatestTweetCount(DeferredResult<Long> deferredResult, long id) {
-        //To change body of created methods use File | Settings | File Templates.
     }
 
     public List<String> getCurrentTrends() {

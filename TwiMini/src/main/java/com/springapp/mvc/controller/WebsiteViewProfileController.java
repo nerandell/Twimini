@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.HtmlUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -137,19 +138,15 @@ public class WebsiteViewProfileController {
     @RequestMapping(value = "MiniTwitter/Website/updateInfo", method = RequestMethod.POST)
     @ResponseBody
     public boolean updateUser(@RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
-        System.out.println("In updateUser function..");
-        System.out.println("password: "+ password);
-        System.out.println("description: "+ description);
-        System.out.println("name: "+ name);
         String userName = httpServletRequest.getAttribute("currentUser").toString();
         System.out.println("Update settings request confirmation from user: "+userName);
         if (password.length()>7){
             userRepository.updatePasswordByUsername(userName, password);
         }
         if (name.length()>0){
-            userRepository.updateNameByUsername(userName, name);
+            userRepository.updateNameByUsername(userName, HtmlUtils.htmlEscape(name));
         }
-        userRepository.updateDescriptionByUsername(userName, description);
+        userRepository.updateDescriptionByUsername(userName, HtmlUtils.htmlEscape(description));
         return true;
     }
 }
