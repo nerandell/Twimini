@@ -24,6 +24,25 @@ public class UserRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public String getEmailFromName(String name) throws EmptyResultDataAccessException, CannotGetJdbcConnectionException  {
+        System.out.println("starting getEmailByName.");
+        String email;
+        String query = "SELECT email from users where name="+name;
+        if (template.opsForValue().get(query) == null){
+            System.out.println("Cache is empty. Filling Cache.");
+            email = jdbcTemplate.queryForObject("SELECT email from users where name=?", String.class, name);
+            template.opsForValue().set(query, email);
+            return email;
+        }
+        System.out.println("Replying from the cache..");
+        return (String) template.opsForValue().get(query);
+//        return jdbcTemplate.queryForObject("SELECT email from users where name=?", String.class, name);
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public User fetchUser(String username) throws CannotGetJdbcConnectionException {
         return jdbcTemplate.queryForObject("select username, name, email,description from users where username=?",
                 new Object[]{username}, new BeanPropertyRowMapper<>(User.class));

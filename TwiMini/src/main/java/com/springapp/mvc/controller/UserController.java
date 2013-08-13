@@ -45,6 +45,9 @@ public class UserController {
             userDetails.put("Error","CannotGetJdbcConnectionException");
             return userDetails;
         }
+        catch (Exception e){
+            System.out.println(e);
+        }
         return userDetails;
     }
 

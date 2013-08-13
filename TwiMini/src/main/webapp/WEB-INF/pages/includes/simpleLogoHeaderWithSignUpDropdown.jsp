@@ -22,7 +22,7 @@
                                     </label>
                                 </div>
                                 <div class="span5">
-                                    <button class="btn btn-primary" type="submit" value="Sign in">Sign In..</button>
+                                    <button class="btn btn-primary" type="submit" value="Sign in">Sign In</button>
                                 </div>
                             </div>
                         </div>

@@ -16,6 +16,7 @@ public class HTTPErrorController {
 
     @RequestMapping(value="/errors/404.html")
     public String handle404() {
+        System.out.println("We encountered a 404 error.");
         return "errorPageTemplate";
     }
 }

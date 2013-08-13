@@ -48,7 +48,7 @@ public class ImageController implements ImageSettings{
 
     @RequestMapping(value = "MiniTwitter/API/users/profile_image", method = RequestMethod.GET)
     @ResponseBody
-    @Cacheable("defaultCache")
+//    @Cacheable("defaultCache")
     public byte[] getImage(@RequestParam("username") String username) {
         byte[] image = imageRepository.getImage(username);
         log.info(image);
@@ -61,7 +61,7 @@ public class ImageController implements ImageSettings{
 
     @RequestMapping(value = "MiniTwitter/API/tweets/getImages", method = RequestMethod.GET)
     @ResponseBody
-    @Cacheable("defaultCache")
+//    @Cacheable("defaultCache")
     public List<byte[]> getTweetImage(@RequestParam("id") long id) {
         return imageRepository.getTweetImage(id);
     }

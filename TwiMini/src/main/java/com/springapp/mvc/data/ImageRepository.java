@@ -58,7 +58,7 @@ public class ImageRepository{
         }
     }
 
-    @Cacheable("defaultCache")
+//    @Cacheable("defaultCache")
     public byte[] getImage(String username) {
         String query = "select image from images where username='"+username+"'";
         log.info("Getting image of user "+username);
