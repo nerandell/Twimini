@@ -68,4 +68,11 @@ public class FriendController {
         if(friendRepository.existsFriendShip(follower, following)) return "true";
         else return "false";
     }
+
+    @RequestMapping(value = "MiniTwitter/API/friendships/recommendations", method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> getRecommendations(HttpServletRequest httpServletRequest) {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        return friendRepository.getRecommendedUsers(username);
+    }
 }

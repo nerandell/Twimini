@@ -85,4 +85,10 @@ public class FriendRepository {
         int row = jdbcTemplate.queryForInt("select count(*) from following where follower=? and following=? and timestamp is null",new Object[]{username,following});
         return row != 0;
     }
+
+    public List<User> getRecommendedUsers(String username) {
+        return jdbcTemplate.query("select * from users where username in (select following from following where follower in " +
+                "(select following from following where follower=?)) and username not in (select following from following where follower=?) and username",
+                new Object[]{username,username},new BeanPropertyRowMapper<>(User.class));
+    }
 }
