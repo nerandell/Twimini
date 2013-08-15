@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,14 +49,14 @@
     <file path="/WebsiteViewProfileController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376576599514" ignored="false" />
     <file path="/home.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376574204674" ignored="false" />
     <file path="/user_profile.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374926834988" ignored="false" />
-    <file path="/WebsiteSignUpController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375426804157" ignored="false" />
+    <file path="/WebsiteSignUpController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376588529533" ignored="false" />
     <file path="/logout.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374687205366" ignored="false" />
     <file path="/getTweetData.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376312328138" ignored="false" />
     <file path="/TestController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374745167141" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/java/com/springapp/mvc/Test/TestController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374745203383" ignored="false" />
     <file path="/autoComplete.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374755529403" ignored="false" />
     <file path="/searchbar.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374759488160" ignored="false" />
-    <file path="/a.dummy" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376582177746" ignored="false" />
+    <file path="/a.dummy" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376588331257" ignored="false" />
     <file path="/settings.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374845790115" ignored="false" />
     <file path="/ImageRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375282755462" ignored="false" />
     <file path="/AppTests.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374822784143" ignored="false" />
@@ -151,7 +151,7 @@
       <file leaf-file-name="UserRepository.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="51" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0">
+            <state line="35" column="16" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -172,16 +172,16 @@
       <file leaf-file-name="UserController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0">
+            <state line="84" column="42" selection-start="3630" selection-end="3630" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebsiteSignUpController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WebsiteSignUpController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="26" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0">
+            <state line="29" column="20" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.38391224">
               <folding />
             </state>
           </provider>
@@ -190,16 +190,25 @@
       <file leaf-file-name="WebsiteViewProfileController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="90" selection-start="3294" selection-end="3294" vertical-scroll-proportion="-27.096775">
+            <state line="100" column="38" selection-start="4714" selection-end="4719" vertical-scroll-proportion="-5.967742">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userinfo.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="WebsiteController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="0" selection-start="2031" selection-end="2444" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userinfo.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="79" selection-start="3869" selection-end="3869" vertical-scroll-proportion="0.45115453">
+            <state line="76" column="79" selection-start="3869" selection-end="3869" vertical-scroll-proportion="-10.583333">
               <folding />
             </state>
           </provider>
@@ -223,7 +232,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp" />
@@ -239,6 +247,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/main.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/bootstrap-image-gallery.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/themes/js/bootstrap-image-gallery.min.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" />
       </list>
     </option>
   </component>
@@ -300,9 +309,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="50" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1871" />
-    <option name="height" value="1085" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -447,40 +456,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TwiMini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="w8_admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1324,8 +1299,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="-4" width="1871" height="1085" extended-state="6" />
-    <editor active="false" />
+    <frame x="50" y="24" width="1871" height="1057" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985157" sideWeight="0.69860065" order="8" side_tool="false" content_ui="tabs" />
@@ -1347,8 +1322,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912782" sideWeight="0.70757735" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2341946" sideWeight="0.67814857" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32185146" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2341946" sideWeight="0.6681465" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3318535" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1422,13 +1397,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/settingsModal.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="84" selection-start="3580" selection-end="3581" vertical-scroll-proportion="-16.363636">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="723" selection-end="723" vertical-scroll-proportion="-3.049002">
@@ -1453,34 +1421,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="138" column="60" selection-start="4592" selection-end="4592" vertical-scroll-proportion="0.38333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="90" selection-start="3294" selection-end="3294" vertical-scroll-proportion="-27.096775">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="26" selection-start="1573" selection-end="1573" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="51" selection-start="1661" selection-end="1661" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1515,7 +1455,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="274" column="9" selection-start="9071" selection-end="9071" vertical-scroll-proportion="6.6397414">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1524,7 +1464,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="3" selection-start="1643" selection-end="1643" vertical-scroll-proportion="0.95153475">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1547,7 +1487,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="79" selection-start="3869" selection-end="3869" vertical-scroll-proportion="0.45115453">
+        <state line="76" column="79" selection-start="3869" selection-end="3869" vertical-scroll-proportion="-10.583333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="42" selection-start="3630" selection-end="3630" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="38" selection-start="4714" selection-end="4719" vertical-scroll-proportion="-5.967742">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="16" selection-start="1350" selection-end="1350" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="2031" selection-end="2444" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="20" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.38391224">
           <folding />
         </state>
       </provider>
