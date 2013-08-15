@@ -74,8 +74,6 @@
 <script type="text/javascript" src="../../w8_admin/themes/js/load-image.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/bootstrap-image-gallery.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
-<script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
-<script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
 
 <div class="clearfix">
     <div class="grid3">
