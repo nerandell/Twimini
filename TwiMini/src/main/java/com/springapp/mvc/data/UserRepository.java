@@ -2,6 +2,7 @@ package com.springapp.mvc.data;
 
 import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
@@ -15,6 +16,7 @@ import java.util.List;
 public class UserRepository {
 
     private final JdbcTemplate jdbcTemplate;
+    static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
     public UserRepository(JdbcTemplate jdbcTemplate) {
@@ -111,6 +113,7 @@ public class UserRepository {
     }
 
     public void updatePasswordByUsername(String username, String password) throws CannotGetJdbcConnectionException {
+        log.info("Changing Password");
         String encodedPassword = encodePassword(password);
         jdbcTemplate.update("UPDATE users set password=? where username=?", new Object[]{encodedPassword,username});
     }

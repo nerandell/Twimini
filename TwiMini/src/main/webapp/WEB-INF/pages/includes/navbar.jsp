@@ -12,7 +12,7 @@
 
             <ul class="nav ace-nav pull-right">
                 <li class="grey user-p">
-                    <a href="/MiniTwitter/Website/home">
+                    <a href="/MiniTwitter/Website">
                         <i class="icon-home"></i>
                     </a>
                 </li>
@@ -44,7 +44,7 @@
 								</span>
                                 </a>
                                 <div class="pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer span3">
-                                    <form class="form-signing-in-top" action="/MiniTwitter/Website" method="post">
+                                    <form class="form-signing-in-top" action="/MiniTwitter/login" method="post">
                                         <div id="login-header-right-form">
                                             <div>
                                                 <input type="text" class="input-block-level input-large logIn-class-inputs" name="username" placeholder="Username">

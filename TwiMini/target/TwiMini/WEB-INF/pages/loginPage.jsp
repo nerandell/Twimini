@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <form class="form-signing-in" action="/MiniTwitter/Website" method="post">
+                            <form class="form-signing-in" action="/MiniTwitter/login" method="post">
                                 <div id="login-partial-container">
                                     <div id="login-partial">
                                         <div id="login-name">

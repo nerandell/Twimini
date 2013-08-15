@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.HtmlUtils;
+import org.springframework.web.util.WebUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,20 @@ public class WebsiteViewProfileController {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
         this.friendRepository = friendRepository;
+    }
+
+    @RequestMapping(value = "MiniTwitter/Website", method= RequestMethod.GET)
+    @ResponseBody
+    public ModelAndView getHomePage(HttpServletRequest httpServletRequest) {
+        ModelAndView modelAndView = new ModelAndView("home");
+        modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
+        String userName = httpServletRequest.getAttribute("currentUser").toString();
+        User currentUser = userRepository.fetchUser(userName);
+        modelAndView.addObject("info",currentUser);
+        modelAndView = getUserInformation(userName,modelAndView);
+        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
+        modelAndView.addObject("timeline",timeline);
+        return modelAndView;
     }
 
     @RequestMapping(value = "MiniTwitter/Website/{id}", method = RequestMethod.GET)
@@ -76,29 +91,14 @@ public class WebsiteViewProfileController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "MiniTwitter/Website/home", method = RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView fetchHomeTimeLine(HttpServletRequest httpServletRequest) {
-        ModelAndView modelAndView = new ModelAndView("home");
-        modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
-        String userName = httpServletRequest.getAttribute("currentUser").toString();
-        User currentUser = userRepository.fetchUser(userName);
-        modelAndView.addObject("info",currentUser);
-        modelAndView = getUserInformation(userName,modelAndView);
-        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
-        modelAndView.addObject("timeline",timeline);
-        return modelAndView;
-    }
-
     @RequestMapping(value = "MiniTwitter/Website/logout", method = RequestMethod.GET)
-    public String logoutCurrentUser(HttpServletResponse httpServletResponse) {
+    public ModelAndView logoutCurrentUser(HttpServletResponse httpServletResponse) {
         log.info("Logging the user out");
         Cookie cookie = new Cookie("token",null);
         cookie.setMaxAge(0);
         cookie.setPath("/MiniTwitter");
         httpServletResponse.addCookie(cookie);
-        String redirectUrl = "/MiniTwitter/Website";
-        return "redirect:" + redirectUrl;
+        return new ModelAndView("loginPage");
     }
 
     private ModelAndView addCurrentUser(String userName, ModelAndView modelAndView) {
@@ -140,13 +140,11 @@ public class WebsiteViewProfileController {
     public boolean updateUser(@RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
         String userName = httpServletRequest.getAttribute("currentUser").toString();
         System.out.println("Update settings request confirmation from user: "+userName);
-        if (password.length()>7){
+        if (password.length()>7 && name.length()>0){
             userRepository.updatePasswordByUsername(userName, password);
-        }
-        if (name.length()>0){
             userRepository.updateNameByUsername(userName, HtmlUtils.htmlEscape(name));
+            userRepository.updateDescriptionByUsername(userName, HtmlUtils.htmlEscape(description));
         }
-        userRepository.updateDescriptionByUsername(userName, HtmlUtils.htmlEscape(description));
         return true;
     }
 }

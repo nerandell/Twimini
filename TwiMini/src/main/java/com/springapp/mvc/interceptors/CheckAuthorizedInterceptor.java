@@ -31,7 +31,7 @@ public class CheckAuthorizedInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse response, Object o) throws Exception {
         Cookie cookie = WebUtils.getCookie(httpServletRequest,"token");
         if(cookie==null) {
-            response.sendRedirect("/MiniTwitter/Website");
+            response.sendRedirect("/MiniTwitter/login");
             return false;
         }
         String username = cookie.getValue().split("\\|")[1];

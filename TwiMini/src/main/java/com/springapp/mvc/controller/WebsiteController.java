@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
@@ -26,30 +28,25 @@ import java.util.UUID;
  */
 
 @Controller
-@RequestMapping("MiniTwitter/Website")
 public class WebsiteController {
 
     private final UserRepository userRepository;
-    private final TweetRepository tweetRepository;
     private final TokenRepository tokenRepository;
 
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public WebsiteController(UserRepository userRepository,TweetRepository tweetRepository, TokenRepository tokenRepository) {
+    public WebsiteController(UserRepository userRepository, TokenRepository tokenRepository) {
         this.userRepository = userRepository;
-        this.tweetRepository = tweetRepository;
         this.tokenRepository = tokenRepository;
     }
 
-    @RequestMapping(method= RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView loginPage() {
-        ModelAndView modelAndView = new ModelAndView("loginPage");
-        return modelAndView;
+    @RequestMapping(value = "MiniTwitter/login", method= RequestMethod.GET)
+    public ModelAndView loginUser() {
+        return new ModelAndView("loginPage");
     }
 
-    @RequestMapping(method= RequestMethod.POST)
+    @RequestMapping(value = "MiniTwitter/login", method= RequestMethod.POST)
     public String verifyUser(@RequestParam("username") String username, @RequestParam("password") String password,
                              ModelMap model, HttpServletResponse httpServletResponse) {
         System.out.println("Verifying user");
@@ -61,7 +58,7 @@ public class WebsiteController {
             cookie.setPath("/MiniTwitter");
             tokenRepository.setToken(token,username);
             httpServletResponse.addCookie(cookie);
-            String redirectUrl = "/MiniTwitter/Website/home";
+            String redirectUrl = "/MiniTwitter/Website";
             return "redirect:" + redirectUrl;
         }
         model.addAttribute("message", "User Not Verified.");
