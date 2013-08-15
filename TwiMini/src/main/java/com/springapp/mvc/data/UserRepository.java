@@ -34,7 +34,7 @@ public class UserRepository {
     }
 
     public void addUser(String username, String password, String name, String email,String description) throws CannotGetJdbcConnectionException {
-        jdbcTemplate.update("INSERT INTO users values (?,?,?,?)",new Object[]{username,name,email,encodePassword(password),description});
+        jdbcTemplate.update("INSERT INTO users values(?,?,?,?,?)",new Object[]{username,name,email,password,description});
     }
 
     public void modifyUser(String userName, String name, String email, String password) throws CannotGetJdbcConnectionException {
