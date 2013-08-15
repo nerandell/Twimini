@@ -44,15 +44,15 @@
                     <form target="hiddenIframe" method="post" action="/MiniTwitter/API/statuses/update" id="tweetForm" enctype="multipart/form-data">
                         <div class="form-actions input-append">
                             <input placeholder="Compose a tweet..." name="status" type="text" class="width-75" id="tweet" />
+                            <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); window.location.reload();">
+                                <i class="icon-pencil"></i>
+                                <span class="hidden-phone">Tweet</span>
+                            </button>
                             <button class="btn btn-info no-radius" onclick="uploadFile(); return false;">
                                 <i class="icon-camera"></i>
                             </button>
                             <button class="btn btn-info no-radius" onclick="getLocation(); return false;">
                                 <i class="icon-location-arrow"></i>
-                            </button>
-                            <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); window.location.reload();">
-                                <i class="icon-pencil"></i>
-                                <span class="hidden-phone">Tweet</span>
                             </button>
                             <input id="upload" name="files[]" type="file" multiple style="visibility:hidden;"/>
                             <input name="location" value="-1" type="text" id="location" style="visibility: hidden;"/>
@@ -130,6 +130,7 @@
         else {
             $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow(\'${info.username}\',this)">Follow</span></a></div>');
         }
+
     });
 
     function uploadFile() {
