@@ -144,6 +144,6 @@
         })
     });
 </script>
-<script src="../../w8_admin/js/settingsFormValidation.js"></script>
+<script src="../../../w8_admin/js/settingsFormValidation.js"></script>
 </body>
 </html>

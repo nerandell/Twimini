@@ -67,6 +67,7 @@ var re4 = /^[\w.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;             //Email check
 
 var timer;
 $('#name-box').keyup(function(event){
+    console.log("Checking name");
     if(timer){
         clearTimeout(timer);
     }
@@ -95,6 +96,7 @@ $('#name-box').keyup(function(event){
 });
 
 $('#password-box').keyup(function(event){
+    console.log("Checking password");
     if(timer){
         clearTimeout(timer);
     }
@@ -151,7 +153,7 @@ $(function() {
                 else
                     showErrorForTime("Could not update from the server. Try again.", timeForWhichErrorMessageIsDisplayed)
             });
-            posting.fail(function() { showErrorForTime("AJAX call did not go through. Sorry for that!", timeForWhichErrorMessageIsDisplayed) })
+            //posting.fail(function() { showErrorForTime("AJAX call did not go through. Sorry for that!", timeForWhichErrorMessageIsDisplayed) })
 
         }
     });

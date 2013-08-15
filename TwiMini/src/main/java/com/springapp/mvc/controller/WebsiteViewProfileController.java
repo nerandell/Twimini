@@ -140,10 +140,12 @@ public class WebsiteViewProfileController {
     public boolean updateUser(@RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
         String userName = httpServletRequest.getAttribute("currentUser").toString();
         System.out.println("Update settings request confirmation from user: "+userName);
-        if (password.length()>7 && name.length()>0){
-            userRepository.updatePasswordByUsername(userName, password);
+        if (name.length()>0) {
             userRepository.updateNameByUsername(userName, HtmlUtils.htmlEscape(name));
             userRepository.updateDescriptionByUsername(userName, HtmlUtils.htmlEscape(description));
+        }
+        if(password.length()>7) {
+            userRepository.updatePasswordByUsername(userName, password);
         }
         return true;
     }
