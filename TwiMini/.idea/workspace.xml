@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeaderWithSignUpDropdown.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeaderWithSignUpDropdown.jsp" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,7 +89,7 @@
     <file path="/getHashTags.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375789889291" ignored="false" />
     <file path="/simpleLogoHeaderWithSignUpDropdown.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376343162919" ignored="false" />
     <file path="/about.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376343032834" ignored="false" />
-    <file path="/errorPageTemplate.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376347034790" ignored="false" />
+    <file path="/errorPageTemplate.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376651655399" ignored="false" />
     <file path="/HTTPErrorController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376344705334" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,33 +160,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebsiteSignUpController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="30" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signUpFormValidation.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="40" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="46" selection-start="4532" selection-end="4532" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
@@ -222,10 +196,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="27" selection-start="266" selection-end="266" vertical-scroll-proportion="0.5555556">
+            <state line="8" column="1" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -243,7 +217,36 @@
       <file leaf-file-name="errorPageTemplate.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="118" selection-start="98" selection-end="98" vertical-scroll-proportion="-1.875">
+            <state line="10" column="22" selection-start="379" selection-end="379" vertical-scroll-proportion="6.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simpleFooter.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleFooter.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="23" selection-start="263" selection-end="263" vertical-scroll-proportion="0.3858521">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="followers.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="24" selection-start="420" selection-end="420" vertical-scroll-proportion="-7.5">
+              <folding>
+                <marker date="1376307558489" expanded="false" signature="5083:5096" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simpleLogoHeaderWithSignUpDropdown.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeaderWithSignUpDropdown.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="33" selection-start="462" selection-end="462" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
@@ -272,8 +275,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeader.jsp" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/HTTPErrorController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeaderWithSignUpDropdown.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/ImageRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java" />
@@ -283,6 +284,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeaderWithSignUpDropdown.jsp" />
       </list>
     </option>
   </component>
@@ -1513,38 +1516,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/ImageRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="21" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.39655173">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="31" selection-start="2035" selection-end="2035" vertical-scroll-proportion="0.072413795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="27" selection-start="6093" selection-end="6093" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="15" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.0">
@@ -1583,13 +1554,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="25" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="118" selection-start="98" selection-end="98" vertical-scroll-proportion="-1.875">
           <folding />
         </state>
       </provider>
@@ -1633,7 +1597,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="27" selection-start="266" selection-end="266" vertical-scroll-proportion="0.5555556">
+        <state line="8" column="1" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/followers.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="24" selection-start="420" selection-end="420" vertical-scroll-proportion="-7.5">
+          <folding>
+            <marker date="1376307558489" expanded="false" signature="5083:5096" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/goToHomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="227" selection-end="227" vertical-scroll-proportion="0.4477612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeaderWithSignUpDropdown.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="33" selection-start="462" selection-end="462" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="22" selection-start="379" selection-end="379" vertical-scroll-proportion="6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleFooter.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="23" selection-start="263" selection-end="263" vertical-scroll-proportion="0.3858521">
           <folding />
         </state>
       </provider>

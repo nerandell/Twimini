@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <title>MiniTwitter - Page not found</title>
     <meta name="description" content="MiniTwitter - Ideas you care about">
-    <link href="../../w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/w8_admin/bootstrap/css/bootstrap.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -44,11 +44,11 @@
 <script type="text/javascript">
     window.jQuery || document.write("<script src='themes/js/jquery-1.9.1.min.js'>"+"<"+"/script>");
 </script>
-<script src="../../w8_admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="/w8_admin/bootstrap/js/bootstrap.min.js"></script>
 
 <%--page-specific scripts--%>
-<script src="../../w8_admin/js/pageContentMinHeight.js"></script>
-<script src="../../w8_admin/js/dropdownToggle.js"></script>
+<script src="/w8_admin/js/pageContentMinHeight.js"></script>
+<script src="/w8_admin/js/dropdownToggle.js"></script>
 <script>
     $(document).load(adjustPageContentHeight());
 </script>
