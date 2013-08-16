@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +28,7 @@
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/examples/sticky-footer-navbar.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
     <file path="$PROJECT_DIR$/src/main/resources/twitter-bootstrap/docs/build/node_modules/hogan.js/test/index.html" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374212806714" ignored="false" />
-    <file path="/bootstrap.css" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376648017013" ignored="false" />
+    <file path="/bootstrap.css" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376648528945" ignored="false" />
     <file path="/user_info.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374302530865" ignored="false" />
     <file path="/FriendController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375095432085" ignored="false" />
     <file path="/following.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375094092079" ignored="false" />
@@ -228,7 +225,7 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="188" column="103" selection-start="2856" selection-end="2856" vertical-scroll-proportion="0.7570978">
+            <state line="11" column="27" selection-start="266" selection-end="266" vertical-scroll-proportion="0.5555556">
               <folding />
             </state>
           </provider>
@@ -346,10 +343,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-4" />
-    <option name="width" value="1857" />
-    <option name="height" value="1085" />
+    <option name="x" value="-1302" />
+    <option name="y" value="764" />
+    <option name="width" value="1303" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1418,7 +1415,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="-1302" y="764" width="1303" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1440,8 +1437,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912782" sideWeight="0.70757735" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18781163" sideWeight="0.7540279" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24597207" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27098322" sideWeight="0.63004845" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36995155" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1636,7 +1633,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="188" column="103" selection-start="2856" selection-end="2856" vertical-scroll-proportion="0.7570978">
+        <state line="11" column="27" selection-start="266" selection-end="266" vertical-scroll-proportion="0.5555556">
           <folding />
         </state>
       </provider>
