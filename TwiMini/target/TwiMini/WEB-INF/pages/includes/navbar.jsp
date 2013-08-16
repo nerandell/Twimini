@@ -26,7 +26,7 @@
                 <li class="purple">
                     <a href="#">
                         <i class="icon-bell-alt icon-only icon-animated-bell"></i>
-                        <span class="badge badge-important">8</span>
+                        <span id="notifications" class="badge badge-important">0</span>
                     </a>
                 </li>
 

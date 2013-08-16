@@ -19,7 +19,13 @@ function loadImages(id) {
 function poll(last_id){
     $.get('/MiniTwitter/API/statuses/polling?id='+last_id,
         function(data) {
-            console.log(data);
+            $("#notifications").text(data);
+            if(data>0) {
+                $('#notification-message').show();
+                if(data===1)
+                    $("#notification-number").text(data+ " new tweet");
+                else $("#notification-number").text(data+ " new tweets");
+            }
             setTimeout(function() {
                 poll(last_id);
             }, 5000);

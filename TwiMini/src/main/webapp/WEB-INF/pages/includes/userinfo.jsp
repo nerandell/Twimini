@@ -71,6 +71,11 @@
     Location successfully added
 </div>
 
+<div class="alert alert-success text-center" id = "notification-message" style="display:none;">
+    <a class="close" data-dismiss="alert">x</a>
+    <span id="notification-number"></span>
+</div>
+
 <script type="text/javascript" src="../../w8_admin/themes/js/load-image.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/bootstrap-image-gallery.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/main.js"></script>
