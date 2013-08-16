@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,10 +106,10 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/polling", method = RequestMethod.GET)
     @ResponseBody
-    public long getNewTweets(@RequestParam("id") long id, HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
+    public long getCountOfNewTweets(@RequestParam("id") long timestamp, HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
         String username = httpServletRequest.getAttribute("currentUser").toString();
-        log.info("Polling: " + username + " for last id" + id);
-        return tweetRepository.getLatestTweetCount(id,username);
+        log.info("Polling: " + username + " for last id" + new Timestamp(timestamp));
+        return tweetRepository.getLatestTweetCount(new Timestamp(timestamp),username);
     }
 
 

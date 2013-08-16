@@ -24,7 +24,7 @@
                 </li>
 
                 <li class="purple">
-                    <a href="#">
+                    <a href="/MiniTwitter/Website">
                         <i class="icon-bell-alt icon-only icon-animated-bell"></i>
                         <span id="notifications" class="badge badge-important">0</span>
                     </a>

@@ -71,10 +71,12 @@
     Location successfully added
 </div>
 
-<div class="alert alert-success text-center" id = "notification-message" style="display:none;">
-    <a class="close" data-dismiss="alert">x</a>
-    <span id="notification-number"></span>
-</div>
+<a href="/MiniTwitter/Website">
+    <div class="alert alert-success text-center" id = "notification-message" style="display:none;">
+        <a class="close" data-dismiss="alert">x</a>
+        <span id="notification-number"></span>
+    </div>
+</a>
 
 <script type="text/javascript" src="../../w8_admin/themes/js/load-image.js"></script>
 <script type="text/javascript" src="../../w8_admin/themes/js/bootstrap-image-gallery.js"></script>
