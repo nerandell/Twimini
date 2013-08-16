@@ -7,6 +7,7 @@
  */
 
 var timeForWhichErrorMessageIsDisplayed = 3000;
+var timeToAjaxCallAfterKeyUp = 100;
 
 function updateUserInfo(name, description){
     init_name = name;
@@ -91,7 +92,7 @@ $('#name-box').keyup(function(event){
         else{
             removeCrossShowTick("#name-check");
         }
-    }, 1000);
+    }, timeToAjaxCallAfterKeyUp);
 });
 
 $('#password-box').keyup(function(event){
@@ -121,7 +122,7 @@ $('#password-box').keyup(function(event){
         else{
             removeCrossShowTick("#password-check");
         }
-    }, 1000);
+    }, timeToAjaxCallAfterKeyUp);
 });
 
 $(function() {

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,6 +92,7 @@
     <file path="/errorPageTemplate.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376651655399" ignored="false" />
     <file path="/HTTPErrorController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376344705334" ignored="false" />
     <file path="/errorPageCustom.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376657928868" ignored="false" />
+    <file path="/signUpFormValidation.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376661674855" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,28 +162,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="errorPageTemplate.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
+      <file leaf-file-name="signUpFormValidation.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="47" selection-start="1673" selection-end="1673" vertical-scroll-proportion="1.0185186">
+            <state line="12" column="39" selection-start="321" selection-end="321" vertical-scroll-proportion="0.26785713">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebsiteSignUpController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java">
+      <file leaf-file-name="processTweets.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/processTweets.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="21" selection-start="1452" selection-end="1452" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebsiteController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
+      <file leaf-file-name="settingsFormValidation.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="63" selection-start="2239" selection-end="2239" vertical-scroll-proportion="0.0">
+            <state line="97" column="22" selection-start="3100" selection-end="3100" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -206,8 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/simpleLogoHeader.jsp" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/HTTPErrorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/ImageRepository.java" />
@@ -222,6 +221,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageCustom.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js" />
       </list>
     </option>
   </component>
@@ -283,7 +284,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="64" />
-    <option name="y" value="-4" />
+    <option name="y" value="1076" />
     <option name="width" value="1857" />
     <option name="height" value="1085" />
   </component>
@@ -1354,32 +1355,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="64" y="1076" width="1857" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="167" y="180" width="1657" height="885" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="167" y="180" width="1657" height="885" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.7540279" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293018" sideWeight="0.73089343" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.7540279" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293018" sideWeight="0.73089343" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40680712" sideWeight="0.50039524" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26640317" sideWeight="0.14100486" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985157" sideWeight="0.67169" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985157" sideWeight="0.67169" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25040388" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.7540279" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.7540279" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22559653" sideWeight="0.08396125" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290859" sideWeight="0.7540279" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290859" sideWeight="0.7540279" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18781163" sideWeight="0.7540279" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24597207" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30139935" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1453,20 +1454,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="40" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="46" selection-start="4532" selection-end="4532" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="12" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
@@ -1548,13 +1535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="164" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="63" selection-start="2239" selection-end="2239" vertical-scroll-proportion="0.0">
@@ -1564,7 +1544,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="47" selection-start="1673" selection-end="1673" vertical-scroll-proportion="1.0185186">
+        <state line="16" column="38" selection-start="556" selection-end="556" vertical-scroll-proportion="0.37037036">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="164" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="22" selection-start="3100" selection-end="3100" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/processTweets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="39" selection-start="321" selection-end="321" vertical-scroll-proportion="0.26785713">
           <folding />
         </state>
       </provider>
