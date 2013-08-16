@@ -105,12 +105,10 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/polling", method = RequestMethod.GET)
     @ResponseBody
-    public DeferredResult<Long> getNewTweets(@RequestParam("id") long id,HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
-        final DeferredResult<Long> deferredResult = new DeferredResult<>();
+    public long getNewTweets(@RequestParam("id") long id, HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
         String username = httpServletRequest.getAttribute("currentUser").toString();
-        tweetRepository.getLatestTweetCount(deferredResult,id);
         log.info("Polling: " + username + " for last id" + id);
-        return deferredResult;
+        return tweetRepository.getLatestTweetCount(id,username);
     }
 
 

@@ -111,7 +111,16 @@ public class TweetRepository {
         }
     }
 
-    public void getLatestTweetCount(DeferredResult<Long> deferredResult, long id) {
+    public long getLatestTweetCount(long id,String username) {
+        return jdbcTemplate.queryForInt("select count(*) from (((select DISTINCT id,username,tweet,tweet_timestamp as timestamp,originalId,location, latitude, longitude from " +
+                "(select username,follower,tweet,id,test.timestamp as tweet_timestamp,location, latitude, longitude, following.timestamp as following_timestamp,test.originalId as originalId from " +
+                "((((select id,username,tweet,timestamp,null as originalId,location, latitude, longitude from tweets) UNION (select id,retweets.username as username,tweets.tweet,retweets.timestamp,tweets.username as originalId,location, latitude, longitude from tweets inner join retweets on retweets.retweetId=tweets.id)) as test inner join following on test.username = following.following))) as mergedTable where " +
+                "((mergedTable.following_timestamp is not NULL and mergedTable.tweet_timestamp<mergedTable.following_timestamp) or mergedTable.following_timestamp is NULL) and " +
+                "mergedTable.follower=?) UNION ((select id,username,tweet,timestamp,null as originalId, location, latitude, longitude  from tweets where username=?) " +
+                "UNION " +
+                "(select id,retweets.username as username,tweets.tweet,retweets.timestamp ,tweets.username as originalId,location, latitude, longitude  from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=?) " +
+                ")) ORDER by timestamp DESC) as finalResult where finalResult.id>?",
+                new Object[]{username,username,username,id});
     }
 
     public List<String> getCurrentTrends() {
