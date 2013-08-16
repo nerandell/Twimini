@@ -11,26 +11,32 @@
             </a><!--/.brand-->
 
             <ul class="nav ace-nav pull-right">
-                <li class="grey user-p">
-                    <a href="/MiniTwitter/Website">
-                        <i class="icon-home"></i>
-                    </a>
-                </li>
+                <c:choose>
+                    <c:when test="${(empty currentLoggedUser) or (currentLoggedUser eq \"-1\")}">
+                    </c:when>
+                    <c:otherwise>
+                        <li class="grey user-p">
+                            <a href="/MiniTwitter/Website">
+                                <i class="icon-home"></i>
+                            </a>
+                        </li>
 
-                <li class="blue user-p">
-                    <a href="#">
-                        <i class="icon-search"></i>
-                    </a>
-                </li>
+                        <li class="blue user-p">
+                            <a href="#">
+                                <i class="icon-search"></i>
+                            </a>
+                        </li>
 
-                <li class="purple">
-                    <a href="/MiniTwitter/Website">
-                        <i class="icon-bell-alt icon-only icon-animated-bell"></i>
-                        <span id="notifications" class="badge badge-important">0</span>
-                    </a>
-                </li>
+                        <li class="purple">
+                            <a href="/MiniTwitter/Website">
+                                <i class="icon-bell-alt icon-only icon-animated-bell"></i>
+                                <span id="notifications" class="badge badge-important">0</span>
+                            </a>
+                        </li>
+                        <%@ include file="settingsModal.jsp" %>
+                    </c:otherwise>
+                </c:choose>
 
-                <%@ include file="settingsModal.jsp" %>
                 <%@ include file="MapModal.jsp" %>
                 <%@ include file="HashTagModal.jsp" %>
                 <c:choose>
