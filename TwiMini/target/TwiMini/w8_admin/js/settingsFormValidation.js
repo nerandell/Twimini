@@ -7,7 +7,7 @@
  */
 
 var timeForWhichErrorMessageIsDisplayed = 3000;
-var timeToAjaxCallAfterKeyUp = 100;
+var timeToAjaxCallAfterKeyUp = 1000;
 
 function updateUserInfo(name, description){
     init_name = name;
@@ -60,40 +60,51 @@ function removeCrossRemoveTick(selector, message){
     showErrorForTime(message, timeForWhichErrorMessageIsDisplayed);
 }
 
-var timer;
 var re = /[\W]+/ ;          //any non-word character
 var re2 = /[^a-zA-Z ]+/ ;           //any non-(character or space)
 var re3 = /^[a-zA-Z]/ ;             //start with an alphabet
-var re4 = /^[\w.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;             //Email check
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var timer;
+
 $('#name-box').keyup(function(event){
     if(timer){
         clearTimeout(timer);
     }
 
     timer = setTimeout(function(event){
-        console.log("name check - howdy!");
-        name = $('#name-box').val();
-        if (name.length==0){
-            removeCrossRemoveTick("#name-check", "Name would not be changed.");
-            return;
-        }
-        else if (name.length>80){
-            removeTickShowCross("#name-check", "Name should be at most 80 characters long.");
-            return;
-        }
-        else if (!re3.test(name)){
-            removeTickShowCross("#name-check", "Name should start with alphabet.")
-        }
-        else if (re2.test(name)){
-            removeTickShowCross("#name-check", "Only alphabets and spaces allowed in name.")
-        }
-        else{
-            removeCrossShowTick("#name-check");
-        }
+        nameCheckCore();
     }, timeToAjaxCallAfterKeyUp);
 });
+
+$('#name-box').blur(function(event){
+    nameCheckCore();
+});
+
+function nameCheckCore(){
+    console.log("name check - howdy!");
+    name = $('#name-box').val();
+    if (name.length==0){
+        removeCrossRemoveTick("#name-check", "Name would not be changed.");
+        return;
+    }
+    else if (name.length>80){
+        removeTickShowCross("#name-check", "Name should be at most 80 characters long.");
+        return;
+    }
+    else if (!re3.test(name)){
+        removeTickShowCross("#name-check", "Name should start with alphabet.")
+    }
+    else if (re2.test(name)){
+        removeTickShowCross("#name-check", "Only alphabets and spaces allowed in name.")
+    }
+    else{
+        removeCrossShowTick("#name-check");
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $('#password-box').keyup(function(event){
     if(timer){
@@ -101,29 +112,39 @@ $('#password-box').keyup(function(event){
     }
 
     timer = setTimeout(function(event){
-        console.log("password check - howdy!");
-        password = $('#password-box').val();
-        if (password.length==0){
-            removeCrossRemoveTick("#password-check", "Password would not be changed");
-            return;
-        }
-        else if (password.length<8){
-            removeTickShowCross("#password-check", "Length of password should at least be 8");
-            return;
-        }
-        else if (password.length>100){
-            removeTickShowCross("#password-check", "Length of password should at most be 100");
-            return;
-        }
-
-        else if (re.test(password)){
-            removeTickShowCross("#password-check", "Only alphanumeric and underscores allowed in password");
-        }
-        else{
-            removeCrossShowTick("#password-check");
-        }
+        passwordCheckCore();
     }, timeToAjaxCallAfterKeyUp);
 });
+
+$('#password-box').blur(function(event){
+    passwordCheckCore();
+});
+
+function passwordCheckCore(){
+    console.log("password check - howdy!");
+    password = $('#password-box').val();
+    if (password.length==0){
+        removeCrossRemoveTick("#password-check", "Password would not be changed");
+        return;
+    }
+    else if (password.length<8){
+        removeTickShowCross("#password-check", "Length of password should at least be 8");
+        return;
+    }
+    else if (password.length>100){
+        removeTickShowCross("#password-check", "Length of password should at most be 100");
+        return;
+    }
+
+    else if (re.test(password)){
+        removeTickShowCross("#password-check", "Only alphanumeric and underscores allowed in password");
+    }
+    else{
+        removeCrossShowTick("#password-check");
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(function() {
     $('#form-update-info').submit(function(event) {
@@ -158,3 +179,4 @@ $(function() {
     });
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

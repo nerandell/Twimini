@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,6 +92,7 @@
     <file path="/HTTPErrorController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376344705334" ignored="false" />
     <file path="/errorPageCustom.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376657928868" ignored="false" />
     <file path="/signUpFormValidation.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376661674855" ignored="false" />
+    <file path="/settingsFormValidation.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376662302654" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,10 +162,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signUpFormValidation.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="signUpFormValidation.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="39" selection-start="321" selection-end="321" vertical-scroll-proportion="0.26785713">
+            <state line="44" column="14" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -180,10 +180,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settingsFormValidation.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="settingsFormValidation.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="22" selection-start="3100" selection-end="3100" vertical-scroll-proportion="0.0">
+            <state line="130" column="75" selection-start="3908" selection-end="3908" vertical-scroll-proportion="0.5535714">
               <folding />
             </state>
           </provider>
@@ -221,8 +221,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageCustom.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPageTemplate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js" />
       </list>
     </option>
   </component>
@@ -284,7 +284,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="64" />
-    <option name="y" value="1076" />
+    <option name="y" value="-4" />
     <option name="width" value="1857" />
     <option name="height" value="1085" />
   </component>
@@ -1355,7 +1355,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="1076" width="1857" height="1085" extended-state="6" />
+    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="167" y="180" width="1657" height="885" />
@@ -1556,13 +1556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="22" selection-start="3100" selection-end="3100" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/processTweets.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1572,7 +1565,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/signUpFormValidation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="321" selection-end="321" vertical-scroll-proportion="0.26785713">
+        <state line="44" column="14" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/js/settingsFormValidation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="75" selection-start="3908" selection-end="3908" vertical-scroll-proportion="0.5535714">
           <folding />
         </state>
       </provider>
