@@ -8,6 +8,11 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.TwoPxInput {
+    width: 2px;
+    padding: 0px 0px 0px 0px;
+}
+
 .logo-icon{
     width: 4%;
 }
@@ -1365,7 +1370,7 @@ input[type="checkbox"] {
   line-height: normal;
 }
 
-input[type="file"],
+/*input[type="file"],*/
 input[type="image"],
 input[type="submit"],
 input[type="reset"],

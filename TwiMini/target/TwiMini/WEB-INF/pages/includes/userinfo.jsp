@@ -51,10 +51,10 @@
                                 <i class="icon-pencil"></i>
                                 <span class="hidden-phone">Tweet</span>
                             </button>
-                            <input id="upload" name="files[]" type="file" multiple style="visibility:hidden;"/>
-                            <input name="location" value="-1" type="text" id="location" style="visibility: hidden;"/>
-                            <input name="latitude" value="-1" type="text" id="latitude" style="visibility: hidden;"/>
-                            <input name="longitude" value="-1" type="text" id="longitude" style="visibility: hidden;"/>
+                            <input id="upload" name="files[]" type="file" multiple style="visibility:hidden;" class="TwoPxInput"/>
+                            <input name="location" value="-1" type="text" id="location" style="visibility: hidden;" class="TwoPxInput"/>
+                            <input name="latitude" value="-1" type="text" id="latitude" style="visibility: hidden;" class="TwoPxInput"/>
+                            <input name="longitude" value="-1" type="text" id="longitude" style="visibility: hidden;" class="TwoPxInput"/>
                         </div>
                     </form>
                     <iframe name="hiddenIframe" id="hiddenIframe" style="display:none;"></iframe>
