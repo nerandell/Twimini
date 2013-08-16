@@ -3,6 +3,7 @@ package com.springapp.mvc.controller;
 import com.springapp.mvc.data.FriendRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.data.UserRepository;
+import com.springapp.mvc.data.ValidationChecks;
 import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
 import org.apache.log4j.Logger;
@@ -23,14 +24,16 @@ public class WebsiteViewProfileController {
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
     private final FriendRepository friendRepository;
+    private final ValidationChecks validationChecks;
 
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public WebsiteViewProfileController(UserRepository userRepository, TweetRepository tweetRepository, FriendRepository friendRepository) {
+    public WebsiteViewProfileController(UserRepository userRepository, TweetRepository tweetRepository, FriendRepository friendRepository, ValidationChecks validationChecks) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
         this.friendRepository = friendRepository;
+        this.validationChecks = validationChecks;
     }
 
     @RequestMapping(value = "MiniTwitter/Website/{id}", method = RequestMethod.GET)
@@ -141,6 +144,11 @@ public class WebsiteViewProfileController {
         System.out.println("password: "+ password);
         System.out.println("description: "+ description);
         System.out.println("name: "+ name);
+
+        if ((!validationChecks.isPasswordValid(password))||(!validationChecks.isNameValid(name))||(!validationChecks.isDescriptionValid(description))){
+            return false;
+        }
+
         String userName = httpServletRequest.getAttribute("currentUser").toString();
         System.out.println("Update settings request confirmation from user: "+userName);
         if (password.length()>7){

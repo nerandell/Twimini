@@ -3,6 +3,7 @@ package com.springapp.mvc.controller;
 import com.springapp.mvc.data.TokenRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.data.UserRepository;
+import com.springapp.mvc.data.ValidationChecks;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,14 +33,16 @@ public class WebsiteController {
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
     private final TokenRepository tokenRepository;
+    private final ValidationChecks validationChecks;
 
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public WebsiteController(UserRepository userRepository,TweetRepository tweetRepository, TokenRepository tokenRepository) {
+    public WebsiteController(UserRepository userRepository,TweetRepository tweetRepository, TokenRepository tokenRepository, ValidationChecks validationChecks) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
         this.tokenRepository = tokenRepository;
+        this.validationChecks = validationChecks;
     }
 
     @RequestMapping(method= RequestMethod.GET)
@@ -54,6 +57,14 @@ public class WebsiteController {
                              ModelMap model, HttpServletResponse httpServletResponse) {
         System.out.println("Verifying user");
         log.debug("Verifying user");
+
+        if ((!validationChecks.isUsernameValid(username))||(!validationChecks.isPasswordValid(password))){
+            model.addAttribute("heading", "Play fair, mate.");
+            model.addAttribute("message", "If you gotta play the game, you must obey the rules!");
+            model.addAttribute("errorCode", "400");
+            return "errorPageTemplate";
+        }
+
         if (userRepository.isUserValid(username, password)){
             String token = UUID.randomUUID().toString();
             Cookie cookie = new Cookie("token",token+"|"+username);
