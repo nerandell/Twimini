@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.context.request.async.DeferredResult;
+import org.springframework.web.util.HtmlUtils;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -68,9 +69,9 @@ public class TweetRepository {
         log.info("Inserting new tweet " + status + " by user " + username);
         long id;
         if(!location.equals("-1"))
-            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp, location, latitude, longitude ) VALUES (?,?,?,?,?,?) RETURNING id", new Object[]{username, status, timestamp, location, latitude, longitude});
+            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp, location, latitude, longitude ) VALUES (?,?,?,?,?,?) RETURNING id", new Object[]{username, HtmlUtils.htmlEscapeDecimal(status), timestamp, location, latitude, longitude});
         else
-            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp) VALUES (?,?,?) RETURNING id", new Object[]{username, status, timestamp});
+            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp) VALUES (?,?,?) RETURNING id", new Object[]{username, HtmlUtils.htmlEscapeDecimal(status), timestamp});
         detectAndInsertHashTags(id, status);
         return id;
     }
@@ -87,7 +88,7 @@ public class TweetRepository {
     }
 
     public void detectAndInsertHashTags(long id,String status) {
-        Pattern p = Pattern.compile("#\\w+");
+        Pattern p = Pattern.compile("#[a-zA-Z][a-zA-Z0-9_]+");
         Matcher m = p.matcher(status);
         while(m.find()){
             String hashtag = m.group().substring(1);

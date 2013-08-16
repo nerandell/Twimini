@@ -42,7 +42,7 @@
                     <form target="hiddenIframe" method="post" action="/MiniTwitter/API/statuses/update" id="tweetForm" enctype="multipart/form-data">
                         <div class="form-actions input-append">
                             <input placeholder="Compose a tweet..." name="status" type="text" class="width-75" id="tweet" />
-                            <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); window.location.reload();">
+                            <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); top.location.href=top.location.href">
                                 <i class="icon-pencil"></i>
                                 <span class="hidden-phone">Tweet</span>
                             </button>
