@@ -64,7 +64,9 @@ public class WebsiteController {
             String redirectUrl = "/MiniTwitter/Website/home";
             return "redirect:" + redirectUrl;
         }
-        model.addAttribute("message", "User Not Verified.");
+        model.addAttribute("heading", "Wrong Credentials.");
+        model.addAttribute("message", "You can try again, or Sign Up now!");
+        model.addAttribute("errorCode", "401");
         return "errorPageTemplate";
     }
 }

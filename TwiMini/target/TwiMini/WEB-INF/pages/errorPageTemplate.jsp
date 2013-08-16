@@ -1,4 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String heading= request.getParameter("heading");
+    String message= request.getParameter("message");
+    String errorCode= request.getParameter("errorCode");
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,12 +27,38 @@
             <div id="page-content">
                 <div class="span8 offset2" id="sub-content-container">
                     <div class="page-content-sub-heading pagination-centered">
-                        <h3>Oops!</h3>
+                        <h3>
+                            <%----------------------%>
+                            <c:choose>
+                                <c:when test="${heading != null}"> ${heading}
+                                </c:when>
+
+                                <c:otherwise>Oops!
+                                </c:otherwise>
+                            </c:choose>
+                            <%----------------------%>
+                        </h3>
                     </div>
                     <div class="biggify text-center little-margin-top-bottom" >
-                        Seems like you were looking for something else. No worries, happens!
+                        <%----------------------%>
+                        <c:choose>
+                            <c:when test="${message != null}"> ${message}
+                            </c:when>
+
+                            <c:otherwise>Seems like you were looking for something else. No worries, happens!
+                            </c:otherwise>
+                        </c:choose>
+                        <%----------------------%>
                         <div class="biggify text-center little-margin-top-bottom" >
-                            404
+                            <%----------------------%>
+                            <c:choose>
+                                <c:when test="${errorCode != null}"> ${errorCode}
+                                </c:when>
+
+                                <c:otherwise>404
+                                </c:otherwise>
+                            </c:choose>
+                            <%----------------------%>
                         </div>
                     </div>
                 </div>
