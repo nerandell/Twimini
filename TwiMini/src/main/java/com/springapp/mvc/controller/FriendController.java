@@ -71,8 +71,8 @@ public class FriendController {
 
     @RequestMapping(value = "MiniTwitter/API/friendships/recommendations", method = RequestMethod.GET)
     @ResponseBody
-    public List<User> getRecommendations(HttpServletRequest httpServletRequest) {
+    public List<String> getRecommendations(@RequestParam("offset") long offset,HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
-        return friendRepository.getRecommendedUsers(username);
+        return friendRepository.getRecommendedUsers(username,offset);
     }
 }

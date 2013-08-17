@@ -86,9 +86,11 @@ public class FriendRepository {
         return row != 0;
     }
 
-    public List<User> getRecommendedUsers(String username) {
-        return jdbcTemplate.query("select * from users where username in (select following from following where follower in " +
-                "(select following from following where follower=?)) and username not in (select following from following where follower=?) and username",
-                new Object[]{username,username},new BeanPropertyRowMapper<>(User.class));
+    public List<String> getRecommendedUsers(String username,long offset) {
+        String query = 	"select following from (select following,count(*) as num from following where following in " +
+                "(select * from (select username from users where username in (select following from following where follower in " +
+                "(select following from following where follower=? and timestamp is null)) and username not in (select following from following where follower=? and timestamp is null)) " +
+                "as finalresult where finalresult.username!=?) group by following order by num DESC LIMIT 10 OFFSET ?) as result";
+        return jdbcTemplate.queryForList(query,new Object[]{username,username,username,offset*10},String.class);
     }
 }

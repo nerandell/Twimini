@@ -132,13 +132,16 @@ function getTweetData(offset,username) {
                 frameSrc = '<a href="http://maps.google.com/maps?q=' + tweet.latitude + ',' + tweet.longitude;
                 data.push('<small class="grey">From '+ '<a data-toggle="modal" href="#MapModal" id="showmap" onclick="addMap('+tweet.latitude+','+tweet.longitude+')">'+tweet.location+'</a>' +'</small>');
             }
-            data.push('<div class="tools" style="margin-right: 25px">');
+            data.push('<div class="tools" style="margin-right: 60px">');
             data.push('<table><tr>');
-            var url = "https://www.facebook.com/dialog/feed?app_id=140586622674265&link=http%3A%2F%2F172.16.152.62%3A8080%2FMiniTwitter%2FAPI%2Fstatuses%2Fshow%3Fid%3D"+tweet.id+"&name=View+"+tweet.username+"%27s+tweet+on+MiniTwitter&picture=http://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s320/Twitter+logo+2012.png&redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fpostshare%2Fc00.html"
-            data.push('<td><a  target="_blank" onclick="return !window.open(this.href, \'Facebook\', \'width=640,height=300\')" href="'+url+'" class="btn btn-minier btn-info"><i class="icon-only icon-facebook"></i></a></td>');
             if(tweet.username!==username) {
                 data.push('<td><a class="btn btn-minier btn-info"><i class="icon-only icon-retweet" onclick="reTweet('+ tweet.id +')"></i></a></td>');
             }
+            var url = "https://www.facebook.com/dialog/feed?app_id=140586622674265&link=http%3A%2F%2F172.16.152.62%3A10000%2FMiniTwitter%2FAPI%2Fstatuses%2Fshow%3Fid%3D"+tweet.id+"&name=View+"+tweet.username+"%27s+tweet+on+MiniTwitter&picture=http://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s320/Twitter+logo+2012.png&redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fpostshare%2Fc00.html"
+            data.push('<td><a  target="_blank" onclick="return !window.open(this.href, \'Facebook\', \'width=640,height=300\')" href="'+url+'" class="btn btn-minier btn-info"><i class="icon-only icon-facebook"></i></a></td>');
+            var url = "http://172.16.152.62:10000/MiniTwitter/API/statuses/show?id"+tweet.id;
+            //data.push('<td><a href="https://plus.google.com/share?url='+url+'" onclick="javascript:window.open(this.href, \'\', \'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600\');return false;"><i class="icon-only icon-google-plus"></i></a></td>');
+            //data.push('<td><a target="_blank" href="https://twitter.com/share" data-url="'+url+'" class="twitter-share-button" data-lang="en"><i class="icon-only icon-twitter"></i></a></td>');
             data.push("</tr></table></div></div></div>");
             var content = data.join("");
             $(content).appendTo(".tweets");
