@@ -125,7 +125,7 @@ function getTweetData(offset,username) {
             else {
                 data.push('<div class="text">'+urlify(tweet.tweet)+'<div>');
                 data = addImages(data, tweet.id);
-                data.push('<small class="text grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a></small>');
+                data.push('<small class="text grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'&nbsp;</a></small>');
             }
             if(tweet.location!==null) {
                 //data.push('<small class="grey">From '+ '<a href="http://maps.google.com/maps?q=' + tweet.latitude + ',' + tweet.longitude +'">'+tweet.location+'</a>' +'</small>');
