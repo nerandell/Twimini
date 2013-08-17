@@ -141,4 +141,12 @@ public class ImageRepository{
         }
     }
 
+    public boolean checkIfProfileImageExists(String userName) {
+        return this.getImage(userName) == null;
+    }
+
+    public void setUserImage(String userName, String filePath) {
+        if(checkIfProfileImageExists(userName)) setImage(userName,filePath);
+        else updateImage(userName,filePath);
+    }
 }

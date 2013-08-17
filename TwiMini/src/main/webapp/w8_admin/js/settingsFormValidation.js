@@ -126,36 +126,13 @@ $('#password-box').keyup(function(event){
     }, 1000);
 });
 
-$(function() {
-    $('#form-update-info').submit(function(event) {
-        // DO STUFF
-        if ( ( ($("#name-check").hasClass("icon-remove")) || ($("#password-check").hasClass("icon-remove")) ) ){
-            showErrorForTime("Cannot submit form. Please fill all fields carefully.", timeForWhichErrorMessageIsDisplayed);
-            return false; // return false to cancel form action
-        }
-        else{
-            event.preventDefault();
-            var $form = $( this ),
-                nameVal = $form.find( 'input[name="name"]' ).val(),
-                passwordVal = $form.find( 'input[name="password"]' ).val(),
-                descriptionVal = $form.find( 'textarea[name="description"]' ).val(),
-                url = $form.attr( 'action' );
-            console.log(nameVal);
-            console.log(passwordVal);
-            console.log(descriptionVal);
-            var posting = $.post( url, { name: nameVal, password: passwordVal, description: descriptionVal } );
-            posting.done(function( data ) {
-                if (data==true){
-                    showSuccessForTime("Successfully updated data.", timeForWhichErrorMessageIsDisplayed);
-                    updateUserInfo(nameVal, descriptionVal);
-                    updateInfoInForm();
-                }
-                else
-                    showErrorForTime("Could not update from the server. Try again.", timeForWhichErrorMessageIsDisplayed)
-            });
-            //posting.fail(function() { showErrorForTime("AJAX call did not go through. Sorry for that!", timeForWhichErrorMessageIsDisplayed) })
-
-        }
-    });
-});
+function submitForm() {
+    if ((($("#name-check").hasClass("icon-remove")) || ($("#password-check").hasClass("icon-remove")))){
+        showErrorForTime("Cannot submit form. Please fill all fields carefully.", timeForWhichErrorMessageIsDisplayed);
+        return false; // return false to cancel form action
+    }
+    else {
+        $('#form-update-info').submit();
+    }
+}
 

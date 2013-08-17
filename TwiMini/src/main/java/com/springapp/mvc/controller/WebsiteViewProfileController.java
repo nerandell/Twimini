@@ -1,6 +1,7 @@
 package com.springapp.mvc.controller;
 
 import com.springapp.mvc.data.FriendRepository;
+import com.springapp.mvc.data.ImageRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.data.UserRepository;
 import com.springapp.mvc.model.Tweet;
@@ -9,6 +10,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.HtmlUtils;
 import org.springframework.web.util.WebUtils;
@@ -16,6 +18,8 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -25,14 +29,16 @@ public class WebsiteViewProfileController {
     private final UserRepository userRepository;
     private final TweetRepository tweetRepository;
     private final FriendRepository friendRepository;
+    private final ImageRepository imageRepository;
 
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public WebsiteViewProfileController(UserRepository userRepository, TweetRepository tweetRepository, FriendRepository friendRepository) {
+    public WebsiteViewProfileController(UserRepository userRepository, TweetRepository tweetRepository, FriendRepository friendRepository, ImageRepository imageRepository) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
         this.friendRepository = friendRepository;
+        this.imageRepository = imageRepository;
     }
 
     @RequestMapping(value = "MiniTwitter/Website", method= RequestMethod.GET)
@@ -137,8 +143,18 @@ public class WebsiteViewProfileController {
 
     @RequestMapping(value = "MiniTwitter/Website/updateInfo", method = RequestMethod.POST)
     @ResponseBody
-    public boolean updateUser(@RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
+    public boolean updateUser(@RequestParam("file") MultipartFile file, @RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
         String userName = httpServletRequest.getAttribute("currentUser").toString();
+        try {
+            FileOutputStream outputStream = null;
+            String filePath = System.getProperty("java.io.tmpdir") + "/" + file.getOriginalFilename();
+            outputStream = new FileOutputStream(new File(filePath));
+            outputStream.write(file.getBytes());
+            outputStream.close();
+            imageRepository.setUserImage(userName, filePath);
+        } catch (Exception e) {
+            System.out.println("Error while saving file");
+        }
         System.out.println("Update settings request confirmation from user: "+userName);
         if (name.length()>0) {
             userRepository.updateNameByUsername(userName, HtmlUtils.htmlEscape(name));
