@@ -71,7 +71,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" onclick="submitForm(); document.location.reload();">
+                    <button class="btn btn-primary" onclick="submitForm(); top.location.href = top.location.href;">
                         <span class="hidden-phone">Save Changes</span>
                     </button>
                 </div>
