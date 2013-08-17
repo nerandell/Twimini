@@ -23,6 +23,21 @@
     min-height: 150px;
 }
 
+.label-suggested {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.user-suggested {
+    cursor: pointer;
+}
+
+.picture-suggested {
+    height: 20px;
+    float: left;
+    padding-right: 3px;
+}
+
 .profile-pic{
     text-align: center;
     height: 150px;
