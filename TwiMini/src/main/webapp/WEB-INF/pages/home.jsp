@@ -180,8 +180,11 @@
                     data.push('</a>');
                     data.push('<li>');
                 });
+                offset++;
+                data.push('<li><a><i class="icon-double-angle-right"></i>');
+                data.push('<span class="user-suggested" onclick="addUsersTofollow(offset)">More</span>');
                 var content = data.join("");
-                $(content).appendTo("#suggestions");
+                $('#suggestions').html(content);
             }
         })
     }

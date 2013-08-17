@@ -121,6 +121,7 @@
     getFollowing(username,currentLoggedUser)
 </script>
 <script>
+    var offset = 0;
     $(document).ready(function() {
         init_name = '${currentUser.name}';
         init_description = '${currentUser.description}';
@@ -142,7 +143,65 @@
                 $(content).appendTo("#trends");
             }
         })
+        addUsersTofollow(offset);
     });
+
+    function addUsersTofollow(off) {
+        $.ajax({
+            type:  "GET",
+            url: "/MiniTwitter/API/friendships/recommendations?offset="+off,
+            success: function(response) {
+                var data = [];
+                $.each(response, function(array, username) {
+                    console.log(username)
+                    data.push('<li><a><i class="icon-double-angle-right"></i>');
+                    data.push('<img class="nav-user-photo picture-suggested" src="/MiniTwitter/API/users/profile_image?username='+username+'" alt="Jason\'s Photo" />')
+                    data.push('<span class="user-suggested" onclick="document.location.href=\'/MiniTwitter/Website/'+username+'\'">'+username+'</span>');
+                    data.push('<span><span class="label-suggested switch label label-success pull-right" onclick="follow(\''+username+'\',this)">Follow</span></span>')
+                    data.push('</a>');
+                    data.push('<li>');
+                });
+                offset++;
+                data.push('<li><a><i class="icon-double-angle-right"></i>');
+                data.push('<span class="user-suggested" onclick="addUsersTofollow(offset)">More</span>');
+                var content = data.join("");
+                $('#suggestions').html(content);
+            }
+        })
+    }
+
+    function follow(username,element) {
+        $.ajax({
+            url: '/MiniTwitter/API/friendships/create?username='+username,
+            type: 'POST',
+            dataType: "text",
+            success:function(data) {
+                if(data.length!=0) {
+                    window.location.replace("/MiniTwitter/Website");
+                }
+                else {
+                    console.log("Successfully followed user "+username);
+                    var $parent = $(element).closest('.switch');
+                    $parent.replaceWith('<span><span class="label-suggested switch label label-important pull-right" onclick="unfollow(\''+username+'\',this)">Unfollow</span></span>');
+                }
+            }
+        });
+    }
+
+    function unfollow(username,element) {
+        $.ajax({
+            url: '/MiniTwitter/API/friendships/destroy?username='+username,
+            type: 'POST',
+            success:function(data) {
+                if(data.length!=0) {
+                    window.location.replace("/MiniTwitter/Website");
+                }
+                console.log("Successfully unfollowed user "+username);
+                var $parent = $(element).closest('.switch');
+                $parent.replaceWith('<span><span class="label-suggested switch label label-success pull-right" onclick="follow(\''+username+'\',this)">Follow</span></span>');
+            }
+        });
+    }
 </script>
 <script src="../../../w8_admin/js/settingsFormValidation.js"></script>
 </body>
