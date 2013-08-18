@@ -4,9 +4,10 @@ function urlify(text) {
         "\\b((?:https?|ftp)://[^\\s\"'<>]+)\\b",
         "\\b(www\\.[^\\s\"'<>]+)\\b",
         "\\b(\\w[\\w.+-]*@[\\w.-]+\\.[a-z]{2,6})\\b",
-        "#([a-zA-Z][a-zA-Z0-9]+)"];
+        "#([a-zA-Z][a-zA-Z0-9]+)\\b",
+        "@([a-zA-Z0-9]+)"];
     re = new RegExp(re.join('|'), "gi");
-    return text.replace(re, function(match, url, www, mail, twitler){
+    return text.replace(re, function(match, url, www, mail, twitler, usertag){
         if(url) {
             var youtubeUrl = url.match(/watch\?v=([a-zA-Z0-9\-_]+)/);
             var vimeoUrl = url.match(/^http:\/\/(www\.)?vimeo\.com\/(clip\:)?(\d+).*$/);
@@ -31,5 +32,7 @@ function urlify(text) {
             return "<a href=\"mailto:" + mail + "\">" + mail + "</a>";
         if(twitler)
             return '<a data-toggle="modal" href="#HashTagModal" id="showHashTags" onclick="initialize('+'\''+twitler +'\''+')">#' + twitler + "</a>";
+        if(usertag )
+            return '<a href="/MiniTwitter/Website/'+usertag+'" id="showHashTags">@' + usertag + "</a>";
     });
 }

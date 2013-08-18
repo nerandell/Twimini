@@ -1,5 +1,97 @@
-<!-- modal-gallery is the modal dialog used for the image gallery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+<script>
+    $(function() {
+        var availableTags = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+        ];
+
+        function split( val ) {
+            return val.split(/[ ]+/);
+        }
+
+        function extractLast( term ) {
+            return split( term ).pop();
+        }
+
+        $( ".tags" )
+            // don't navigate away from the field on tab when selecting an item
+                .bind( "keydown", function( event ) {
+                    console.log("keydown");
+                    if ( event.keyCode === $.ui.keyCode.TAB &&
+                            $( this ).data( "ui-autocomplete" ).menu.active ) {
+                        event.preventDefault();
+                    }
+                })
+                .autocomplete({
+                    minLength: 0,
+                    source: function( request, response ) {
+                        console.log(extractLast(request.term).charAt(0));
+                        if(extractLast(request.term).charAt(0)==='@') {
+                            $.getJSON("/MiniTwitter/API/users/taguser?query="+extractLast(request.term).substr(1),function(data) {
+                                console.log(data);
+                                response( $.ui.autocomplete.filter(
+                                        data, extractLast(request.term).substr(1)));
+                            });
+                        }
+                        if(extractLast(request.term).charAt(0)==='#') {
+                            $.getJSON("/MiniTwitter/API/hashtags/findtag?query="+extractLast(request.term).substr(1),function(data) {
+                                console.log(data);
+                                response( $.ui.autocomplete.filter(
+                                        data, extractLast(request.term).substr(1)));
+                            });
+                        }
+                    },
+                    focus: function() {
+                        console.log("focus");
+                        // prevent value inserted on focus
+                        return false;
+                    },
+                    select: function( event, ui ) {
+                        console.log("select");
+                        var terms = split( this.value );
+                        // remove the current input
+                        var last_ele = terms.pop();
+                        if(last_ele.charAt(0)==='@') {
+                            // add the selected item
+                            terms.push( '@'+ui.item.value );
+                        }
+                        else if(last_ele.charAt(0)==='#') {
+                            // add the selected item
+                            terms.push( '#'+ui.item.value );
+                        }
+                        // add placeholder to get the comma-and-space at the end
+                        terms.push( "" );
+                        this.value = terms.join( " " );
+                        return false;
+                    }
+                });
+    });
+</script>
 
 <div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
     <div class="modal-header">
@@ -43,7 +135,7 @@
                 <div class="widget-main no-padding">
                     <form target="hiddenIframe" method="post" action="/MiniTwitter/API/statuses/update" id="tweetForm" enctype="multipart/form-data">
                         <div class="form-actions input-append">
-                            <input placeholder="Compose a tweet..." name="status" type="text" class="width-75" id="tweet" />
+                            <input placeholder="Compose a tweet..." name="status" type="text" class="width-75 ui-widget tags" id="tweet" />
                             <button class="btn btn-danger no-radius" onclick="$('#tweetForm').submit(); top.location.href=top.location.href">
                                 <i class="icon-pencil"></i>
                                 <span class="hidden-phone">Tweet</span>

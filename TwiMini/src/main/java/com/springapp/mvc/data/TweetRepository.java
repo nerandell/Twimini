@@ -141,5 +141,11 @@ public class TweetRepository {
         return jdbcTemplate.queryForList("select result.hashtag from (select count(*) as mycount,hashtag from hashtags where hashtags.id in (select tweets.id from tweets where tweets.timestamp>?) group by hashtag order by mycount desc) as result LIMIT 10",
                 new Object[]{timestamp}, String.class);
     }
+
+    public List<String> getHashTags(String searchTag) {
+        return jdbcTemplate.queryForList("SELECT distinct hashtag from hashtags where hashtag LIKE '%"+searchTag+"%' LIMIT 10",
+                new Object[]{}, String.class);
+
+    }
 }
 

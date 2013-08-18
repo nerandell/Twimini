@@ -129,5 +129,10 @@ public class UserRepository {
     public static String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
     }
+
+    public List<String> tagUser(String query) {
+        return jdbcTemplate.queryForList("SELECT username from users where username LIKE '%"+query+"%' LIMIT 10",
+                new Object[]{}, String.class);
+    }
 }
 

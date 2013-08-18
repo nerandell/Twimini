@@ -97,4 +97,10 @@ public class UserController {
         return DigestUtils.sha256Hex(password);
     }
 
+    @RequestMapping(value = "MiniTwitter/API/users/taguser", method = RequestMethod.GET)
+    @ResponseBody
+    public List<String> tagUser(@RequestParam("query") String query) {
+        log.info("Searching for user to tag "+query);
+        return userRepository.tagUser(query);
+    }
 }
