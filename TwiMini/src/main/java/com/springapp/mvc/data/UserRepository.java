@@ -1,5 +1,6 @@
 package com.springapp.mvc.data;
 
+import com.springapp.mvc.HelperClasses.ByteObjectConversion;
 import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,14 @@ import java.util.List;
 public class UserRepository {
 
     private final JdbcTemplate jdbcTemplate;
+    private ByteObjectConversion byteObjectConversion;
     private final RedisTemplate< String, Object > template;
 
     @Autowired
     public UserRepository(JdbcTemplate jdbcTemplate, RedisTemplate< String, Object > template) {
         this.template = template;
         this.jdbcTemplate = jdbcTemplate;
+        byteObjectConversion = new ByteObjectConversion();
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////

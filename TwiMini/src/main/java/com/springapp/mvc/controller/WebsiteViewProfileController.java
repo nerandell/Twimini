@@ -59,10 +59,11 @@ public class WebsiteViewProfileController {
     public ModelAndView fetchFollowing(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("following");
         modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
-        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
-        List<User> following = friendRepository.fetchFollowing(userName);
+//        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+//        List<User> following = friendRepository.fetchFollowing(userName);
         modelAndView.addObject("info",userRepository.fetchUser(userName));
         modelAndView = getUserInformation(userName,modelAndView);
+        System.out.println("Returning basic user, following page requested.");
         return modelAndView;
     }
 

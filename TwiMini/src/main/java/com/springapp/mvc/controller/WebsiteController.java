@@ -58,12 +58,12 @@ public class WebsiteController {
         System.out.println("Verifying user");
         log.debug("Verifying user");
 
-        if ((!validationChecks.isUsernameValid(username))||(!validationChecks.isPasswordValid(password))){
-            model.addAttribute("heading", "Play fair, mate.");
-            model.addAttribute("message", "If you gotta play the game, you must obey the rules!");
-            model.addAttribute("errorCode", "400");
-            return "errorPageTemplate";
-        }
+//        if ((!validationChecks.isUsernameValid(username))||(!validationChecks.isPasswordValid(password))){
+//            model.addAttribute("heading", "Play fair, mate.");
+//            model.addAttribute("message", "If you gotta play the game, you must obey the rules!");
+//            model.addAttribute("errorCode", "400");
+//            return "errorPageTemplate";
+//        }
 
         if (userRepository.isUserValid(username, password)){
             String token = UUID.randomUUID().toString();
