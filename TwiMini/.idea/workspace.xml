@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" line="65" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" line="67" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,7 +73,7 @@
     <file path="/detectHashTags.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374909471785" ignored="false" />
     <file path="/retweet.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375016851396" ignored="false" />
     <file path="/hello.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375026914903" ignored="false" />
-    <file path="/FriendRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376834877616" ignored="false" />
+    <file path="/FriendRepository.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376837030518" ignored="false" />
     <file path="/addFriendshipData.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375104282534" ignored="false" />
     <file path="/CheckIfLoggedInInterceptor.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375089919944" ignored="false" />
     <file path="/addFollowerData.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375103031726" ignored="false" />
@@ -172,39 +166,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FriendRepository.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="24" selection-start="6978" selection-end="6978" vertical-scroll-proportion="0.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ByteObjectConversion.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/HelperClasses/ByteObjectConversion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="99" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebsiteController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="14" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebsiteViewProfileController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="WebsiteViewProfileController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="62" selection-start="6237" selection-end="6237" vertical-scroll-proportion="0.0">
+            <state line="126" column="25" selection-start="5941" selection-end="5941" vertical-scroll-proportion="0.21509434">
               <folding />
             </state>
           </provider>
@@ -304,7 +269,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1302" />
+    <option name="x" value="64" />
     <option name="y" value="764" />
     <option name="width" value="1303" />
     <option name="height" value="773" />
@@ -1218,7 +1183,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1302" y="764" width="1303" height="773" extended-state="6" />
+    <frame x="64" y="764" width="1303" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1396,20 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="14" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="62" selection-start="6237" selection-end="6237" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="27" selection-start="661" selection-end="661" vertical-scroll-proportion="0.375">
@@ -1424,18 +1375,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="40" selection-start="7201" selection-end="7201" vertical-scroll-proportion="0.3125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/HelperClasses/ByteObjectConversion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="99" selection-start="893" selection-end="893" vertical-scroll-proportion="0.0">
+        <state line="35" column="99" selection-start="893" selection-end="893" vertical-scroll-proportion="0.64028776">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/FriendRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="24" selection-start="6978" selection-end="6978" vertical-scroll-proportion="0.5">
+        <state line="61" column="14" selection-start="2368" selection-end="2368" vertical-scroll-proportion="1.8037736">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteViewProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="25" selection-start="5941" selection-end="5941" vertical-scroll-proportion="0.21509434">
           <folding />
         </state>
       </provider>

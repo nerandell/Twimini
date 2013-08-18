@@ -39,6 +39,8 @@ public class FriendRepository {
         this.jdbcTemplate = jdbcTemplate;
         jedis = new Jedis("localhost");
         jedis.connect();
+        jedis.flushDB();
+        jedis.flushAll();
         byteObjectConverter = new ByteObjectConversion();
     }
 
@@ -47,7 +49,7 @@ public class FriendRepository {
         List<User> followings;
         String query = "select username,name,email from users where username in (select following from following where follower="+userName+" and timestamp is null)";
         byte[] queryInBytes = byteObjectConverter.toBytes(query);
-        if (jedis.get(queryInBytes) == null){
+        if (!jedis.exists(queryInBytes)){
             System.out.println("Cache is empty. Filling Cache.");
 
             followings = jdbcTemplate.query("select username,name,email from users where username in (select following from following where follower=? and timestamp is null)",
@@ -72,7 +74,7 @@ public class FriendRepository {
         List<User> follower;
         String query = "select username,name,email from users where username in (select follower from following where following="+userName+" and timestamp is null)";
         byte[] queryInBytes = byteObjectConverter.toBytes(query);
-        if (jedis.get(queryInBytes) == null){
+        if (!jedis.exists(queryInBytes)){
             System.out.println("Cache is empty. Filling Cache.");
 
             follower = jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=? and timestamp is null)",
@@ -87,6 +89,7 @@ public class FriendRepository {
 
         System.out.println("Replying from the cache..");
         byte[] outputBytes = jedis.get(queryInBytes);
+        System.out.println(outputBytes.length);
         Object outputObjectUser = byteObjectConverter.fromBytes(outputBytes);
         List<User> outputFollower = (List<User>) outputObjectUser;
         return outputFollower;
