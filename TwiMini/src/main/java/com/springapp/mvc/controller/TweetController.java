@@ -112,6 +112,13 @@ public class TweetController {
         return tweetRepository.getLatestTweetCount(new Timestamp(timestamp),username);
     }
 
+    @RequestMapping(value = "MiniTwitter/API/statuses/new_tweets", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Tweet> getNewTweets(@RequestParam("timestamp") long timestamp, HttpServletRequest httpServletRequest) throws UnsupportedEncodingException {
+        String username = httpServletRequest.getAttribute("currentUser").toString();
+        log.info("Getting new tweets for : " + username + " for last id" + new Timestamp(timestamp));
+        return tweetRepository.getLatestTweets(new Timestamp(timestamp),username);
+    }
 
     @RequestMapping(value = "MiniTwitter/API/search/hashtags", method = RequestMethod.GET)
     @ResponseBody

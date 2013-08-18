@@ -1,3 +1,5 @@
+time = 0;
+
 function loadImages(id) {
     console.log("Loading images")
     $('#gallery').html("");
@@ -16,18 +18,22 @@ function loadImages(id) {
         }});
 }
 
-function poll(timestamp){
-    $.get('/MiniTwitter/API/statuses/polling?id='+timestamp,
+function poll() {
+    $.get('/MiniTwitter/API/statuses/polling?id='+time,
         function(data) {
             $("#notifications").text(data);
+            var $parent = $("#notifications").closest('.notify');
+            $parent.attr("data-time",time);
             if(data>0) {
                 $('#notification-message').show();
                 if(data===1)
                     $("#notification-number").text(data+ " new tweet");
                 else $("#notification-number").text(data+ " new tweets");
+                var $parent = $("#notification-number").closest('.notify');
+                $parent.attr("data-time",time);
             }
             setTimeout(function() {
-                poll(timestamp);
+                poll(time);
             }, 5000);
         });
 }
@@ -92,6 +98,64 @@ function addMap(latitude,longitude) {
     }, 1000);
 }
 
+function addRecentTweets(ele) {
+    var timestamp = $(ele).attr('data-time');
+    var check = 0;
+    $.getJSON("/MiniTwitter/API/statuses/new_tweets?"+"timestamp="+timestamp, function(data) {
+        if(check===0) {
+            time = data[data.length-1].timestamp;
+            check = 1;
+        }
+        $.each(data, function(array, tweet) {
+            var post_time = new Date(tweet.timestamp);
+            var data = [];
+            data.push('<div class="itemdiv dialogdiv">');
+            data.push('<div class="user">');
+            if(tweet.originalId===null) data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.username+'"/></div>');
+            else data.push('<img alt="Alexa\'s Avatar" src="/MiniTwitter/API/users/profile_image?username='+tweet.originalId+'"/></div>');
+            data.push('<div class="body"><div class="time"><i class="icon-time"></i>');
+            data.push('<span class="green">');
+            var now = new Date().getTime();
+            data.push('<span title="'+tweet.timestamp+'">&nbsp;'+timeDifference(now, post_time)+'</span');
+            data.push('</span>');
+            data.push('</div>');
+            data.push('<div class="name">');
+            if(tweet.originalId===null) data.push('<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'</a>');
+            else data.push('<a href="/MiniTwitter/Website/'+tweet.originalId+'">'+tweet.originalId+'</a>');
+            data.push('</div>');
+            if(tweet.originalId===null) {
+                data.push('<div class="text">'+urlify(tweet.tweet)+'</div>');
+                data = addImages(data, tweet.id);
+            }
+            else {
+                data.push('<div class="text">'+urlify(tweet.tweet)+'<div>');
+                data = addImages(data, tweet.id);
+                data.push('<small class="text grey">Retweeted by '+ '<a href="/MiniTwitter/Website/'+tweet.username+'">'+tweet.username+'&nbsp;</a></small>');
+            }
+            if(tweet.location!==null) {
+                //data.push('<small class="grey">From '+ '<a href="http://maps.google.com/maps?q=' + tweet.latitude + ',' + tweet.longitude +'">'+tweet.location+'</a>' +'</small>');
+                frameSrc = '<a href="http://maps.google.com/maps?q=' + tweet.latitude + ',' + tweet.longitude;
+                data.push('<small class="grey">From '+ '<a data-toggle="modal" href="#MapModal" id="showmap" onclick="addMap('+tweet.latitude+','+tweet.longitude+')">'+tweet.location+'</a>' +'</small>');
+            }
+            data.push('<div class="tools" style="margin-right: 60px">');
+            data.push('<table><tr>');
+            if(tweet.username!==username) {
+                data.push('<td><a class="btn btn-minier btn-info"><i class="icon-only icon-retweet" onclick="reTweet('+ tweet.id +')"></i></a></td>');
+            }
+            var url = "https://www.facebook.com/dialog/feed?app_id=140586622674265&link=http%3A%2F%2F172.16.152.62%3A10000%2FMiniTwitter%2FAPI%2Fstatuses%2Fshow%3Fid%3D"+tweet.id+"&name=View+"+tweet.username+"%27s+tweet+on+MiniTwitter&picture=http://3.bp.blogspot.com/-NxouMmz2bOY/T8_ac97cesI/AAAAAAAAGg0/e3vY1_bdnbE/s320/Twitter+logo+2012.png&redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fpostshare%2Fc00.html"
+            data.push('<td><a  target="_blank" onclick="return !window.open(this.href, \'Facebook\', \'width=640,height=300\')" href="'+url+'" class="btn btn-minier btn-info"><i class="icon-only icon-facebook"></i></a></td>');
+            var url = "http://172.16.152.62:10000/MiniTwitter/API/statuses/show?id"+tweet.id;
+            //data.push('<td><a href="https://plus.google.com/share?url='+url+'" onclick="javascript:window.open(this.href, \'\', \'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600\');return false;"><i class="icon-only icon-google-plus"></i></a></td>');
+            //data.push('<td><a target="_blank" href="https://twitter.com/share" data-url="'+url+'" class="twitter-share-button" data-lang="en"><i class="icon-only icon-twitter"></i></a></td>');
+            data.push("</tr></table></div></div></div>");
+            var content = data.join("");
+            $(content).prependTo(".tweets");
+        });
+    });
+    $("#notifications").text(0);
+    $('#notification-message').hide();
+}
+
 function getTweetData(offset,username) {
 
     $.getJSON("/MiniTwitter/API/statuses/home_timeline?"+"offset="+offset, function(data) {
@@ -99,7 +163,8 @@ function getTweetData(offset,username) {
         var check = 0;
         $.each(data, function(array, tweet) {
             if(offset==0 && check==0) {
-                poll(tweet.timestamp);
+                time = tweet.timestamp;
+                poll();
                 check = 1;
             }
             var post_time = new Date(tweet.timestamp);
@@ -148,21 +213,22 @@ function getTweetData(offset,username) {
         });
     });
 
-    function addImages(data,id) {
-        data.push('<div class="images">')
-        $.ajax({
-            url:"/MiniTwitter/API/tweets/getImages?id="+id,
-            type: 'GET',
-            async: false,
-            success: function(result){
-                $.each(result, function(key, image) {
-                    data.push('<a data-slideshow="5000" onclick="loadImages('+id+')" href="#modal-gallery" data-toggle="modal" data-selector="#gallery [data-gallery=gallery]"><img style="height: 240px" src="data:image/png;base64,'+image+'"></img></a>');
-                    data.push('&nbsp;');
-                });
-            }});
-        data.push('</div>');
-        return data;
-    }
+}
+
+function addImages(data,id) {
+    data.push('<div class="images">')
+    $.ajax({
+        url:"/MiniTwitter/API/tweets/getImages?id="+id,
+        type: 'GET',
+        async: false,
+        success: function(result){
+            $.each(result, function(key, image) {
+                data.push('<a data-slideshow="5000" onclick="loadImages('+id+')" href="#modal-gallery" data-toggle="modal" data-selector="#gallery [data-gallery=gallery]"><img style="height: 240px" src="data:image/png;base64,'+image+'"></img></a>');
+                data.push('&nbsp;');
+            });
+        }});
+    data.push('</div>');
+    return data;
 }
 
 

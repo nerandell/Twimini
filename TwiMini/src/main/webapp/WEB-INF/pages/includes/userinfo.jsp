@@ -74,7 +74,7 @@
 </div>
 
 <div class="alert alert-success text-center" id = "notification-message" style="display:none;">
-    <a href="/MiniTwitter/Website">
+    <a class="notify" data-time="" onclick="addRecentTweets(this);">
         <span id="notification-number"></span>
     </a>
 </div>
@@ -90,14 +90,12 @@
             <h4 class="bigger pull-right">${num_of_tweets}</h4>
         </a>
     </div>
-
     <div class="grid3">
         <a href="/MiniTwitter/Website/${info.username}/followers">
             <span class="grey">Followers</span>
             <h4 class="bigger pull-right">${num_followers}</h4>
         </a>
     </div>
-
     <div class="grid3">
         <a href="/MiniTwitter/Website/${info.username}/following">
             <div>
@@ -106,7 +104,6 @@
             </div>
         </a>
     </div>
-
 </div>
 
 <script type="text/javascript">

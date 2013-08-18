@@ -102,6 +102,7 @@
 <script src="../../w8_admin/js/autoComplete.js"></script>
 <script src="../../w8_admin/js/retweet.js"></script>
 <script src="../../w8_admin/js/getHashTags.js"></script>
+<script src="../../w8_admin/js/addRecentTweets.js"></script>
 
 
 <script src="../../w8_admin/themes/js/jquery.slimscroll.min.js"></script>

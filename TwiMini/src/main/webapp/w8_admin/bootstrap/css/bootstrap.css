@@ -32,6 +32,10 @@
     cursor: pointer;
 }
 
+.notify {
+    cursor: pointer;
+}
+
 .picture-suggested {
     height: 20px;
     float: left;

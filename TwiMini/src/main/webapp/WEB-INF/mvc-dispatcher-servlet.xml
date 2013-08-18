@@ -80,6 +80,7 @@
             <mvc:mapping path="/MiniTwitter/API/friendships/recommendations" />
             <mvc:mapping path="/MiniTwitter/API/statuses/polling" />
             <mvc:mapping path="/MiniTwitter/Website/updateInfo" />
+            <mvc:mapping path="/MiniTwitter/API/statuses/new_tweets" />
             <mvc:mapping path="/MiniTwitter/Website" />
             <bean class="com.springapp.mvc.interceptors.CheckAuthorizedInterceptor" />
         </mvc:interceptor>
