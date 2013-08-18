@@ -149,7 +149,7 @@ function addRecentTweets(ele) {
             //data.push('<td><a target="_blank" href="https://twitter.com/share" data-url="'+url+'" class="twitter-share-button" data-lang="en"><i class="icon-only icon-twitter"></i></a></td>');
             data.push("</tr></table></div></div></div>");
             var content = data.join("");
-            $(content).prependTo(".tweets");
+            $(content).prependTo(".tweets").hide().slideDown();
         });
     });
     $("#notifications").text(0);
