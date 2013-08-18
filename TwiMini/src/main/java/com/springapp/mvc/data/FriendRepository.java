@@ -37,7 +37,7 @@ public class FriendRepository {
     @Autowired
     public FriendRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        jedis = new Jedis("localhost");
+        jedis = new Jedis("localhost", 6379, 10000);
         jedis.connect();
         jedis.flushDB();
         jedis.flushAll();
