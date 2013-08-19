@@ -1,10 +1,12 @@
 package com.springapp.mvc.data;
 
+import com.springapp.mvc.HelperClasses.ByteObjectConversion;
 import com.springapp.mvc.model.User;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,10 +19,28 @@ public class UserRepository {
 
     private final JdbcTemplate jdbcTemplate;
     static Logger log = Logger.getLogger(UserRepository.class);
+    private ByteObjectConversion byteObjectConversion;
+    private final RedisTemplate< String, Object > template;
 
     @Autowired
-    public UserRepository(JdbcTemplate jdbcTemplate) {
+    public UserRepository(JdbcTemplate jdbcTemplate, RedisTemplate< String, Object > template) {
+        this.template = template;
         this.jdbcTemplate = jdbcTemplate;
+        byteObjectConversion = new ByteObjectConversion();
+    }
+
+    public String getEmailFromName(String name) throws EmptyResultDataAccessException, CannotGetJdbcConnectionException  {
+        System.out.println("starting getEmailByName.");
+        String email;
+        String query = "SELECT email from users where name="+name;
+        if (template.opsForValue().get(query) == null){
+            System.out.println("Cache is empty. Filling Cache.");
+            email = jdbcTemplate.queryForObject("SELECT email from users where name=?", String.class, name);
+            template.opsForValue().set(query, email);
+            return email;
+        }
+        System.out.println("Replying from the cache..");
+        return (String) template.opsForValue().get(query);
     }
 
     public User fetchUser(String username) throws CannotGetJdbcConnectionException {
@@ -38,7 +58,6 @@ public class UserRepository {
     }
 
     public void modifyUser(String userName, String name, String email, String password) throws CannotGetJdbcConnectionException {
-        //To change body of created methods use File | Settings | File Templates.
         String encodedPassword = encodePassword(password);
         jdbcTemplate.update("UPDATE users set name=?,email=?,password=? where username=?", new Object[]{name,email,encodedPassword,userName});
     }

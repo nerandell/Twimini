@@ -121,11 +121,10 @@
                             <button class="btn btn-info no-radius" onclick="getLocation(); return false;">
                                 <i class="icon-location-arrow"></i>
                             </button>
-                            <input id="upload" name="files[]" type="file" multiple style="visibility:hidden;"/>
-                            <input name="location" value="-1" type="text" id="location" style="visibility: hidden;"/>
-                            <input name="latitude" value="-1" type="text" id="latitude" style="visibility: hidden;"/>
-                            <input name="longitude" value="-1" type="text" id="longitude" style="visibility: hidden;"/>
-
+                            <input class="TwoPxInput" id="upload" name="files[]" type="file" multiple style="visibility:hidden;"/>
+                            <input class="TwoPxInput" name="location" value="-1" type="text" id="location" style="visibility: hidden;"/>
+                            <input class="TwoPxInput" name="latitude" value="-1" type="text" id="latitude" style="visibility: hidden;"/>
+                            <input class="TwoPxInput" name="longitude" value="-1" type="text" id="longitude" style="visibility: hidden;"/>
                         </div>
                     </form>
                     <iframe name="hiddenIframe" id="hiddenIframe" style="display:none;"></iframe>

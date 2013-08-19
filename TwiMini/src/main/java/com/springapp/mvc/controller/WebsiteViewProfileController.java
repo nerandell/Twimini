@@ -4,6 +4,7 @@ import com.springapp.mvc.data.FriendRepository;
 import com.springapp.mvc.data.ImageRepository;
 import com.springapp.mvc.data.TweetRepository;
 import com.springapp.mvc.data.UserRepository;
+import com.springapp.mvc.data.ValidationChecks;
 import com.springapp.mvc.model.Tweet;
 import com.springapp.mvc.model.User;
 import org.apache.log4j.Logger;
@@ -30,15 +31,17 @@ public class WebsiteViewProfileController {
     private final TweetRepository tweetRepository;
     private final FriendRepository friendRepository;
     private final ImageRepository imageRepository;
+    private final ValidationChecks validationChecks;
 
     static Logger log = Logger.getLogger(UserRepository.class);
 
     @Autowired
-    public WebsiteViewProfileController(UserRepository userRepository, TweetRepository tweetRepository, FriendRepository friendRepository, ImageRepository imageRepository) {
+    public WebsiteViewProfileController(UserRepository userRepository, TweetRepository tweetRepository, FriendRepository friendRepository, ImageRepository imageRepository, ValidationChecks validationChecks) {
         this.userRepository = userRepository;
         this.tweetRepository = tweetRepository;
         this.friendRepository = friendRepository;
         this.imageRepository = imageRepository;
+        this.validationChecks = validationChecks;
     }
 
     @RequestMapping(value = "MiniTwitter/Website", method= RequestMethod.GET)
@@ -78,10 +81,11 @@ public class WebsiteViewProfileController {
     public ModelAndView fetchFollowing(@PathVariable("id") String userName,HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("following");
         modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
-        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
-        List<User> following = friendRepository.fetchFollowing(userName);
+//        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+//        List<User> following = friendRepository.fetchFollowing(userName);
         modelAndView.addObject("info",userRepository.fetchUser(userName));
         modelAndView = getUserInformation(userName,modelAndView);
+        System.out.println("Returning basic user, following page requested.");
         return modelAndView;
     }
 
@@ -144,6 +148,11 @@ public class WebsiteViewProfileController {
     @RequestMapping(value = "MiniTwitter/Website/updateInfo", method = RequestMethod.POST)
     @ResponseBody
     public boolean updateUser(@RequestParam("file") MultipartFile file, @RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
+        System.out.println("In updateUser function..");
+        System.out.println("password: "+ password);
+        System.out.println("description: "+ description);
+        System.out.println("name: "+ name);
+
         String userName = httpServletRequest.getAttribute("currentUser").toString();
         try {
             FileOutputStream outputStream = null;
@@ -156,11 +165,12 @@ public class WebsiteViewProfileController {
             System.out.println("Error while saving file");
         }
         System.out.println("Update settings request confirmation from user: "+userName);
-        if (name.length()>0) {
+        if (validationChecks.isNameValid(name) && validationChecks.isDescriptionValid(description)) {
             userRepository.updateNameByUsername(userName, HtmlUtils.htmlEscape(name));
             userRepository.updateDescriptionByUsername(userName, HtmlUtils.htmlEscape(description));
         }
-        if(password.length()>7) {
+
+        if(validationChecks.isPasswordValid(password)) {
             userRepository.updatePasswordByUsername(userName, password);
         }
         return true;

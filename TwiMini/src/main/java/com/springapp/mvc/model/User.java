@@ -10,7 +10,7 @@ import org.codehaus.jackson.annotate.JsonIgnore;
  * To change this template use File | Settings | File Templates.
  */
 
-public class User {
+public class User implements java.io.Serializable{
 
     public String username;
     @JsonIgnore
