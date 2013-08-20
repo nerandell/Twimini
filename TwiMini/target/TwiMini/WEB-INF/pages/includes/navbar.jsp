@@ -3,7 +3,7 @@
 <div class="navbar navbar-inverse">
     <div class="navbar-inner">
         <div class="container-fluid">
-            <a href="#" class="brand">
+            <a href="/MiniTwitter/Website" class="brand">
                 <small>
                     <i class="icon-unlock-alt"></i>
                     TwiMini

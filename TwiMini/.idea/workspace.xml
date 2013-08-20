@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6ed2d24-8a72-4b79-b314-92845cc7437e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/sidebar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/sidebar.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp" />
     </list>
     <ignored path="TwiMini.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +34,7 @@
     <file path="/following.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376766603234" ignored="false" />
     <file path="/followers.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376913002133" ignored="false" />
     <file path="/addTweet.js" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1375270265639" ignored="false" />
-    <file path="/navbar.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376833616586" ignored="false" />
+    <file path="/navbar.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376976446009" ignored="false" />
     <file path="/LoginController.java" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1374488594316" ignored="false" />
     <file path="/Dummy.txt" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376897708525" ignored="false" />
     <file path="/userinfo.jsp" changelist="f6ed2d24-8a72-4b79-b314-92845cc7437e" time="1376975462661" ignored="false" />
@@ -151,15 +151,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user_profile.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user_profile.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="24" selection-start="1006" selection-end="1006" vertical-scroll-proportion="-10.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="userinfo.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -169,10 +160,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sidebar.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sidebar.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/sidebar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="28" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.4643963">
+            <state line="40" column="21" selection-start="1177" selection-end="1177" vertical-scroll-proportion="-6.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="35" selection-start="631" selection-end="631" vertical-scroll-proportion="0.65656567">
               <folding />
             </state>
           </provider>
@@ -259,7 +259,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/WebsiteSignUpController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/ImageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/UserRepository.java" />
@@ -275,6 +274,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springapp/mvc/data/TweetRepository.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/userinfo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/sidebar.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp" />
       </list>
     </option>
   </component>
@@ -1225,8 +1225,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912782" sideWeight="0.70757735" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24822134" sideWeight="0.6515397" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3484603" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24822134" sideWeight="0.63047004" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36953" sideWeight="0.49960473" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24958768" sideWeight="0.6350915" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1300,13 +1300,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w8_admin/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13882" selection-start="14111" selection-end="14111" vertical-scroll-proportion="-3.8709676">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/settingsModal.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="68" selection-start="4653" selection-end="4653" vertical-scroll-proportion="-11.875">
@@ -1407,7 +1400,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/sidebar.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="28" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.4643963">
+        <state line="40" column="21" selection-start="1177" selection-end="1177" vertical-scroll-proportion="-6.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/includes/navbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="35" selection-start="631" selection-end="631" vertical-scroll-proportion="0.65656567">
           <folding />
         </state>
       </provider>
