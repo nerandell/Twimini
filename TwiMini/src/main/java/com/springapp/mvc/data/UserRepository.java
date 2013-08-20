@@ -76,7 +76,7 @@ public class UserRepository {
     }
 
     public List<User> searchForUsers(String query) throws CannotGetJdbcConnectionException {
-        return jdbcTemplate.query("SELECT username from users where username LIKE '%"+query+"%'",
+        return jdbcTemplate.query("SELECT username from users where LOWER(username) LIKE LOWER('%"+query+"%')",
                 new Object[]{}, new BeanPropertyRowMapper<>(User.class));
     }
 
