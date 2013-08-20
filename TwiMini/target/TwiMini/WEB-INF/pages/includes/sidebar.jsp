@@ -22,7 +22,7 @@
         <li>
             <a href="#" class="dropdown-toggle">
                 <i class="icon-bar-chart"></i>
-                <span>Trending</span>
+                <span>Trending topics</span>
 
                 <b class="arrow icon-angle-down"></b>
             </a>
@@ -33,7 +33,7 @@
         <li>
             <a href="#" class="dropdown-toggle">
                 <i class="icon-star"></i>
-                <span>Suggestions</span>
+                <span>Suggested Users</span>
 
                 <b class="arrow icon-angle-down"></b>
             </a>
