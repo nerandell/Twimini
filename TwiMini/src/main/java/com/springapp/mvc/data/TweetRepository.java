@@ -69,9 +69,9 @@ public class TweetRepository {
         log.info("Inserting new tweet " + status + " by user " + username);
         long id;
         if(!location.equals("-1"))
-            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp, location, latitude, longitude ) VALUES (?,?,?,?,?,?) RETURNING id", new Object[]{username, HtmlUtils.htmlEscapeDecimal(status), timestamp, location, latitude, longitude});
+            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp, location, latitude, longitude ) VALUES (?,?,?,?,?,?) RETURNING id", new Object[]{username, status, timestamp, location, latitude, longitude});
         else
-            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp) VALUES (?,?,?) RETURNING id", new Object[]{username, HtmlUtils.htmlEscapeDecimal(status), timestamp});
+            id = jdbcTemplate.queryForInt("INSERT into tweets (username, tweet, timestamp) VALUES (?,?,?) RETURNING id", new Object[]{username, status, timestamp});
         detectAndInsertHashTags(id, status);
         return id;
     }

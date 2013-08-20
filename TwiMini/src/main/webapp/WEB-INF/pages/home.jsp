@@ -177,7 +177,7 @@
                     data.push('<li><a><i class="icon-double-angle-right"></i>');
                     data.push('<img class="nav-user-photo picture-suggested" src="/MiniTwitter/API/users/profile_image?username='+username+'" alt="Jason\'s Photo" />')
                     data.push('<span class="user-suggested" onclick="document.location.href=\'/MiniTwitter/Website/'+username+'\'">'+username+'</span>');
-                    data.push('<span><span class="label-suggested switch label label-success pull-right" onclick="follow(\''+username+'\',this)">Follow</span></span>')
+                    data.push('<span><span class="label-suggested switch label label-success pull-right" onclick="follow_user(\''+username+'\',this)">Follow</span></span>')
                     data.push('</a>');
                     data.push('<li>');
                 });
@@ -190,7 +190,7 @@
         })
     }
 
-    function follow(username,element) {
+    function follow_user(username,element) {
         $.ajax({
             url: '/MiniTwitter/API/friendships/create?username='+username,
             type: 'POST',
@@ -202,13 +202,13 @@
                 else {
                     console.log("Successfully followed user "+username);
                     var $parent = $(element).closest('.switch');
-                    $parent.replaceWith('<span><span class="label-suggested switch label label-important pull-right" onclick="unfollow(\''+username+'\',this)">Unfollow</span></span>');
+                    $parent.replaceWith('<span><span class="label-suggested switch label label-important pull-right" onclick="unfollow_user(\''+username+'\',this)">Unfollow</span></span>');
                 }
             }
         });
     }
 
-    function unfollow(username,element) {
+    function unfollow_user(username,element) {
         $.ajax({
             url: '/MiniTwitter/API/friendships/destroy?username='+username,
             type: 'POST',
@@ -218,7 +218,7 @@
                 }
                 console.log("Successfully unfollowed user "+username);
                 var $parent = $(element).closest('.switch');
-                $parent.replaceWith('<span><span class="label-suggested switch label label-success pull-right" onclick="follow(\''+username+'\',this)">Follow</span></span>');
+                $parent.replaceWith('<span><span class="label-suggested switch label label-success pull-right" onclick="follow_user(\''+username+'\',this)">Follow</span></span>');
             }
         });
     }

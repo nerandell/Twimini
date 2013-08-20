@@ -1,4 +1,4 @@
-function follow(username,element) {
+function follow_page(username,element) {
     $.ajax({
         url: '/MiniTwitter/API/friendships/create?username='+username,
         type: 'POST',
@@ -10,13 +10,13 @@ function follow(username,element) {
             else {
                 console.log("Successfully followed user "+username);
                 var $parent = $(element).closest('.switch');
-                $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+username+'\',this)">Unfollow</span></a></div>');
+                $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow_page(\''+username+'\',this)">Unfollow</span></a></div>');
             }
         }
     });
 }
 
-function unfollow(username,element) {
+function unfollow_page(username,element) {
     $.ajax({
         url: '/MiniTwitter/API/friendships/destroy?username='+username,
         type: 'POST',
@@ -26,7 +26,7 @@ function unfollow(username,element) {
             }
             console.log("Successfully unfollowed user "+username);
             var $parent = $(element).closest('.switch');
-            $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-success" onclick="follow(\''+username+'\',this)">Follow</span></a></div>');
+            $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-success" onclick="follow_page(\''+username+'\',this)">Follow</span></a></div>');
         }
     });
 }
@@ -55,17 +55,17 @@ function getFollowing(username,currentLoggedUser) {
                     success:function(data)
                     {
                         if(data==="true") {
-                            htmlContent.push('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow(\''+relationship.username+'\',this)">Unfollow</span></a></div>');
+                            htmlContent.push('<div><a class="switch" href="#"><span class="label label-important" onclick="unfollow_page(\''+relationship.username+'\',this)">Unfollow</span></a></div>');
                         }
                         else {
-                            htmlContent.push('<div><a class="switch" href="#"><span class="label label-success" onclick="follow(\''+relationship.username+'\',this)">Follow</span></a></div>');
+                            htmlContent.push('<div><a class="switch" href="#"><span class="label label-success" onclick="follow_page(\''+relationship.username+'\',this)">Follow</span></a></div>');
                         }
                     },
                     async: false
                 });
             }
             else {
-                htmlContent.push('<div><a class="switch" href="#"><span class="label label-success" onclick="follow(\''+relationship.username+'\',this)">Follow</span></a></div>');
+                htmlContent.push('<div><a class="switch" href="#"><span class="label label-success" onclick="follow_page(\''+relationship.username+'\',this)">Follow</span></a></div>');
             }
             htmlContent.push('</div></div>')
             var content = htmlContent.join("");

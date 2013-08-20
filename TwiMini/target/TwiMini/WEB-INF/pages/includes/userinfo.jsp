@@ -1,8 +1,6 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css" />
 <script>
     $(function() {
         function split( val ) {
@@ -186,16 +184,16 @@
                 success:function(data)
                 {
                     if(data==="true") {
-                        $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-important" onclick="unfollow(\'${info.username}\',this)">Unfollow</span></a></div>');
+                        $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-important" onclick="unfollow_large(\'${info.username}\',this)">Unfollow</span></a></div>');
                     }
                     else {
-                        $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow(\'${info.username}\',this)">Follow</span></a></div>');
+                        $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow_large(\'${info.username}\',this)">Follow</span></a></div>');
                     }
                 }
             });
         }
         else {
-            $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow(\'${info.username}\',this)">Follow</span></a></div>');
+            $('#relationButton').append('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow_large(\'${info.username}\',this)">Follow</span></a></div>');
         }
 
     });
@@ -259,7 +257,7 @@
         }
     }
 
-    function follow(username,element) {
+    function follow_large(username,element) {
         $.ajax({
             url: '/MiniTwitter/API/friendships/create?username='+username,
             type: 'POST',
@@ -271,13 +269,13 @@
                 else {
                     console.log("Successfully followed user "+username);
                     var $parent = $(element).closest('.switch');
-                    $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-large label-important" onclick="unfollow(\''+username+'\',this)">Unfollow</span></a></div>');
+                    $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-large label-important" onclick="unfollow_large(\''+username+'\',this)">Unfollow</span></a></div>');
                 }
             }
         });
     }
 
-    function unfollow(username,element) {
+    function unfollow_large(username,element) {
         $.ajax({
             url: '/MiniTwitter/API/friendships/destroy?username='+username,
             type: 'POST',
@@ -287,7 +285,7 @@
                 }
                 console.log("Successfully unfollowed user "+username);
                 var $parent = $(element).closest('.switch');
-                $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow(\''+username+'\',this)">Follow</span></a></div>');
+                $parent.replaceWith('<div><a class="switch" href="#"><span class="label label-large label-success" onclick="follow_large(\''+username+'\',this)">Follow</span></a></div>');
             }
         });
     }
