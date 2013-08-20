@@ -116,7 +116,7 @@
                             <button class="btn btn-info no-radius" onclick="uploadFile(); return false;">
                                 <i class="icon-camera"></i>
                             </button>
-                            <button class="btn btn-info no-radius" onclick="getLocation(); return false;">
+                            <button id="loc" class="btn btn-info no-radius" onclick="getLocation(); return false;">
                                 <i class="icon-location-arrow"></i>
                             </button>
                             <input class="TwoPxInput" id="upload" name="files[]" type="file" multiple style="visibility:hidden;"/>
@@ -217,6 +217,7 @@
             var lng = position.coords.longitude;
             codeLatLng(lat, lng);
             $('#success-message').show();
+            $('#loc').prop('disabled', true);
         }
 
         function errorFunction(){
@@ -247,6 +248,7 @@
                         $('#latitude').val(lat);
                         $('#longitude').val(lng);
                         console.log($('#location').val());
+
                     } else {
                         alert("No results found");
                     }
