@@ -21,11 +21,11 @@
                             </a>
                         </li>
 
-                        <li class="blue user-p">
-                            <a href="#">
-                                <i class="icon-search"></i>
-                            </a>
-                        </li>
+                        <%--<li class="blue user-p">--%>
+                            <%--<a href="#">--%>
+                                <%--<i class="icon-search"></i>--%>
+                            <%--</a>--%>
+                        <%--</li>--%>
 
                         <li class="purple">
                             <a class="notify" data-time="" onclick="addRecentTweets(this);">
