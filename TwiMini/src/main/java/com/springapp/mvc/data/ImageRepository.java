@@ -57,7 +57,9 @@ public class ImageRepository{
             catch (redis.clients.jedis.exceptions.JedisConnectionException e){
                 log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
             }
-
+            catch (ArrayIndexOutOfBoundsException e){
+                log.info("ArrayIndexOutOfBoundsException - no need to call jedis.del.");
+            }
             final FileInputStream fis = new FileInputStream(file);
             String query = "insert into images values (?,?)";
             jdbcTemplate.execute(query, new PreparedStatementCallback<Boolean>() {
@@ -215,7 +217,9 @@ public class ImageRepository{
             catch (redis.clients.jedis.exceptions.JedisConnectionException e){
                 log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
             }
-
+            catch (ArrayIndexOutOfBoundsException e){
+                log.info("ArrayIndexOutOfBoundsException - no need to call jedis.del.");
+            }
             final FileInputStream fis = new FileInputStream(file);
             String query = "update images set image=? where username=?";
             jdbcTemplate.execute(query, new PreparedStatementCallback<Boolean>() {
