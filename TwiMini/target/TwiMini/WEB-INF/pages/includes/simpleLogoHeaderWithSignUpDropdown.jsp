@@ -7,7 +7,7 @@
                     <i class="icon-chevron-down"></i>
                 </a>
                 <div class="dropdown-menu" role="menu">
-                    <form class="form-signing-in-top" action="/MiniTwitter/Website" method="post">
+                    <form class="form-signing-in-top" action="/MiniTwitter/login" method="post">
                         <div id="login-header-right-form">
                             <div>
                                 <input type="text" class="input-block-level input-large logIn-class-inputs" name="username" placeholder="Username">

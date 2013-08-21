@@ -149,6 +149,7 @@ public class WebsiteViewProfileController {
     @ResponseBody
     public boolean updateUser(@RequestParam("file") MultipartFile file, @RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
         System.out.println("In updateUser function..");
+        System.out.println("FILE:"+ file);
         System.out.println("password: "+ password);
         System.out.println("description: "+ description);
         System.out.println("name: "+ name);
@@ -160,9 +161,15 @@ public class WebsiteViewProfileController {
             outputStream = new FileOutputStream(new File(filePath));
             outputStream.write(file.getBytes());
             outputStream.close();
+            System.out.println("calling to imageRepo function");
+            System.out.println(file.getBytes().length);
+            System.out.println(file.getSize());
+            System.out.println("calling to imageRepo function");
             imageRepository.setUserImage(userName, filePath);
         } catch (Exception e) {
             System.out.println("Error while saving file");
+            System.out.println("Error:"+e);
+
         }
         System.out.println("Update settings request confirmation from user: "+userName);
         if (validationChecks.isNameValid(name) && validationChecks.isDescriptionValid(description)) {
