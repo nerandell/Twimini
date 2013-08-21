@@ -1,15 +1,5 @@
 <div id="breadcrumbs">
-    <ul class="breadcrumb">
-        <li>
-            <i class="icon-home"></i>
-            <a href="#">Home</a>
 
-							<span class="divider">
-								<i class="icon-angle-right"></i>
-							</span>
-        </li>
-        <li class="active">Dashboard</li>
-    </ul><!--.breadcrumb-->
 
     <div id="nav-search">
         <form class="form-search" onsubmit="location.href = '/MiniTwitter/Website/' + document.getElementById('nav-search-input').value; return false;">
