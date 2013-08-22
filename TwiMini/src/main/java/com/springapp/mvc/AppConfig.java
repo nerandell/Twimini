@@ -11,6 +11,7 @@ package com.springapp.mvc;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import java.beans.PropertyVetoException;
 
+import com.springapp.mvc.HelperClasses.ByteObjectConversion;
 import com.springapp.mvc.data.TokenRepository;
 import com.springapp.mvc.interceptors.CheckAuthorizedInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import com.springapp.mvc.data.UserRepository;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,6 +53,23 @@ public class AppConfig extends WebMvcConfigurerAdapter{
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
         return new JedisConnectionFactory();
+    }
+
+    @Bean
+    public static JedisPool jedisPool(){
+        JedisPoolConfig poolConfig = new JedisPoolConfig();
+        poolConfig.setMaxIdle(5);
+        poolConfig.setMaxActive(50);
+        return new JedisPool(poolConfig,"localhost", 6379);
+    }
+    @Bean
+    public static Jedis jedis(){
+        return jedisPool().getResource();
+    }
+
+    @Bean
+    public static ByteObjectConversion byteObjectConversion(){
+        return new ByteObjectConversion();
     }
 
     @Bean

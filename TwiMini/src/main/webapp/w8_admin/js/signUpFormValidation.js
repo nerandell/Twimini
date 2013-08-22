@@ -67,10 +67,6 @@ function usernameCheckCore(){
         removeCrossRemoveTick("#username-check", "Username cannot be null.");
         return;
     }
-    else if (username.length<8){
-        removeTickShowCross("#username-check", "Length of username should at least be 8");
-        return;
-    }
     else if (username.length>40){
         removeTickShowCross("#username-check", "Length of username should at most be 40");
         return;

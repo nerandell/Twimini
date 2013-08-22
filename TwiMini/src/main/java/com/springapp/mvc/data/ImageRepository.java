@@ -32,18 +32,15 @@ public class ImageRepository{
 
     static Logger log = Logger.getLogger(ImageRepository.class);
     private final JdbcTemplate jdbcTemplate;
-    private ByteObjectConversion byteObjectConverter;
+    private final ByteObjectConversion byteObjectConverter;
     private final Jedis jedis;
 
     @Autowired
-    public ImageRepository(JdbcTemplate jdbcTemplate) {
+    public ImageRepository(JdbcTemplate jdbcTemplate, Jedis jedis, ByteObjectConversion byteObjectConverter) {
         this.jdbcTemplate = jdbcTemplate;
+        this.jedis = jedis;
+        this.byteObjectConverter = byteObjectConverter;
         jedis = new Jedis("localhost");
-        new Jedis("localhost", 6379, 10000);
-        jedis.connect();
-        jedis.flushDB();
-        jedis.flushAll();
-        byteObjectConverter = new ByteObjectConversion();
     }
 
     public void setImage(final String username,String path) {
@@ -57,9 +54,7 @@ public class ImageRepository{
             catch (redis.clients.jedis.exceptions.JedisConnectionException e){
                 log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
             }
-            catch (ArrayIndexOutOfBoundsException e){
-                log.info("ArrayIndexOutOfBoundsException - no need to call jedis.del.");
-            }
+
             final FileInputStream fis = new FileInputStream(file);
             String query = "insert into images values (?,?)";
             jdbcTemplate.execute(query, new PreparedStatementCallback<Boolean>() {
@@ -217,9 +212,7 @@ public class ImageRepository{
             catch (redis.clients.jedis.exceptions.JedisConnectionException e){
                 log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
             }
-            catch (ArrayIndexOutOfBoundsException e){
-                log.info("ArrayIndexOutOfBoundsException - no need to call jedis.del.");
-            }
+
             final FileInputStream fis = new FileInputStream(file);
             String query = "update images set image=? where username=?";
             jdbcTemplate.execute(query, new PreparedStatementCallback<Boolean>() {

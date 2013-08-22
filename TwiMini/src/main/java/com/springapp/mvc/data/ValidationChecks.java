@@ -17,7 +17,7 @@ public class ValidationChecks {
     public Boolean isUsernameValid(String username){
         if (username==null)
             return false;
-        if ((username.length()<8)||(username.length()>40))
+        if ((username.length()<1)||(username.length()>40))
             return false;
         if ( username.matches("(\\w)+") )
             return true;

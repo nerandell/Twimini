@@ -128,7 +128,39 @@ function submitForm() {
         return false; // return false to cancel form action
     }
     else {
-        $('#form-update-info').submit();
+//        $('#form-update-info').submit();
+        alert("hahaha. Got ya!");
+
+        ////////////////////////////////////////////////////
+//        var url = "/MiniTwitter/Website/updateInfo";
+//        var posting = $.post(url, {file:$('.uploadImage').val() , password:$('.password-box').val() , name:$('.name-box').val()},
+//            function(data, status){
+//                alert(status);
+//            });
+//        alert("hocus");
+//        return false;
+//        posting.done(function(data){
+//            alert('success!');
+//        })
+
+        ////////////////////////////////////////////////////
+
+        ////////////////////////////////////////////////////
+        var formData = new FormData($('form-update-info')[0]);
+        console.log(formData);
+        $.ajax({
+            url: "/MiniTwitter/Website/updateInfo",
+            type:  "POST",
+            data: formData,
+            contentType: "application/json",
+            success: function(response) {
+//                showSuccessForTime("Changed fields:", timeForWhichErrorMessageIsDisplayed);
+//                alert(response);
+                console.log("Image Uploaded?");
+            }
+        });
+        ////////////////////////////////////////////////////
+        return false;
     }
 }
 

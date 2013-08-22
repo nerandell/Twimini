@@ -53,15 +53,11 @@ public class TweetRepository {
     }
 
     public List<Tweet> fetchHomeTimeline(String username,long offset) {
-        return jdbcTemplate.query("((select DISTINCT id,username,tweet,tweet_timestamp as timestamp,originalId,location, latitude, longitude from " +
-                "(select username,follower,tweet,id,test.timestamp as tweet_timestamp,location, latitude, longitude, following.timestamp as following_timestamp,test.originalId as originalId from " +
-                "((((select id,username,tweet,timestamp,null as originalId,location, latitude, longitude from tweets) UNION (select id,retweets.username as username,tweets.tweet,retweets.timestamp,tweets.username as originalId,location, latitude, longitude from tweets inner join retweets on retweets.retweetId=tweets.id)) as test inner join following on test.username = following.following))) as mergedTable where " +
-                "((mergedTable.following_timestamp is not NULL and mergedTable.tweet_timestamp<mergedTable.following_timestamp) or mergedTable.following_timestamp is NULL) and " +
-                "mergedTable.follower=?) UNION ((select id,username,tweet,timestamp,null as originalId, location, latitude, longitude  from tweets where username=?) " +
-                "UNION " +
-                "(select id,retweets.username as username,tweets.tweet,retweets.timestamp ,tweets.username as originalId,location, latitude, longitude  from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=?) " +
-                ")) ORDER by timestamp DESC LIMIT 10 OFFSET ?",
+        System.out.println("Starting fetchHomeTimeline.");
+        List<Tweet> tweetList = jdbcTemplate.query("(select DISTINCT id,username,tweet,timestamp,null as originalId,location,latitude,longitude from tweets where tweets.username=?) union (select DISTINCT id,username,tweet,tweets.timestamp,null as originalId,location,latitude,longitude from tweets join following ON (following.follower=? and following.following=tweets.username and (following.timestamp is NULL or following.timestamp>tweets.timestamp)) ) union ( select DISTINCT id,retweets.username as username,tweets.tweet,retweets.timestamp,tweets.username as originalId,location,latitude,longitude from tweets inner join retweets on retweets.retweetId=tweets.id where retweets.username=? ) order by timestamp desc LIMIT 10 OFFSET ?",
                 new Object[]{username,username,username,offset*10}, new BeanPropertyRowMapper<>(Tweet.class));
+        System.out.println("Ending fetchHomeTimeline.");
+        return tweetList;
     }
 
     public long addTweet(String username, String status, String location, Double latitude, Double longitude) {

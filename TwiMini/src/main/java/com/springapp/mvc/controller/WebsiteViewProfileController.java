@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -53,8 +54,10 @@ public class WebsiteViewProfileController {
         User currentUser = userRepository.fetchUser(userName);
         modelAndView.addObject("info",currentUser);
         modelAndView = getUserInformation(userName,modelAndView);
-        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
-        modelAndView.addObject("timeline",timeline);
+//        System.out.println("calling fetchhometimeline from controller..");
+//        List<Tweet> timeline = tweetRepository.fetchHomeTimeline(userName,1);
+//        modelAndView.addObject("timeline",timeline);
+//        ^^ is it useful?
         return modelAndView;
     }
 
@@ -95,8 +98,8 @@ public class WebsiteViewProfileController {
         ModelAndView modelAndView = new ModelAndView("followers");
         modelAndView = addLoggedInUser(modelAndView,httpServletRequest);
         modelAndView.addObject("info",userRepository.fetchUser(userName));
-        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
-        List<User> followers = friendRepository.fetchFollowers(userName);
+//        List<Tweet> tweets = tweetRepository.fetchTweets(userName);
+//        List<User> followers = friendRepository.fetchFollowers(userName);
         modelAndView = getUserInformation(userName,modelAndView);
         return modelAndView;
     }
@@ -147,12 +150,14 @@ public class WebsiteViewProfileController {
 
     @RequestMapping(value = "MiniTwitter/Website/updateInfo", method = RequestMethod.POST)
     @ResponseBody
-    public boolean updateUser(@RequestParam("file") MultipartFile file, @RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
+    public HashMap updateUser(@RequestParam("file") MultipartFile file, @RequestParam("password") String password, @RequestParam("name") String name, @RequestParam("description") String description, HttpServletRequest httpServletRequest){
         System.out.println("In updateUser function..");
         System.out.println("FILE:"+ file);
         System.out.println("password: "+ password);
         System.out.println("description: "+ description);
         System.out.println("name: "+ name);
+
+        HashMap isItUpdated = new HashMap();
 
         String userName = httpServletRequest.getAttribute("currentUser").toString();
         try {
@@ -166,20 +171,52 @@ public class WebsiteViewProfileController {
             System.out.println(file.getSize());
             System.out.println("calling to imageRepo function");
             imageRepository.setUserImage(userName, filePath);
+            isItUpdated.put("isImageUpdated", true);
+
         } catch (Exception e) {
             System.out.println("Error while saving file");
             System.out.println("Error:"+e);
-
+            isItUpdated.put("isImageUpdated", false);
         }
         System.out.println("Update settings request confirmation from user: "+userName);
-        if (validationChecks.isNameValid(name) && validationChecks.isDescriptionValid(description)) {
-            userRepository.updateNameByUsername(userName, HtmlUtils.htmlEscape(name));
-            userRepository.updateDescriptionByUsername(userName, HtmlUtils.htmlEscape(description));
+        if (validationChecks.isNameValid(name))
+        {   try{
+                userRepository.updateNameByUsername(userName, HtmlUtils.htmlEscape(name));
+                isItUpdated.put("isNameUpdated", true);
+            }
+            catch (Exception e) {
+                System.out.println("Error while calling updateNameByUsername.");
+                isItUpdated.put("isNameUpdated", false);
+            }
         }
-
+        else
+            isItUpdated.put("isNameUpdated", false);
+        if (validationChecks.isDescriptionValid(description)) {
+            try{
+                userRepository.updateDescriptionByUsername(userName, HtmlUtils.htmlEscape(description));
+                isItUpdated.put("isDescriptionUpdated", true);
+            }
+            catch (Exception e) {
+                System.out.println("Error while calling updateDescriptionByUsername.");
+                isItUpdated.put("isDescriptionUpdated", false);
+            }
+        }
+        else
+            isItUpdated.put("isDescriptionUpdated", false);
         if(validationChecks.isPasswordValid(password)) {
-            userRepository.updatePasswordByUsername(userName, password);
+            try{
+                userRepository.updatePasswordByUsername(userName, password);
+                isItUpdated.put("isPasswordUpdated", false);
+            }
+            catch (Exception e) {
+                System.out.println("Error while calling updatePasswordByUsername.");
+                isItUpdated.put("isPasswordUpdated", false);
+            }
         }
-        return true;
+        else
+            isItUpdated.put("isPasswordUpdated", false);
+        System.out.println("Printing isItUpdated");
+        System.out.println(isItUpdated);
+        return isItUpdated;
     }
 }

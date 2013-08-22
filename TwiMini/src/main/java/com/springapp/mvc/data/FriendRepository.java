@@ -31,17 +31,14 @@ public class FriendRepository {
 
     static Logger log = Logger.getLogger(TweetRepository.class);
     private final JdbcTemplate jdbcTemplate;
-    private ByteObjectConversion byteObjectConverter;
+    private final ByteObjectConversion byteObjectConverter;
     private final Jedis jedis;
 
     @Autowired
-    public FriendRepository(JdbcTemplate jdbcTemplate) {
+    public FriendRepository(JdbcTemplate jdbcTemplate, Jedis jedis, ByteObjectConversion byteObjectConverter) {
         this.jdbcTemplate = jdbcTemplate;
-        jedis = new Jedis("localhost", 6379, 10000);
-        jedis.connect();
-        jedis.flushDB();
-        jedis.flushAll();
-        byteObjectConverter = new ByteObjectConversion();
+        this.byteObjectConverter = byteObjectConverter;
+        this.jedis = jedis;
     }
 
     public List<User> fetchFollowing(String userName) {
@@ -77,6 +74,11 @@ public class FriendRepository {
         }
         catch (redis.clients.jedis.exceptions.JedisConnectionException e){
             log.info("redis.clients.jedis.exceptions.JedisConnectionException - using direct DB call.");
+            return jdbcTemplate.query("select username,name,email from users where username in (select following from following where follower=? and timestamp is null)",
+                    new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
+        }
+        catch (java.lang.ArrayIndexOutOfBoundsException e){
+            log.info("java.lang.ArrayIndexOutOfBoundsException - using direct DB call.");
             return jdbcTemplate.query("select username,name,email from users where username in (select following from following where follower=? and timestamp is null)",
                     new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
         }
@@ -132,8 +134,12 @@ public class FriendRepository {
             return jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=? and timestamp is null)",
                     new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
         }
+        catch (java.lang.ArrayIndexOutOfBoundsException e){
+            log.info("java.lang.ArrayIndexOutOfBoundsException - using direct DB call.");
+            return jdbcTemplate.query("select username,name,email from users where username in (select follower from following where following=? and timestamp is null)",
+                    new Object[]{userName}, new BeanPropertyRowMapper<>(User.class));
+        }
     }
-
 
     public static String encodePassword(String password) {
         return DigestUtils.sha256Hex(password);
