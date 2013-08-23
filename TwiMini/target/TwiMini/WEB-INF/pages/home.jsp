@@ -225,5 +225,6 @@
 
 </script>
 <script src="../../w8_admin/js/settingsFormValidation.js"></script>
+<script src="../../w8_admin/js/jquery.form.js"></script>
 </body>
 </html>

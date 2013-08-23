@@ -2,6 +2,7 @@ package com.springapp.mvc.controller;
 
 import com.springapp.mvc.data.ImageRepository;
 import com.springapp.mvc.data.TweetRepository;
+import com.springapp.mvc.data.UserRepository;
 import com.springapp.mvc.model.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -29,13 +30,15 @@ public class TweetController {
 
     private final TweetRepository tweetRepository;
     private final ImageRepository imageRepository;
+    private final UserRepository userRepository;
 
     static Logger log = Logger.getLogger(TweetRepository.class);
 
     @Autowired
-    public TweetController(TweetRepository tweetRepository, ImageRepository imageRepository) {
+    public TweetController(TweetRepository tweetRepository, ImageRepository imageRepository, UserRepository userRepository) {
         this.tweetRepository = tweetRepository;
         this.imageRepository = imageRepository;
+        this.userRepository = userRepository;
     }
 
     @RequestMapping(value = "MiniTwitter/API/statuses/show", method = RequestMethod.GET)
@@ -75,17 +78,51 @@ public class TweetController {
 
     @RequestMapping(value = "MiniTwitter/API/statuses/user_timeline", method = RequestMethod.GET)
     @ResponseBody
-    public List<Tweet> fetchUserTimeline(@RequestParam("username") String username,@RequestParam("offset") long offset) {
+    public List<Tweet> fetchUsererTimeline(@RequestParam("username") String username,@RequestParam("offset") long offset) {
         log.info("Fetching timeline for user " + username);
         return tweetRepository.fetchUserTimeline(username, offset);
     }
 
     @RequestMapping(value = "MiniTwitter/API/statuses/home_timeline", method = RequestMethod.GET)
     @ResponseBody
-//    @Cacheable("defaultCache")
     public List<Tweet> fetchHomeTimeline(@RequestParam("offset") long offset, HttpServletRequest httpServletRequest) {
         String username = httpServletRequest.getAttribute("currentUser").toString();
         return tweetRepository.fetchHomeTimeline(username, offset);
+    }
+
+    @RequestMapping(value = "MiniTwitter/API/statuses/getMyHomeTimeline", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Tweet> fetchMyHomeTimeline(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("offset") long offset) {
+        System.out.println("API getMyHomeTimeline REQUEST");
+        System.out.println(username);
+        System.out.println(password);
+        System.out.println(offset);
+        if (userRepository.isUserValid(username, password)){
+            System.out.println("User is valid here too, dude!!");
+            return tweetRepository.fetchHomeTimeline(username, offset);
+        }
+
+        return tweetRepository.fetchHomeTimeline(username, offset);
+    }
+
+    @RequestMapping(value = "MiniTwitter/API/statuses/post", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean postTweetByAPI(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("tweettext") String tweetText){
+        System.out.println("API POST REQUEST");
+        System.out.println(username);
+        System.out.println(password);
+        System.out.println(tweetText);
+        if (userRepository.isUserValid(username, password)){
+            System.out.println("User is valid, dude!!");
+            try{
+                tweetRepository.addTweet(username, tweetText,"-1",null,null);
+            }
+            catch (Exception e){
+                return false;
+            }
+            return true;
+        }
+        return false;
     }
 
     @RequestMapping(value = "MiniTwitter/API/search/tweets", method = RequestMethod.GET)

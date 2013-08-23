@@ -147,11 +147,11 @@ public class FriendRepository {
 
     public void addFriend(String username, String toFollow) {
         System.out.println("addFriend request came from "+username+" to "+toFollow+".");
-        if (!jedis.isConnected()){
-            System.out.println("Connecting again...");
-            jedis.disconnect();
-            jedis.connect();
-        }
+//        if (!jedis.isConnected()){
+//            System.out.println("Connecting again...");
+//            jedis.disconnect();
+//            jedis.connect();
+//        }
 
         if(!username.equals(toFollow)) {
             List<Friend> list = jdbcTemplate.query("select * from following where follower=? AND following=?",
@@ -166,28 +166,28 @@ public class FriendRepository {
                 }
             }
             else jdbcTemplate.execute("INSERT into following VALUES('" + username + "','" + toFollow + "')");
-            String query1 = "select username,name,email from users where username in (select following from following where follower="+username+" and timestamp is null)";
-            String query2 = "select username,name,email from users where username in (select follower from following where following="+toFollow+" and timestamp is null)";
-            byte[] query1InBytes = byteObjectConverter.toBytes(query1);
-            byte[] query2InBytes = byteObjectConverter.toBytes(query2);
-            try{
-                jedis.del(query1InBytes);
-                jedis.del(query2InBytes);
-            }
-            catch (redis.clients.jedis.exceptions.JedisConnectionException e){
-                log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
-            }
+//            String query1 = "select username,name,email from users where username in (select following from following where follower="+username+" and timestamp is null)";
+//            String query2 = "select username,name,email from users where username in (select follower from following where following="+toFollow+" and timestamp is null)";
+//            byte[] query1InBytes = byteObjectConverter.toBytes(query1);
+//            byte[] query2InBytes = byteObjectConverter.toBytes(query2);
+//            try{
+//                jedis.del(query1InBytes);
+//                jedis.del(query2InBytes);
+//            }
+//            catch (redis.clients.jedis.exceptions.JedisConnectionException e){
+//                log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
+//            }
         }
         else log.info("Can't follow yourself");
     }
 
     public void deleteFollower(String username, String toUnfollow) {
         System.out.println("deleteFollower request came from "+username+" to "+toUnfollow+".");
-        if (!jedis.isConnected()){
-            System.out.println("Connecting again...");
-            jedis.disconnect();
-            jedis.connect();
-        }
+//        if (!jedis.isConnected()){
+//            System.out.println("Connecting again...");
+//            jedis.disconnect();
+//            jedis.connect();
+//        }
 
         List<Friend> list = jdbcTemplate.query("select * from following where follower=? AND following=?",
                new Object[]{username, toUnfollow}, new BeanPropertyRowMapper<>(Friend.class));
@@ -198,17 +198,17 @@ public class FriendRepository {
                 Timestamp timestamp = new Timestamp(new Date().getTime());
                 jdbcTemplate.execute("update following set timestamp='" + timestamp + "' where follower = '"+ username + "' AND following = '" + toUnfollow + "'");
                 log.info("Resetting timestamp to current time");
-                String query1 = "select username,name,email from users where username in (select following from following where follower="+username+" and timestamp is null)";
-                String query2 = "select username,name,email from users where username in (select follower from following where following="+toUnfollow+" and timestamp is null)";
-                byte[] query1InBytes = byteObjectConverter.toBytes(query1);
-                byte[] query2InBytes = byteObjectConverter.toBytes(query2);
-                try{
-                    jedis.del(query1InBytes);
-                    jedis.del(query2InBytes);
-                }
-                catch (redis.clients.jedis.exceptions.JedisConnectionException e){
-                    log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
-                }
+//                String query1 = "select username,name,email from users where username in (select following from following where follower="+username+" and timestamp is null)";
+//                String query2 = "select username,name,email from users where username in (select follower from following where following="+toUnfollow+" and timestamp is null)";
+//                byte[] query1InBytes = byteObjectConverter.toBytes(query1);
+//                byte[] query2InBytes = byteObjectConverter.toBytes(query2);
+//                try{
+//                    jedis.del(query1InBytes);
+//                    jedis.del(query2InBytes);
+//                }
+//                catch (redis.clients.jedis.exceptions.JedisConnectionException e){
+//                    log.info("redis.clients.jedis.exceptions.JedisConnectionException - no need to call jedis.del.");
+//                }
             }
             else log.info("Already unfollowed");
         }

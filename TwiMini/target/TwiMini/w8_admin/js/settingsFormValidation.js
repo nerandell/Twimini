@@ -129,7 +129,7 @@ function submitForm() {
     }
     else {
 //        $('#form-update-info').submit();
-        alert("hahaha. Got ya!");
+//        alert("hahaha. Got ya!");
 
         ////////////////////////////////////////////////////
 //        var url = "/MiniTwitter/Website/updateInfo";
@@ -146,23 +146,51 @@ function submitForm() {
         ////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////
-        var formData = new FormData($('form-update-info')[0]);
-        console.log(formData);
-        $.ajax({
-            url: "/MiniTwitter/Website/updateInfo",
-            type:  "POST",
-            data: formData,
-            contentType: "application/json",
-            success: function(response) {
-//                showSuccessForTime("Changed fields:", timeForWhichErrorMessageIsDisplayed);
+//        var formData = new FormData($('form-update-info')[0]);
+//        console.log(formData);
+//        $.ajax({
+//            url: "/MiniTwitter/Website/updateInfo",
+//            type:  "POST",
+//            data: formData,
+//            contentType: "application/json",
+//            success: function(response) {
+////                showSuccessForTime("Changed fields:", timeForWhichErrorMessageIsDisplayed);
 //                alert(response);
-                console.log("Image Uploaded?");
+//                console.log("Image Uploaded?");
+//            }
+//        });
+        ////////////////////////////////////////////////////
+
+        ////////////////////////////////////////////////////
+
+        $('#form-update-info').ajaxSubmit({
+            url: "/MiniTwitter/Website/updateInfo",
+            type: 'post',
+            beforeSubmit: function() {
+                console.log("Submitting...");
+            },
+            success: function(data) {
+                alert(data);
             }
-        });
+        })
+
         ////////////////////////////////////////////////////
         return false;
     }
 }
+
+$(document).ready(function(){
+    $('#form-update-info').ajaxSubmit({
+        url: "/MiniTwitter/Website/updateInfo",
+        type: 'post',
+        beforeSubmit: function() {
+            console.log("Submitting...");
+        },
+        success: function(data) {
+            alert(data);
+        }
+    })
+})
 
 function passwordCheckCore(){
     console.log("password check - howdy!");
